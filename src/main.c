@@ -9,6 +9,8 @@ int main(int argc, char *argv[])
    
     r = getBytes("tetris.gb");
 
+
+    printf("test: %c", r.bytes[0x134]);
     printf("Bytes = ");
     for(int i = 0; i < r.sizeInBytes; i++)
         printf("%u ", r.bytes[i]);
