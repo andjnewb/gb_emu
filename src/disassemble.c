@@ -36,7 +36,10 @@ struct romBytes getBytes(char * fileName)
 
     //rom.bytes = buffer;
     
-    
+    for(int i = 0; i < fileLen; i+8)
+    {
+        buffer[i] = __ntohl(buffer[i]);//TODO, FIX
+    }
 
     memcpy(rom.bytes, buffer, fileLen);
     //printf("%u", buffer[0]);

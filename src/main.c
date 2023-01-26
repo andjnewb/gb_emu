@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "disassemble.h"
+#include <inttypes.h>
 
 int main(int argc, char *argv[])
 {
@@ -10,7 +11,7 @@ int main(int argc, char *argv[])
     r = getBytes("tetris.gb");
 
 
-    printf("test: %c", r.bytes[0x134]);
+    printf("test: %d", __builtin_bswap16(r.bytes[0x134]));
     printf("Bytes = ");
     for(int i = 0; i < r.sizeInBytes; i++)
         printf("%u ", r.bytes[i]);
