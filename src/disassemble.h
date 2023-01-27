@@ -18,6 +18,6 @@ struct romBytes
 
 
 int getSizeInBytes(char * fileName);
-struct romBytes getBytes(char * fileName); //Will perform endianess conversion
+struct romBytes getBytes(char * fileName); 
 
 #endif

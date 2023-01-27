@@ -9,12 +9,15 @@ int main(int argc, char *argv[])
     
    
     r = getBytes("tetris.gb");
+    
 
-
-    printf("test: %d", __builtin_bswap16(r.bytes[0x134]));
+    
     printf("Bytes = ");
+    FILE * out = fopen( "out.hex", "w");
     for(int i = 0; i < r.sizeInBytes; i++)
-        printf("%u ", r.bytes[i]);
-    printf("\n");
+        printf("0x%x", r.bytes[i]);
+    fwrite(r.bytes, r.sizeInBytes, sizeof(unsigned char), out);
+    //printf("\n");
     //free(r.bytes);
+    fclose(out);
 }
