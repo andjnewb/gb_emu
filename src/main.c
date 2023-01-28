@@ -13,11 +13,11 @@ int main(int argc, char *argv[])
 
     
     //printf("Title = %s", r->metaData.title);
-    //FILE * out = fopen( "out.hex", "w");
+    FILE * out = fopen( "out.hex", "w");
     //for(int i = 0; i < 48; i++)
         //printf("%x", r->metaData.logo[i]);
-    //fwrite(r->bytes, r->sizeInBytes, sizeof(unsigned char), out);
+    fwrite(r->bytes, r->sizeInBytes, sizeof(u_int8_t), out);
     //printf("\n");
     //free(r.bytes);
-    //fclose(out);
+    fclose(out);
 }
