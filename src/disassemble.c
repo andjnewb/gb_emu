@@ -75,8 +75,12 @@ struct romMetaData getMetaData(struct romBytes * bytes)
 
     //printf("Title:%s\nManufacturer Code:%x\nNew Licensee Code:%s\nGlobal Checksum:%s\nCGB Flag:%x\n SGB Flag:%x\n Cart Type:%x\nROM Size(From Header):%x\nRAM Size:%x\nDestination Code:%x\nOld Licensee Code:%x\nGame Version:%x\nHead Checksum:%x\n",metaData.title, metaData.mf_code, metaData.new_licensee_code, metaData.global_checksum, metaData.cgb_flag, metaData.sgb_flag, metaData.cart_type, metaData.rom_size, metaData.ram_size, metaData.dest_code,metaData.old_license_code, metaData.game_version, metaData.header_checksum);
     printf("Title:%s\n", metaData.title);
-    printf("ROM Size:%d\n", 32768 * (1 << metaData.rom_size));
-    
+    printf("ROM Size:%dKiB\n", 32 * (1 << metaData.rom_size));
+    printf("RAM Size(See Table For KiB Value):%x\n", metaData.ram_size);
+    printf("New Licensee Code(See Table):%s\n", metaData.new_licensee_code);
+    printf("Old Licensee Code(Use New Licensee if 0x33)(See Table):0x%x\n", metaData.old_license_code);
+    printf("Cart Type(See Table):%x\n", metaData.cart_type);
+
 
     return metaData;
 }

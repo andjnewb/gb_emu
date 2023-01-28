@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
     struct romBytes * r = malloc(sizeof(struct romBytes));
     
    
-    *r = getBytes("tetris.gb");
+    *r = getBytes("pk_red.gb");
     r->metaData = getMetaData(r);
 
     
