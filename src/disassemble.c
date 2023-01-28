@@ -54,14 +54,29 @@ struct romMetaData getMetaData(struct romBytes * bytes)
 {
     struct romMetaData metaData;
 
-    //Malloc hell
-    metaData.title = malloc(16);
+    //Memcpy hell
+    metaData.title = malloc(16);//TODO:Remove magic numbers
     memcpy(metaData.title, bytes->bytes + 0x134, 16);
+    memcpy(metaData.logo, bytes->bytes + 0x104, 48);
+    memcpy(metaData.mf_code, bytes->bytes + 0x13F, 3);
+    memcpy(metaData.new_licensee_code, bytes->bytes + 0x144, 2);
+    memcpy(metaData.global_checksum, bytes->bytes + 0x14E, 2);
+    
+    
+    metaData.cgb_flag = bytes->bytes[0x143];
+    metaData.sgb_flag = bytes->bytes[0x146];
+    metaData.cart_type = bytes->bytes[0x147];
+    metaData.rom_size = bytes->bytes[0x148];
+    metaData.ram_size = bytes->bytes[0x149];
+    metaData.dest_code = bytes->bytes[0x14A];
+    metaData.old_license_code = bytes->bytes[0x14B];
+    metaData.game_version = bytes->bytes[0x14C];
+    metaData.header_checksum = bytes->bytes[0x14D];
 
-    for(int i = 0x104; i <= 0x133; i++)
-    {
-        printf("%x",bytes->bytes[i]);//TODO:Find way to copy this to logo in rom header
-    }
+    //printf("Title:%s\nManufacturer Code:%x\nNew Licensee Code:%s\nGlobal Checksum:%s\nCGB Flag:%x\n SGB Flag:%x\n Cart Type:%x\nROM Size(From Header):%x\nRAM Size:%x\nDestination Code:%x\nOld Licensee Code:%x\nGame Version:%x\nHead Checksum:%x\n",metaData.title, metaData.mf_code, metaData.new_licensee_code, metaData.global_checksum, metaData.cgb_flag, metaData.sgb_flag, metaData.cart_type, metaData.rom_size, metaData.ram_size, metaData.dest_code,metaData.old_license_code, metaData.game_version, metaData.header_checksum);
+    printf("Title:%s\n", metaData.title);
+    printf("ROM Size:%d\n", 32768 * (1 << metaData.rom_size));
+    
 
     return metaData;
 }
