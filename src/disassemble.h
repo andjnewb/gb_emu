@@ -5,13 +5,13 @@
 
 struct romMetaData
 {
-    int title;
-
+    unsigned char * title;
+    u_int8_t logo[48];
 };
 
 struct romBytes
 {
-    unsigned char * bytes;
+    u_int8_t * bytes;
     int sizeInBytes;
     struct romMetaData metaData;
 };
@@ -19,5 +19,6 @@ struct romBytes
 
 int getSizeInBytes(char * fileName);
 struct romBytes getBytes(char * fileName); 
+struct romMetaData getMetaData(struct romBytes * bytes);
 
 #endif
