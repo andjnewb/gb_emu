@@ -24,25 +24,20 @@ struct romBytes getBytes(char * fileName)
     struct romBytes rom;
 
     FILE *filePtr;
-    unsigned char * buffer;
+    u_int8_t * buffer;
     int fileLen = getSizeInBytes(fileName);
 
     rom.sizeInBytes = fileLen;
 
     filePtr = fopen(fileName, "rb");
 
-    buffer = (unsigned char *)malloc(fileLen * sizeof(unsigned char));
-    rom.bytes = (unsigned char *)malloc(fileLen * sizeof(unsigned char));
+    buffer = (u_int8_t *)malloc(fileLen * sizeof(u_int8_t));
+    rom.bytes = (u_int8_t *)malloc(fileLen * sizeof(u_int8_t));
     fread(buffer, fileLen, 1, filePtr);
 
-    for(int i = 0; i < fileLen; i++)
-    {
-        buffer[i] = ((buffer[i] & 0xf) << 4) | ((buffer[i] & 0xf0) >> 4);
-    }
-
     rom.bytes = buffer;
-    
-    
+    // rom.metaData.title = malloc(16);
+    // memcpy(rom.metaData.title, buffer + 0x134, 16);
 
     memcpy(rom.bytes, buffer, fileLen);
     //printf("%u", buffer[0]);
@@ -53,4 +48,20 @@ struct romBytes getBytes(char * fileName)
 
     return rom;
 
+}
+
+struct romMetaData getMetaData(struct romBytes * bytes)
+{
+    struct romMetaData metaData;
+
+    //Malloc hell
+    metaData.title = malloc(16);
+    memcpy(metaData.title, bytes->bytes + 0x134, 16);
+
+    for(int i = 0x104; i <= 0x133; i++)
+    {
+        printf("%x",bytes->bytes[i]);//TODO:Find way to copy this to logo in rom header
+    }
+
+    return metaData;
 }
