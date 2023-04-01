@@ -5,3 +5,4 @@
 *.gb
 out.hex
 diss
+src/instructions.h.gch
