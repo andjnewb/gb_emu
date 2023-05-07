@@ -1,6 +1,11 @@
 #include "disassemble.h"
 #include <sys/stat.h>
 #include <string.h>
+#include <byteswap.h>
+#include <inttypes.h>
+
+
+
 int getSizeInBytes(char * fileName)
 {
     FILE *fp = fopen(fileName, "r");
@@ -23,15 +28,15 @@ struct romBytes getBytes(char * fileName)
     struct romBytes rom;
 
     FILE *filePtr;
-    uint16_t * buffer;
+    uint8_t * buffer;
     int fileLen = getSizeInBytes(fileName);
 
     rom.sizeInBytes = fileLen;
 
     filePtr = fopen(fileName, "rb");
 
-    buffer = (uint16_t *)malloc(fileLen * sizeof(uint16_t));
-    rom.bytes = (uint16_t *)malloc(fileLen * sizeof(uint16_t));
+    buffer = (uint8_t *)malloc(fileLen * sizeof(uint8_t));
+    rom.bytes = (uint8_t *)malloc(fileLen * sizeof(uint8_t));
     fread(buffer, fileLen, 1, filePtr);
 
     rom.bytes = buffer;
@@ -82,9 +87,4 @@ struct romMetaData getMetaData(struct romBytes * bytes)
 
 
     return metaData;
-}
-
-uint8_t rom_fetch_op_at(uint16_t addr, struct romBytes * bytes)
-{
-    bytes->bytes[addr];
 }
