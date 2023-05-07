@@ -2,8 +2,7 @@
 #define DISSASEMBLE_H
 #include <stdio.h>
 #include <stdlib.h>
-#include <inttypes.h>
-
+#include "instructions.h"
 struct romMetaData
 {
     unsigned char * title;
@@ -22,18 +21,15 @@ struct romMetaData
     uint8_t global_checksum[2];
 
 };
-
-struct romBytes
+ struct romBytes
 {
-    uint16_t * bytes;//Should change this, confusing
+    uint8_t * bytes;//Should change this, confusing
     int sizeInBytes;//Size as measured by read
     struct romMetaData metaData;
 };
 
 
 int getSizeInBytes(char * fileName);//Get size in bytes of fileName
-uint8_t rom_fetch_op_at(uint16_t addr, struct romBytes * bytes);
-
 struct romBytes getBytes(char * fileName); //Get bytes from file
 struct romMetaData getMetaData(struct romBytes * bytes);//Used for loading meta data into romByte struct
 
