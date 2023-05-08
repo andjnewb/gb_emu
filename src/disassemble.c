@@ -88,3 +88,8 @@ struct romMetaData getMetaData(struct romBytes * bytes)
 
     return metaData;
 }
+
+void printd8(uint16_t addr, struct romBytes * bytes)
+{
+    printf("%hhx", bytes->bytes[addr]);
+}

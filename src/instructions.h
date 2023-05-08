@@ -25,6 +25,7 @@ typedef struct instruction
 
 
 
+
 // const struct instruction instructions[512] =
 //     {
 //         [0] = {"NOP", 0x0, 1},

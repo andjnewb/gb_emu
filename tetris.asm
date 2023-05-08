@@ -1,9 +1,9 @@
 Instruction at 0x100 is: NOP
 Instruction at 0x101 is: JP A16
-Instruction at 0x104 is: ADC A,D8
+Instruction at 0x104 is: ADC A,D8 ed
 Instruction at 0x106 is: LD H,(HL)
 Instruction at 0x107 is: LD H,(HL)
-Instruction at 0x108 is: CALL Z,A1
+Instruction at 0x108 is: CALL Z,A16
 Instruction at 0x10b is: DEC BC
 Instruction at 0x10c is: INC BC
 Instruction at 0x10d is: LD (HL),E
@@ -18,8 +18,8 @@ Instruction at 0x115 is: LD (a16),SP
 Instruction at 0x118 is: ADC A,B
 Instruction at 0x119 is: ADC A,C
 Instruction at 0x11a is: NOP
-Instruction at 0x11b is: LD C,d8
-Instruction at 0x11d is: CALL Z,A1
+Instruction at 0x11b is: LD C,d8 dc
+Instruction at 0x11d is: CALL Z,A16
 Instruction at 0x120 is: UNDEFINED
 Instruction at 0x121 is: UNDEFINED
 Instruction at 0x122 is: RETI
@@ -29,14 +29,14 @@ Instruction at 0x125 is: CP E
 Instruction at 0x126 is: LD H,A
 Instruction at 0x127 is: LD H,E
 Instruction at 0x128 is: LD L,(HL)
-Instruction at 0x129 is: LD C,d8
-Instruction at 0x12b is: CALL Z,A1
+Instruction at 0x129 is: LD C,d8 ec
+Instruction at 0x12b is: CALL Z,A16
 Instruction at 0x12e is: SBC A,C
 Instruction at 0x12f is: SBC A,A
 Instruction at 0x130 is: CP E
 Instruction at 0x131 is: CP C
 Instruction at 0x132 is: INC SP
-Instruction at 0x133 is: LD A,d8
+Instruction at 0x133 is: LD A,d8 54
 Instruction at 0x135 is: LD B,L
 Instruction at 0x136 is: LD D,H
 Instruction at 0x137 is: LD D,D
@@ -60,15 +60,15 @@ Instruction at 0x148 is: NOP
 Instruction at 0x149 is: NOP
 Instruction at 0x14a is: NOP
 Instruction at 0x14b is: LD BC,d16
-Instruction at 0x14e is: LD D,d8
+Instruction at 0x14e is: LD D,d8 bf
 Instruction at 0x150 is: JP A16
 Instruction at 0x153 is: CALL A16
 Instruction at 0x156 is: LDH A,A8
-Instruction at 0x158 is: AND D8
+Instruction at 0x158 is: AND D8 3
 Instruction at 0x15a is: JR NZ,r8
 Instruction at 0x15c is: LD B,(HL)
 Instruction at 0x15d is: LDH A,A8
-Instruction at 0x15f is: AND D8
+Instruction at 0x15f is: AND D8 3
 Instruction at 0x161 is: JR NZ,r8
 Instruction at 0x163 is: LD A,(HL)
 Instruction at 0x164 is: AND B
@@ -81,14 +81,14 @@ Instruction at 0x16a is: LD A,D
 Instruction at 0x16b is: ADC A,(HL
 Instruction at 0x16c is: DAA
 Instruction at 0x16d is: LD (HL+),A
-Instruction at 0x16e is: LD A,d8
+Instruction at 0x16e is: LD A,d8 0
 Instruction at 0x170 is: ADC A,(HL
 Instruction at 0x171 is: DAA
 Instruction at 0x172 is: LD (HL),A
-Instruction at 0x173 is: LD A,d8
+Instruction at 0x173 is: LD A,d8 1
 Instruction at 0x175 is: LDH (A8),A
 Instruction at 0x177 is: RET NC
-Instruction at 0x178 is: LD A,d8
+Instruction at 0x178 is: LD A,d8 99
 Instruction at 0x17a is: LD (HL-),A
 Instruction at 0x17b is: LD (HL-),A
 Instruction at 0x17c is: LD (HL),A
@@ -101,14 +101,14 @@ Instruction at 0x182 is: LDH A,A8
 Instruction at 0x184 is: AND A
 Instruction at 0x185 is: JR Z,r8
 Instruction at 0x187 is: LDH A,A8
-Instruction at 0x189 is: CP D8
+Instruction at 0x189 is: CP D8 29
 Instruction at 0x18b is: JR NZ,r8
 Instruction at 0x18d is: XOR A
 Instruction at 0x18e is: LDH (A8),A
 Instruction at 0x190 is: LDH A,A8
 Instruction at 0x192 is: LDH (A8),A
 Instruction at 0x194 is: LD HL,d16
-Instruction at 0x197 is: LD (HL),d8
+Instruction at 0x197 is: LD (HL),d8 81
 Instruction at 0x199 is: CALL A16
 Instruction at 0x19c is: CALL A16
 Instruction at 0x19f is: CALL A16
@@ -135,11 +135,11 @@ Instruction at 0x1db is: LD A,(A16)
 Instruction at 0x1de is: AND A
 Instruction at 0x1df is: JR Z,r8
 Instruction at 0x1e1 is: LDH A,A8
-Instruction at 0x1e3 is: CP D8
+Instruction at 0x1e3 is: CP D8 3
 Instruction at 0x1e5 is: JR NZ,r8
 Instruction at 0x1e7 is: LD HL,d16
 Instruction at 0x1ea is: CALL A16
-Instruction at 0x1ed is: LD A,d8
+Instruction at 0x1ed is: LD A,d8 1
 Instruction at 0x1ef is: LDH (A8),A
 Instruction at 0x1f1 is: LD HL,d16
 Instruction at 0x1f4 is: CALL A16
@@ -159,14 +159,14 @@ Instruction at 0x20a is: POP AF
 Instruction at 0x20b is: RETI
 Instruction at 0x20c is: XOR A
 Instruction at 0x20d is: LD HL,d16
-Instruction at 0x210 is: LD C,d8
-Instruction at 0x212 is: LD B,d8
+Instruction at 0x210 is: LD C,d8 10
+Instruction at 0x212 is: LD B,d8 0
 Instruction at 0x214 is: LD (HL-),A
 Instruction at 0x215 is: DEC B
 Instruction at 0x216 is: JR NZ,r8
 Instruction at 0x218 is: DEC C
 Instruction at 0x219 is: JR NZ,r8
-Instruction at 0x21b is: LD A,d8
+Instruction at 0x21b is: LD A,d8 1
 Instruction at 0x21d is: DI
 Instruction at 0x21e is: LDH (A8),A
 Instruction at 0x220 is: LDH (A8),A
@@ -177,62 +177,62 @@ Instruction at 0x227 is: LDH (A8),A
 Instruction at 0x229 is: LDH (A8),A
 Instruction at 0x22b is: LDH (A8),A
 Instruction at 0x22d is: LDH (A8),A
-Instruction at 0x22f is: LD A,d8
+Instruction at 0x22f is: LD A,d8 80
 Instruction at 0x231 is: LDH (A8),A
 Instruction at 0x233 is: LDH A,A8
-Instruction at 0x235 is: CP D8
+Instruction at 0x235 is: CP D8 94
 Instruction at 0x237 is: JR NZ,r8
-Instruction at 0x239 is: LD A,d8
+Instruction at 0x239 is: LD A,d8 3
 Instruction at 0x23b is: LDH (A8),A
-Instruction at 0x23d is: LD A,d8
+Instruction at 0x23d is: LD A,d8 e4
 Instruction at 0x23f is: LDH (A8),A
 Instruction at 0x241 is: LDH (A8),A
-Instruction at 0x243 is: LD A,d8
+Instruction at 0x243 is: LD A,d8 c4
 Instruction at 0x245 is: LDH (A8),A
 Instruction at 0x247 is: LD HL,d16
-Instruction at 0x24a is: LD A,d8
+Instruction at 0x24a is: LD A,d8 80
 Instruction at 0x24c is: LD (HL-),A
-Instruction at 0x24d is: LD A,d8
+Instruction at 0x24d is: LD A,d8 ff
 Instruction at 0x24f is: LD (HL-),A
-Instruction at 0x250 is: LD (HL),d8
-Instruction at 0x252 is: LD A,d8
+Instruction at 0x250 is: LD (HL),d8 77
+Instruction at 0x252 is: LD A,d8 1
 Instruction at 0x254 is: LD (A16),A
 Instruction at 0x257 is: LD SP,d16
 Instruction at 0x25a is: XOR A
 Instruction at 0x25b is: LD HL,d16
-Instruction at 0x25e is: LD B,d8
+Instruction at 0x25e is: LD B,d8 0
 Instruction at 0x260 is: LD (HL-),A
 Instruction at 0x261 is: DEC B
 Instruction at 0x262 is: JR NZ,r8
 Instruction at 0x264 is: LD HL,d16
-Instruction at 0x267 is: LD C,d8
-Instruction at 0x269 is: LD B,d8
+Instruction at 0x267 is: LD C,d8 10
+Instruction at 0x269 is: LD B,d8 0
 Instruction at 0x26b is: LD (HL-),A
 Instruction at 0x26c is: DEC B
 Instruction at 0x26d is: JR NZ,r8
 Instruction at 0x26f is: DEC C
 Instruction at 0x270 is: JR NZ,r8
 Instruction at 0x272 is: LD HL,d16
-Instruction at 0x275 is: LD C,d8
+Instruction at 0x275 is: LD C,d8 20
 Instruction at 0x277 is: XOR A
-Instruction at 0x278 is: LD B,d8
+Instruction at 0x278 is: LD B,d8 0
 Instruction at 0x27a is: LD (HL-),A
 Instruction at 0x27b is: DEC B
 Instruction at 0x27c is: JR NZ,r8
 Instruction at 0x27e is: DEC C
 Instruction at 0x27f is: JR NZ,r8
 Instruction at 0x281 is: LD HL,d16
-Instruction at 0x284 is: LD B,d8
+Instruction at 0x284 is: LD B,d8 0
 Instruction at 0x286 is: LD (HL-),A
 Instruction at 0x287 is: DEC B
 Instruction at 0x288 is: JR NZ,r8
 Instruction at 0x28a is: LD HL,d16
-Instruction at 0x28d is: LD B,d8
+Instruction at 0x28d is: LD B,d8 80
 Instruction at 0x28f is: LD (HL-),A
 Instruction at 0x290 is: DEC B
 Instruction at 0x291 is: JR NZ,r8
-Instruction at 0x293 is: LD C,d8
-Instruction at 0x295 is: LD B,d8
+Instruction at 0x293 is: LD C,d8 b6
+Instruction at 0x295 is: LD B,d8 c
 Instruction at 0x297 is: LD HL,d16
 Instruction at 0x29a is: LD A,(HL+)
 Instruction at 0x29b is: LD (C),A
@@ -240,15 +240,15 @@ Instruction at 0x29d is: DEC B
 Instruction at 0x29e is: JR NZ,r8
 Instruction at 0x2a0 is: CALL A16
 Instruction at 0x2a3 is: CALL A16
-Instruction at 0x2a6 is: LD A,d8
+Instruction at 0x2a6 is: LD A,d8 9
 Instruction at 0x2a8 is: LDH (A8),A
-Instruction at 0x2aa is: LD A,d8
+Instruction at 0x2aa is: LD A,d8 37
 Instruction at 0x2ac is: LDH (A8),A
-Instruction at 0x2ae is: LD A,d8
+Instruction at 0x2ae is: LD A,d8 1c
 Instruction at 0x2b0 is: LDH (A8),A
-Instruction at 0x2b2 is: LD A,d8
+Instruction at 0x2b2 is: LD A,d8 24
 Instruction at 0x2b4 is: LDH (A8),A
-Instruction at 0x2b6 is: LD A,d8
+Instruction at 0x2b6 is: LD A,d8 80
 Instruction at 0x2b8 is: LDH (A8),A
 Instruction at 0x2ba is: EI
 Instruction at 0x2bb is: XOR A
@@ -260,11 +260,11 @@ Instruction at 0x2c4 is: CALL A16
 Instruction at 0x2c7 is: CALL A16
 Instruction at 0x2ca is: CALL A16
 Instruction at 0x2cd is: LDH A,A8
-Instruction at 0x2cf is: AND D8
-Instruction at 0x2d1 is: CP D8
+Instruction at 0x2cf is: AND D8 f
+Instruction at 0x2d1 is: CP D8 f
 Instruction at 0x2d3 is: JP Z,A16
 Instruction at 0x2d6 is: LD HL,d16
-Instruction at 0x2d9 is: LD B,d8
+Instruction at 0x2d9 is: LD B,d8 2
 Instruction at 0x2db is: LD A,(HL)
 Instruction at 0x2dc is: AND A
 Instruction at 0x2dd is: JR Z,r8
@@ -275,7 +275,7 @@ Instruction at 0x2e2 is: JR NZ,r8
 Instruction at 0x2e4 is: LDH A,A8
 Instruction at 0x2e6 is: AND A
 Instruction at 0x2e7 is: JR Z,r8
-Instruction at 0x2e9 is: LD A,d8
+Instruction at 0x2e9 is: LD A,d8 9
 Instruction at 0x2eb is: LDH (A8),A
 Instruction at 0x2ed is: LDH A,A8
 Instruction at 0x2ef is: AND A
@@ -285,14 +285,14 @@ Instruction at 0x2f3 is: LDH (A8),A
 Instruction at 0x2f5 is: JP A16
 Instruction at 0x2f8 is: LDH A,A8
 Instruction at 0x2fa is: RST 28H
-Instruction at 0x2fb is: ADC A,D8
+Instruction at 0x2fb is: ADC A,D8 1b
 Instruction at 0x2fd is: LD (C),A
 Instruction at 0x2ff is: LD B,H
 Instruction at 0x300 is: LD (DE), A
 Instruction at 0x301 is: LD A,E
 Instruction at 0x302 is: LD (DE), A
-Instruction at 0x303 is: LD B,d8
-Instruction at 0x305 is: LD H,d8
+Instruction at 0x303 is: LD B,d8 1d
+Instruction at 0x305 is: LD H,d8 1d
 Instruction at 0x307 is: XOR (HL
 Instruction at 0x308 is: INC BC
 Instruction at 0x309 is: LD A,C
@@ -305,7 +305,7 @@ Instruction at 0x30f is: RLCA
 Instruction at 0x310 is: LD A,(DE)
 Instruction at 0x311 is: RET NZ
 Instruction at 0x312 is: DEC E
-Instruction at 0x313 is: LD D,d8
+Instruction at 0x313 is: LD D,d8 1f
 Instruction at 0x315 is: RRA
 Instruction at 0x316 is: RRA
 Instruction at 0x317 is: DEC H
@@ -317,12 +317,12 @@ Instruction at 0x31c is: DEC D
 Instruction at 0x31d is: CP A
 Instruction at 0x31e is: DEC D
 Instruction at 0x31f is: ADD HL,HL
-Instruction at 0x320 is: LD D,d8
-Instruction at 0x322 is: LD D,d8
-Instruction at 0x324 is: LD D,d8
+Instruction at 0x320 is: LD D,d8 7a
+Instruction at 0x322 is: LD D,d8 eb
+Instruction at 0x324 is: LD D,d8 13
 Instruction at 0x326 is: ADD HL,DE
 Instruction at 0x327 is: LD (HL),A
-Instruction at 0x328 is: LD B,d8
+Instruction at 0x328 is: LD B,d8 2c
 Instruction at 0x32a is: RLCA
 Instruction at 0x32b is: DEC H
 Instruction at 0x32c is: LD (a16),SP
@@ -331,13 +331,13 @@ Instruction at 0x332 is: INC C
 Instruction at 0x333 is: JP NC,A16
 Instruction at 0x336 is: DEC C
 Instruction at 0x337 is: INC HL
-Instruction at 0x338 is: LD C,d8
+Instruction at 0x338 is: LD C,d8 12
 Instruction at 0x33a is: LD DE,d16
 Instruction at 0x33d is: ADC A,D
-Instruction at 0x33e is: LD C,d8
+Instruction at 0x33e is: LD C,d8 ce
 Instruction at 0x340 is: DEC E
 Instruction at 0x341 is: LD B,C
-Instruction at 0x342 is: LD E, d8
+Instruction at 0x342 is: LD E, d8 69
 Instruction at 0x344 is: INC BC
 Instruction at 0x345 is: SUB E
 Instruction at 0x346 is: INC BC
@@ -381,21 +381,21 @@ Instruction at 0x37e is: LD A,(DE)
 Instruction at 0x37f is: LD (HL+),A
 Instruction at 0x380 is: INC DE
 Instruction at 0x381 is: LD A,H
-Instruction at 0x382 is: CP D8
+Instruction at 0x382 is: CP D8 c4
 Instruction at 0x384 is: JR NZ,r8
-Instruction at 0x386 is: LD A,d8
+Instruction at 0x386 is: LD A,d8 d3
 Instruction at 0x388 is: LDH (A8),A
-Instruction at 0x38a is: LD A,d8
+Instruction at 0x38a is: LD A,d8 fa
 Instruction at 0x38c is: LDH (A8),A
-Instruction at 0x38e is: LD A,d8
+Instruction at 0x38e is: LD A,d8 25
 Instruction at 0x390 is: LDH (A8),A
 Instruction at 0x392 is: RET
 Instruction at 0x393 is: LDH A,A8
 Instruction at 0x395 is: AND A
 Instruction at 0x396 is: RET NZ
-Instruction at 0x397 is: LD A,d8
+Instruction at 0x397 is: LD A,d8 fa
 Instruction at 0x399 is: LDH (A8),A
-Instruction at 0x39b is: LD A,d8
+Instruction at 0x39b is: LD A,d8 35
 Instruction at 0x39d is: LDH (A8),A
 Instruction at 0x39f is: RET
 Instruction at 0x3a0 is: LDH A,A8
@@ -404,7 +404,7 @@ Instruction at 0x3a3 is: JR NZ,r8
 Instruction at 0x3a5 is: LDH A,A8
 Instruction at 0x3a7 is: AND A
 Instruction at 0x3a8 is: RET NZ
-Instruction at 0x3a9 is: LD A,d8
+Instruction at 0x3a9 is: LD A,d8 6
 Instruction at 0x3ab is: LDH (A8),A
 Instruction at 0x3ad is: RET
 Instruction at 0x3ae is: CALL A16
@@ -421,18 +421,18 @@ Instruction at 0x3c2 is: CALL A16
 Instruction at 0x3c5 is: CALL A16
 Instruction at 0x3c8 is: CALL A16
 Instruction at 0x3cb is: LD HL,d16
-Instruction at 0x3ce is: LD A,d8
+Instruction at 0x3ce is: LD A,d8 2f
 Instruction at 0x3d0 is: LD (HL+),A
 Instruction at 0x3d1 is: LD A,H
-Instruction at 0x3d2 is: CP D8
+Instruction at 0x3d2 is: CP D8 cc
 Instruction at 0x3d4 is: JR NZ,r8
 Instruction at 0x3d6 is: LD HL,d16
 Instruction at 0x3d9 is: CALL A16
 Instruction at 0x3dc is: LD HL,d16
 Instruction at 0x3df is: CALL A16
 Instruction at 0x3e2 is: LD HL,d16
-Instruction at 0x3e5 is: LD B,d8
-Instruction at 0x3e7 is: LD A,d8
+Instruction at 0x3e5 is: LD B,d8 c
+Instruction at 0x3e7 is: LD A,d8 8e
 Instruction at 0x3e9 is: LD (HL+),A
 Instruction at 0x3ea is: DEC B
 Instruction at 0x3eb is: JR NZ,r8
@@ -440,69 +440,69 @@ Instruction at 0x3ed is: LD DE,d16
 Instruction at 0x3f0 is: CALL A16
 Instruction at 0x3f3 is: CALL A16
 Instruction at 0x3f6 is: LD HL,d16
-Instruction at 0x3f9 is: LD (HL),d8
+Instruction at 0x3f9 is: LD (HL),d8 80
 Instruction at 0x3fb is: INC L
-Instruction at 0x3fc is: LD (HL),d8
+Instruction at 0x3fc is: LD (HL),d8 10
 Instruction at 0x3fe is: INC L
-Instruction at 0x3ff is: LD (HL),d8
-Instruction at 0x401 is: LD A,d8
+Instruction at 0x3ff is: LD (HL),d8 58
+Instruction at 0x401 is: LD A,d8 3
 Instruction at 0x403 is: LD (A16),A
-Instruction at 0x406 is: LD A,d8
+Instruction at 0x406 is: LD A,d8 d3
 Instruction at 0x408 is: LDH (A8),A
-Instruction at 0x40a is: LD A,d8
+Instruction at 0x40a is: LD A,d8 7
 Instruction at 0x40c is: LDH (A8),A
-Instruction at 0x40e is: LD A,d8
+Instruction at 0x40e is: LD A,d8 7d
 Instruction at 0x410 is: LDH (A8),A
-Instruction at 0x412 is: LD A,d8
+Instruction at 0x412 is: LD A,d8 4
 Instruction at 0x414 is: LDH (A8),A
 Instruction at 0x416 is: LDH A,A8
 Instruction at 0x418 is: AND A
 Instruction at 0x419 is: RET NZ
-Instruction at 0x41a is: LD A,d8
+Instruction at 0x41a is: LD A,d8 13
 Instruction at 0x41c is: LDH (A8),A
 Instruction at 0x41e is: RET
-Instruction at 0x41f is: LD A,d8
+Instruction at 0x41f is: LD A,d8 37
 Instruction at 0x421 is: LDH (A8),A
-Instruction at 0x423 is: LD A,d8
+Instruction at 0x423 is: LD A,d8 9
 Instruction at 0x425 is: LDH (A8),A
 Instruction at 0x427 is: XOR A
 Instruction at 0x428 is: LDH (A8),A
 Instruction at 0x42a is: LDH (A8),A
 Instruction at 0x42c is: LDH (A8),A
 Instruction at 0x42e is: LDH (A8),A
-Instruction at 0x430 is: LD A,d8
+Instruction at 0x430 is: LD A,d8 62
 Instruction at 0x432 is: LDH (A8),A
-Instruction at 0x434 is: LD A,d8
+Instruction at 0x434 is: LD A,d8 b0
 Instruction at 0x436 is: LDH (A8),A
 Instruction at 0x438 is: LDH A,A8
-Instruction at 0x43a is: CP D8
-Instruction at 0x43c is: LD A,d8
+Instruction at 0x43a is: CP D8 2
+Instruction at 0x43c is: LD A,d8 2
 Instruction at 0x43e is: JR NZ,r8
-Instruction at 0x440 is: LD A,d8
+Instruction at 0x440 is: LD A,d8 77
 Instruction at 0x442 is: LDH (A8),A
-Instruction at 0x444 is: LD A,d8
+Instruction at 0x444 is: LD A,d8 9
 Instruction at 0x446 is: LDH (A8),A
-Instruction at 0x448 is: LD A,d8
+Instruction at 0x448 is: LD A,d8 2
 Instruction at 0x44a is: LDH (A8),A
-Instruction at 0x44c is: LD A,d8
+Instruction at 0x44c is: LD A,d8 63
 Instruction at 0x44e is: LDH (A8),A
-Instruction at 0x450 is: LD A,d8
+Instruction at 0x450 is: LD A,d8 b0
 Instruction at 0x452 is: LDH (A8),A
-Instruction at 0x454 is: LD A,d8
+Instruction at 0x454 is: LD A,d8 11
 Instruction at 0x456 is: LDH (A8),A
-Instruction at 0x458 is: LD A,d8
+Instruction at 0x458 is: LD A,d8 1
 Instruction at 0x45a is: LDH (A8),A
-Instruction at 0x45c is: LD A,d8
+Instruction at 0x45c is: LD A,d8 a
 Instruction at 0x45e is: LDH (A8),A
 Instruction at 0x460 is: CALL A16
 Instruction at 0x463 is: CALL A16
 Instruction at 0x466 is: LD DE,d16
 Instruction at 0x469 is: CALL A16
 Instruction at 0x46c is: CALL A16
-Instruction at 0x46f is: LD A,d8
+Instruction at 0x46f is: LD A,d8 d3
 Instruction at 0x471 is: LDH (A8),A
 Instruction at 0x473 is: RET
-Instruction at 0x474 is: LD A,d8
+Instruction at 0x474 is: LD A,d8 ff
 Instruction at 0x476 is: LDH (A8),A
 Instruction at 0x478 is: RET
 Instruction at 0x479 is: LDH A,A8
@@ -511,12 +511,12 @@ Instruction at 0x47c is: JR NZ,r8
 Instruction at 0x47e is: LD HL,d16
 Instruction at 0x481 is: DEC (HL)
 Instruction at 0x482 is: JR Z,r8
-Instruction at 0x484 is: LD A,d8
+Instruction at 0x484 is: LD A,d8 7d
 Instruction at 0x486 is: LDH (A8),A
 Instruction at 0x488 is: CALL A16
-Instruction at 0x48b is: LD A,d8
+Instruction at 0x48b is: LD A,d8 55
 Instruction at 0x48d is: LDH (A8),A
-Instruction at 0x48f is: LD A,d8
+Instruction at 0x48f is: LD A,d8 80
 Instruction at 0x491 is: LDH (A8),A
 Instruction at 0x493 is: LDH A,A8
 Instruction at 0x495 is: AND A
@@ -539,17 +539,17 @@ Instruction at 0x4b1 is: JR NZ,r8
 Instruction at 0x4b3 is: CBPREFIX
 Instruction at 0x4b5 is: RET Z
 Instruction at 0x4b6 is: AND A
-Instruction at 0x4b7 is: LD A,d8
+Instruction at 0x4b7 is: LD A,d8 8
 Instruction at 0x4b9 is: JR Z,r8
 Instruction at 0x4bb is: LD A,B
-Instruction at 0x4bc is: CP D8
+Instruction at 0x4bc is: CP D8 8
 Instruction at 0x4be is: RET NZ
 Instruction at 0x4bf is: LDH A,A8
-Instruction at 0x4c1 is: CP D8
+Instruction at 0x4c1 is: CP D8 29
 Instruction at 0x4c3 is: JR Z,r8
-Instruction at 0x4c5 is: LD A,d8
+Instruction at 0x4c5 is: LD A,d8 29
 Instruction at 0x4c7 is: LDH (A8),A
-Instruction at 0x4c9 is: LD A,d8
+Instruction at 0x4c9 is: LD A,d8 81
 Instruction at 0x4cb is: LDH (A8),A
 Instruction at 0x4cd is: LDH A,A8
 Instruction at 0x4cf is: AND A
@@ -557,7 +557,7 @@ Instruction at 0x4d0 is: JR Z,r8
 Instruction at 0x4d2 is: LDH A,A8
 Instruction at 0x4d4 is: AND A
 Instruction at 0x4d5 is: JR Z,r8
-Instruction at 0x4d7 is: LD A,d8
+Instruction at 0x4d7 is: LD A,d8 2a
 Instruction at 0x4d9 is: LDH (A8),A
 Instruction at 0x4db is: XOR A
 Instruction at 0x4dc is: LDH (A8),A
@@ -573,12 +573,12 @@ Instruction at 0x4ec is: JR Z,r8
 Instruction at 0x4ee is: LDH (A8),A
 Instruction at 0x4f0 is: POP AF
 Instruction at 0x4f1 is: JR r8
-Instruction at 0x4f3 is: XOR D8
+Instruction at 0x4f3 is: XOR D8 1
 Instruction at 0x4f5 is: LDH (A8),A
 Instruction at 0x4f7 is: AND A
-Instruction at 0x4f8 is: LD A,d8
+Instruction at 0x4f8 is: LD A,d8 10
 Instruction at 0x4fa is: JR Z,r8
-Instruction at 0x4fc is: LD A,d8
+Instruction at 0x4fc is: LD A,d8 60
 Instruction at 0x4fe is: LD (A16),A
 Instruction at 0x501 is: RET
 Instruction at 0x502 is: AND A
@@ -595,35 +595,35 @@ Instruction at 0x50f is: RET Z
 Instruction at 0x510 is: CALL A16
 Instruction at 0x513 is: XOR A
 Instruction at 0x514 is: LDH (A8),A
-Instruction at 0x516 is: LD A,d8
+Instruction at 0x516 is: LD A,d8 80
 Instruction at 0x518 is: LDH (A8),A
 Instruction at 0x51a is: LDH A,A8
 Instruction at 0x51c is: CBPREFIX
 Instruction at 0x51e is: JR Z,r8
-Instruction at 0x520 is: LD A,d8
+Instruction at 0x520 is: LD A,d8 33
 Instruction at 0x522 is: LDH (A8),A
-Instruction at 0x524 is: LD A,d8
+Instruction at 0x524 is: LD A,d8 81
 Instruction at 0x526 is: LDH (A8),A
-Instruction at 0x528 is: LD A,d8
+Instruction at 0x528 is: LD A,d8 6
 Instruction at 0x52a is: LDH (A8),A
 Instruction at 0x52c is: RET
 Instruction at 0x52d is: LD HL,d16
 Instruction at 0x530 is: LDH A,A8
-Instruction at 0x532 is: CP D8
-Instruction at 0x534 is: LD B,d8
+Instruction at 0x532 is: CP D8 2
+Instruction at 0x534 is: LD B,d8 10
 Instruction at 0x536 is: JR Z,r8
-Instruction at 0x538 is: LD B,d8
+Instruction at 0x538 is: LD B,d8 1d
 Instruction at 0x53a is: LD A,(HL)
 Instruction at 0x53b is: CP B
 Instruction at 0x53c is: RET NZ
-Instruction at 0x53d is: LD A,d8
+Instruction at 0x53d is: LD A,d8 6
 Instruction at 0x53f is: LDH (A8),A
 Instruction at 0x541 is: RET
 Instruction at 0x542 is: LDH A,A8
 Instruction at 0x544 is: AND A
 Instruction at 0x545 is: RET Z
 Instruction at 0x546 is: LDH A,A8
-Instruction at 0x548 is: CP D8
+Instruction at 0x548 is: CP D8 ff
 Instruction at 0x54a is: RET Z
 Instruction at 0x54b is: LDH A,A8
 Instruction at 0x54d is: AND A
@@ -665,7 +665,7 @@ Instruction at 0x583 is: LDH A,A8
 Instruction at 0x585 is: AND A
 Instruction at 0x586 is: RET Z
 Instruction at 0x587 is: LDH A,A8
-Instruction at 0x589 is: CP D8
+Instruction at 0x589 is: CP D8 ff
 Instruction at 0x58b is: RET NZ
 Instruction at 0x58c is: LDH A,A8
 Instruction at 0x58e is: LD B,A
@@ -705,13 +705,13 @@ Instruction at 0x5bf is: RET
 Instruction at 0x5c0 is: LD HL,d16
 Instruction at 0x5c3 is: CBPREFIX
 Instruction at 0x5c5 is: JR r8
-Instruction at 0x5c7 is: LD A,d8
+Instruction at 0x5c7 is: LD A,d8 3
 Instruction at 0x5c9 is: LDH (A8),A
 Instruction at 0x5cb is: LDH A,A8
-Instruction at 0x5cd is: CP D8
+Instruction at 0x5cd is: CP D8 29
 Instruction at 0x5cf is: JR NZ,r8
 Instruction at 0x5d1 is: CALL A16
-Instruction at 0x5d4 is: LD A,d8
+Instruction at 0x5d4 is: LD A,d8 80
 Instruction at 0x5d6 is: LD (A16),A
 Instruction at 0x5d9 is: CALL A16
 Instruction at 0x5dc is: LDH (A8),A
@@ -725,11 +725,11 @@ Instruction at 0x5e9 is: LDH (A8),A
 Instruction at 0x5eb is: LDH (A8),A
 Instruction at 0x5ed is: LDH (A8),A
 Instruction at 0x5ef is: CALL A16
-Instruction at 0x5f2 is: LD A,d8
+Instruction at 0x5f2 is: LD A,d8 2b
 Instruction at 0x5f4 is: LDH (A8),A
 Instruction at 0x5f6 is: RET
 Instruction at 0x5f7 is: LDH A,A8
-Instruction at 0x5f9 is: CP D8
+Instruction at 0x5f9 is: CP D8 29
 Instruction at 0x5fb is: JR Z,r8
 Instruction at 0x5fd is: LDH A,A8
 Instruction at 0x5ff is: AND A
@@ -748,17 +748,17 @@ Instruction at 0x619 is: CBPREFIX
 Instruction at 0x61b is: JR NZ,r8
 Instruction at 0x61d is: CALL A16
 Instruction at 0x620 is: LDH A,A8
-Instruction at 0x622 is: CP D8
+Instruction at 0x622 is: CP D8 29
 Instruction at 0x624 is: JR Z,r8
 Instruction at 0x626 is: LDH A,A8
 Instruction at 0x628 is: AND A
 Instruction at 0x629 is: RET Z
 Instruction at 0x62a is: XOR A
 Instruction at 0x62b is: LDH (A8),A
-Instruction at 0x62d is: LD A,d8
+Instruction at 0x62d is: LD A,d8 39
 Instruction at 0x62f is: LDH (A8),A
 Instruction at 0x631 is: LDH A,A8
-Instruction at 0x633 is: CP D8
+Instruction at 0x633 is: CP D8 50
 Instruction at 0x635 is: JR Z,r8
 Instruction at 0x637 is: LD B,A
 Instruction at 0x638 is: LDH A,A8
@@ -766,7 +766,7 @@ Instruction at 0x63a is: CP B
 Instruction at 0x63b is: RET Z
 Instruction at 0x63c is: LD A,B
 Instruction at 0x63d is: LDH (A8),A
-Instruction at 0x63f is: LD A,d8
+Instruction at 0x63f is: LD A,d8 1
 Instruction at 0x641 is: LDH (A8),A
 Instruction at 0x643 is: RET
 Instruction at 0x644 is: LDH A,A8
@@ -780,31 +780,31 @@ Instruction at 0x651 is: RET Z
 Instruction at 0x652 is: XOR A
 Instruction at 0x653 is: LDH (A8),A
 Instruction at 0x655 is: LDH A,A8
-Instruction at 0x657 is: CP D8
+Instruction at 0x657 is: CP D8 50
 Instruction at 0x659 is: JR Z,r8
 Instruction at 0x65b is: LDH A,A8
 Instruction at 0x65d is: LDH (A8),A
-Instruction at 0x65f is: LD A,d8
+Instruction at 0x65f is: LD A,d8 1
 Instruction at 0x661 is: LDH (A8),A
 Instruction at 0x663 is: RET
 Instruction at 0x664 is: CALL A16
-Instruction at 0x667 is: LD A,d8
+Instruction at 0x667 is: LD A,d8 16
 Instruction at 0x669 is: LDH (A8),A
 Instruction at 0x66b is: RET
-Instruction at 0x66c is: LD A,d8
+Instruction at 0x66c is: LD A,d8 50
 Instruction at 0x66e is: JR r8
 Instruction at 0x670 is: LD HL,d16
 Instruction at 0x673 is: CBPREFIX
 Instruction at 0x675 is: JR r8
-Instruction at 0x677 is: LD A,d8
+Instruction at 0x677 is: LD A,d8 3
 Instruction at 0x679 is: LDH (A8),A
 Instruction at 0x67b is: LDH A,A8
-Instruction at 0x67d is: CP D8
+Instruction at 0x67d is: CP D8 29
 Instruction at 0x67f is: JR NZ,r8
 Instruction at 0x681 is: CALL A16
 Instruction at 0x684 is: CALL A16
 Instruction at 0x687 is: CALL A16
-Instruction at 0x68a is: LD B,d8
+Instruction at 0x68a is: LD B,d8 0
 Instruction at 0x68c is: LD HL,d16
 Instruction at 0x68f is: CALL A16
 Instruction at 0x692 is: LD (HL+),A
@@ -815,9 +815,9 @@ Instruction at 0x699 is: CALL A16
 Instruction at 0x69c is: LD DE,d16
 Instruction at 0x69f is: CALL A16
 Instruction at 0x6a2 is: CALL A16
-Instruction at 0x6a5 is: LD A,d8
+Instruction at 0x6a5 is: LD A,d8 2f
 Instruction at 0x6a7 is: CALL A16
-Instruction at 0x6aa is: LD A,d8
+Instruction at 0x6aa is: LD A,d8 3
 Instruction at 0x6ac is: LDH (A8),A
 Instruction at 0x6ae is: XOR A
 Instruction at 0x6af is: LDH (A8),A
@@ -830,8 +830,8 @@ Instruction at 0x6bb is: LDH (A8),A
 Instruction at 0x6bd is: LDH (A8),A
 Instruction at 0x6bf is: LDH (A8),A
 Instruction at 0x6c1 is: LD HL,d16
-Instruction at 0x6c4 is: LD B,d8
-Instruction at 0x6c6 is: LD A,d8
+Instruction at 0x6c4 is: LD B,d8 a
+Instruction at 0x6c6 is: LD A,d8 28
 Instruction at 0x6c8 is: LD (HL+),A
 Instruction at 0x6c9 is: DEC B
 Instruction at 0x6ca is: JR NZ,r8
@@ -839,15 +839,15 @@ Instruction at 0x6cc is: LDH A,A8
 Instruction at 0x6ce is: AND A
 Instruction at 0x6cf is: JP NZ,A16
 Instruction at 0x6d2 is: CALL A16
-Instruction at 0x6d5 is: LD A,d8
+Instruction at 0x6d5 is: LD A,d8 d3
 Instruction at 0x6d7 is: LDH (A8),A
 Instruction at 0x6d9 is: LD HL,d16
 Instruction at 0x6dc is: LD DE,d16
-Instruction at 0x6df is: LD B,d8
+Instruction at 0x6df is: LD B,d8 20
 Instruction at 0x6e1 is: CALL A16
 Instruction at 0x6e4 is: LD HL,d16
 Instruction at 0x6e7 is: LD DE,d16
-Instruction at 0x6ea is: LD C,d8
+Instruction at 0x6ea is: LD C,d8 2
 Instruction at 0x6ec is: CALL A16
 Instruction at 0x6ef is: CALL A16
 Instruction at 0x6f2 is: CALL A16
@@ -857,7 +857,7 @@ Instruction at 0x6f8 is: LDH (A8),A
 Instruction at 0x6fa is: LDH (A8),A
 Instruction at 0x6fc is: LDH (A8),A
 Instruction at 0x6fe is: LDH (A8),A
-Instruction at 0x700 is: LD A,d8
+Instruction at 0x700 is: LD A,d8 17
 Instruction at 0x702 is: LDH (A8),A
 Instruction at 0x704 is: RET
 Instruction at 0x705 is: LD B,B
@@ -887,15 +887,15 @@ Instruction at 0x728 is: DEC B
 Instruction at 0x729 is: JR NZ,r8
 Instruction at 0x72b is: RET
 Instruction at 0x72c is: LDH A,A8
-Instruction at 0x72e is: CP D8
+Instruction at 0x72e is: CP D8 29
 Instruction at 0x730 is: JR Z,r8
 Instruction at 0x732 is: LDH A,A8
 Instruction at 0x734 is: AND A
 Instruction at 0x735 is: JR Z,r8
 Instruction at 0x737 is: LDH A,A8
-Instruction at 0x739 is: CP D8
+Instruction at 0x739 is: CP D8 60
 Instruction at 0x73b is: JR Z,r8
-Instruction at 0x73d is: CP D8
+Instruction at 0x73d is: CP D8 6
 Instruction at 0x73f is: JR NC,r8
 Instruction at 0x741 is: LDH (A8),A
 Instruction at 0x743 is: LDH A,A8
@@ -909,42 +909,42 @@ Instruction at 0x753 is: JR r8
 Instruction at 0x755 is: LDH A,A8
 Instruction at 0x757 is: CBPREFIX
 Instruction at 0x759 is: JR Z,r8
-Instruction at 0x75b is: LD A,d8
+Instruction at 0x75b is: LD A,d8 60
 Instruction at 0x75d is: JR r8
 Instruction at 0x75f is: LDH A,A8
 Instruction at 0x761 is: AND A
 Instruction at 0x762 is: JR Z,r8
 Instruction at 0x764 is: LDH A,A8
-Instruction at 0x766 is: CP D8
+Instruction at 0x766 is: CP D8 60
 Instruction at 0x768 is: JR NZ,r8
 Instruction at 0x76a is: CALL A16
 Instruction at 0x76d is: LDH A,A8
 Instruction at 0x76f is: AND A
 Instruction at 0x770 is: JR NZ,r8
-Instruction at 0x772 is: LD A,d8
+Instruction at 0x772 is: LD A,d8 18
 Instruction at 0x774 is: LDH (A8),A
 Instruction at 0x776 is: LDH A,A8
-Instruction at 0x778 is: CP D8
+Instruction at 0x778 is: CP D8 29
 Instruction at 0x77a is: RET NZ
 Instruction at 0x77b is: XOR A
 Instruction at 0x77c is: LDH (A8),A
-Instruction at 0x77e is: LD A,d8
+Instruction at 0x77e is: LD A,d8 6
 Instruction at 0x780 is: LD DE,d16
 Instruction at 0x783 is: LD HL,d16
 Instruction at 0x786 is: CALL A16
 Instruction at 0x789 is: RET
 Instruction at 0x78a is: LDH A,A8
-Instruction at 0x78c is: CP D8
+Instruction at 0x78c is: CP D8 29
 Instruction at 0x78e is: JP NZ,A16
 Instruction at 0x791 is: XOR A
 Instruction at 0x792 is: LDH (A8),A
-Instruction at 0x794 is: LD A,d8
+Instruction at 0x794 is: LD A,d8 6
 Instruction at 0x796 is: LD DE,d16
 Instruction at 0x799 is: LD HL,d16
 Instruction at 0x79c is: CALL A16
 Instruction at 0x79f is: JP A16
 Instruction at 0x7a2 is: LDH A,A8
-Instruction at 0x7a4 is: CP D8
+Instruction at 0x7a4 is: CP D8 6
 Instruction at 0x7a6 is: JR NC,r8
 Instruction at 0x7a8 is: LDH (A8),A
 Instruction at 0x7aa is: LDH A,A8
@@ -965,15 +965,15 @@ Instruction at 0x7c6 is: CBPREFIX
 Instruction at 0x7c8 is: JR NZ,r8
 Instruction at 0x7ca is: CBPREFIX
 Instruction at 0x7cc is: JR Z,r8
-Instruction at 0x7ce is: CP D8
+Instruction at 0x7ce is: CP D8 3
 Instruction at 0x7d0 is: JR NC,r8
-Instruction at 0x7d2 is: ADD A,D8
+Instruction at 0x7d2 is: ADD A,D8 3
 Instruction at 0x7d4 is: JR r8
-Instruction at 0x7d6 is: CP D8
+Instruction at 0x7d6 is: CP D8 5
 Instruction at 0x7d8 is: JR Z,r8
 Instruction at 0x7da is: INC A
 Instruction at 0x7db is: LD (HL),A
-Instruction at 0x7dc is: LD A,d8
+Instruction at 0x7dc is: LD A,d8 1
 Instruction at 0x7de is: LD (A16),A
 Instruction at 0x7e1 is: CALL A16
 Instruction at 0x7e4 is: CALL A16
@@ -982,9 +982,9 @@ Instruction at 0x7e8 is: AND A
 Instruction at 0x7e9 is: JR Z,r8
 Instruction at 0x7eb is: DEC A
 Instruction at 0x7ec is: JR r8
-Instruction at 0x7ee is: CP D8
+Instruction at 0x7ee is: CP D8 3
 Instruction at 0x7f0 is: JR Z,r8 
-Instruction at 0x7f2 is: SUB D8
+Instruction at 0x7f2 is: SUB D8 3
 Instruction at 0x7f4 is: JR r8
 Instruction at 0x7f6 is: LD B,B
 Instruction at 0x7f7 is: LD H,B
@@ -1041,7 +1041,7 @@ Instruction at 0x84c is: LDH (A8),A
 Instruction at 0x84e is: CALL A16
 Instruction at 0x851 is: LD DE,d16
 Instruction at 0x854 is: PUSH DE
-Instruction at 0x855 is: LD A,d8
+Instruction at 0x855 is: LD A,d8 1
 Instruction at 0x857 is: LDH (A8),A
 Instruction at 0x859 is: LDH (A8),A
 Instruction at 0x85b is: CALL A16
@@ -1050,7 +1050,7 @@ Instruction at 0x85f is: LD HL,d16
 Instruction at 0x862 is: CALL A16
 Instruction at 0x865 is: LD DE,d16
 Instruction at 0x868 is: LD HL,d16
-Instruction at 0x86b is: LD C,d8
+Instruction at 0x86b is: LD C,d8 a
 Instruction at 0x86d is: CALL A16
 Instruction at 0x870 is: LD HL,d16
 Instruction at 0x873 is: LD DE,d16
@@ -1059,16 +1059,16 @@ Instruction at 0x879 is: LD HL,d16
 Instruction at 0x87c is: LD DE,d16
 Instruction at 0x87f is: CALL A16
 Instruction at 0x882 is: LD HL,d16
-Instruction at 0x885 is: LD A,d8
+Instruction at 0x885 is: LD A,d8 30
 Instruction at 0x887 is: LDH (A8),A
-Instruction at 0x889 is: LD (HL),d8
+Instruction at 0x889 is: LD (HL),d8 0
 Instruction at 0x88b is: DEC L
-Instruction at 0x88c is: LD (HL),d8
+Instruction at 0x88c is: LD (HL),d8 3
 Instruction at 0x88e is: CALL A16
 Instruction at 0x891 is: XOR A
 Instruction at 0x892 is: LDH (A8),A
 Instruction at 0x894 is: LDH A,A8
-Instruction at 0x896 is: CP D8
+Instruction at 0x896 is: CP D8 29
 Instruction at 0x898 is: LD DE,d16
 Instruction at 0x89b is: LDH A,A8
 Instruction at 0x89d is: JR Z,r8
@@ -1076,18 +1076,18 @@ Instruction at 0x89f is: LD DE,d16
 Instruction at 0x8a2 is: LDH A,A8
 Instruction at 0x8a4 is: LD HL,d16
 Instruction at 0x8a7 is: LD (HL),A
-Instruction at 0x8a8 is: LD H,d8
+Instruction at 0x8a8 is: LD H,d8 9c
 Instruction at 0x8aa is: LD (HL),A
 Instruction at 0x8ab is: LD HL,d16
-Instruction at 0x8ae is: LD B,d8
+Instruction at 0x8ae is: LD B,d8 10
 Instruction at 0x8b0 is: CALL A16
-Instruction at 0x8b3 is: LD A,d8
+Instruction at 0x8b3 is: LD A,d8 77
 Instruction at 0x8b5 is: LDH (A8),A
-Instruction at 0x8b7 is: LD A,d8
+Instruction at 0x8b7 is: LD A,d8 d3
 Instruction at 0x8b9 is: LDH (A8),A
-Instruction at 0x8bb is: LD A,d8
+Instruction at 0x8bb is: LD A,d8 19
 Instruction at 0x8bd is: LDH (A8),A
-Instruction at 0x8bf is: LD A,d8
+Instruction at 0x8bf is: LD A,d8 1
 Instruction at 0x8c1 is: LDH (A8),A
 Instruction at 0x8c3 is: RET
 Instruction at 0x8c4 is: JR r8
@@ -1118,32 +1118,32 @@ Instruction at 0x8e5 is: LD (a16),SP
 Instruction at 0x8e8 is: XOR A
 Instruction at 0x8e9 is: LDH (A8),A
 Instruction at 0x8eb is: LDH A,A8
-Instruction at 0x8ed is: CP D8
+Instruction at 0x8ed is: CP D8 29
 Instruction at 0x8ef is: JP NZ,A16
 Instruction at 0x8f2 is: CALL A16
 Instruction at 0x8f5 is: CALL A16
 Instruction at 0x8f8 is: XOR A
 Instruction at 0x8f9 is: LDH (A8),A
-Instruction at 0x8fb is: LD A,d8
+Instruction at 0x8fb is: LD A,d8 29
 Instruction at 0x8fd is: LDH (A8),A
-Instruction at 0x8ff is: LD A,d8
+Instruction at 0x8ff is: LD A,d8 81
 Instruction at 0x901 is: LDH (A8),A
 Instruction at 0x903 is: LDH A,A8
 Instruction at 0x905 is: AND A
 Instruction at 0x906 is: JR Z,r8
 Instruction at 0x908 is: LDH A,A8
-Instruction at 0x90a is: CP D8
+Instruction at 0x90a is: CP D8 55
 Instruction at 0x90c is: JR NZ,r8
 Instruction at 0x90e is: LD DE,d16
-Instruction at 0x911 is: LD C,d8
+Instruction at 0x911 is: LD C,d8 a
 Instruction at 0x913 is: LD HL,d16
-Instruction at 0x916 is: LD B,d8
+Instruction at 0x916 is: LD B,d8 a
 Instruction at 0x918 is: XOR A
 Instruction at 0x919 is: LDH (A8),A
 Instruction at 0x91b is: CALL A16
 Instruction at 0x91e is: LD A,(HL+)
 Instruction at 0x91f is: LDH (A8),A
-Instruction at 0x921 is: LD A,d8
+Instruction at 0x921 is: LD A,d8 81
 Instruction at 0x923 is: LDH (A8),A
 Instruction at 0x925 is: LDH A,A8
 Instruction at 0x927 is: AND A
@@ -1154,17 +1154,17 @@ Instruction at 0x92d is: ADD HL,DE
 Instruction at 0x92e is: DEC C
 Instruction at 0x92f is: JR NZ,r8
 Instruction at 0x931 is: LDH A,A8
-Instruction at 0x933 is: CP D8
+Instruction at 0x933 is: CP D8 5
 Instruction at 0x935 is: JR Z,r8
 Instruction at 0x937 is: LD HL,d16
 Instruction at 0x93a is: LD DE,d16
 Instruction at 0x93d is: ADD HL,DE
 Instruction at 0x93e is: INC A
-Instruction at 0x93f is: CP D8
+Instruction at 0x93f is: CP D8 5
 Instruction at 0x941 is: JR NZ,r8
 Instruction at 0x943 is: LD DE,d16
-Instruction at 0x946 is: LD C,d8
-Instruction at 0x948 is: LD B,d8
+Instruction at 0x946 is: LD C,d8 a
+Instruction at 0x948 is: LD B,d8 a
 Instruction at 0x94a is: LD A,(DE)
 Instruction at 0x94b is: LD (HL+),A
 Instruction at 0x94c is: INC E
@@ -1183,11 +1183,11 @@ Instruction at 0x95d is: POP HL
 Instruction at 0x95e is: DEC C
 Instruction at 0x95f is: JR NZ,r8
 Instruction at 0x961 is: LD DE,d16
-Instruction at 0x964 is: LD B,d8
+Instruction at 0x964 is: LD B,d8 a
 Instruction at 0x966 is: LD A,H
-Instruction at 0x967 is: CP D8
+Instruction at 0x967 is: CP D8 c8
 Instruction at 0x969 is: JR Z,r8
-Instruction at 0x96b is: LD A,d8
+Instruction at 0x96b is: LD A,d8 2f
 Instruction at 0x96d is: LD (HL+),A
 Instruction at 0x96e is: DEC B
 Instruction at 0x96f is: JR NZ,r8
@@ -1197,24 +1197,24 @@ Instruction at 0x974 is: CALL A16
 Instruction at 0x977 is: CALL A16
 Instruction at 0x97a is: XOR A
 Instruction at 0x97b is: LDH (A8),A
-Instruction at 0x97d is: LD A,d8
+Instruction at 0x97d is: LD A,d8 29
 Instruction at 0x97f is: LDH (A8),A
-Instruction at 0x981 is: LD A,d8
+Instruction at 0x981 is: LD A,d8 81
 Instruction at 0x983 is: LDH (A8),A
 Instruction at 0x985 is: LDH A,A8
 Instruction at 0x987 is: AND A
 Instruction at 0x988 is: JR Z,r8
 Instruction at 0x98a is: LDH A,A8
-Instruction at 0x98c is: CP D8
+Instruction at 0x98c is: CP D8 55
 Instruction at 0x98e is: JR NZ,r8
 Instruction at 0x990 is: LD HL,d16
-Instruction at 0x993 is: LD B,d8
+Instruction at 0x993 is: LD B,d8 0
 Instruction at 0x995 is: XOR A
 Instruction at 0x996 is: LDH (A8),A
 Instruction at 0x998 is: LD A,(HL+)
 Instruction at 0x999 is: CALL A16
 Instruction at 0x99c is: LDH (A8),A
-Instruction at 0x99e is: LD A,d8
+Instruction at 0x99e is: LD A,d8 81
 Instruction at 0x9a0 is: LDH (A8),A
 Instruction at 0x9a2 is: LDH A,A8
 Instruction at 0x9a4 is: AND A
@@ -1225,27 +1225,27 @@ Instruction at 0x9aa is: CALL A16
 Instruction at 0x9ad is: CALL A16
 Instruction at 0x9b0 is: XOR A
 Instruction at 0x9b1 is: LDH (A8),A
-Instruction at 0x9b3 is: LD A,d8
+Instruction at 0x9b3 is: LD A,d8 30
 Instruction at 0x9b5 is: LDH (A8),A
-Instruction at 0x9b7 is: LD A,d8
+Instruction at 0x9b7 is: LD A,d8 81
 Instruction at 0x9b9 is: LDH (A8),A
 Instruction at 0x9bb is: LDH A,A8
 Instruction at 0x9bd is: AND A
 Instruction at 0x9be is: JR Z,r8
 Instruction at 0x9c0 is: LDH A,A8
-Instruction at 0x9c2 is: CP D8
+Instruction at 0x9c2 is: CP D8 56
 Instruction at 0x9c4 is: JR NZ,r8
 Instruction at 0x9c6 is: CALL A16
-Instruction at 0x9c9 is: LD A,d8
+Instruction at 0x9c9 is: LD A,d8 9
 Instruction at 0x9cb is: LDH (A8),A
-Instruction at 0x9cd is: LD A,d8
+Instruction at 0x9cd is: LD A,d8 1c
 Instruction at 0x9cf is: LDH (A8),A
-Instruction at 0x9d1 is: LD A,d8
+Instruction at 0x9d1 is: LD A,d8 2
 Instruction at 0x9d3 is: LDH (A8),A
-Instruction at 0x9d5 is: LD A,d8
+Instruction at 0x9d5 is: LD A,d8 3
 Instruction at 0x9d7 is: LDH (A8),A
 Instruction at 0x9d9 is: LDH A,A8
-Instruction at 0x9db is: CP D8
+Instruction at 0x9db is: CP D8 29
 Instruction at 0x9dd is: JR Z,r8
 Instruction at 0x9df is: LD HL,d16
 Instruction at 0x9e2 is: CBPREFIX
@@ -1271,23 +1271,23 @@ Instruction at 0xa04 is: JR r8
 Instruction at 0xa06 is: CALL A16
 Instruction at 0xa09 is: XOR A
 Instruction at 0xa0a is: LDH (A8),A
-Instruction at 0xa0c is: LD A,d8
+Instruction at 0xa0c is: LD A,d8 55
 Instruction at 0xa0e is: LDH (A8),A
-Instruction at 0xa10 is: LD A,d8
+Instruction at 0xa10 is: LD A,d8 80
 Instruction at 0xa12 is: LDH (A8),A
 Instruction at 0xa14 is: LDH A,A8
 Instruction at 0xa16 is: AND A
 Instruction at 0xa17 is: JR Z,r8
 Instruction at 0xa19 is: LDH A,A8
-Instruction at 0xa1b is: CP D8
+Instruction at 0xa1b is: CP D8 29
 Instruction at 0xa1d is: JR NZ,r8
 Instruction at 0xa1f is: LD DE,d16
-Instruction at 0xa22 is: LD C,d8
-Instruction at 0xa24 is: LD B,d8
+Instruction at 0xa22 is: LD C,d8 a
+Instruction at 0xa24 is: LD B,d8 a
 Instruction at 0xa26 is: XOR A
 Instruction at 0xa27 is: LDH (A8),A
 Instruction at 0xa29 is: LDH (A8),A
-Instruction at 0xa2b is: LD A,d8
+Instruction at 0xa2b is: LD A,d8 80
 Instruction at 0xa2d is: LDH (A8),A
 Instruction at 0xa2f is: LDH A,A8
 Instruction at 0xa31 is: AND A
@@ -1302,22 +1302,22 @@ Instruction at 0xa3c is: JR NZ,r8
 Instruction at 0xa3e is: CALL A16
 Instruction at 0xa41 is: XOR A
 Instruction at 0xa42 is: LDH (A8),A
-Instruction at 0xa44 is: LD A,d8
+Instruction at 0xa44 is: LD A,d8 55
 Instruction at 0xa46 is: LDH (A8),A
-Instruction at 0xa48 is: LD A,d8
+Instruction at 0xa48 is: LD A,d8 80
 Instruction at 0xa4a is: LDH (A8),A
 Instruction at 0xa4c is: LDH A,A8
 Instruction at 0xa4e is: AND A
 Instruction at 0xa4f is: JR Z,r8
 Instruction at 0xa51 is: LDH A,A8
-Instruction at 0xa53 is: CP D8
+Instruction at 0xa53 is: CP D8 29
 Instruction at 0xa55 is: JR NZ,r8
-Instruction at 0xa57 is: LD B,d8
+Instruction at 0xa57 is: LD B,d8 0
 Instruction at 0xa59 is: LD HL,d16
 Instruction at 0xa5c is: XOR A
 Instruction at 0xa5d is: LDH (A8),A
 Instruction at 0xa5f is: LDH (A8),A
-Instruction at 0xa61 is: LD A,d8
+Instruction at 0xa61 is: LD A,d8 80
 Instruction at 0xa63 is: LDH (A8),A
 Instruction at 0xa65 is: LDH A,A8
 Instruction at 0xa67 is: AND A
@@ -1329,26 +1329,26 @@ Instruction at 0xa6e is: JR NZ,r8
 Instruction at 0xa70 is: CALL A16
 Instruction at 0xa73 is: XOR A
 Instruction at 0xa74 is: LDH (A8),A
-Instruction at 0xa76 is: LD A,d8
+Instruction at 0xa76 is: LD A,d8 56
 Instruction at 0xa78 is: LDH (A8),A
-Instruction at 0xa7a is: LD A,d8
+Instruction at 0xa7a is: LD A,d8 80
 Instruction at 0xa7c is: LDH (A8),A
 Instruction at 0xa7e is: LDH A,A8
 Instruction at 0xa80 is: AND A
 Instruction at 0xa81 is: JR Z,r8
 Instruction at 0xa83 is: LDH A,A8
-Instruction at 0xa85 is: CP D8
+Instruction at 0xa85 is: CP D8 30
 Instruction at 0xa87 is: JR NZ,r8
 Instruction at 0xa89 is: JP A16
 Instruction at 0xa8c is: LD HL,d16
-Instruction at 0xa8f is: LD A,d8
-Instruction at 0xa91 is: LD B,d8
+Instruction at 0xa8f is: LD A,d8 80
+Instruction at 0xa91 is: LD B,d8 a
 Instruction at 0xa93 is: LD (HL+),A
 Instruction at 0xa94 is: DEC B
 Instruction at 0xa95 is: JR NZ,r8
 Instruction at 0xa97 is: RET
 Instruction at 0xa98 is: PUSH BC
-Instruction at 0xa99 is: LD B,d8
+Instruction at 0xa99 is: LD B,d8 fa
 Instruction at 0xa9b is: LD B,B
 Instruction at 0xa9c is: DEC B
 Instruction at 0xa9d is: JR NZ,r8
@@ -1357,9 +1357,9 @@ Instruction at 0xaa0 is: RET
 Instruction at 0xaa1 is: PUSH HL
 Instruction at 0xaa2 is: PUSH BC
 Instruction at 0xaa3 is: LDH A,A8
-Instruction at 0xaa5 is: AND D8
+Instruction at 0xaa5 is: AND D8 fc
 Instruction at 0xaa7 is: LD C,A
-Instruction at 0xaa8 is: LD H,d8
+Instruction at 0xaa8 is: LD H,d8 3
 Instruction at 0xaaa is: LDH A,A8
 Instruction at 0xaac is: LD B,A
 Instruction at 0xaad is: XOR A
@@ -1369,7 +1369,7 @@ Instruction at 0xab1 is: INC A
 Instruction at 0xab2 is: INC A
 Instruction at 0xab3 is: INC A
 Instruction at 0xab4 is: INC A
-Instruction at 0xab5 is: CP D8
+Instruction at 0xab5 is: CP D8 1c
 Instruction at 0xab7 is: JR Z,r8
 Instruction at 0xab9 is: JR r8
 Instruction at 0xabb is: LD D,A
@@ -1379,7 +1379,7 @@ Instruction at 0xabf is: DEC H
 Instruction at 0xac0 is: JR Z,r8
 Instruction at 0xac2 is: OR D
 Instruction at 0xac3 is: OR C
-Instruction at 0xac4 is: AND D8
+Instruction at 0xac4 is: AND D8 fc
 Instruction at 0xac6 is: CP C
 Instruction at 0xac7 is: JR Z,r8
 Instruction at 0xac9 is: LD A,D
@@ -1389,45 +1389,45 @@ Instruction at 0xacd is: LDH (A8),A
 Instruction at 0xacf is: POP BC
 Instruction at 0xad0 is: POP HL
 Instruction at 0xad1 is: RET
-Instruction at 0xad2 is: LD A,d8
+Instruction at 0xad2 is: LD A,d8 1
 Instruction at 0xad4 is: LDH (A8),A
 Instruction at 0xad6 is: LDH A,A8
 Instruction at 0xad8 is: AND A
 Instruction at 0xad9 is: JR NZ,r8
-Instruction at 0xadb is: LD B,d8
-Instruction at 0xadd is: LD C,d8
+Instruction at 0xadb is: LD B,d8 44
+Instruction at 0xadd is: LD C,d8 20
 Instruction at 0xadf is: CALL A16
-Instruction at 0xae2 is: LD A,d8
+Instruction at 0xae2 is: LD A,d8 2
 Instruction at 0xae4 is: LDH (A8),A
 Instruction at 0xae6 is: LD A,(A16)
 Instruction at 0xae9 is: AND A
 Instruction at 0xaea is: JR Z,r8
-Instruction at 0xaec is: LD A,d8
+Instruction at 0xaec is: LD A,d8 80
 Instruction at 0xaee is: LD (A16),A
 Instruction at 0xaf1 is: CALL A16
 Instruction at 0xaf4 is: CALL A16
 Instruction at 0xaf7 is: CALL A16
 Instruction at 0xafa is: XOR A
 Instruction at 0xafb is: LDH (A8),A
-Instruction at 0xafd is: LD A,d8
+Instruction at 0xafd is: LD A,d8 1a
 Instruction at 0xaff is: LDH (A8),A
 Instruction at 0xb01 is: RET
-Instruction at 0xb02 is: CP D8
+Instruction at 0xb02 is: CP D8 5
 Instruction at 0xb04 is: RET NZ
 Instruction at 0xb05 is: LD HL,d16
-Instruction at 0xb08 is: LD B,d8
-Instruction at 0xb0a is: LD (HL),d8
+Instruction at 0xb08 is: LD B,d8 12
+Instruction at 0xb0a is: LD (HL),d8 f0
 Instruction at 0xb0c is: INC HL
-Instruction at 0xb0d is: LD (HL),d8
+Instruction at 0xb0d is: LD (HL),d8 10
 Instruction at 0xb0f is: INC HL
-Instruction at 0xb10 is: LD (HL),d8
+Instruction at 0xb10 is: LD (HL),d8 b6
 Instruction at 0xb12 is: INC HL
-Instruction at 0xb13 is: LD (HL),d8
+Instruction at 0xb13 is: LD (HL),d8 80
 Instruction at 0xb15 is: INC HL
 Instruction at 0xb16 is: DEC B
 Instruction at 0xb17 is: JR NZ,r8
 Instruction at 0xb19 is: LD A,(A16)
-Instruction at 0xb1c is: LD B,d8
+Instruction at 0xb1c is: LD B,d8 a
 Instruction at 0xb1e is: LD HL,d16
 Instruction at 0xb21 is: DEC A
 Instruction at 0xb22 is: JR Z,r8
@@ -1435,20 +1435,20 @@ Instruction at 0xb24 is: INC L
 Instruction at 0xb25 is: DEC B
 Instruction at 0xb26 is: JR NZ,r8
 Instruction at 0xb28 is: JR r8
-Instruction at 0xb2a is: LD (HL),d8
-Instruction at 0xb2c is: LD A,d8
+Instruction at 0xb2a is: LD (HL),d8 2f
+Instruction at 0xb2c is: LD A,d8 3
 Instruction at 0xb2e is: LDH (A8),A
 Instruction at 0xb30 is: RET
-Instruction at 0xb31 is: LD A,d8
+Instruction at 0xb31 is: LD A,d8 1
 Instruction at 0xb33 is: LDH (A8),A
 Instruction at 0xb35 is: LD HL,d16
 Instruction at 0xb38 is: XOR A
 Instruction at 0xb39 is: LD (HL+),A
-Instruction at 0xb3a is: LD (HL),d8
+Instruction at 0xb3a is: LD (HL),d8 50
 Instruction at 0xb3c is: INC L
-Instruction at 0xb3d is: LD (HL),d8
+Instruction at 0xb3d is: LD (HL),d8 27
 Instruction at 0xb3f is: INC L
-Instruction at 0xb40 is: LD (HL),d8
+Instruction at 0xb40 is: LD (HL),d8 0
 Instruction at 0xb42 is: CALL A16
 Instruction at 0xb45 is: CALL A16
 Instruction at 0xb48 is: CALL A16
@@ -1460,23 +1460,23 @@ Instruction at 0xb57 is: CALL A16
 Instruction at 0xb5a is: LDH A,A8
 Instruction at 0xb5c is: AND A
 Instruction at 0xb5d is: JR Z,r8
-Instruction at 0xb5f is: LD A,d8
+Instruction at 0xb5f is: LD A,d8 77
 Instruction at 0xb61 is: LDH (A8),A
 Instruction at 0xb63 is: LDH (A8),A
-Instruction at 0xb65 is: LD A,d8
+Instruction at 0xb65 is: LD A,d8 aa
 Instruction at 0xb67 is: LDH (A8),A
-Instruction at 0xb69 is: LD A,d8
+Instruction at 0xb69 is: LD A,d8 1b
 Instruction at 0xb6b is: LDH (A8),A
-Instruction at 0xb6d is: LD A,d8
+Instruction at 0xb6d is: LD A,d8 5
 Instruction at 0xb6f is: LDH (A8),A
 Instruction at 0xb71 is: JR r8
 Instruction at 0xb73 is: LDH A,A8
-Instruction at 0xb75 is: CP D8
+Instruction at 0xb75 is: CP D8 1
 Instruction at 0xb77 is: JR NZ,r8
-Instruction at 0xb79 is: LD A,d8
+Instruction at 0xb79 is: LD A,d8 aa
 Instruction at 0xb7b is: LDH (A8),A
 Instruction at 0xb7d is: LDH (A8),A
-Instruction at 0xb7f is: LD A,d8
+Instruction at 0xb7f is: LD A,d8 77
 Instruction at 0xb81 is: LDH (A8),A
 Instruction at 0xb83 is: XOR A
 Instruction at 0xb84 is: LDH (A8),A
@@ -1484,7 +1484,7 @@ Instruction at 0xb86 is: LDH (A8),A
 Instruction at 0xb88 is: LDH (A8),A
 Instruction at 0xb8a is: LDH (A8),A
 Instruction at 0xb8c is: LDH A,A8
-Instruction at 0xb8e is: CP D8
+Instruction at 0xb8e is: CP D8 29
 Instruction at 0xb90 is: JR NZ,r8
 Instruction at 0xb92 is: LDH (A8),A
 Instruction at 0xb94 is: CALL A16
@@ -1492,9 +1492,9 @@ Instruction at 0xb97 is: CALL A16
 Instruction at 0xb9a is: RET
 Instruction at 0xb9b is: LD DE,d16
 Instruction at 0xb9e is: LD HL,d16
-Instruction at 0xba1 is: LD A,d8
-Instruction at 0xba3 is: LD C,d8
-Instruction at 0xba5 is: LD B,d8
+Instruction at 0xba1 is: LD A,d8 2f
+Instruction at 0xba3 is: LD C,d8 12
+Instruction at 0xba5 is: LD B,d8 a
 Instruction at 0xba7 is: PUSH HL
 Instruction at 0xba8 is: CP (HL)
 Instruction at 0xba9 is: JR NZ,r8
@@ -1509,25 +1509,25 @@ Instruction at 0xbb4 is: PUSH HL
 Instruction at 0xbb5 is: POP HL
 Instruction at 0xbb6 is: LD A,C
 Instruction at 0xbb7 is: LDH (A8),A
-Instruction at 0xbb9 is: CP D8
+Instruction at 0xbb9 is: CP D8 c
 Instruction at 0xbbb is: LD A,(A16)
 Instruction at 0xbbe is: JR NC,r8
-Instruction at 0xbc0 is: CP D8
+Instruction at 0xbc0 is: CP D8 8
 Instruction at 0xbc2 is: RET NZ
 Instruction at 0xbc3 is: CALL A16
 Instruction at 0xbc6 is: RET
-Instruction at 0xbc7 is: CP D8
+Instruction at 0xbc7 is: CP D8 8
 Instruction at 0xbc9 is: RET Z
 Instruction at 0xbca is: LD A,(A16)
-Instruction at 0xbcd is: CP D8
+Instruction at 0xbcd is: CP D8 2
 Instruction at 0xbcf is: RET Z
-Instruction at 0xbd0 is: LD A,d8
+Instruction at 0xbd0 is: LD A,d8 8
 Instruction at 0xbd2 is: LD (A16),A
 Instruction at 0xbd5 is: RET
 Instruction at 0xbd6 is: LDH A,A8
-Instruction at 0xbd8 is: CP D8
+Instruction at 0xbd8 is: CP D8 29
 Instruction at 0xbda is: JR Z,r8
-Instruction at 0xbdc is: LD A,d8
+Instruction at 0xbdc is: LD A,d8 1
 Instruction at 0xbde is: LD (A16),A
 Instruction at 0xbe1 is: LDH (A8),A
 Instruction at 0xbe3 is: LDH A,A8
@@ -1545,30 +1545,30 @@ Instruction at 0xbf7 is: LD DE,d16
 Instruction at 0xbfa is: XOR A
 Instruction at 0xbfb is: LDH (A8),A
 Instruction at 0xbfd is: LDH A,A8
-Instruction at 0xbff is: CP D8
+Instruction at 0xbff is: CP D8 aa
 Instruction at 0xc01 is: JR Z,r8
-Instruction at 0xc03 is: CP D8
+Instruction at 0xc03 is: CP D8 77
 Instruction at 0xc05 is: JR Z,r8
-Instruction at 0xc07 is: CP D8
+Instruction at 0xc07 is: CP D8 94
 Instruction at 0xc09 is: JR Z,r8
 Instruction at 0xc0b is: LD B,A
 Instruction at 0xc0c is: AND A
 Instruction at 0xc0d is: JR Z,r8
 Instruction at 0xc0f is: CBPREFIX
 Instruction at 0xc11 is: JR NZ,r8
-Instruction at 0xc13 is: CP D8
+Instruction at 0xc13 is: CP D8 13
 Instruction at 0xc15 is: JR NC,r8
-Instruction at 0xc17 is: LD A,d8
+Instruction at 0xc17 is: LD A,d8 12
 Instruction at 0xc19 is: SUB B
 Instruction at 0xc1a is: LD C,A
 Instruction at 0xc1b is: INC C
-Instruction at 0xc1c is: LD A,d8
+Instruction at 0xc1c is: LD A,d8 98
 Instruction at 0xc1e is: LD (HL),A
 Instruction at 0xc1f is: ADD HL,DE
-Instruction at 0xc20 is: SUB D8
+Instruction at 0xc20 is: SUB D8 8
 Instruction at 0xc22 is: DEC B
 Instruction at 0xc23 is: JR NZ,r8
-Instruction at 0xc25 is: LD A,d8
+Instruction at 0xc25 is: LD A,d8 f0
 Instruction at 0xc27 is: DEC C
 Instruction at 0xc28 is: JR Z,r8
 Instruction at 0xc2a is: LD (HL),A
@@ -1577,49 +1577,49 @@ Instruction at 0xc2c is: JR r8
 Instruction at 0xc2e is: LDH A,A8
 Instruction at 0xc30 is: AND A
 Instruction at 0xc31 is: JR Z,r8
-Instruction at 0xc33 is: OR D8
+Instruction at 0xc33 is: OR D8 80
 Instruction at 0xc35 is: LDH (A8),A
 Instruction at 0xc37 is: XOR A
 Instruction at 0xc38 is: LDH (A8),A
-Instruction at 0xc3a is: LD A,d8
+Instruction at 0xc3a is: LD A,d8 ff
 Instruction at 0xc3c is: LDH (A8),A
 Instruction at 0xc3e is: LDH A,A8
-Instruction at 0xc40 is: CP D8
+Instruction at 0xc40 is: CP D8 29
 Instruction at 0xc42 is: LDH A,A8
 Instruction at 0xc44 is: JR NZ,r8
 Instruction at 0xc46 is: LDH (A8),A
-Instruction at 0xc48 is: LD A,d8
+Instruction at 0xc48 is: LD A,d8 1
 Instruction at 0xc4a is: LDH (A8),A
 Instruction at 0xc4c is: RET
 Instruction at 0xc4d is: LDH (A8),A
 Instruction at 0xc4f is: RET
 Instruction at 0xc50 is: LDH A,A8
-Instruction at 0xc52 is: CP D8
+Instruction at 0xc52 is: CP D8 aa
 Instruction at 0xc54 is: JR Z,r8
-Instruction at 0xc56 is: LD A,d8
+Instruction at 0xc56 is: LD A,d8 77
 Instruction at 0xc58 is: LDH (A8),A
-Instruction at 0xc5a is: LD A,d8
+Instruction at 0xc5a is: LD A,d8 1
 Instruction at 0xc5c is: LDH (A8),A
 Instruction at 0xc5e is: JR r8
-Instruction at 0xc60 is: LD C,d8
+Instruction at 0xc60 is: LD C,d8 13
 Instruction at 0xc62 is: JR r8
 Instruction at 0xc64 is: LDH A,A8
-Instruction at 0xc66 is: CP D8
+Instruction at 0xc66 is: CP D8 77
 Instruction at 0xc68 is: JR Z,r8
-Instruction at 0xc6a is: LD A,d8
+Instruction at 0xc6a is: LD A,d8 aa
 Instruction at 0xc6c is: LDH (A8),A
-Instruction at 0xc6e is: LD A,d8
+Instruction at 0xc6e is: LD A,d8 1b
 Instruction at 0xc70 is: LDH (A8),A
-Instruction at 0xc72 is: LD A,d8
+Instruction at 0xc72 is: LD A,d8 5
 Instruction at 0xc74 is: LDH (A8),A
-Instruction at 0xc76 is: LD C,d8
-Instruction at 0xc78 is: LD B,d8
+Instruction at 0xc76 is: LD C,d8 1
+Instruction at 0xc78 is: LD B,d8 12
 Instruction at 0xc7a is: JR r8
-Instruction at 0xc7c is: LD A,d8
+Instruction at 0xc7c is: LD A,d8 1
 Instruction at 0xc7e is: LDH (A8),A
 Instruction at 0xc80 is: JR r8
-Instruction at 0xc82 is: AND D8
-Instruction at 0xc84 is: CP D8
+Instruction at 0xc82 is: AND D8 7f
+Instruction at 0xc84 is: CP D8 5
 Instruction at 0xc86 is: JR NC,r8
 Instruction at 0xc88 is: LDH (A8),A
 Instruction at 0xc8a is: JR r8
@@ -1628,7 +1628,7 @@ Instruction at 0xc8e is: AND A
 Instruction at 0xc8f is: JR Z,r8
 Instruction at 0xc91 is: CBPREFIX
 Instruction at 0xc93 is: RET Z
-Instruction at 0xc94 is: AND D8
+Instruction at 0xc94 is: AND D8 7
 Instruction at 0xc96 is: JR r8
 Instruction at 0xc98 is: LDH A,A8
 Instruction at 0xc9a is: AND A
@@ -1645,8 +1645,8 @@ Instruction at 0xcaa is: ADD HL,DE
 Instruction at 0xcab is: DEC C
 Instruction at 0xcac is: JR NZ,r8
 Instruction at 0xcae is: LD DE,d16
-Instruction at 0xcb1 is: LD C,d8
-Instruction at 0xcb3 is: LD B,d8
+Instruction at 0xcb1 is: LD C,d8 11
+Instruction at 0xcb3 is: LD B,d8 a
 Instruction at 0xcb5 is: LD A,(DE)
 Instruction at 0xcb6 is: LD (HL+),A
 Instruction at 0xcb7 is: INC E
@@ -1666,7 +1666,7 @@ Instruction at 0xcc9 is: DEC C
 Instruction at 0xcca is: JR NZ,r8
 Instruction at 0xccc is: POP BC
 Instruction at 0xccd is: LD DE,d16
-Instruction at 0xcd0 is: LD B,d8
+Instruction at 0xcd0 is: LD B,d8 a
 Instruction at 0xcd2 is: LD A,(DE)
 Instruction at 0xcd3 is: LD (HL+),A
 Instruction at 0xcd4 is: INC DE
@@ -1678,7 +1678,7 @@ Instruction at 0xcdc is: ADD HL,DE
 Instruction at 0xcdd is: POP DE
 Instruction at 0xcde is: DEC C
 Instruction at 0xcdf is: JR NZ,r8
-Instruction at 0xce1 is: LD A,d8
+Instruction at 0xce1 is: LD A,d8 2
 Instruction at 0xce3 is: LDH (A8),A
 Instruction at 0xce5 is: LDH (A8),A
 Instruction at 0xce7 is: XOR A
@@ -1687,38 +1687,38 @@ Instruction at 0xcea is: RET
 Instruction at 0xceb is: LDH A,A8
 Instruction at 0xced is: AND A
 Instruction at 0xcee is: RET NZ
-Instruction at 0xcef is: LD A,d8
+Instruction at 0xcef is: LD A,d8 1
 Instruction at 0xcf1 is: LDH (A8),A
-Instruction at 0xcf3 is: LD A,d8
+Instruction at 0xcf3 is: LD A,d8 3
 Instruction at 0xcf5 is: LDH (A8),A
 Instruction at 0xcf7 is: LDH A,A8
-Instruction at 0xcf9 is: CP D8
+Instruction at 0xcf9 is: CP D8 77
 Instruction at 0xcfb is: JR NZ,r8
 Instruction at 0xcfd is: LDH A,A8
-Instruction at 0xcff is: CP D8
+Instruction at 0xcff is: CP D8 aa
 Instruction at 0xd01 is: JR NZ,r8
-Instruction at 0xd03 is: LD A,d8
+Instruction at 0xd03 is: LD A,d8 1
 Instruction at 0xd05 is: LDH (A8),A
 Instruction at 0xd07 is: JR r8
-Instruction at 0xd09 is: CP D8
+Instruction at 0xd09 is: CP D8 aa
 Instruction at 0xd0b is: JR NZ,r8
 Instruction at 0xd0d is: LDH A,A8
-Instruction at 0xd0f is: CP D8
+Instruction at 0xd0f is: CP D8 77
 Instruction at 0xd11 is: JR Z,r8
-Instruction at 0xd13 is: LD B,d8
-Instruction at 0xd15 is: LD C,d8
+Instruction at 0xd13 is: LD B,d8 34
+Instruction at 0xd15 is: LD C,d8 43
 Instruction at 0xd17 is: CALL A16
 Instruction at 0xd1a is: XOR A
 Instruction at 0xd1b is: LDH (A8),A
 Instruction at 0xd1d is: LDH A,A8
-Instruction at 0xd1f is: CP D8
-Instruction at 0xd21 is: LD A,d8
+Instruction at 0xd1f is: CP D8 aa
+Instruction at 0xd21 is: LD A,d8 1e
 Instruction at 0xd23 is: JR NZ,r8
-Instruction at 0xd25 is: LD A,d8
+Instruction at 0xd25 is: LD A,d8 1d
 Instruction at 0xd27 is: LDH (A8),A
-Instruction at 0xd29 is: LD A,d8
+Instruction at 0xd29 is: LD A,d8 28
 Instruction at 0xd2b is: LDH (A8),A
-Instruction at 0xd2d is: LD A,d8
+Instruction at 0xd2d is: LD A,d8 1d
 Instruction at 0xd2f is: LDH (A8),A
 Instruction at 0xd31 is: RET
 Instruction at 0xd32 is: LDH A,A8
@@ -1733,33 +1733,33 @@ Instruction at 0xd3e is: LDH (A8),A
 Instruction at 0xd40 is: CALL A16
 Instruction at 0xd43 is: LD DE,d16
 Instruction at 0xd46 is: LDH A,A8
-Instruction at 0xd48 is: CP D8
+Instruction at 0xd48 is: CP D8 29
 Instruction at 0xd4a is: JR Z,r8
 Instruction at 0xd4c is: LD DE,d16
 Instruction at 0xd4f is: LD HL,d16
-Instruction at 0xd52 is: LD C,d8
+Instruction at 0xd52 is: LD C,d8 3
 Instruction at 0xd54 is: CALL A16
-Instruction at 0xd57 is: LD A,d8
+Instruction at 0xd57 is: LD A,d8 19
 Instruction at 0xd59 is: LDH (A8),A
 Instruction at 0xd5b is: LDH A,A8
 Instruction at 0xd5d is: AND A
 Instruction at 0xd5e is: JR Z,r8
 Instruction at 0xd60 is: LD HL,d16
-Instruction at 0xd63 is: LD (HL),d8
-Instruction at 0xd65 is: LD A,d8
+Instruction at 0xd63 is: LD (HL),d8 80
+Instruction at 0xd65 is: LD A,d8 3
 Instruction at 0xd67 is: CALL A16
-Instruction at 0xd6a is: LD A,d8
+Instruction at 0xd6a is: LD A,d8 20
 Instruction at 0xd6c is: LDH (A8),A
-Instruction at 0xd6e is: LD A,d8
+Instruction at 0xd6e is: LD A,d8 9
 Instruction at 0xd70 is: LD (A16),A
 Instruction at 0xd73 is: LDH A,A8
-Instruction at 0xd75 is: CP D8
+Instruction at 0xd75 is: CP D8 5
 Instruction at 0xd77 is: RET NZ
-Instruction at 0xd78 is: LD A,d8
+Instruction at 0xd78 is: LD A,d8 11
 Instruction at 0xd7a is: LD (A16),A
 Instruction at 0xd7d is: RET
 Instruction at 0xd7e is: LDH A,A8
-Instruction at 0xd80 is: CP D8
+Instruction at 0xd80 is: CP D8 5
 Instruction at 0xd82 is: JR NZ,r8
 Instruction at 0xd84 is: LDH A,A8
 Instruction at 0xd86 is: AND A
@@ -1768,25 +1768,25 @@ Instruction at 0xd89 is: JR r8
 Instruction at 0xd8b is: LDH A,A8
 Instruction at 0xd8d is: CBPREFIX
 Instruction at 0xd8f is: JR Z,r8
-Instruction at 0xd91 is: LD A,d8
+Instruction at 0xd91 is: LD A,d8 60
 Instruction at 0xd93 is: LDH (A8),A
 Instruction at 0xd95 is: LDH (A8),A
 Instruction at 0xd97 is: JR r8
-Instruction at 0xd99 is: LD A,d8
+Instruction at 0xd99 is: LD A,d8 1
 Instruction at 0xd9b is: LDH (A8),A
 Instruction at 0xd9d is: LDH A,A8
 Instruction at 0xd9f is: JR Z,r8
 Instruction at 0xda1 is: LDH A,A8
-Instruction at 0xda3 is: CP D8
+Instruction at 0xda3 is: CP D8 29
 Instruction at 0xda5 is: JR Z,r8
 Instruction at 0xda7 is: LDH A,A8
-Instruction at 0xda9 is: CP D8
+Instruction at 0xda9 is: CP D8 60
 Instruction at 0xdab is: JR Z,r8
 Instruction at 0xdad is: CALL A16
-Instruction at 0xdb0 is: LD A,d8
+Instruction at 0xdb0 is: LD A,d8 3
 Instruction at 0xdb2 is: CALL A16
 Instruction at 0xdb5 is: RET
-Instruction at 0xdb6 is: LD A,d8
+Instruction at 0xdb6 is: LD A,d8 1f
 Instruction at 0xdb8 is: LDH (A8),A
 Instruction at 0xdba is: LDH (A8),A
 Instruction at 0xdbc is: RET
@@ -1795,60 +1795,60 @@ Instruction at 0xdbf is: AND A
 Instruction at 0xdc0 is: JR NZ,r8
 Instruction at 0xdc2 is: LD HL,d16
 Instruction at 0xdc5 is: DEC (HL)
-Instruction at 0xdc6 is: LD A,d8
+Instruction at 0xdc6 is: LD A,d8 19
 Instruction at 0xdc8 is: LDH (A8),A
 Instruction at 0xdca is: CALL A16
 Instruction at 0xdcd is: LD HL,d16
 Instruction at 0xdd0 is: LD A,(HL)
-Instruction at 0xdd1 is: XOR D8
+Instruction at 0xdd1 is: XOR D8 30
 Instruction at 0xdd3 is: LD (HL+),A
-Instruction at 0xdd4 is: CP D8
-Instruction at 0xdd6 is: CALL Z,A1
+Instruction at 0xdd4 is: CP D8 60
+Instruction at 0xdd6 is: CALL Z,A16
 Instruction at 0xdd9 is: INC L
 Instruction at 0xdda is: PUSH AF
 Instruction at 0xddb is: LD A,(HL)
-Instruction at 0xddc is: XOR D8
+Instruction at 0xddc is: XOR D8 1
 Instruction at 0xdde is: LD (HL),A
-Instruction at 0xddf is: LD L,d8
+Instruction at 0xddf is: LD L,d8 13
 Instruction at 0xde1 is: LD (HL-),A
 Instruction at 0xde2 is: POP AF
 Instruction at 0xde3 is: DEC L
 Instruction at 0xde4 is: LD (HL),A
 Instruction at 0xde5 is: LDH A,A8
-Instruction at 0xde7 is: CP D8
+Instruction at 0xde7 is: CP D8 5
 Instruction at 0xde9 is: JR NZ,r8
 Instruction at 0xdeb is: LDH A,A8
 Instruction at 0xded is: LD HL,d16
-Instruction at 0xdf0 is: CP D8
+Instruction at 0xdf0 is: CP D8 6
 Instruction at 0xdf2 is: JR Z,r8
-Instruction at 0xdf4 is: CP D8
+Instruction at 0xdf4 is: CP D8 8
 Instruction at 0xdf6 is: JR NC,r8
 Instruction at 0xdf8 is: LD A,(HL)
-Instruction at 0xdf9 is: CP D8
+Instruction at 0xdf9 is: CP D8 72
 Instruction at 0xdfb is: JR NC,r8
-Instruction at 0xdfd is: CP D8
+Instruction at 0xdfd is: CP D8 69
 Instruction at 0xdff is: RET Z
 Instruction at 0xe00 is: INC (HL)
 Instruction at 0xe01 is: INC (HL)
 Instruction at 0xe02 is: RET
-Instruction at 0xe03 is: LD (HL),d8
+Instruction at 0xe03 is: LD (HL),d8 69
 Instruction at 0xe05 is: INC L
 Instruction at 0xe06 is: INC L
-Instruction at 0xe07 is: LD (HL),d8
-Instruction at 0xe09 is: LD A,d8
+Instruction at 0xe07 is: LD (HL),d8 57
+Instruction at 0xe09 is: LD A,d8 6
 Instruction at 0xe0b is: LD (A16),A
 Instruction at 0xe0e is: RET
 Instruction at 0xe0f is: DEC L
-Instruction at 0xe10 is: LD (HL),d8
+Instruction at 0xe10 is: LD (HL),d8 80
 Instruction at 0xe12 is: RET
 Instruction at 0xe13 is: LDH A,A8
 Instruction at 0xe15 is: AND A
 Instruction at 0xe16 is: RET NZ
-Instruction at 0xe17 is: LD A,d8
+Instruction at 0xe17 is: LD A,d8 f
 Instruction at 0xe19 is: LDH (A8),A
 Instruction at 0xe1b is: LD HL,d16
 Instruction at 0xe1e is: LD A,(HL)
-Instruction at 0xe1f is: XOR D8
+Instruction at 0xe1f is: XOR D8 1
 Instruction at 0xe21 is: LD (HL),A
 Instruction at 0xe22 is: RET
 Instruction at 0xe23 is: LDH A,A8
@@ -1863,33 +1863,33 @@ Instruction at 0xe2f is: LDH (A8),A
 Instruction at 0xe31 is: CALL A16
 Instruction at 0xe34 is: LD DE,d16
 Instruction at 0xe37 is: LDH A,A8
-Instruction at 0xe39 is: CP D8
+Instruction at 0xe39 is: CP D8 29
 Instruction at 0xe3b is: JR Z,r8
 Instruction at 0xe3d is: LD DE,d16
 Instruction at 0xe40 is: LD HL,d16
-Instruction at 0xe43 is: LD C,d8
+Instruction at 0xe43 is: LD C,d8 2
 Instruction at 0xe45 is: CALL A16
-Instruction at 0xe48 is: LD A,d8
+Instruction at 0xe48 is: LD A,d8 19
 Instruction at 0xe4a is: LDH (A8),A
 Instruction at 0xe4c is: LDH A,A8
 Instruction at 0xe4e is: AND A
 Instruction at 0xe4f is: JR Z,r8
 Instruction at 0xe51 is: LD HL,d16
-Instruction at 0xe54 is: LD (HL),d8
-Instruction at 0xe56 is: LD A,d8
+Instruction at 0xe54 is: LD (HL),d8 80
+Instruction at 0xe56 is: LD A,d8 2
 Instruction at 0xe58 is: CALL A16
-Instruction at 0xe5b is: LD A,d8
+Instruction at 0xe5b is: LD A,d8 21
 Instruction at 0xe5d is: LDH (A8),A
-Instruction at 0xe5f is: LD A,d8
+Instruction at 0xe5f is: LD A,d8 9
 Instruction at 0xe61 is: LD (A16),A
 Instruction at 0xe64 is: LDH A,A8
-Instruction at 0xe66 is: CP D8
+Instruction at 0xe66 is: CP D8 5
 Instruction at 0xe68 is: RET NZ
-Instruction at 0xe69 is: LD A,d8
+Instruction at 0xe69 is: LD A,d8 11
 Instruction at 0xe6b is: LD (A16),A
 Instruction at 0xe6e is: RET
 Instruction at 0xe6f is: LDH A,A8
-Instruction at 0xe71 is: CP D8
+Instruction at 0xe71 is: CP D8 5
 Instruction at 0xe73 is: JR NZ,r8
 Instruction at 0xe75 is: LDH A,A8
 Instruction at 0xe77 is: AND A
@@ -1898,25 +1898,25 @@ Instruction at 0xe7a is: JR r8
 Instruction at 0xe7c is: LDH A,A8
 Instruction at 0xe7e is: CBPREFIX
 Instruction at 0xe80 is: JR Z,r8
-Instruction at 0xe82 is: LD A,d8
+Instruction at 0xe82 is: LD A,d8 60
 Instruction at 0xe84 is: LDH (A8),A
 Instruction at 0xe86 is: LDH (A8),A
 Instruction at 0xe88 is: JR r8
-Instruction at 0xe8a is: LD A,d8
+Instruction at 0xe8a is: LD A,d8 1
 Instruction at 0xe8c is: LDH (A8),A
 Instruction at 0xe8e is: LDH A,A8
 Instruction at 0xe90 is: JR Z,r8
 Instruction at 0xe92 is: LDH A,A8
-Instruction at 0xe94 is: CP D8
+Instruction at 0xe94 is: CP D8 29
 Instruction at 0xe96 is: JR Z,r8
 Instruction at 0xe98 is: LDH A,A8
-Instruction at 0xe9a is: CP D8
+Instruction at 0xe9a is: CP D8 60
 Instruction at 0xe9c is: JR Z,r8
 Instruction at 0xe9e is: CALL A16
-Instruction at 0xea1 is: LD A,d8
+Instruction at 0xea1 is: LD A,d8 2
 Instruction at 0xea3 is: CALL A16
 Instruction at 0xea6 is: RET
-Instruction at 0xea7 is: LD A,d8
+Instruction at 0xea7 is: LD A,d8 1f
 Instruction at 0xea9 is: LDH (A8),A
 Instruction at 0xeab is: LDH (A8),A
 Instruction at 0xead is: RET
@@ -1925,34 +1925,34 @@ Instruction at 0xeb0 is: AND A
 Instruction at 0xeb1 is: JR NZ,r8
 Instruction at 0xeb3 is: LD HL,d16
 Instruction at 0xeb6 is: DEC (HL)
-Instruction at 0xeb7 is: LD A,d8
+Instruction at 0xeb7 is: LD A,d8 19
 Instruction at 0xeb9 is: LDH (A8),A
 Instruction at 0xebb is: CALL A16
 Instruction at 0xebe is: LD HL,d16
 Instruction at 0xec1 is: LD A,(HL)
-Instruction at 0xec2 is: XOR D8
+Instruction at 0xec2 is: XOR D8 8
 Instruction at 0xec4 is: LD (HL+),A
-Instruction at 0xec5 is: CP D8
-Instruction at 0xec7 is: CALL Z,A1
+Instruction at 0xec5 is: CP D8 68
+Instruction at 0xec7 is: CALL Z,A16
 Instruction at 0xeca is: INC L
 Instruction at 0xecb is: LD A,(HL)
-Instruction at 0xecc is: XOR D8
+Instruction at 0xecc is: XOR D8 1
 Instruction at 0xece is: LD (HL),A
 Instruction at 0xecf is: LDH A,A8
-Instruction at 0xed1 is: CP D8
+Instruction at 0xed1 is: CP D8 5
 Instruction at 0xed3 is: JR NZ,r8
 Instruction at 0xed5 is: LDH A,A8
 Instruction at 0xed7 is: LD HL,d16
-Instruction at 0xeda is: CP D8
+Instruction at 0xeda is: CP D8 5
 Instruction at 0xedc is: JR Z,r8
-Instruction at 0xede is: CP D8
+Instruction at 0xede is: CP D8 6
 Instruction at 0xee0 is: JR Z,r8
-Instruction at 0xee2 is: CP D8
+Instruction at 0xee2 is: CP D8 8
 Instruction at 0xee4 is: JR NC,r8
 Instruction at 0xee6 is: LD A,(HL)
-Instruction at 0xee7 is: CP D8
+Instruction at 0xee7 is: CP D8 72
 Instruction at 0xee9 is: JR NC,r8
-Instruction at 0xeeb is: CP D8
+Instruction at 0xeeb is: CP D8 61
 Instruction at 0xeed is: RET Z
 Instruction at 0xeee is: INC (HL)
 Instruction at 0xeef is: INC (HL)
@@ -1960,41 +1960,41 @@ Instruction at 0xef0 is: INC (HL)
 Instruction at 0xef1 is: INC (HL)
 Instruction at 0xef2 is: RET
 Instruction at 0xef3 is: DEC L
-Instruction at 0xef4 is: LD (HL),d8
+Instruction at 0xef4 is: LD (HL),d8 0
 Instruction at 0xef6 is: INC L
-Instruction at 0xef7 is: LD (HL),d8
+Instruction at 0xef7 is: LD (HL),d8 61
 Instruction at 0xef9 is: INC L
 Instruction at 0xefa is: INC L
-Instruction at 0xefb is: LD (HL),d8
-Instruction at 0xefd is: LD A,d8
+Instruction at 0xefb is: LD (HL),d8 56
+Instruction at 0xefd is: LD A,d8 6
 Instruction at 0xeff is: LD (A16),A
 Instruction at 0xf02 is: RET
 Instruction at 0xf03 is: DEC L
-Instruction at 0xf04 is: LD (HL),d8
+Instruction at 0xf04 is: LD (HL),d8 80
 Instruction at 0xf06 is: RET
 Instruction at 0xf07 is: LDH A,A8
 Instruction at 0xf09 is: AND A
 Instruction at 0xf0a is: RET NZ
-Instruction at 0xf0b is: LD A,d8
+Instruction at 0xf0b is: LD A,d8 f
 Instruction at 0xf0d is: LDH (A8),A
 Instruction at 0xf0f is: LD HL,d16
 Instruction at 0xf12 is: LD A,(HL)
-Instruction at 0xf13 is: XOR D8
+Instruction at 0xf13 is: XOR D8 1
 Instruction at 0xf15 is: LD (HL),A
 Instruction at 0xf16 is: RET
 Instruction at 0xf17 is: PUSH AF
 Instruction at 0xf18 is: PUSH HL
 Instruction at 0xf19 is: LDH A,A8
-Instruction at 0xf1b is: CP D8
+Instruction at 0xf1b is: CP D8 5
 Instruction at 0xf1d is: JR Z,r8
 Instruction at 0xf1f is: LDH A,A8
-Instruction at 0xf21 is: CP D8
+Instruction at 0xf21 is: CP D8 5
 Instruction at 0xf23 is: JR Z,r8
 Instruction at 0xf25 is: LDH A,A8
-Instruction at 0xf27 is: CP D8
+Instruction at 0xf27 is: CP D8 29
 Instruction at 0xf29 is: JR NZ,r8
 Instruction at 0xf2b is: LD HL,d16
-Instruction at 0xf2e is: LD B,d8
+Instruction at 0xf2e is: LD B,d8 24
 Instruction at 0xf30 is: LD DE,d16
 Instruction at 0xf33 is: LD A,(DE)
 Instruction at 0xf34 is: LD (HL+),A
@@ -2012,14 +2012,14 @@ Instruction at 0xf41 is: JR Z,r8
 Instruction at 0xf43 is: NOP
 Instruction at 0xf44 is: LD B,D
 Instruction at 0xf45 is: LD B,B
-Instruction at 0xf46 is: LD C,d8
+Instruction at 0xf46 is: LD C,d8 0
 Instruction at 0xf48 is: LD B,D
 Instruction at 0xf49 is: LD C,B
 Instruction at 0xf4a is: INC E
 Instruction at 0xf4b is: NOP
 Instruction at 0xf4c is: LD B,D
 Instruction at 0xf4d is: LD E,B
-Instruction at 0xf4e is: LD C,d8
+Instruction at 0xf4e is: LD C,d8 0
 Instruction at 0xf50 is: LD B,D
 Instruction at 0xf51 is: LD H,B
 Instruction at 0xf52 is: DEC E
@@ -2038,7 +2038,7 @@ Instruction at 0xf5e is: DEC E
 Instruction at 0xf5f is: NOP
 Instruction at 0xf60 is: LD HL,d16
 Instruction at 0xf63 is: LD DE,d16
-Instruction at 0xf66 is: LD B,d8
+Instruction at 0xf66 is: LD B,d8 9
 Instruction at 0xf68 is: XOR A
 Instruction at 0xf69 is: LD (HL),A
 Instruction at 0xf6a is: ADD HL,DE
@@ -2052,34 +2052,34 @@ Instruction at 0xf78 is: CALL A16
 Instruction at 0xf7b is: CALL A16
 Instruction at 0xf7e is: LD HL,d16
 Instruction at 0xf81 is: LD DE,d16
-Instruction at 0xf84 is: LD B,d8
+Instruction at 0xf84 is: LD B,d8 4
 Instruction at 0xf86 is: CALL A16
 Instruction at 0xf89 is: LD HL,d16
-Instruction at 0xf8c is: LD B,d8
+Instruction at 0xf8c is: LD B,d8 6
 Instruction at 0xf8e is: CALL A16
 Instruction at 0xf91 is: LDH A,A8
-Instruction at 0xf93 is: CP D8
+Instruction at 0xf93 is: CP D8 29
 Instruction at 0xf95 is: JR NZ,r8
 Instruction at 0xf97 is: LD HL,d16
-Instruction at 0xf9a is: LD (HL),d8
+Instruction at 0xf9a is: LD (HL),d8 bd
 Instruction at 0xf9c is: INC L
-Instruction at 0xf9d is: LD (HL),d8
+Instruction at 0xf9d is: LD (HL),d8 b2
 Instruction at 0xf9f is: INC L
-Instruction at 0xfa0 is: LD (HL),d8
+Instruction at 0xfa0 is: LD (HL),d8 2e
 Instruction at 0xfa2 is: INC L
-Instruction at 0xfa3 is: LD (HL),d8
+Instruction at 0xfa3 is: LD (HL),d8 be
 Instruction at 0xfa5 is: INC L
-Instruction at 0xfa6 is: LD (HL),d8
+Instruction at 0xfa6 is: LD (HL),d8 2e
 Instruction at 0xfa8 is: LD HL,d16
-Instruction at 0xfab is: LD (HL),d8
+Instruction at 0xfab is: LD (HL),d8 b4
 Instruction at 0xfad is: INC L
-Instruction at 0xfae is: LD (HL),d8
+Instruction at 0xfae is: LD (HL),d8 b5
 Instruction at 0xfb0 is: INC L
-Instruction at 0xfb1 is: LD (HL),d8
+Instruction at 0xfb1 is: LD (HL),d8 bb
 Instruction at 0xfb3 is: INC L
-Instruction at 0xfb4 is: LD (HL),d8
+Instruction at 0xfb4 is: LD (HL),d8 2e
 Instruction at 0xfb6 is: INC L
-Instruction at 0xfb7 is: LD (HL),d8
+Instruction at 0xfb7 is: LD (HL),d8 bc
 Instruction at 0xfb9 is: LDH A,A8
 Instruction at 0xfbb is: AND A
 Instruction at 0xfbc is: JR NZ,r8
@@ -2087,84 +2087,84 @@ Instruction at 0xfbe is: CALL A16
 Instruction at 0xfc1 is: LDH A,A8
 Instruction at 0xfc3 is: AND A
 Instruction at 0xfc4 is: JR Z,r8
-Instruction at 0xfc6 is: CP D8
+Instruction at 0xfc6 is: CP D8 5
 Instruction at 0xfc8 is: JR NZ,r8
 Instruction at 0xfca is: LD HL,d16
-Instruction at 0xfcd is: LD B,d8
+Instruction at 0xfcd is: LD B,d8 b
 Instruction at 0xfcf is: LDH A,A8
-Instruction at 0xfd1 is: CP D8
+Instruction at 0xfd1 is: CP D8 29
 Instruction at 0xfd3 is: LD DE,d16
 Instruction at 0xfd6 is: JR Z,r8
 Instruction at 0xfd8 is: LD DE,d16
 Instruction at 0xfdb is: CALL A16
-Instruction at 0xfde is: LD A,d8
+Instruction at 0xfde is: LD A,d8 4
 Instruction at 0xfe0 is: LD C,A
 Instruction at 0xfe1 is: LDH A,A8
-Instruction at 0xfe3 is: CP D8
-Instruction at 0xfe5 is: LD A,d8
+Instruction at 0xfe3 is: CP D8 29
+Instruction at 0xfe5 is: LD A,d8 93
 Instruction at 0xfe7 is: JR NZ,r8
-Instruction at 0xfe9 is: LD A,d8
+Instruction at 0xfe9 is: LD A,d8 8f
 Instruction at 0xfeb is: LDH (A8),A
 Instruction at 0xfed is: LD HL,d16
 Instruction at 0xff0 is: CALL A16
 Instruction at 0xff3 is: LDH A,A8
 Instruction at 0xff5 is: AND A
 Instruction at 0xff6 is: JR Z,r8
-Instruction at 0xff8 is: LD A,d8
+Instruction at 0xff8 is: LD A,d8 ac
 Instruction at 0xffa is: LDH (A8),A
 Instruction at 0xffc is: LD HL,d16
-Instruction at 0xfff is: LD C,d8
+Instruction at 0xfff is: LD C,d8 1
 Instruction at 0x1001 is: CALL A16
 Instruction at 0x1004 is: LD HL,d16
 Instruction at 0x1007 is: LD DE,d16
-Instruction at 0x100a is: LD B,d8
+Instruction at 0x100a is: LD B,d8 9
 Instruction at 0x100c is: CALL A16
 Instruction at 0x100f is: LDH A,A8
 Instruction at 0x1011 is: AND A
 Instruction at 0x1012 is: JR Z,r8
-Instruction at 0x1014 is: CP D8
+Instruction at 0x1014 is: CP D8 5
 Instruction at 0x1016 is: JR NZ,r8
 Instruction at 0x1018 is: LD HL,d16
-Instruction at 0x101b is: LD B,d8
+Instruction at 0x101b is: LD B,d8 b
 Instruction at 0x101d is: LDH A,A8
-Instruction at 0x101f is: CP D8
+Instruction at 0x101f is: CP D8 29
 Instruction at 0x1021 is: LD DE,d16
 Instruction at 0x1024 is: JR Z,r8
 Instruction at 0x1026 is: LD DE,d16
 Instruction at 0x1029 is: CALL A16
-Instruction at 0x102c is: LD A,d8
+Instruction at 0x102c is: LD A,d8 4
 Instruction at 0x102e is: LD C,A
 Instruction at 0x102f is: LDH A,A8
-Instruction at 0x1031 is: CP D8
-Instruction at 0x1033 is: LD A,d8
+Instruction at 0x1031 is: CP D8 29
+Instruction at 0x1033 is: LD A,d8 8f
 Instruction at 0x1035 is: JR NZ,r8
-Instruction at 0x1037 is: LD A,d8
+Instruction at 0x1037 is: LD A,d8 93
 Instruction at 0x1039 is: LDH (A8),A
 Instruction at 0x103b is: LD HL,d16
 Instruction at 0x103e is: CALL A16
 Instruction at 0x1041 is: LDH A,A8
 Instruction at 0x1043 is: AND A
 Instruction at 0x1044 is: JR Z,r8
-Instruction at 0x1046 is: LD A,d8
+Instruction at 0x1046 is: LD A,d8 ac
 Instruction at 0x1048 is: LDH (A8),A
 Instruction at 0x104a is: LD HL,d16
-Instruction at 0x104d is: LD C,d8
+Instruction at 0x104d is: LD C,d8 1
 Instruction at 0x104f is: CALL A16
 Instruction at 0x1052 is: LDH A,A8
 Instruction at 0x1054 is: AND A
 Instruction at 0x1055 is: JR Z,r8
 Instruction at 0x1057 is: LD HL,d16
 Instruction at 0x105a is: LD DE,d16
-Instruction at 0x105d is: LD B,d8
+Instruction at 0x105d is: LD B,d8 6
 Instruction at 0x105f is: CALL A16
-Instruction at 0x1062 is: LD A,d8
+Instruction at 0x1062 is: LD A,d8 d3
 Instruction at 0x1064 is: LDH (A8),A
 Instruction at 0x1066 is: CALL A16
 Instruction at 0x1069 is: RET
 Instruction at 0x106a is: LDH A,A8
 Instruction at 0x106c is: PUSH HL
 Instruction at 0x106d is: LD DE,d16
-Instruction at 0x1070 is: LD B,d8
+Instruction at 0x1070 is: LD B,d8 2
 Instruction at 0x1072 is: PUSH HL
 Instruction at 0x1073 is: LD (HL+),A
 Instruction at 0x1074 is: INC A
@@ -2192,20 +2192,20 @@ Instruction at 0x1095 is: LDH A,A8
 Instruction at 0x1097 is: AND A
 Instruction at 0x1098 is: JR NZ,r8
 Instruction at 0x109a is: LD A,(HL)
-Instruction at 0x109b is: CP D8
+Instruction at 0x109b is: CP D8 4
 Instruction at 0x109d is: JR Z,r8
 Instruction at 0x109f is: LD A,(DE)
-Instruction at 0x10a0 is: CP D8
+Instruction at 0x10a0 is: CP D8 4
 Instruction at 0x10a2 is: RET NZ
-Instruction at 0x10a3 is: LD A,d8
+Instruction at 0x10a3 is: LD A,d8 5
 Instruction at 0x10a5 is: LD (DE), A
 Instruction at 0x10a6 is: JR r8
 Instruction at 0x10a8 is: LD A,(DE)
-Instruction at 0x10a9 is: CP D8
+Instruction at 0x10a9 is: CP D8 3
 Instruction at 0x10ab is: RET NZ
-Instruction at 0x10ac is: LD A,d8
+Instruction at 0x10ac is: LD A,d8 3
 Instruction at 0x10ae is: JR r8
-Instruction at 0x10b0 is: LD (HL),d8
+Instruction at 0x10b0 is: LD (HL),d8 5
 Instruction at 0x10b2 is: XOR A
 Instruction at 0x10b3 is: LDH (A8),A
 Instruction at 0x10b5 is: XOR A
@@ -2213,7 +2213,7 @@ Instruction at 0x10b6 is: LDH (A8),A
 Instruction at 0x10b8 is: LDH (A8),A
 Instruction at 0x10ba is: RET
 Instruction at 0x10bb is: LD A,(HL)
-Instruction at 0x10bc is: CP D8
+Instruction at 0x10bc is: CP D8 4
 Instruction at 0x10be is: JR NZ,r8
 Instruction at 0x10c0 is: LDH (A8),A
 Instruction at 0x10c2 is: XOR A
@@ -2222,11 +2222,11 @@ Instruction at 0x10c5 is: RET
 Instruction at 0x10c6 is: LDH (A8),A
 Instruction at 0x10c8 is: JR r8
 Instruction at 0x10ca is: LD A,(HL)
-Instruction at 0x10cb is: CP D8
+Instruction at 0x10cb is: CP D8 5
 Instruction at 0x10cd is: JR Z,r8
 Instruction at 0x10cf is: JR r8
 Instruction at 0x10d1 is: LD A,(DE)
-Instruction at 0x10d2 is: CP D8
+Instruction at 0x10d2 is: CP D8 5
 Instruction at 0x10d4 is: JR Z,r8
 Instruction at 0x10d6 is: JR r8
 Instruction at 0x10d8 is: PUSH BC
@@ -2240,7 +2240,7 @@ Instruction at 0x10e0 is: POP HL
 Instruction at 0x10e1 is: LD DE,d16
 Instruction at 0x10e4 is: ADD HL,DE
 Instruction at 0x10e5 is: POP BC
-Instruction at 0x10e6 is: LD A,d8
+Instruction at 0x10e6 is: LD A,d8 b6
 Instruction at 0x10e8 is: LD (HL+),A
 Instruction at 0x10e9 is: DEC B
 Instruction at 0x10ea is: JR NZ,r8
@@ -2250,21 +2250,21 @@ Instruction at 0x10ee is: OR C
 Instruction at 0x10ef is: OR D
 Instruction at 0x10f0 is: OR E
 Instruction at 0x10f1 is: OR C
-Instruction at 0x10f2 is: LD A,d8
+Instruction at 0x10f2 is: LD A,d8 b4
 Instruction at 0x10f4 is: OR L
 Instruction at 0x10f5 is: CP E
-Instruction at 0x10f6 is: LD L,d8
+Instruction at 0x10f6 is: LD L,d8 bc
 Instruction at 0x10f8 is: CPL
 Instruction at 0x10f9 is: DEC L
-Instruction at 0x10fa is: LD L,d8
-Instruction at 0x10fc is: LD C,d8
+Instruction at 0x10fa is: LD L,d8 3d
+Instruction at 0x10fc is: LD C,d8 3e
 Instruction at 0x10fe is: CP L
 Instruction at 0x10ff is: OR D
-Instruction at 0x1100 is: LD L,d8
-Instruction at 0x1102 is: LD L,d8
+Instruction at 0x1100 is: LD L,d8 be
+Instruction at 0x1102 is: LD L,d8 2f
 Instruction at 0x1104 is: DEC L
-Instruction at 0x1105 is: LD L,d8
-Instruction at 0x1107 is: LD C,d8
+Instruction at 0x1105 is: LD L,d8 3d
+Instruction at 0x1107 is: LD C,d8 3e
 Instruction at 0x1109 is: OR L
 Instruction at 0x110a is: OR B
 Instruction at 0x110b is: LD B,C
@@ -2274,7 +2274,7 @@ Instruction at 0x110e is: DEC E
 Instruction at 0x110f is: OR L
 Instruction at 0x1110 is: CP (HL)
 Instruction at 0x1111 is: OR C
-Instruction at 0x1112 is: LD A,d8
+Instruction at 0x1112 is: LD A,d8 1
 Instruction at 0x1114 is: LDH (A8),A
 Instruction at 0x1116 is: LDH A,A8
 Instruction at 0x1118 is: AND A
@@ -2282,19 +2282,19 @@ Instruction at 0x1119 is: RET NZ
 Instruction at 0x111a is: CALL A16
 Instruction at 0x111d is: XOR A
 Instruction at 0x111e is: LDH (A8),A
-Instruction at 0x1120 is: LD B,d8
-Instruction at 0x1122 is: LD C,d8
+Instruction at 0x1120 is: LD B,d8 27
+Instruction at 0x1122 is: LD C,d8 79
 Instruction at 0x1124 is: CALL A16
 Instruction at 0x1127 is: CALL A16
 Instruction at 0x112a is: LDH A,A8
-Instruction at 0x112c is: CP D8
+Instruction at 0x112c is: CP D8 5
 Instruction at 0x112e is: JR Z,r8
 Instruction at 0x1130 is: LDH A,A8
-Instruction at 0x1132 is: CP D8
+Instruction at 0x1132 is: CP D8 5
 Instruction at 0x1134 is: JR Z,r8
-Instruction at 0x1136 is: LD A,d8
+Instruction at 0x1136 is: LD A,d8 1
 Instruction at 0x1138 is: LDH (A8),A
-Instruction at 0x113a is: LD A,d8
+Instruction at 0x113a is: LD A,d8 16
 Instruction at 0x113c is: LDH (A8),A
 Instruction at 0x113e is: RET
 Instruction at 0x113f is: LDH A,A8
@@ -2303,12 +2303,12 @@ Instruction at 0x1142 is: JR Z,r8
 Instruction at 0x1144 is: XOR A
 Instruction at 0x1145 is: LDH (A8),A
 Instruction at 0x1147 is: LDH A,A8
-Instruction at 0x1149 is: CP D8
+Instruction at 0x1149 is: CP D8 29
 Instruction at 0x114b is: LDH A,A8
 Instruction at 0x114d is: JR NZ,r8
 Instruction at 0x114f is: CP B
 Instruction at 0x1150 is: JR Z,r8
-Instruction at 0x1152 is: LD A,d8
+Instruction at 0x1152 is: LD A,d8 2
 Instruction at 0x1154 is: LDH (A8),A
 Instruction at 0x1156 is: LDH (A8),A
 Instruction at 0x1158 is: POP HL
@@ -2326,33 +2326,33 @@ Instruction at 0x1166 is: RET
 Instruction at 0x1167 is: CALL A16
 Instruction at 0x116a is: LD HL,d16
 Instruction at 0x116d is: LD DE,d16
-Instruction at 0x1170 is: LD B,d8
+Instruction at 0x1170 is: LD B,d8 7
 Instruction at 0x1172 is: CALL A16
 Instruction at 0x1175 is: LD HL,d16
 Instruction at 0x1178 is: LD DE,d16
-Instruction at 0x117b is: LD B,d8
+Instruction at 0x117b is: LD B,d8 7
 Instruction at 0x117d is: CALL A16
 Instruction at 0x1180 is: LD HL,d16
-Instruction at 0x1183 is: LD (HL),d8
+Instruction at 0x1183 is: LD (HL),d8 72
 Instruction at 0x1185 is: INC L
-Instruction at 0x1186 is: LD (HL),d8
+Instruction at 0x1186 is: LD (HL),d8 c4
 Instruction at 0x1188 is: LD HL,d16
-Instruction at 0x118b is: LD (HL),d8
+Instruction at 0x118b is: LD (HL),d8 b7
 Instruction at 0x118d is: INC L
-Instruction at 0x118e is: LD (HL),d8
+Instruction at 0x118e is: LD (HL),d8 b8
 Instruction at 0x1190 is: LD DE,d16
 Instruction at 0x1193 is: LD HL,d16
-Instruction at 0x1196 is: LD C,d8
+Instruction at 0x1196 is: LD C,d8 3
 Instruction at 0x1198 is: CALL A16
-Instruction at 0x119b is: LD A,d8
+Instruction at 0x119b is: LD A,d8 3
 Instruction at 0x119d is: CALL A16
-Instruction at 0x11a0 is: LD A,d8
+Instruction at 0x11a0 is: LD A,d8 db
 Instruction at 0x11a2 is: LDH (A8),A
-Instruction at 0x11a4 is: LD A,d8
+Instruction at 0x11a4 is: LD A,d8 bb
 Instruction at 0x11a6 is: LDH (A8),A
-Instruction at 0x11a8 is: LD A,d8
+Instruction at 0x11a8 is: LD A,d8 27
 Instruction at 0x11aa is: LDH (A8),A
-Instruction at 0x11ac is: LD A,d8
+Instruction at 0x11ac is: LD A,d8 10
 Instruction at 0x11ae is: LD (A16),A
 Instruction at 0x11b1 is: RET
 Instruction at 0x11b2 is: CALL A16
@@ -2363,27 +2363,27 @@ Instruction at 0x11be is: LD HL,d16
 Instruction at 0x11c1 is: CALL A16
 Instruction at 0x11c4 is: LD HL,d16
 Instruction at 0x11c7 is: LD DE,d16
-Instruction at 0x11ca is: LD B,d8
+Instruction at 0x11ca is: LD B,d8 4
 Instruction at 0x11cc is: CALL A16
 Instruction at 0x11cf is: LD HL,d16
 Instruction at 0x11d2 is: LD DE,d16
-Instruction at 0x11d5 is: LD B,d8
+Instruction at 0x11d5 is: LD B,d8 7
 Instruction at 0x11d7 is: CALL A16
 Instruction at 0x11da is: LD HL,d16
 Instruction at 0x11dd is: LD DE,d16
-Instruction at 0x11e0 is: LD B,d8
+Instruction at 0x11e0 is: LD B,d8 7
 Instruction at 0x11e2 is: CALL A16
 Instruction at 0x11e5 is: RET
 Instruction at 0x11e6 is: LDH A,A8
 Instruction at 0x11e8 is: AND A
 Instruction at 0x11e9 is: RET NZ
 Instruction at 0x11ea is: LD HL,d16
-Instruction at 0x11ed is: LD (HL),d8
-Instruction at 0x11ef is: LD L,d8
-Instruction at 0x11f1 is: LD (HL),d8
-Instruction at 0x11f3 is: LD A,d8
+Instruction at 0x11ed is: LD (HL),d8 0
+Instruction at 0x11ef is: LD L,d8 20
+Instruction at 0x11f1 is: LD (HL),d8 0
+Instruction at 0x11f3 is: LD A,d8 ff
 Instruction at 0x11f5 is: LDH (A8),A
-Instruction at 0x11f7 is: LD A,d8
+Instruction at 0x11f7 is: LD A,d8 28
 Instruction at 0x11f9 is: LDH (A8),A
 Instruction at 0x11fb is: RET
 Instruction at 0x11fc is: LDH A,A8
@@ -2391,15 +2391,15 @@ Instruction at 0x11fe is: AND A
 Instruction at 0x11ff is: JR Z,r8
 Instruction at 0x1201 is: CALL A16
 Instruction at 0x1204 is: RET
-Instruction at 0x1205 is: LD A,d8
+Instruction at 0x1205 is: LD A,d8 29
 Instruction at 0x1207 is: LDH (A8),A
 Instruction at 0x1209 is: LD HL,d16
-Instruction at 0x120c is: LD (HL),d8
-Instruction at 0x120e is: LD L,d8
-Instruction at 0x1210 is: LD (HL),d8
-Instruction at 0x1212 is: LD A,d8
+Instruction at 0x120c is: LD (HL),d8 35
+Instruction at 0x120e is: LD L,d8 23
+Instruction at 0x1210 is: LD (HL),d8 35
+Instruction at 0x1212 is: LD A,d8 ff
 Instruction at 0x1214 is: LDH (A8),A
-Instruction at 0x1216 is: LD A,d8
+Instruction at 0x1216 is: LD A,d8 2f
 Instruction at 0x1218 is: CALL A16
 Instruction at 0x121b is: RET
 Instruction at 0x121c is: LDH A,A8
@@ -2407,10 +2407,10 @@ Instruction at 0x121e is: AND A
 Instruction at 0x121f is: JR Z,r8
 Instruction at 0x1221 is: CALL A16
 Instruction at 0x1224 is: RET
-Instruction at 0x1225 is: LD A,d8
+Instruction at 0x1225 is: LD A,d8 2
 Instruction at 0x1227 is: LDH (A8),A
 Instruction at 0x1229 is: LD HL,d16
-Instruction at 0x122c is: LD B,d8
+Instruction at 0x122c is: LD B,d8 2f
 Instruction at 0x122e is: CALL A16
 Instruction at 0x1231 is: LD HL,d16
 Instruction at 0x1234 is: CALL A16
@@ -2422,28 +2422,28 @@ Instruction at 0x1243 is: RET
 Instruction at 0x1244 is: LDH A,A8
 Instruction at 0x1246 is: AND A
 Instruction at 0x1247 is: JR NZ,r8
-Instruction at 0x1249 is: LD A,d8
+Instruction at 0x1249 is: LD A,d8 a
 Instruction at 0x124b is: LDH (A8),A
 Instruction at 0x124d is: LD HL,d16
 Instruction at 0x1250 is: DEC (HL)
 Instruction at 0x1251 is: LD A,(HL)
-Instruction at 0x1252 is: CP D8
+Instruction at 0x1252 is: CP D8 58
 Instruction at 0x1254 is: JR NZ,r8
 Instruction at 0x1256 is: LD HL,d16
-Instruction at 0x1259 is: LD (HL),d8
+Instruction at 0x1259 is: LD (HL),d8 0
 Instruction at 0x125b is: INC L
-Instruction at 0x125c is: ADD A,D8
+Instruction at 0x125c is: ADD A,D8 20
 Instruction at 0x125e is: LD (HL+),A
-Instruction at 0x125f is: LD (HL),d8
+Instruction at 0x125f is: LD (HL),d8 4c
 Instruction at 0x1261 is: INC L
-Instruction at 0x1262 is: LD (HL),d8
-Instruction at 0x1264 is: LD L,d8
-Instruction at 0x1266 is: LD (HL),d8
-Instruction at 0x1268 is: LD A,d8
+Instruction at 0x1262 is: LD (HL),d8 40
+Instruction at 0x1264 is: LD L,d8 20
+Instruction at 0x1266 is: LD (HL),d8 80
+Instruction at 0x1268 is: LD A,d8 3
 Instruction at 0x126a is: CALL A16
-Instruction at 0x126d is: LD A,d8
+Instruction at 0x126d is: LD A,d8 3
 Instruction at 0x126f is: LDH (A8),A
-Instruction at 0x1271 is: LD A,d8
+Instruction at 0x1271 is: LD A,d8 4
 Instruction at 0x1273 is: LD (A16),A
 Instruction at 0x1276 is: RET
 Instruction at 0x1277 is: CALL A16
@@ -2451,43 +2451,43 @@ Instruction at 0x127a is: RET
 Instruction at 0x127b is: LDH A,A8
 Instruction at 0x127d is: AND A
 Instruction at 0x127e is: JR NZ,r8
-Instruction at 0x1280 is: LD A,d8
+Instruction at 0x1280 is: LD A,d8 a
 Instruction at 0x1282 is: LDH (A8),A
 Instruction at 0x1284 is: LD HL,d16
 Instruction at 0x1287 is: DEC (HL)
-Instruction at 0x1288 is: LD L,d8
+Instruction at 0x1288 is: LD L,d8 1
 Instruction at 0x128a is: DEC (HL)
 Instruction at 0x128b is: LD A,(HL)
-Instruction at 0x128c is: CP D8
+Instruction at 0x128c is: CP D8 d0
 Instruction at 0x128e is: JR NZ,r8
-Instruction at 0x1290 is: LD A,d8
+Instruction at 0x1290 is: LD A,d8 9c
 Instruction at 0x1292 is: LDH (A8),A
-Instruction at 0x1294 is: LD A,d8
+Instruction at 0x1294 is: LD A,d8 82
 Instruction at 0x1296 is: LDH (A8),A
-Instruction at 0x1298 is: LD A,d8
+Instruction at 0x1298 is: LD A,d8 2c
 Instruction at 0x129a is: LDH (A8),A
 Instruction at 0x129c is: RET
 Instruction at 0x129d is: LDH A,A8
 Instruction at 0x129f is: AND A
 Instruction at 0x12a0 is: JR NZ,r8
-Instruction at 0x12a2 is: LD A,d8
+Instruction at 0x12a2 is: LD A,d8 6
 Instruction at 0x12a4 is: LDH (A8),A
 Instruction at 0x12a6 is: LD HL,d16
 Instruction at 0x12a9 is: LD A,(HL)
-Instruction at 0x12aa is: XOR D8
+Instruction at 0x12aa is: XOR D8 1
 Instruction at 0x12ac is: LD (HL),A
-Instruction at 0x12ad is: LD A,d8
+Instruction at 0x12ad is: LD A,d8 3
 Instruction at 0x12af is: CALL A16
 Instruction at 0x12b2 is: RET
 Instruction at 0x12b3 is: LDH A,A8
 Instruction at 0x12b5 is: AND A
 Instruction at 0x12b6 is: RET NZ
-Instruction at 0x12b7 is: LD A,d8
+Instruction at 0x12b7 is: LD A,d8 6
 Instruction at 0x12b9 is: LDH (A8),A
 Instruction at 0x12bb is: LDH A,A8
-Instruction at 0x12bd is: SUB D8
+Instruction at 0x12bd is: SUB D8 82
 Instruction at 0x12bf is: LD E,A
-Instruction at 0x12c0 is: LD D,d8
+Instruction at 0x12c0 is: LD D,d8 0
 Instruction at 0x12c2 is: LD HL,d16
 Instruction at 0x12c5 is: ADD HL,DE
 Instruction at 0x12c6 is: PUSH HL
@@ -2501,21 +2501,21 @@ Instruction at 0x12cf is: CALL A16
 Instruction at 0x12d2 is: PUSH HL
 Instruction at 0x12d3 is: LD DE,d16
 Instruction at 0x12d6 is: ADD HL,DE
-Instruction at 0x12d7 is: LD B,d8
+Instruction at 0x12d7 is: LD B,d8 b6
 Instruction at 0x12d9 is: CALL A16
 Instruction at 0x12dc is: POP HL
 Instruction at 0x12dd is: INC HL
-Instruction at 0x12de is: LD A,d8
+Instruction at 0x12de is: LD A,d8 2
 Instruction at 0x12e0 is: LD (A16),A
 Instruction at 0x12e3 is: LD A,H
 Instruction at 0x12e4 is: LDH (A8),A
 Instruction at 0x12e6 is: LD A,L
 Instruction at 0x12e7 is: LDH (A8),A
-Instruction at 0x12e9 is: CP D8
+Instruction at 0x12e9 is: CP D8 92
 Instruction at 0x12eb is: RET NZ
-Instruction at 0x12ec is: LD A,d8
+Instruction at 0x12ec is: LD A,d8 ff
 Instruction at 0x12ee is: LDH (A8),A
-Instruction at 0x12f0 is: LD A,d8
+Instruction at 0x12f0 is: LD A,d8 2d
 Instruction at 0x12f2 is: LDH (A8),A
 Instruction at 0x12f4 is: RET
 Instruction at 0x12f5 is: OR E
@@ -2529,56 +2529,56 @@ Instruction at 0x12fc is: OR D
 Instruction at 0x12fd is: CP L
 Instruction at 0x12fe is: OR L
 Instruction at 0x12ff is: DEC E
-Instruction at 0x1300 is: LD L,d8
+Instruction at 0x1300 is: LD L,d8 bc
 Instruction at 0x1302 is: DEC A
-Instruction at 0x1303 is: LD C,d8
+Instruction at 0x1303 is: LD C,d8 3e
 Instruction at 0x1305 is: LDH A,A8
 Instruction at 0x1307 is: AND A
 Instruction at 0x1308 is: RET NZ
 Instruction at 0x1309 is: CALL A16
 Instruction at 0x130c is: CALL A16
 Instruction at 0x130f is: CALL A16
-Instruction at 0x1312 is: LD A,d8
+Instruction at 0x1312 is: LD A,d8 93
 Instruction at 0x1314 is: LDH (A8),A
-Instruction at 0x1316 is: LD A,d8
+Instruction at 0x1316 is: LD A,d8 5
 Instruction at 0x1318 is: LDH (A8),A
 Instruction at 0x131a is: RET
 Instruction at 0x131b is: LDH A,A8
 Instruction at 0x131d is: AND A
 Instruction at 0x131e is: RET NZ
-Instruction at 0x131f is: LD A,d8
+Instruction at 0x131f is: LD A,d8 2e
 Instruction at 0x1321 is: LDH (A8),A
 Instruction at 0x1323 is: RET
 Instruction at 0x1324 is: CALL A16
 Instruction at 0x1327 is: LD DE,d16
 Instruction at 0x132a is: LD HL,d16
-Instruction at 0x132d is: LD C,d8
+Instruction at 0x132d is: LD C,d8 3
 Instruction at 0x132f is: CALL A16
 Instruction at 0x1332 is: LDH A,A8
 Instruction at 0x1334 is: LD (A16),A
-Instruction at 0x1337 is: LD A,d8
+Instruction at 0x1337 is: LD A,d8 3
 Instruction at 0x1339 is: CALL A16
 Instruction at 0x133c is: XOR A
 Instruction at 0x133d is: LDH (A8),A
-Instruction at 0x133f is: LD A,d8
+Instruction at 0x133f is: LD A,d8 db
 Instruction at 0x1341 is: LDH (A8),A
-Instruction at 0x1343 is: LD A,d8
+Instruction at 0x1343 is: LD A,d8 bb
 Instruction at 0x1345 is: LDH (A8),A
-Instruction at 0x1347 is: LD A,d8
+Instruction at 0x1347 is: LD A,d8 2f
 Instruction at 0x1349 is: LDH (A8),A
-Instruction at 0x134b is: LD A,d8
+Instruction at 0x134b is: LD A,d8 10
 Instruction at 0x134d is: LD (A16),A
 Instruction at 0x1350 is: RET
 Instruction at 0x1351 is: LDH A,A8
 Instruction at 0x1353 is: AND A
 Instruction at 0x1354 is: RET NZ
 Instruction at 0x1355 is: LD HL,d16
-Instruction at 0x1358 is: LD (HL),d8
-Instruction at 0x135a is: LD L,d8
-Instruction at 0x135c is: LD (HL),d8
-Instruction at 0x135e is: LD A,d8
+Instruction at 0x1358 is: LD (HL),d8 0
+Instruction at 0x135a is: LD L,d8 20
+Instruction at 0x135c is: LD (HL),d8 0
+Instruction at 0x135e is: LD A,d8 a0
 Instruction at 0x1360 is: LDH (A8),A
-Instruction at 0x1362 is: LD A,d8
+Instruction at 0x1362 is: LD A,d8 30
 Instruction at 0x1364 is: LDH (A8),A
 Instruction at 0x1366 is: RET
 Instruction at 0x1367 is: LDH A,A8
@@ -2586,38 +2586,38 @@ Instruction at 0x1369 is: AND A
 Instruction at 0x136a is: JR Z,r8
 Instruction at 0x136c is: CALL A16
 Instruction at 0x136f is: RET
-Instruction at 0x1370 is: LD A,d8
+Instruction at 0x1370 is: LD A,d8 31
 Instruction at 0x1372 is: LDH (A8),A
-Instruction at 0x1374 is: LD A,d8
+Instruction at 0x1374 is: LD A,d8 80
 Instruction at 0x1376 is: LDH (A8),A
-Instruction at 0x1378 is: LD A,d8
+Instruction at 0x1378 is: LD A,d8 2f
 Instruction at 0x137a is: CALL A16
 Instruction at 0x137d is: RET
 Instruction at 0x137e is: LDH A,A8
 Instruction at 0x1380 is: AND A
 Instruction at 0x1381 is: JR NZ,r8
-Instruction at 0x1383 is: LD A,d8
+Instruction at 0x1383 is: LD A,d8 a
 Instruction at 0x1385 is: LDH (A8),A
 Instruction at 0x1387 is: LD HL,d16
 Instruction at 0x138a is: DEC (HL)
 Instruction at 0x138b is: LD A,(HL)
-Instruction at 0x138c is: CP D8
+Instruction at 0x138c is: CP D8 6a
 Instruction at 0x138e is: JR NZ,r8
 Instruction at 0x1390 is: LD HL,d16
-Instruction at 0x1393 is: LD (HL),d8
+Instruction at 0x1393 is: LD (HL),d8 0
 Instruction at 0x1395 is: INC L
-Instruction at 0x1396 is: ADD A,D8
+Instruction at 0x1396 is: ADD A,D8 10
 Instruction at 0x1398 is: LD (HL+),A
-Instruction at 0x1399 is: LD (HL),d8
+Instruction at 0x1399 is: LD (HL),d8 54
 Instruction at 0x139b is: INC L
-Instruction at 0x139c is: LD (HL),d8
-Instruction at 0x139e is: LD L,d8
-Instruction at 0x13a0 is: LD (HL),d8
-Instruction at 0x13a2 is: LD A,d8
+Instruction at 0x139c is: LD (HL),d8 5c
+Instruction at 0x139e is: LD L,d8 20
+Instruction at 0x13a0 is: LD (HL),d8 80
+Instruction at 0x13a2 is: LD A,d8 3
 Instruction at 0x13a4 is: CALL A16
-Instruction at 0x13a7 is: LD A,d8
+Instruction at 0x13a7 is: LD A,d8 32
 Instruction at 0x13a9 is: LDH (A8),A
-Instruction at 0x13ab is: LD A,d8
+Instruction at 0x13ab is: LD A,d8 4
 Instruction at 0x13ad is: LD (A16),A
 Instruction at 0x13b0 is: RET
 Instruction at 0x13b1 is: CALL A16
@@ -2625,55 +2625,55 @@ Instruction at 0x13b4 is: RET
 Instruction at 0x13b5 is: LDH A,A8
 Instruction at 0x13b7 is: AND A
 Instruction at 0x13b8 is: JR NZ,r8
-Instruction at 0x13ba is: LD A,d8
+Instruction at 0x13ba is: LD A,d8 a
 Instruction at 0x13bc is: LDH (A8),A
 Instruction at 0x13be is: LD HL,d16
 Instruction at 0x13c1 is: DEC (HL)
-Instruction at 0x13c2 is: LD L,d8
+Instruction at 0x13c2 is: LD L,d8 1
 Instruction at 0x13c4 is: DEC (HL)
 Instruction at 0x13c5 is: LD A,(HL)
-Instruction at 0x13c6 is: CP D8
+Instruction at 0x13c6 is: CP D8 e0
 Instruction at 0x13c8 is: JR NZ,r8
-Instruction at 0x13ca is: LD A,d8
+Instruction at 0x13ca is: LD A,d8 33
 Instruction at 0x13cc is: LDH (A8),A
 Instruction at 0x13ce is: RET
 Instruction at 0x13cf is: LDH A,A8
 Instruction at 0x13d1 is: AND A
 Instruction at 0x13d2 is: JR NZ,r8
-Instruction at 0x13d4 is: LD A,d8
+Instruction at 0x13d4 is: LD A,d8 6
 Instruction at 0x13d6 is: LDH (A8),A
 Instruction at 0x13d8 is: LD HL,d16
 Instruction at 0x13db is: LD A,(HL)
-Instruction at 0x13dc is: XOR D8
+Instruction at 0x13dc is: XOR D8 1
 Instruction at 0x13de is: LD (HL),A
-Instruction at 0x13df is: LD A,d8
+Instruction at 0x13df is: LD A,d8 3
 Instruction at 0x13e1 is: CALL A16
 Instruction at 0x13e4 is: RET
 Instruction at 0x13e5 is: CALL A16
 Instruction at 0x13e8 is: CALL A16
 Instruction at 0x13eb is: CALL A16
 Instruction at 0x13ee is: CALL A16
-Instruction at 0x13f1 is: LD A,d8
+Instruction at 0x13f1 is: LD A,d8 93
 Instruction at 0x13f3 is: LDH (A8),A
-Instruction at 0x13f5 is: LD A,d8
+Instruction at 0x13f5 is: LD A,d8 10
 Instruction at 0x13f7 is: LDH (A8),A
 Instruction at 0x13f9 is: RET
 Instruction at 0x13fa is: LDH A,A8
 Instruction at 0x13fc is: AND A
 Instruction at 0x13fd is: RET NZ
-Instruction at 0x13fe is: LD A,d8
+Instruction at 0x13fe is: LD A,d8 a
 Instruction at 0x1400 is: LDH (A8),A
-Instruction at 0x1402 is: LD A,d8
+Instruction at 0x1402 is: LD A,d8 3
 Instruction at 0x1404 is: LD (A16),A
-Instruction at 0x1407 is: LD B,d8
+Instruction at 0x1407 is: LD B,d8 2
 Instruction at 0x1409 is: LD HL,d16
 Instruction at 0x140c is: LD A,(HL)
-Instruction at 0x140d is: XOR D8
+Instruction at 0x140d is: XOR D8 80
 Instruction at 0x140f is: LD (HL),A
-Instruction at 0x1410 is: LD L,d8
+Instruction at 0x1410 is: LD L,d8 20
 Instruction at 0x1412 is: DEC B
 Instruction at 0x1413 is: JR NZ,r8
-Instruction at 0x1415 is: LD A,d8
+Instruction at 0x1415 is: LD A,d8 3
 Instruction at 0x1417 is: CALL A16
 Instruction at 0x141a is: RET
 Instruction at 0x141b is: JP NZ,A16
@@ -2708,7 +2708,7 @@ Instruction at 0x143f is: POP DE
 Instruction at 0x1440 is: DEC B
 Instruction at 0x1441 is: JR NZ,r8
 Instruction at 0x1443 is: RET
-Instruction at 0x1444 is: LD A,d8
+Instruction at 0x1444 is: LD A,d8 1
 Instruction at 0x1446 is: LDH (A8),A
 Instruction at 0x1448 is: XOR A
 Instruction at 0x1449 is: LDH (A8),A
@@ -2721,34 +2721,34 @@ Instruction at 0x1458 is: CALL A16
 Instruction at 0x145b is: CALL A16
 Instruction at 0x145e is: LD HL,d16
 Instruction at 0x1461 is: LD DE,d16
-Instruction at 0x1464 is: LD C,d8
+Instruction at 0x1464 is: LD C,d8 2
 Instruction at 0x1466 is: CALL A16
 Instruction at 0x1469 is: LD DE,d16
 Instruction at 0x146c is: CALL A16
 Instruction at 0x146f is: LDH A,A8
-Instruction at 0x1471 is: LD E, d8
+Instruction at 0x1471 is: LD E, d8 12
 Instruction at 0x1473 is: LD (DE), A
 Instruction at 0x1474 is: INC DE
-Instruction at 0x1475 is: CP D8
-Instruction at 0x1477 is: LD A,d8
+Instruction at 0x1475 is: CP D8 37
+Instruction at 0x1477 is: LD A,d8 1c
 Instruction at 0x1479 is: JR Z,r8
-Instruction at 0x147b is: LD A,d8
+Instruction at 0x147b is: LD A,d8 1d
 Instruction at 0x147d is: LD (DE), A
 Instruction at 0x147e is: CALL A16
 Instruction at 0x1481 is: CALL A16
-Instruction at 0x1484 is: LD A,d8
+Instruction at 0x1484 is: LD A,d8 d3
 Instruction at 0x1486 is: LDH (A8),A
-Instruction at 0x1488 is: LD A,d8
+Instruction at 0x1488 is: LD A,d8 e
 Instruction at 0x148a is: LDH (A8),A
 Instruction at 0x148c is: RET
-Instruction at 0x148d is: LD A,d8
+Instruction at 0x148d is: LD A,d8 1
 Instruction at 0x148f is: LD (A16),A
 Instruction at 0x1492 is: LDH A,A8
 Instruction at 0x1494 is: PUSH AF
-Instruction at 0x1495 is: SUB D8
+Instruction at 0x1495 is: SUB D8 1c
 Instruction at 0x1497 is: ADD A,A
 Instruction at 0x1498 is: LD C,A
-Instruction at 0x1499 is: LD B,d8
+Instruction at 0x1499 is: LD B,d8 0
 Instruction at 0x149b is: LD HL,d16
 Instruction at 0x149e is: ADD HL,BC
 Instruction at 0x149f is: LD A,(HL+)
@@ -2787,27 +2787,27 @@ Instruction at 0x14d1 is: CBPREFIX
 Instruction at 0x14d3 is: JR NZ,r8
 Instruction at 0x14d5 is: CBPREFIX
 Instruction at 0x14d7 is: JP Z,A16
-Instruction at 0x14da is: CP D8
+Instruction at 0x14da is: CP D8 1e
 Instruction at 0x14dc is: JR NC,r8
-Instruction at 0x14de is: ADD A,D8
+Instruction at 0x14de is: ADD A,D8 2
 Instruction at 0x14e0 is: LD (HL),A
 Instruction at 0x14e1 is: CALL A16
 Instruction at 0x14e4 is: CALL A16
 Instruction at 0x14e7 is: CALL A16
 Instruction at 0x14ea is: RET
-Instruction at 0x14eb is: CP D8
+Instruction at 0x14eb is: CP D8 1e
 Instruction at 0x14ed is: JR Z,r8 
-Instruction at 0x14ef is: SUB D8
+Instruction at 0x14ef is: SUB D8 2
 Instruction at 0x14f1 is: JR r8
-Instruction at 0x14f3 is: CP D8
+Instruction at 0x14f3 is: CP D8 1d
 Instruction at 0x14f5 is: JR Z,r8
-Instruction at 0x14f7 is: CP D8
+Instruction at 0x14f7 is: CP D8 1f
 Instruction at 0x14f9 is: JR Z,r8
 Instruction at 0x14fb is: INC A
 Instruction at 0x14fc is: JR r8
-Instruction at 0x14fe is: CP D8
+Instruction at 0x14fe is: CP D8 1c
 Instruction at 0x1500 is: JR Z,r8
-Instruction at 0x1502 is: CP D8
+Instruction at 0x1502 is: CP D8 1e
 Instruction at 0x1504 is: JR Z,r8
 Instruction at 0x1506 is: DEC A
 Instruction at 0x1507 is: JR r8
@@ -2818,13 +2818,13 @@ Instruction at 0x150d is: JR Z,r8
 Instruction at 0x150f is: POP AF
 Instruction at 0x1510 is: JR r8
 Instruction at 0x1512 is: POP AF
-Instruction at 0x1513 is: LD A,d8
+Instruction at 0x1513 is: LD A,d8 e
 Instruction at 0x1515 is: JR r8
 Instruction at 0x1517 is: LDH A,A8
-Instruction at 0x1519 is: SUB D8
-Instruction at 0x151b is: CP D8
+Instruction at 0x1519 is: SUB D8 17
+Instruction at 0x151b is: CP D8 8
 Instruction at 0x151d is: JR NZ,r8
-Instruction at 0x151f is: LD A,d8
+Instruction at 0x151f is: LD A,d8 ff
 Instruction at 0x1521 is: LD (A16),A
 Instruction at 0x1524 is: RET
 Instruction at 0x1525 is: LD DE,d16
@@ -2841,18 +2841,18 @@ Instruction at 0x1539 is: CBPREFIX
 Instruction at 0x153b is: JR NZ,r8
 Instruction at 0x153d is: CBPREFIX
 Instruction at 0x153f is: JR Z,r8
-Instruction at 0x1541 is: CP D8
+Instruction at 0x1541 is: CP D8 37
 Instruction at 0x1543 is: JR Z,r8
-Instruction at 0x1545 is: LD A,d8
-Instruction at 0x1547 is: LD B,d8
+Instruction at 0x1545 is: LD A,d8 37
+Instruction at 0x1547 is: LD B,d8 1c
 Instruction at 0x1549 is: JR r8
-Instruction at 0x154b is: CP D8
+Instruction at 0x154b is: CP D8 77
 Instruction at 0x154d is: JR Z,r8
-Instruction at 0x154f is: LD A,d8
-Instruction at 0x1551 is: LD B,d8
+Instruction at 0x154f is: LD A,d8 77
+Instruction at 0x1551 is: LD B,d8 1d
 Instruction at 0x1553 is: LD (HL),A
 Instruction at 0x1554 is: PUSH AF
-Instruction at 0x1555 is: LD A,d8
+Instruction at 0x1555 is: LD A,d8 1
 Instruction at 0x1557 is: LD (A16),A
 Instruction at 0x155a is: POP AF
 Instruction at 0x155b is: LD (DE), A
@@ -2861,17 +2861,17 @@ Instruction at 0x155d is: LD A,B
 Instruction at 0x155e is: LD (DE), A
 Instruction at 0x155f is: CALL A16
 Instruction at 0x1562 is: RET
-Instruction at 0x1563 is: LD A,d8
+Instruction at 0x1563 is: LD A,d8 2
 Instruction at 0x1565 is: LD (A16),A
 Instruction at 0x1568 is: LDH A,A8
-Instruction at 0x156a is: CP D8
-Instruction at 0x156c is: LD A,d8
+Instruction at 0x156a is: CP D8 37
+Instruction at 0x156c is: LD A,d8 10
 Instruction at 0x156e is: JR Z,r8
-Instruction at 0x1570 is: LD A,d8
+Instruction at 0x1570 is: LD A,d8 12
 Instruction at 0x1572 is: LDH (A8),A
 Instruction at 0x1574 is: XOR A
 Instruction at 0x1575 is: JR r8
-Instruction at 0x1577 is: LD A,d8
+Instruction at 0x1577 is: LD A,d8 f
 Instruction at 0x1579 is: JR r8
 Instruction at 0x157b is: CALL A16
 Instruction at 0x157e is: LD DE,d16
@@ -2880,7 +2880,7 @@ Instruction at 0x1584 is: CALL A16
 Instruction at 0x1587 is: CALL A16
 Instruction at 0x158a is: LD HL,d16
 Instruction at 0x158d is: LD DE,d16
-Instruction at 0x1590 is: LD C,d8
+Instruction at 0x1590 is: LD C,d8 1
 Instruction at 0x1592 is: CALL A16
 Instruction at 0x1595 is: LD DE,d16
 Instruction at 0x1598 is: LDH A,A8
@@ -2889,27 +2889,27 @@ Instruction at 0x159d is: CALL A16
 Instruction at 0x15a0 is: CALL A16
 Instruction at 0x15a3 is: CALL A16
 Instruction at 0x15a6 is: CALL A16
-Instruction at 0x15a9 is: LD A,d8
+Instruction at 0x15a9 is: LD A,d8 d3
 Instruction at 0x15ab is: LDH (A8),A
-Instruction at 0x15ad is: LD A,d8
+Instruction at 0x15ad is: LD A,d8 11
 Instruction at 0x15af is: LDH (A8),A
 Instruction at 0x15b1 is: LDH A,A8
 Instruction at 0x15b3 is: AND A
 Instruction at 0x15b4 is: JR NZ,r8
 Instruction at 0x15b6 is: CALL A16
 Instruction at 0x15b9 is: RET
-Instruction at 0x15ba is: LD A,d8
+Instruction at 0x15ba is: LD A,d8 15
 Instruction at 0x15bc is: LDH (A8),A
 Instruction at 0x15be is: RET
 Instruction at 0x15bf is: LD DE,d16
 Instruction at 0x15c2 is: CALL A16
 Instruction at 0x15c5 is: LD HL,d16
-Instruction at 0x15c8 is: LD A,d8
+Instruction at 0x15c8 is: LD A,d8 a
 Instruction at 0x15ca is: CBPREFIX
 Instruction at 0x15cc is: JR NZ,r8
 Instruction at 0x15ce is: CBPREFIX
 Instruction at 0x15d0 is: JR NZ,r8
-Instruction at 0x15d2 is: LD A,d8
+Instruction at 0x15d2 is: LD A,d8 8
 Instruction at 0x15d4 is: CBPREFIX
 Instruction at 0x15d6 is: JR NZ,r8
 Instruction at 0x15d8 is: LD A,(HL)
@@ -2921,11 +2921,11 @@ Instruction at 0x15e1 is: CBPREFIX
 Instruction at 0x15e3 is: JR NZ,r8
 Instruction at 0x15e5 is: CBPREFIX
 Instruction at 0x15e7 is: JR Z,r8
-Instruction at 0x15e9 is: CP D8
+Instruction at 0x15e9 is: CP D8 5
 Instruction at 0x15eb is: JR NC,r8
-Instruction at 0x15ed is: ADD A,D8
+Instruction at 0x15ed is: ADD A,D8 5
 Instruction at 0x15ef is: JR r8
-Instruction at 0x15f1 is: CP D8
+Instruction at 0x15f1 is: CP D8 9
 Instruction at 0x15f3 is: JR Z,r8
 Instruction at 0x15f5 is: INC A
 Instruction at 0x15f6 is: LD (HL),A
@@ -2939,9 +2939,9 @@ Instruction at 0x1607 is: AND A
 Instruction at 0x1608 is: JR Z,r8
 Instruction at 0x160a is: DEC A
 Instruction at 0x160b is: JR r8
-Instruction at 0x160d is: CP D8
+Instruction at 0x160d is: CP D8 5
 Instruction at 0x160f is: JR Z,r8 
-Instruction at 0x1611 is: SUB D8
+Instruction at 0x1611 is: SUB D8 5
 Instruction at 0x1613 is: JR r8
 Instruction at 0x1615 is: LD B,B
 Instruction at 0x1616 is: JR NC,r8
@@ -2967,7 +2967,7 @@ Instruction at 0x162f is: CALL A16
 Instruction at 0x1632 is: CALL A16
 Instruction at 0x1635 is: LD HL,d16
 Instruction at 0x1638 is: LD DE,d16
-Instruction at 0x163b is: LD C,d8
+Instruction at 0x163b is: LD C,d8 2
 Instruction at 0x163d is: CALL A16
 Instruction at 0x1640 is: LD DE,d16
 Instruction at 0x1643 is: LDH A,A8
@@ -2980,16 +2980,16 @@ Instruction at 0x1653 is: CALL A16
 Instruction at 0x1656 is: CALL A16
 Instruction at 0x1659 is: CALL A16
 Instruction at 0x165c is: CALL A16
-Instruction at 0x165f is: LD A,d8
+Instruction at 0x165f is: LD A,d8 d3
 Instruction at 0x1661 is: LDH (A8),A
-Instruction at 0x1663 is: LD A,d8
+Instruction at 0x1663 is: LD A,d8 13
 Instruction at 0x1665 is: LDH (A8),A
 Instruction at 0x1667 is: LDH A,A8
 Instruction at 0x1669 is: AND A
 Instruction at 0x166a is: JR NZ,r8
 Instruction at 0x166c is: CALL A16
 Instruction at 0x166f is: RET
-Instruction at 0x1670 is: LD A,d8
+Instruction at 0x1670 is: LD A,d8 15
 Instruction at 0x1672 is: LDH (A8),A
 Instruction at 0x1674 is: RET
 Instruction at 0x1675 is: LDH (A8),A
@@ -2999,13 +2999,13 @@ Instruction at 0x1679 is: RET
 Instruction at 0x167a is: LD DE,d16
 Instruction at 0x167d is: CALL A16
 Instruction at 0x1680 is: LD HL,d16
-Instruction at 0x1683 is: LD A,d8
+Instruction at 0x1683 is: LD A,d8 a
 Instruction at 0x1685 is: CBPREFIX
 Instruction at 0x1687 is: JR NZ,r8
-Instruction at 0x1689 is: LD A,d8
+Instruction at 0x1689 is: LD A,d8 14
 Instruction at 0x168b is: CBPREFIX
 Instruction at 0x168d is: JR NZ,r8
-Instruction at 0x168f is: LD A,d8
+Instruction at 0x168f is: LD A,d8 8
 Instruction at 0x1691 is: CBPREFIX
 Instruction at 0x1693 is: JR NZ,r8
 Instruction at 0x1695 is: LD A,(HL)
@@ -3017,11 +3017,11 @@ Instruction at 0x169e is: CBPREFIX
 Instruction at 0x16a0 is: JR NZ,r8
 Instruction at 0x16a2 is: CBPREFIX
 Instruction at 0x16a4 is: JR Z,r8
-Instruction at 0x16a6 is: CP D8
+Instruction at 0x16a6 is: CP D8 5
 Instruction at 0x16a8 is: JR NC,r8
-Instruction at 0x16aa is: ADD A,D8
+Instruction at 0x16aa is: ADD A,D8 5
 Instruction at 0x16ac is: JR r8
-Instruction at 0x16ae is: CP D8
+Instruction at 0x16ae is: CP D8 9
 Instruction at 0x16b0 is: JR Z,r8
 Instruction at 0x16b2 is: INC A
 Instruction at 0x16b3 is: LD (HL),A
@@ -3035,9 +3035,9 @@ Instruction at 0x16c4 is: AND A
 Instruction at 0x16c5 is: JR Z,r8
 Instruction at 0x16c7 is: DEC A
 Instruction at 0x16c8 is: JR r8
-Instruction at 0x16ca is: CP D8
+Instruction at 0x16ca is: CP D8 5
 Instruction at 0x16cc is: JR Z,r8 
-Instruction at 0x16ce is: SUB D8
+Instruction at 0x16ce is: SUB D8 5
 Instruction at 0x16d0 is: JR r8
 Instruction at 0x16d2 is: LD B,B
 Instruction at 0x16d3 is: JR r8
@@ -3060,12 +3060,12 @@ Instruction at 0x16ea is: RET
 Instruction at 0x16eb is: LD DE,d16
 Instruction at 0x16ee is: CALL A16
 Instruction at 0x16f1 is: LD HL,d16
-Instruction at 0x16f4 is: LD A,d8
+Instruction at 0x16f4 is: LD A,d8 a
 Instruction at 0x16f6 is: CBPREFIX
 Instruction at 0x16f8 is: JR NZ,r8
 Instruction at 0x16fa is: CBPREFIX
 Instruction at 0x16fc is: JR NZ,r8
-Instruction at 0x16fe is: LD A,d8
+Instruction at 0x16fe is: LD A,d8 13
 Instruction at 0x1700 is: CBPREFIX
 Instruction at 0x1702 is: JR NZ,r8
 Instruction at 0x1704 is: LD A,(HL)
@@ -3077,11 +3077,11 @@ Instruction at 0x170d is: CBPREFIX
 Instruction at 0x170f is: JR NZ,r8
 Instruction at 0x1711 is: CBPREFIX
 Instruction at 0x1713 is: JR Z,r8
-Instruction at 0x1715 is: CP D8
+Instruction at 0x1715 is: CP D8 3
 Instruction at 0x1717 is: JR NC,r8
-Instruction at 0x1719 is: ADD A,D8
+Instruction at 0x1719 is: ADD A,D8 3
 Instruction at 0x171b is: JR r8
-Instruction at 0x171d is: CP D8
+Instruction at 0x171d is: CP D8 5
 Instruction at 0x171f is: JR Z,r8
 Instruction at 0x1721 is: INC A
 Instruction at 0x1722 is: LD (HL),A
@@ -3095,9 +3095,9 @@ Instruction at 0x1733 is: AND A
 Instruction at 0x1734 is: JR Z,r8
 Instruction at 0x1736 is: DEC A
 Instruction at 0x1737 is: JR r8
-Instruction at 0x1739 is: CP D8
+Instruction at 0x1739 is: CP D8 3
 Instruction at 0x173b is: JR Z,r8 
-Instruction at 0x173d is: SUB D8
+Instruction at 0x173d is: SUB D8 3
 Instruction at 0x173f is: JR r8
 Instruction at 0x1741 is: LD B,B
 Instruction at 0x1742 is: LD (HL),B
@@ -3113,13 +3113,13 @@ Instruction at 0x174b is: LD D,B
 Instruction at 0x174c is: SUB B
 Instruction at 0x174d is: NOP
 Instruction at 0x174e is: PUSH AF
-Instruction at 0x174f is: LD A,d8
+Instruction at 0x174f is: LD A,d8 1
 Instruction at 0x1751 is: LD (A16),A
 Instruction at 0x1754 is: POP AF
 Instruction at 0x1755 is: PUSH AF
 Instruction at 0x1756 is: ADD A,A
 Instruction at 0x1757 is: LD C,A
-Instruction at 0x1758 is: LD B,d8
+Instruction at 0x1758 is: LD B,d8 0
 Instruction at 0x175a is: ADD HL,BC
 Instruction at 0x175b is: LD A,(HL+)
 Instruction at 0x175c is: LD (DE), A
@@ -3128,7 +3128,7 @@ Instruction at 0x175e is: LD A,(HL)
 Instruction at 0x175f is: LD (DE), A
 Instruction at 0x1760 is: INC DE
 Instruction at 0x1761 is: POP AF
-Instruction at 0x1762 is: ADD A,D8
+Instruction at 0x1762 is: ADD A,D8 20
 Instruction at 0x1764 is: LD (DE), A
 Instruction at 0x1765 is: RET
 Instruction at 0x1766 is: LDH A,A8
@@ -3136,30 +3136,30 @@ Instruction at 0x1768 is: LD B,A
 Instruction at 0x1769 is: LDH A,A8
 Instruction at 0x176b is: AND A
 Instruction at 0x176c is: RET NZ
-Instruction at 0x176d is: LD A,d8
+Instruction at 0x176d is: LD A,d8 10
 Instruction at 0x176f is: LDH (A8),A
 Instruction at 0x1771 is: LD A,(DE)
-Instruction at 0x1772 is: XOR D8
+Instruction at 0x1772 is: XOR D8 80
 Instruction at 0x1774 is: LD (DE), A
 Instruction at 0x1775 is: RET
 Instruction at 0x1776 is: PUSH HL
-Instruction at 0x1777 is: LD B,d8
+Instruction at 0x1777 is: LD B,d8 6
 Instruction at 0x1779 is: LD A,(DE)
 Instruction at 0x177a is: LD (HL+),A
 Instruction at 0x177b is: INC DE
 Instruction at 0x177c is: DEC B
 Instruction at 0x177d is: JR NZ,r8
 Instruction at 0x177f is: POP HL
-Instruction at 0x1780 is: LD A,d8
+Instruction at 0x1780 is: LD A,d8 10
 Instruction at 0x1782 is: ADD A,L
 Instruction at 0x1783 is: LD L,A
 Instruction at 0x1784 is: DEC C
 Instruction at 0x1785 is: JR NZ,r8
-Instruction at 0x1787 is: LD (HL),d8
+Instruction at 0x1787 is: LD (HL),d8 80
 Instruction at 0x1789 is: RET
 Instruction at 0x178a is: XOR A
 Instruction at 0x178b is: LD HL,d16
-Instruction at 0x178e is: LD B,d8
+Instruction at 0x178e is: LD B,d8 a0
 Instruction at 0x1790 is: LD (HL+),A
 Instruction at 0x1791 is: DEC B
 Instruction at 0x1792 is: JR NZ,r8
@@ -3201,31 +3201,31 @@ Instruction at 0x17cf is: PUSH HL
 Instruction at 0x17d0 is: POP DE
 Instruction at 0x17d1 is: CALL A16
 Instruction at 0x17d4 is: RET
-Instruction at 0x17d5 is: LD B,d8
+Instruction at 0x17d5 is: LD B,d8 3
 Instruction at 0x17d7 is: LD A,(HL)
-Instruction at 0x17d8 is: AND D8
+Instruction at 0x17d8 is: AND D8 f0
 Instruction at 0x17da is: JR NZ,r8
 Instruction at 0x17dc is: INC E
 Instruction at 0x17dd is: LD A,(HL-) 
-Instruction at 0x17de is: AND D8
+Instruction at 0x17de is: AND D8 f
 Instruction at 0x17e0 is: JR NZ,r8
 Instruction at 0x17e2 is: INC E
 Instruction at 0x17e3 is: DEC B
 Instruction at 0x17e4 is: JR NZ,r8
 Instruction at 0x17e6 is: RET
 Instruction at 0x17e7 is: LD A,(HL)
-Instruction at 0x17e8 is: AND D8
+Instruction at 0x17e8 is: AND D8 f0
 Instruction at 0x17ea is: CBPREFIX
 Instruction at 0x17ec is: LD (DE), A
 Instruction at 0x17ed is: INC E
 Instruction at 0x17ee is: LD A,(HL-) 
-Instruction at 0x17ef is: AND D8
+Instruction at 0x17ef is: AND D8 f
 Instruction at 0x17f1 is: LD (DE), A
 Instruction at 0x17f2 is: INC E
 Instruction at 0x17f3 is: DEC B
 Instruction at 0x17f4 is: JR NZ,r8
 Instruction at 0x17f6 is: RET
-Instruction at 0x17f7 is: LD B,d8
+Instruction at 0x17f7 is: LD B,d8 3
 Instruction at 0x17f9 is: LD A,(HL-) 
 Instruction at 0x17fa is: LD (DE), A
 Instruction at 0x17fb is: DEC DE
@@ -3236,10 +3236,10 @@ Instruction at 0x1800 is: LD A,D
 Instruction at 0x1801 is: LDH (A8),A
 Instruction at 0x1803 is: LD A,E
 Instruction at 0x1804 is: LDH (A8),A
-Instruction at 0x1806 is: LD C,d8
+Instruction at 0x1806 is: LD C,d8 3
 Instruction at 0x1808 is: LD HL,d16
 Instruction at 0x180b is: PUSH DE
-Instruction at 0x180c is: LD B,d8
+Instruction at 0x180c is: LD B,d8 3
 Instruction at 0x180e is: LD A,(DE)
 Instruction at 0x180f is: SUB (HL)
 Instruction at 0x1810 is: JR Z,r8 
@@ -3274,7 +3274,7 @@ Instruction at 0x1835 is: JR Z,r8
 Instruction at 0x1837 is: CALL A16
 Instruction at 0x183a is: JR r8
 Instruction at 0x183c is: LD HL,d16
-Instruction at 0x183f is: LD B,d8
+Instruction at 0x183f is: LD B,d8 3
 Instruction at 0x1841 is: LD A,(HL-) 
 Instruction at 0x1842 is: LD (DE), A
 Instruction at 0x1843 is: DEC E
@@ -3294,16 +3294,16 @@ Instruction at 0x1856 is: POP DE
 Instruction at 0x1857 is: POP HL
 Instruction at 0x1858 is: DEC C
 Instruction at 0x1859 is: JR Z,r8
-Instruction at 0x185b is: LD B,d8
+Instruction at 0x185b is: LD B,d8 6
 Instruction at 0x185d is: CALL A16
 Instruction at 0x1860 is: JR r8
-Instruction at 0x1862 is: LD A,d8
-Instruction at 0x1864 is: LD B,d8
+Instruction at 0x1862 is: LD A,d8 60
+Instruction at 0x1864 is: LD B,d8 5
 Instruction at 0x1866 is: LD (DE), A
 Instruction at 0x1867 is: DEC DE
 Instruction at 0x1868 is: DEC B
 Instruction at 0x1869 is: JR NZ,r8
-Instruction at 0x186b is: LD A,d8
+Instruction at 0x186b is: LD A,d8 a
 Instruction at 0x186d is: LD (DE), A
 Instruction at 0x186e is: LD A,D
 Instruction at 0x186f is: LDH (A8),A
@@ -3312,7 +3312,7 @@ Instruction at 0x1872 is: LDH (A8),A
 Instruction at 0x1874 is: XOR A
 Instruction at 0x1875 is: LDH (A8),A
 Instruction at 0x1877 is: LDH (A8),A
-Instruction at 0x1879 is: LD A,d8
+Instruction at 0x1879 is: LD A,d8 1
 Instruction at 0x187b is: LD (A16),A
 Instruction at 0x187e is: LDH (A8),A
 Instruction at 0x1880 is: LD DE,d16
@@ -3320,7 +3320,7 @@ Instruction at 0x1883 is: LDH A,A8
 Instruction at 0x1885 is: LD H,A
 Instruction at 0x1886 is: LDH A,A8
 Instruction at 0x1888 is: LD L,A
-Instruction at 0x1889 is: LD B,d8
+Instruction at 0x1889 is: LD B,d8 3
 Instruction at 0x188b is: PUSH HL
 Instruction at 0x188c is: PUSH DE
 Instruction at 0x188d is: PUSH BC
@@ -3340,10 +3340,10 @@ Instruction at 0x18a0 is: DEC B
 Instruction at 0x18a1 is: JR NZ,r8
 Instruction at 0x18a3 is: DEC HL
 Instruction at 0x18a4 is: DEC HL
-Instruction at 0x18a5 is: LD B,d8
+Instruction at 0x18a5 is: LD B,d8 3
 Instruction at 0x18a7 is: LD DE,d16
 Instruction at 0x18aa is: PUSH DE
-Instruction at 0x18ab is: LD C,d8
+Instruction at 0x18ab is: LD C,d8 6
 Instruction at 0x18ad is: LD A,(HL+)
 Instruction at 0x18ae is: AND A
 Instruction at 0x18af is: JR Z,r8
@@ -3361,7 +3361,7 @@ Instruction at 0x18be is: POP HL
 Instruction at 0x18bf is: DEC B
 Instruction at 0x18c0 is: JR NZ,r8
 Instruction at 0x18c2 is: CALL A16
-Instruction at 0x18c5 is: LD A,d8
+Instruction at 0x18c5 is: LD A,d8 1
 Instruction at 0x18c7 is: LDH (A8),A
 Instruction at 0x18c9 is: RET
 Instruction at 0x18ca is: LDH A,A8
@@ -3369,9 +3369,9 @@ Instruction at 0x18cc is: AND A
 Instruction at 0x18cd is: RET Z
 Instruction at 0x18ce is: LD HL,d16
 Instruction at 0x18d1 is: LD DE,d16
-Instruction at 0x18d4 is: LD C,d8
+Instruction at 0x18d4 is: LD C,d8 6
 Instruction at 0x18d6 is: PUSH HL
-Instruction at 0x18d7 is: LD B,d8
+Instruction at 0x18d7 is: LD B,d8 6
 Instruction at 0x18d9 is: LD A,(DE)
 Instruction at 0x18da is: LD (HL+),A
 Instruction at 0x18db is: INC E
@@ -3390,7 +3390,7 @@ Instruction at 0x18eb is: LD DE,d16
 Instruction at 0x18ee is: ADD HL,DE
 Instruction at 0x18ef is: PUSH HL
 Instruction at 0x18f0 is: POP DE
-Instruction at 0x18f1 is: LD A,d8
+Instruction at 0x18f1 is: LD A,d8 30
 Instruction at 0x18f3 is: ADD A,D
 Instruction at 0x18f4 is: LD D,A
 Instruction at 0x18f5 is: JR r8
@@ -3400,9 +3400,9 @@ Instruction at 0x18f9 is: LDH (A8),A
 Instruction at 0x18fb is: RET
 Instruction at 0x18fc is: LD HL,d16
 Instruction at 0x18ff is: LD DE,d16
-Instruction at 0x1902 is: LD A,d8
-Instruction at 0x1904 is: LD C,d8
-Instruction at 0x1906 is: LD B,d8
+Instruction at 0x1902 is: LD A,d8 60
+Instruction at 0x1904 is: LD C,d8 3
+Instruction at 0x1906 is: LD B,d8 e
 Instruction at 0x1908 is: PUSH HL
 Instruction at 0x1909 is: LD (HL+),A
 Instruction at 0x190a is: DEC B
@@ -3421,7 +3421,7 @@ Instruction at 0x191e is: ADD HL,DE
 Instruction at 0x191f is: JR r8
 Instruction at 0x1921 is: LDH A,A8
 Instruction at 0x1923 is: LD E,A
-Instruction at 0x1924 is: LD D,d8
+Instruction at 0x1924 is: LD D,d8 0
 Instruction at 0x1926 is: ADD HL,DE
 Instruction at 0x1927 is: LDH A,A8
 Instruction at 0x1929 is: LD D,A
@@ -3430,20 +3430,20 @@ Instruction at 0x192c is: LD E,A
 Instruction at 0x192d is: LDH A,A8
 Instruction at 0x192f is: AND A
 Instruction at 0x1930 is: JR NZ,r8
-Instruction at 0x1932 is: LD A,d8
+Instruction at 0x1932 is: LD A,d8 7
 Instruction at 0x1934 is: LDH (A8),A
 Instruction at 0x1936 is: LDH A,A8
-Instruction at 0x1938 is: XOR D8
+Instruction at 0x1938 is: XOR D8 1
 Instruction at 0x193a is: LDH (A8),A
 Instruction at 0x193c is: LD A,(DE)
 Instruction at 0x193d is: JR Z,r8
-Instruction at 0x193f is: LD A,d8
+Instruction at 0x193f is: LD A,d8 2f
 Instruction at 0x1941 is: CALL A16
 Instruction at 0x1944 is: LDH A,A8
 Instruction at 0x1946 is: LD B,A
 Instruction at 0x1947 is: LDH A,A8
 Instruction at 0x1949 is: LD C,A
-Instruction at 0x194a is: LD A,d8
+Instruction at 0x194a is: LD A,d8 17
 Instruction at 0x194c is: CBPREFIX
 Instruction at 0x194e is: JR NZ,r8
 Instruction at 0x1950 is: CBPREFIX
@@ -3464,71 +3464,71 @@ Instruction at 0x196c is: CALL A16
 Instruction at 0x196f is: XOR A
 Instruction at 0x1970 is: LDH (A8),A
 Instruction at 0x1972 is: LDH A,A8
-Instruction at 0x1974 is: CP D8
-Instruction at 0x1976 is: LD A,d8
+Instruction at 0x1974 is: CP D8 37
+Instruction at 0x1976 is: LD A,d8 11
 Instruction at 0x1978 is: JR Z,r8
-Instruction at 0x197a is: LD A,d8
+Instruction at 0x197a is: LD A,d8 13
 Instruction at 0x197c is: LDH (A8),A
 Instruction at 0x197e is: RET
 Instruction at 0x197f is: LDH A,A8
 Instruction at 0x1981 is: DEC A
 Instruction at 0x1982 is: LDH (A8),A
 Instruction at 0x1984 is: RET NZ
-Instruction at 0x1985 is: LD A,d8
+Instruction at 0x1985 is: LD A,d8 9
 Instruction at 0x1987 is: LDH (A8),A
-Instruction at 0x1989 is: LD B,d8
+Instruction at 0x1989 is: LD B,d8 26
 Instruction at 0x198b is: LDH A,A8
 Instruction at 0x198d is: AND A
 Instruction at 0x198e is: JR Z,r8
-Instruction at 0x1990 is: LD B,d8
+Instruction at 0x1990 is: LD B,d8 27
 Instruction at 0x1992 is: LD A,(DE)
 Instruction at 0x1993 is: CP B
 Instruction at 0x1994 is: JR NZ,r8
-Instruction at 0x1996 is: LD A,d8
+Instruction at 0x1996 is: LD A,d8 2e
 Instruction at 0x1998 is: INC A
 Instruction at 0x1999 is: LD (DE), A
-Instruction at 0x199a is: LD A,d8
+Instruction at 0x199a is: LD A,d8 1
 Instruction at 0x199c is: LD (A16),A
 Instruction at 0x199f is: RET
-Instruction at 0x19a0 is: CP D8
+Instruction at 0x19a0 is: CP D8 2f
 Instruction at 0x19a2 is: JR NZ,r8
-Instruction at 0x19a4 is: LD A,d8
+Instruction at 0x19a4 is: LD A,d8 a
 Instruction at 0x19a6 is: JR r8
 Instruction at 0x19a8 is: LDH A,A8
 Instruction at 0x19aa is: DEC A
 Instruction at 0x19ab is: LDH (A8),A
 Instruction at 0x19ad is: RET NZ
-Instruction at 0x19ae is: LD A,d8
+Instruction at 0x19ae is: LD A,d8 9
 Instruction at 0x19b0 is: LDH (A8),A
-Instruction at 0x19b2 is: LD B,d8
+Instruction at 0x19b2 is: LD B,d8 26
 Instruction at 0x19b4 is: LDH A,A8
 Instruction at 0x19b6 is: AND A
 Instruction at 0x19b7 is: JR Z,r8
-Instruction at 0x19b9 is: LD B,d8
+Instruction at 0x19b9 is: LD B,d8 27
 Instruction at 0x19bb is: LD A,(DE)
-Instruction at 0x19bc is: CP D8
+Instruction at 0x19bc is: CP D8 a
 Instruction at 0x19be is: JR NZ,r8
-Instruction at 0x19c0 is: LD A,d8
+Instruction at 0x19c0 is: LD A,d8 30
 Instruction at 0x19c2 is: DEC A
 Instruction at 0x19c3 is: JR r8
-Instruction at 0x19c5 is: CP D8
+Instruction at 0x19c5 is: CP D8 2f
 Instruction at 0x19c7 is: JR NZ,r8
 Instruction at 0x19c9 is: LD A,B
 Instruction at 0x19ca is: JR r8
 Instruction at 0x19cc is: LD A,(DE)
 Instruction at 0x19cd is: CALL A16
-Instruction at 0x19d0 is: LD A,d8
+Instruction at 0x19d0 is: LD A,d8 2
 Instruction at 0x19d2 is: LD (A16),A
 Instruction at 0x19d5 is: LDH A,A8
 Instruction at 0x19d7 is: INC A
-Instruction at 0x19d8 is: CP D8
+Instruction at 0x19d8 is: CP D8 6
 Instruction at 0x19da is: JR Z,r8
 Instruction at 0x19dc is: LDH (A8),A
 Instruction at 0x19de is: INC DE
 Instruction at 0x19df is: LD A,(DE)
-Instruction at 0x19e0 is: CP D8
+Instruction at 0x19e0 is: CP D8 60
 Instruction at 0x19e2 is: JR NZ,r8
-Instruction at 0x19e4 is: LD A,d8
+Instruction at 0x19e4 is: LD A,d8 a
 Instruction at 0x19e6 is: LD (DE), A
 Instruction at 0x19e7 is: LD A,D
 Instruction at 0x19e8 is: LDH (A8),A
@@ -3547,7 +3547,7 @@ Instruction at 0x19fb is: DEC DE
 Instruction at 0x19fc is: JR r8
 Instruction at 0x19fe is: LD B,A
 Instruction at 0x19ff is: LDH A,A8
-Instruction at 0x1a01 is: AND D8
+Instruction at 0x1a01 is: AND D8 3
 Instruction at 0x1a03 is: JR NZ,r8
 Instruction at 0x1a05 is: LD (HL),B
 Instruction at 0x1a06 is: RET
@@ -3559,7 +3559,7 @@ Instruction at 0x1a10 is: LDH (A8),A
 Instruction at 0x1a12 is: LDH (A8),A
 Instruction at 0x1a14 is: LDH (A8),A
 Instruction at 0x1a16 is: LDH (A8),A
-Instruction at 0x1a18 is: LD A,d8
+Instruction at 0x1a18 is: LD A,d8 2f
 Instruction at 0x1a1a is: CALL A16
 Instruction at 0x1a1d is: CALL A16
 Instruction at 0x1a20 is: CALL A16
@@ -3569,10 +3569,10 @@ Instruction at 0x1a26 is: CALL A16
 Instruction at 0x1a29 is: LDH A,A8
 Instruction at 0x1a2b is: LD DE,d16
 Instruction at 0x1a2e is: LD HL,d16
-Instruction at 0x1a31 is: CP D8
-Instruction at 0x1a33 is: LD A,d8
+Instruction at 0x1a31 is: CP D8 77
+Instruction at 0x1a33 is: LD A,d8 50
 Instruction at 0x1a35 is: JR Z,r8
-Instruction at 0x1a37 is: LD A,d8
+Instruction at 0x1a37 is: LD A,d8 f1
 Instruction at 0x1a39 is: LD HL,d16
 Instruction at 0x1a3c is: LD DE,d16
 Instruction at 0x1a3f is: PUSH DE
@@ -3585,22 +3585,22 @@ Instruction at 0x1a49 is: LD HL,d16
 Instruction at 0x1a4c is: CALL A16
 Instruction at 0x1a4f is: LD DE,d16
 Instruction at 0x1a52 is: LD HL,d16
-Instruction at 0x1a55 is: LD C,d8
+Instruction at 0x1a55 is: LD C,d8 a
 Instruction at 0x1a57 is: CALL A16
-Instruction at 0x1a5a is: LD H,d8
+Instruction at 0x1a5a is: LD H,d8 98
 Instruction at 0x1a5c is: LDH A,A8
 Instruction at 0x1a5e is: LD L,A
 Instruction at 0x1a5f is: LDH A,A8
 Instruction at 0x1a61 is: LD (HL),A
-Instruction at 0x1a62 is: LD H,d8
+Instruction at 0x1a62 is: LD H,d8 9c
 Instruction at 0x1a64 is: LD (HL),A
 Instruction at 0x1a65 is: LDH A,A8
 Instruction at 0x1a67 is: AND A
 Instruction at 0x1a68 is: JR Z,r8
 Instruction at 0x1a6a is: INC HL
-Instruction at 0x1a6b is: LD (HL),d8
-Instruction at 0x1a6d is: LD H,d8
-Instruction at 0x1a6f is: LD (HL),d8
+Instruction at 0x1a6b is: LD (HL),d8 27
+Instruction at 0x1a6d is: LD H,d8 98
+Instruction at 0x1a6f is: LD (HL),d8 27
 Instruction at 0x1a71 is: LD HL,d16
 Instruction at 0x1a74 is: LD DE,d16
 Instruction at 0x1a77 is: CALL A16
@@ -3609,20 +3609,20 @@ Instruction at 0x1a7d is: LD DE,d16
 Instruction at 0x1a80 is: CALL A16
 Instruction at 0x1a83 is: LD HL,d16
 Instruction at 0x1a86 is: LDH A,A8
-Instruction at 0x1a88 is: CP D8
-Instruction at 0x1a8a is: LD A,d8
+Instruction at 0x1a88 is: CP D8 77
+Instruction at 0x1a8a is: LD A,d8 25
 Instruction at 0x1a8c is: JR Z,r8
 Instruction at 0x1a8e is: XOR A
 Instruction at 0x1a8f is: LDH (A8),A
-Instruction at 0x1a91 is: AND D8
+Instruction at 0x1a91 is: AND D8 f
 Instruction at 0x1a93 is: LD (HL-),A
 Instruction at 0x1a94 is: JR Z,r8
-Instruction at 0x1a96 is: LD (HL),d8
+Instruction at 0x1a96 is: LD (HL),d8 2
 Instruction at 0x1a98 is: CALL A16
 Instruction at 0x1a9b is: LD A,(A16)
 Instruction at 0x1a9e is: AND A
 Instruction at 0x1a9f is: JR Z,r8
-Instruction at 0x1aa1 is: LD A,d8
+Instruction at 0x1aa1 is: LD A,d8 80
 Instruction at 0x1aa3 is: LD (A16),A
 Instruction at 0x1aa6 is: CALL A16
 Instruction at 0x1aa9 is: CALL A16
@@ -3631,14 +3631,14 @@ Instruction at 0x1aaf is: CALL A16
 Instruction at 0x1ab2 is: XOR A
 Instruction at 0x1ab3 is: LDH (A8),A
 Instruction at 0x1ab5 is: LDH A,A8
-Instruction at 0x1ab7 is: CP D8
+Instruction at 0x1ab7 is: CP D8 77
 Instruction at 0x1ab9 is: JR NZ,r8
-Instruction at 0x1abb is: LD A,d8
+Instruction at 0x1abb is: LD A,d8 34
 Instruction at 0x1abd is: LDH (A8),A
 Instruction at 0x1abf is: LDH A,A8
 Instruction at 0x1ac1 is: LD HL,d16
 Instruction at 0x1ac4 is: LD (HL),A
-Instruction at 0x1ac5 is: LD H,d8
+Instruction at 0x1ac5 is: LD H,d8 9c
 Instruction at 0x1ac7 is: LD (HL),A
 Instruction at 0x1ac8 is: AND A
 Instruction at 0x1ac9 is: JR Z,r8
@@ -3652,7 +3652,7 @@ Instruction at 0x1ad6 is: LD A,B
 Instruction at 0x1ad7 is: LD DE,d16
 Instruction at 0x1ada is: LD HL,d16
 Instruction at 0x1add is: CALL A16
-Instruction at 0x1ae0 is: LD A,d8
+Instruction at 0x1ae0 is: LD A,d8 d3
 Instruction at 0x1ae2 is: LDH (A8),A
 Instruction at 0x1ae4 is: XOR A
 Instruction at 0x1ae5 is: LDH (A8),A
@@ -3662,14 +3662,14 @@ Instruction at 0x1aea is: LD E,A
 Instruction at 0x1aeb is: LDH A,A8
 Instruction at 0x1aed is: AND A
 Instruction at 0x1aee is: JR Z,r8
-Instruction at 0x1af0 is: LD A,d8
+Instruction at 0x1af0 is: LD A,d8 a
 Instruction at 0x1af2 is: ADD A,E
-Instruction at 0x1af3 is: CP D8
+Instruction at 0x1af3 is: CP D8 15
 Instruction at 0x1af5 is: JR Z,r8 
-Instruction at 0x1af7 is: LD A,d8
+Instruction at 0x1af7 is: LD A,d8 14
 Instruction at 0x1af9 is: LD E,A
 Instruction at 0x1afa is: LD HL,d16
-Instruction at 0x1afd is: LD D,d8
+Instruction at 0x1afd is: LD D,d8 0
 Instruction at 0x1aff is: ADD HL,DE
 Instruction at 0x1b00 is: LD A,(HL)
 Instruction at 0x1b01 is: LDH (A8),A
@@ -3692,14 +3692,14 @@ Instruction at 0x1b19 is: INC BC
 Instruction at 0x1b1a is: LD (BC),A
 Instruction at 0x1b1b is: LD HL,d16
 Instruction at 0x1b1e is: LD DE,d16
-Instruction at 0x1b21 is: LD C,d8
-Instruction at 0x1b23 is: LD B,d8
+Instruction at 0x1b21 is: LD C,d8 4
+Instruction at 0x1b23 is: LD B,d8 a
 Instruction at 0x1b25 is: PUSH HL
 Instruction at 0x1b26 is: LD A,(DE)
 Instruction at 0x1b27 is: LD (HL),A
 Instruction at 0x1b28 is: PUSH HL
 Instruction at 0x1b29 is: LD A,H
-Instruction at 0x1b2a is: ADD A,D8
+Instruction at 0x1b2a is: ADD A,D8 30
 Instruction at 0x1b2c is: LD H,A
 Instruction at 0x1b2d is: LD A,(DE)
 Instruction at 0x1b2e is: LD (HL),A
@@ -3763,30 +3763,30 @@ Instruction at 0x1b6c is: ADD HL,DE
 Instruction at 0x1b6d is: JR r8
 Instruction at 0x1b6f is: LDH A,A8
 Instruction at 0x1b71 is: LD B,A
-Instruction at 0x1b72 is: LD A,d8
+Instruction at 0x1b72 is: LD A,d8 80
 Instruction at 0x1b74 is: DEC B
 Instruction at 0x1b75 is: JR Z,r8
-Instruction at 0x1b77 is: CP D8
+Instruction at 0x1b77 is: CP D8 80
 Instruction at 0x1b79 is: JR NZ,r8
-Instruction at 0x1b7b is: LD A,d8
+Instruction at 0x1b7b is: LD A,d8 2f
 Instruction at 0x1b7d is: JR r8
-Instruction at 0x1b7f is: CP D8
+Instruction at 0x1b7f is: CP D8 2f
 Instruction at 0x1b81 is: JR Z,r8
 Instruction at 0x1b83 is: LDH A,A8
-Instruction at 0x1b85 is: AND D8
-Instruction at 0x1b87 is: OR D8
+Instruction at 0x1b85 is: AND D8 7
+Instruction at 0x1b87 is: OR D8 80
 Instruction at 0x1b89 is: JR r8
 Instruction at 0x1b8b is: LDH (A8),A
 Instruction at 0x1b8d is: PUSH AF
 Instruction at 0x1b8e is: LD A,L
-Instruction at 0x1b8f is: AND D8
-Instruction at 0x1b91 is: CP D8
+Instruction at 0x1b8f is: AND D8 f
+Instruction at 0x1b91 is: CP D8 b
 Instruction at 0x1b93 is: JR NZ,r8
 Instruction at 0x1b95 is: LDH A,A8
-Instruction at 0x1b97 is: CP D8
+Instruction at 0x1b97 is: CP D8 2f
 Instruction at 0x1b99 is: JR Z,r8
 Instruction at 0x1b9b is: POP AF
-Instruction at 0x1b9c is: LD A,d8
+Instruction at 0x1b9c is: LD A,d8 2f
 Instruction at 0x1b9e is: JR r8
 Instruction at 0x1ba0 is: POP AF
 Instruction at 0x1ba1 is: LD (HL),A
@@ -3802,20 +3802,20 @@ Instruction at 0x1bae is: LD (HL),A
 Instruction at 0x1baf is: POP HL
 Instruction at 0x1bb0 is: INC HL
 Instruction at 0x1bb1 is: LD A,L
-Instruction at 0x1bb2 is: AND D8
-Instruction at 0x1bb4 is: CP D8
+Instruction at 0x1bb2 is: AND D8 f
+Instruction at 0x1bb4 is: CP D8 c
 Instruction at 0x1bb6 is: JR NZ,r8
 Instruction at 0x1bb8 is: XOR A
 Instruction at 0x1bb9 is: LDH (A8),A
 Instruction at 0x1bbb is: LD A,H
-Instruction at 0x1bbc is: AND D8
-Instruction at 0x1bbe is: CP D8
+Instruction at 0x1bbc is: AND D8 f
+Instruction at 0x1bbe is: CP D8 a
 Instruction at 0x1bc0 is: JR Z,r8
 Instruction at 0x1bc2 is: LD DE,d16
 Instruction at 0x1bc5 is: ADD HL,DE
 Instruction at 0x1bc6 is: JR r8
 Instruction at 0x1bc8 is: LD A,L
-Instruction at 0x1bc9 is: CP D8
+Instruction at 0x1bc9 is: CP D8 2c
 Instruction at 0x1bcb is: JR NZ,r8
 Instruction at 0x1bcd is: RET
 Instruction at 0x1bce is: CALL A16
@@ -3836,18 +3836,18 @@ Instruction at 0x1bf3 is: RET
 Instruction at 0x1bf4 is: CBPREFIX
 Instruction at 0x1bf6 is: RET Z
 Instruction at 0x1bf7 is: LD A,(A16)
-Instruction at 0x1bfa is: XOR D8
+Instruction at 0x1bfa is: XOR D8 1
 Instruction at 0x1bfc is: LD (A16),A
 Instruction at 0x1bff is: JR Z,r8
-Instruction at 0x1c01 is: LD A,d8
+Instruction at 0x1c01 is: LD A,d8 80
 Instruction at 0x1c03 is: LD (A16),A
 Instruction at 0x1c06 is: CALL A16
 Instruction at 0x1c09 is: RET
 Instruction at 0x1c0a is: XOR A
 Instruction at 0x1c0b is: JR r8
 Instruction at 0x1c0d is: LDH A,A8
-Instruction at 0x1c0f is: AND D8
-Instruction at 0x1c11 is: CP D8
+Instruction at 0x1c0f is: AND D8 f
+Instruction at 0x1c11 is: CP D8 f
 Instruction at 0x1c13 is: JP Z,A16
 Instruction at 0x1c16 is: LDH A,A8
 Instruction at 0x1c18 is: AND A
@@ -3860,31 +3860,31 @@ Instruction at 0x1c22 is: AND A
 Instruction at 0x1c23 is: JR NZ,r8
 Instruction at 0x1c25 is: LD HL,d16
 Instruction at 0x1c28 is: LDH A,A8
-Instruction at 0x1c2a is: XOR D8
+Instruction at 0x1c2a is: XOR D8 1
 Instruction at 0x1c2c is: LDH (A8),A
 Instruction at 0x1c2e is: JR Z,r8
 Instruction at 0x1c30 is: CBPREFIX
-Instruction at 0x1c32 is: LD A,d8
+Instruction at 0x1c32 is: LD A,d8 1
 Instruction at 0x1c34 is: LD (A16),A
 Instruction at 0x1c37 is: LD HL,d16
 Instruction at 0x1c3a is: LD DE,d16
-Instruction at 0x1c3d is: LD B,d8
+Instruction at 0x1c3d is: LD B,d8 4
 Instruction at 0x1c3f is: LDH A,A8
-Instruction at 0x1c41 is: AND D8
+Instruction at 0x1c41 is: AND D8 3
 Instruction at 0x1c43 is: JR NZ,r8
 Instruction at 0x1c45 is: LD A,(HL+)
 Instruction at 0x1c46 is: LD (DE), A
 Instruction at 0x1c47 is: INC DE
 Instruction at 0x1c48 is: DEC B
 Instruction at 0x1c49 is: JR NZ,r8
-Instruction at 0x1c4b is: LD A,d8
+Instruction at 0x1c4b is: LD A,d8 80
 Instruction at 0x1c4d is: LD (A16),A
 Instruction at 0x1c50 is: LD (A16),A
 Instruction at 0x1c53 is: CALL A16
 Instruction at 0x1c56 is: CALL A16
 Instruction at 0x1c59 is: RET
 Instruction at 0x1c5a is: CBPREFIX
-Instruction at 0x1c5c is: LD A,d8
+Instruction at 0x1c5c is: LD A,d8 2
 Instruction at 0x1c5e is: LD (A16),A
 Instruction at 0x1c61 is: LD A,(A16)
 Instruction at 0x1c64 is: AND A
@@ -3892,13 +3892,13 @@ Instruction at 0x1c65 is: JR Z,r8
 Instruction at 0x1c67 is: XOR A
 Instruction at 0x1c68 is: JR r8
 Instruction at 0x1c6a is: LDH A,A8
-Instruction at 0x1c6c is: CP D8
+Instruction at 0x1c6c is: CP D8 29
 Instruction at 0x1c6e is: RET NZ
 Instruction at 0x1c6f is: LDH A,A8
-Instruction at 0x1c71 is: XOR D8
+Instruction at 0x1c71 is: XOR D8 1
 Instruction at 0x1c73 is: LDH (A8),A
 Instruction at 0x1c75 is: JR Z,r8
-Instruction at 0x1c77 is: LD A,d8
+Instruction at 0x1c77 is: LD A,d8 1
 Instruction at 0x1c79 is: LD (A16),A
 Instruction at 0x1c7c is: LDH A,A8
 Instruction at 0x1c7e is: LDH (A8),A
@@ -3914,9 +3914,9 @@ Instruction at 0x1c8e is: JR Z,r8
 Instruction at 0x1c90 is: XOR A
 Instruction at 0x1c91 is: LDH (A8),A
 Instruction at 0x1c93 is: LDH A,A8
-Instruction at 0x1c95 is: CP D8
+Instruction at 0x1c95 is: CP D8 29
 Instruction at 0x1c97 is: JR NZ,r8
-Instruction at 0x1c99 is: LD A,d8
+Instruction at 0x1c99 is: LD A,d8 94
 Instruction at 0x1c9b is: LDH (A8),A
 Instruction at 0x1c9d is: LDH (A8),A
 Instruction at 0x1c9f is: POP HL
@@ -3924,19 +3924,19 @@ Instruction at 0x1ca0 is: RET
 Instruction at 0x1ca1 is: XOR A
 Instruction at 0x1ca2 is: LDH (A8),A
 Instruction at 0x1ca4 is: LDH A,A8
-Instruction at 0x1ca6 is: CP D8
+Instruction at 0x1ca6 is: CP D8 94
 Instruction at 0x1ca8 is: JR Z,r8
 Instruction at 0x1caa is: LDH A,A8
 Instruction at 0x1cac is: LDH (A8),A
 Instruction at 0x1cae is: LDH A,A8
 Instruction at 0x1cb0 is: LDH (A8),A
-Instruction at 0x1cb2 is: LD A,d8
+Instruction at 0x1cb2 is: LD A,d8 2
 Instruction at 0x1cb4 is: LD (A16),A
 Instruction at 0x1cb7 is: XOR A
 Instruction at 0x1cb8 is: LDH (A8),A
 Instruction at 0x1cba is: LD HL,d16
-Instruction at 0x1cbd is: LD B,d8
-Instruction at 0x1cbf is: LD C,d8
+Instruction at 0x1cbd is: LD B,d8 8e
+Instruction at 0x1cbf is: LD C,d8 5
 Instruction at 0x1cc1 is: CALL A16
 Instruction at 0x1cc4 is: INC L
 Instruction at 0x1cc5 is: DEC C
@@ -3945,7 +3945,7 @@ Instruction at 0x1cc8 is: RET
 Instruction at 0x1cc9 is: POP HL
 Instruction at 0x1cca is: RET
 Instruction at 0x1ccb is: LD HL,d16
-Instruction at 0x1cce is: LD C,d8
+Instruction at 0x1cce is: LD C,d8 5
 Instruction at 0x1cd0 is: LD DE,d16
 Instruction at 0x1cd3 is: LD A,(DE)
 Instruction at 0x1cd4 is: CALL A16
@@ -3956,8 +3956,8 @@ Instruction at 0x1cda is: JR NZ,r8
 Instruction at 0x1cdc is: RET
 Instruction at 0x1cdd is: ADD HL,DE
 Instruction at 0x1cde is: LD A,(BC)
-Instruction at 0x1cdf is: LD E, d8
-Instruction at 0x1ce1 is: LD C,d8
+Instruction at 0x1cdf is: LD E, d8 1c
+Instruction at 0x1ce1 is: LD C,d8 3e
 Instruction at 0x1ce3 is: ADD A,B
 Instruction at 0x1ce4 is: LD (A16),A
 Instruction at 0x1ce7 is: LD (A16),A
@@ -3967,11 +3967,11 @@ Instruction at 0x1cf0 is: XOR A
 Instruction at 0x1cf1 is: LDH (A8),A
 Instruction at 0x1cf3 is: LDH (A8),A
 Instruction at 0x1cf5 is: CALL A16
-Instruction at 0x1cf8 is: LD A,d8
+Instruction at 0x1cf8 is: LD A,d8 87
 Instruction at 0x1cfa is: CALL A16
-Instruction at 0x1cfd is: LD A,d8
+Instruction at 0x1cfd is: LD A,d8 46
 Instruction at 0x1cff is: LDH (A8),A
-Instruction at 0x1d01 is: LD A,d8
+Instruction at 0x1d01 is: LD A,d8 d
 Instruction at 0x1d03 is: LDH (A8),A
 Instruction at 0x1d05 is: RET
 Instruction at 0x1d06 is: LDH A,A8
@@ -3983,13 +3983,13 @@ Instruction at 0x1d0f is: XOR A
 Instruction at 0x1d10 is: LDH (A8),A
 Instruction at 0x1d12 is: LDH A,A8
 Instruction at 0x1d14 is: AND A
-Instruction at 0x1d15 is: LD A,d8
+Instruction at 0x1d15 is: LD A,d8 16
 Instruction at 0x1d17 is: JR NZ,r8
 Instruction at 0x1d19 is: LDH A,A8
-Instruction at 0x1d1b is: CP D8
-Instruction at 0x1d1d is: LD A,d8
+Instruction at 0x1d1b is: CP D8 37
+Instruction at 0x1d1d is: LD A,d8 10
 Instruction at 0x1d1f is: JR Z,r8
-Instruction at 0x1d21 is: LD A,d8
+Instruction at 0x1d21 is: LD A,d8 12
 Instruction at 0x1d23 is: LDH (A8),A
 Instruction at 0x1d25 is: RET
 Instruction at 0x1d26 is: LDH A,A8
@@ -4014,27 +4014,27 @@ Instruction at 0x1d53 is: LD DE,d16
 Instruction at 0x1d56 is: LD HL,d16
 Instruction at 0x1d59 is: CALL A16
 Instruction at 0x1d5c is: LD HL,d16
-Instruction at 0x1d5f is: LD B,d8
+Instruction at 0x1d5f is: LD B,d8 3
 Instruction at 0x1d61 is: XOR A
 Instruction at 0x1d62 is: LD (HL+),A
 Instruction at 0x1d63 is: DEC B
 Instruction at 0x1d64 is: JR NZ,r8
-Instruction at 0x1d66 is: LD A,d8
+Instruction at 0x1d66 is: LD A,d8 80
 Instruction at 0x1d68 is: LDH (A8),A
-Instruction at 0x1d6a is: LD A,d8
+Instruction at 0x1d6a is: LD A,d8 80
 Instruction at 0x1d6c is: LD (A16),A
 Instruction at 0x1d6f is: LD (A16),A
 Instruction at 0x1d72 is: CALL A16
 Instruction at 0x1d75 is: CALL A16
 Instruction at 0x1d78 is: CALL A16
-Instruction at 0x1d7b is: LD A,d8
+Instruction at 0x1d7b is: LD A,d8 25
 Instruction at 0x1d7d is: LDH (A8),A
-Instruction at 0x1d7f is: LD A,d8
+Instruction at 0x1d7f is: LD A,d8 b
 Instruction at 0x1d81 is: LDH (A8),A
 Instruction at 0x1d83 is: RET
 Instruction at 0x1d84 is: PUSH HL
 Instruction at 0x1d85 is: LD HL,d16
-Instruction at 0x1d88 is: LD B,d8
+Instruction at 0x1d88 is: LD B,d8 3
 Instruction at 0x1d8a is: XOR A
 Instruction at 0x1d8b is: LD (HL+),A
 Instruction at 0x1d8c is: DEC B
@@ -4047,24 +4047,24 @@ Instruction at 0x1d96 is: CALL A16
 Instruction at 0x1d99 is: DEC B
 Instruction at 0x1d9a is: JR NZ,r8
 Instruction at 0x1d9c is: POP HL
-Instruction at 0x1d9d is: LD B,d8
+Instruction at 0x1d9d is: LD B,d8 3
 Instruction at 0x1d9f is: LD DE,d16
 Instruction at 0x1da2 is: LD A,(DE)
-Instruction at 0x1da3 is: AND D8
+Instruction at 0x1da3 is: AND D8 f0
 Instruction at 0x1da5 is: JR NZ,r8
 Instruction at 0x1da7 is: LD A,(DE)
-Instruction at 0x1da8 is: AND D8
+Instruction at 0x1da8 is: AND D8 f
 Instruction at 0x1daa is: JR NZ,r8
 Instruction at 0x1dac is: DEC E
 Instruction at 0x1dad is: DEC B
 Instruction at 0x1dae is: JR NZ,r8
 Instruction at 0x1db0 is: RET
 Instruction at 0x1db1 is: LD A,(DE)
-Instruction at 0x1db2 is: AND D8
+Instruction at 0x1db2 is: AND D8 f0
 Instruction at 0x1db4 is: CBPREFIX
 Instruction at 0x1db6 is: LD (HL+),A
 Instruction at 0x1db7 is: LD A,(DE)
-Instruction at 0x1db8 is: AND D8
+Instruction at 0x1db8 is: AND D8 f
 Instruction at 0x1dba is: LD (HL+),A
 Instruction at 0x1dbb is: DEC E
 Instruction at 0x1dbc is: DEC B
@@ -4073,9 +4073,9 @@ Instruction at 0x1dbf is: RET
 Instruction at 0x1dc0 is: LDH A,A8
 Instruction at 0x1dc2 is: AND A
 Instruction at 0x1dc3 is: RET NZ
-Instruction at 0x1dc4 is: LD A,d8
+Instruction at 0x1dc4 is: LD A,d8 1
 Instruction at 0x1dc6 is: LD (A16),A
-Instruction at 0x1dc9 is: LD A,d8
+Instruction at 0x1dc9 is: LD A,d8 5
 Instruction at 0x1dcb is: LDH (A8),A
 Instruction at 0x1dcd is: RET
 Instruction at 0x1dce is: LDH A,A8
@@ -4087,16 +4087,16 @@ Instruction at 0x1dd8 is: CALL A16
 Instruction at 0x1ddb is: CALL A16
 Instruction at 0x1dde is: LD HL,d16
 Instruction at 0x1de1 is: LD DE,d16
-Instruction at 0x1de4 is: LD C,d8
+Instruction at 0x1de4 is: LD C,d8 a
 Instruction at 0x1de6 is: CALL A16
-Instruction at 0x1de9 is: LD A,d8
+Instruction at 0x1de9 is: LD A,d8 10
 Instruction at 0x1deb is: LD HL,d16
 Instruction at 0x1dee is: LD (HL),A
-Instruction at 0x1def is: LD L,d8
+Instruction at 0x1def is: LD L,d8 76
 Instruction at 0x1df1 is: LD (HL),A
 Instruction at 0x1df2 is: LD HL,d16
 Instruction at 0x1df5 is: LD DE,d16
-Instruction at 0x1df8 is: LD B,d8
+Instruction at 0x1df8 is: LD B,d8 a
 Instruction at 0x1dfa is: LD A,(DE)
 Instruction at 0x1dfb is: LD (HL+),A
 Instruction at 0x1dfc is: LD (HL+),A
@@ -4108,9 +4108,9 @@ Instruction at 0x1e03 is: POP DE
 Instruction at 0x1e04 is: DEC B
 Instruction at 0x1e05 is: JR NZ,r8
 Instruction at 0x1e07 is: LDH A,A8
-Instruction at 0x1e09 is: CP D8
+Instruction at 0x1e09 is: CP D8 5
 Instruction at 0x1e0b is: JR NZ,r8
-Instruction at 0x1e0d is: LD A,d8
+Instruction at 0x1e0d is: LD A,d8 9
 Instruction at 0x1e0f is: INC A
 Instruction at 0x1e10 is: LD B,A
 Instruction at 0x1e11 is: LD HL,d16
@@ -4121,32 +4121,32 @@ Instruction at 0x1e19 is: ADD HL,DE
 Instruction at 0x1e1a is: DEC B
 Instruction at 0x1e1b is: JR NZ,r8
 Instruction at 0x1e1d is: LDH A,A8
-Instruction at 0x1e1f is: ADD A,D8
+Instruction at 0x1e1f is: ADD A,D8 a
 Instruction at 0x1e21 is: LD (A16),A
-Instruction at 0x1e24 is: LD A,d8
+Instruction at 0x1e24 is: LD A,d8 25
 Instruction at 0x1e26 is: LDH (A8),A
-Instruction at 0x1e28 is: LD A,d8
+Instruction at 0x1e28 is: LD A,d8 1b
 Instruction at 0x1e2a is: LDH (A8),A
-Instruction at 0x1e2c is: LD A,d8
+Instruction at 0x1e2c is: LD A,d8 23
 Instruction at 0x1e2e is: LDH (A8),A
 Instruction at 0x1e30 is: RET
 Instruction at 0x1e31 is: INC E
 Instruction at 0x1e32 is: RRCA
-Instruction at 0x1e33 is: LD E, d8
+Instruction at 0x1e33 is: LD E, d8 32
 Instruction at 0x1e35 is: JR NZ,r8
-Instruction at 0x1e37 is: LD H,d8
+Instruction at 0x1e37 is: LD H,d8 1d
 Instruction at 0x1e39 is: JR Z,r8
-Instruction at 0x1e3b is: LD A,d8
+Instruction at 0x1e3b is: LD A,d8 a
 Instruction at 0x1e3d is: CALL A16
 Instruction at 0x1e40 is: RET
 Instruction at 0x1e41 is: LDH A,A8
-Instruction at 0x1e43 is: CP D8
+Instruction at 0x1e43 is: CP D8 14
 Instruction at 0x1e45 is: JR Z,r8
 Instruction at 0x1e47 is: AND A
 Instruction at 0x1e48 is: RET NZ
 Instruction at 0x1e49 is: LD HL,d16
 Instruction at 0x1e4c is: LD DE,d16
-Instruction at 0x1e4f is: LD B,d8
+Instruction at 0x1e4f is: LD B,d8 a
 Instruction at 0x1e51 is: PUSH HL
 Instruction at 0x1e52 is: DEC (HL)
 Instruction at 0x1e53 is: JR NZ,r8
@@ -4154,40 +4154,40 @@ Instruction at 0x1e55 is: INC L
 Instruction at 0x1e56 is: LD A,(HL-) 
 Instruction at 0x1e57 is: LD (HL),A
 Instruction at 0x1e58 is: LD A,L
-Instruction at 0x1e59 is: AND D8
-Instruction at 0x1e5b is: OR D8
+Instruction at 0x1e59 is: AND D8 f0
+Instruction at 0x1e5b is: OR D8 3
 Instruction at 0x1e5d is: LD L,A
 Instruction at 0x1e5e is: LD A,(HL)
-Instruction at 0x1e5f is: XOR D8
+Instruction at 0x1e5f is: XOR D8 1
 Instruction at 0x1e61 is: LD (HL),A
-Instruction at 0x1e62 is: CP D8
+Instruction at 0x1e62 is: CP D8 50
 Instruction at 0x1e64 is: JR Z,r8
-Instruction at 0x1e66 is: CP D8
+Instruction at 0x1e66 is: CP D8 51
 Instruction at 0x1e68 is: JR Z,r8
 Instruction at 0x1e6a is: POP HL
 Instruction at 0x1e6b is: ADD HL,DE
 Instruction at 0x1e6c is: DEC B
 Instruction at 0x1e6d is: JR NZ,r8
-Instruction at 0x1e6f is: LD A,d8
+Instruction at 0x1e6f is: LD A,d8 a
 Instruction at 0x1e71 is: CALL A16
 Instruction at 0x1e74 is: LD A,(A16)
 Instruction at 0x1e77 is: AND A
 Instruction at 0x1e78 is: RET NZ
 Instruction at 0x1e79 is: CALL A16
 Instruction at 0x1e7c is: LDH A,A8
-Instruction at 0x1e7e is: CP D8
-Instruction at 0x1e80 is: LD A,d8
+Instruction at 0x1e7e is: CP D8 5
+Instruction at 0x1e80 is: LD A,d8 26
 Instruction at 0x1e82 is: JR Z,r8
-Instruction at 0x1e84 is: LD A,d8
+Instruction at 0x1e84 is: LD A,d8 5
 Instruction at 0x1e86 is: LDH (A8),A
 Instruction at 0x1e88 is: RET
 Instruction at 0x1e89 is: DEC L
 Instruction at 0x1e8a is: DEC L
-Instruction at 0x1e8b is: LD (HL),d8
+Instruction at 0x1e8b is: LD (HL),d8 67
 Instruction at 0x1e8d is: JR r8
 Instruction at 0x1e8f is: DEC L
 Instruction at 0x1e90 is: DEC L
-Instruction at 0x1e91 is: LD (HL),d8
+Instruction at 0x1e91 is: LD (HL),d8 5d
 Instruction at 0x1e93 is: JR r8
 Instruction at 0x1e95 is: XOR A
 Instruction at 0x1e96 is: LD (A16),A
@@ -4220,14 +4220,14 @@ Instruction at 0x1ec5 is: CALL A16
 Instruction at 0x1ec8 is: LD DE,d16
 Instruction at 0x1ecb is: LD HL,d16
 Instruction at 0x1ece is: CALL A16
-Instruction at 0x1ed1 is: LD A,d8
+Instruction at 0x1ed1 is: LD A,d8 2
 Instruction at 0x1ed3 is: LD (A16),A
 Instruction at 0x1ed6 is: RET
 Instruction at 0x1ed7 is: LD A,(A16)
 Instruction at 0x1eda is: AND A
 Instruction at 0x1edb is: RET Z
 Instruction at 0x1edc is: LD A,(A16)
-Instruction at 0x1edf is: CP D8
+Instruction at 0x1edf is: CP D8 4
 Instruction at 0x1ee1 is: JR Z,r8
 Instruction at 0x1ee3 is: LD DE,d16
 Instruction at 0x1ee6 is: LD BC,d16
@@ -4237,12 +4237,12 @@ Instruction at 0x1eed is: JR Z,r8
 Instruction at 0x1eef is: LD DE,d16
 Instruction at 0x1ef2 is: LD BC,d16
 Instruction at 0x1ef5 is: LD HL,d16
-Instruction at 0x1ef8 is: CP D8
+Instruction at 0x1ef8 is: CP D8 1
 Instruction at 0x1efa is: JR Z,r8
 Instruction at 0x1efc is: LD DE,d16
 Instruction at 0x1eff is: LD BC,d16
 Instruction at 0x1f02 is: LD HL,d16
-Instruction at 0x1f05 is: CP D8
+Instruction at 0x1f05 is: CP D8 2
 Instruction at 0x1f07 is: JR Z,r8
 Instruction at 0x1f09 is: LD DE,d16
 Instruction at 0x1f0c is: LD BC,d16
@@ -4252,57 +4252,57 @@ Instruction at 0x1f15 is: RET
 Instruction at 0x1f16 is: LDH A,A8
 Instruction at 0x1f18 is: AND A
 Instruction at 0x1f19 is: RET Z
-Instruction at 0x1f1a is: LD A,d8
+Instruction at 0x1f1a is: LD A,d8 2
 Instruction at 0x1f1c is: LDH (A8),A
 Instruction at 0x1f1e is: RET
 Instruction at 0x1f1f is: LDH A,A8
 Instruction at 0x1f21 is: AND A
 Instruction at 0x1f22 is: RET NZ
-Instruction at 0x1f23 is: LD A,d8
+Instruction at 0x1f23 is: LD A,d8 4
 Instruction at 0x1f25 is: LD (A16),A
 Instruction at 0x1f28 is: LDH A,A8
 Instruction at 0x1f2a is: AND A
 Instruction at 0x1f2b is: JR Z,r8
-Instruction at 0x1f2d is: LD A,d8
+Instruction at 0x1f2d is: LD A,d8 3f
 Instruction at 0x1f2f is: LDH (A8),A
-Instruction at 0x1f31 is: LD A,d8
+Instruction at 0x1f31 is: LD A,d8 1b
 Instruction at 0x1f33 is: LDH (A8),A
 Instruction at 0x1f35 is: JR r8
-Instruction at 0x1f37 is: LD A,d8
+Instruction at 0x1f37 is: LD A,d8 2f
 Instruction at 0x1f39 is: CALL A16
 Instruction at 0x1f3c is: LD HL,d16
 Instruction at 0x1f3f is: LD DE,d16
-Instruction at 0x1f42 is: LD C,d8
+Instruction at 0x1f42 is: LD C,d8 7
 Instruction at 0x1f44 is: CALL A16
 Instruction at 0x1f47 is: LD HL,d16
 Instruction at 0x1f4a is: LD DE,d16
-Instruction at 0x1f4d is: LD C,d8
+Instruction at 0x1f4d is: LD C,d8 6
 Instruction at 0x1f4f is: CALL A16
 Instruction at 0x1f52 is: LDH A,A8
-Instruction at 0x1f54 is: CP D8
+Instruction at 0x1f54 is: CP D8 37
 Instruction at 0x1f56 is: JR NZ,r8
 Instruction at 0x1f58 is: LD HL,d16
 Instruction at 0x1f5b is: LD A,(HL)
-Instruction at 0x1f5c is: LD B,d8
-Instruction at 0x1f5e is: CP D8
+Instruction at 0x1f5c is: LD B,d8 58
+Instruction at 0x1f5e is: CP D8 20
 Instruction at 0x1f60 is: JR NC,r8
 Instruction at 0x1f62 is: INC B
-Instruction at 0x1f63 is: CP D8
+Instruction at 0x1f63 is: CP D8 15
 Instruction at 0x1f65 is: JR NC,r8
 Instruction at 0x1f67 is: INC B
-Instruction at 0x1f68 is: CP D8
+Instruction at 0x1f68 is: CP D8 10
 Instruction at 0x1f6a is: JR NC,r8
-Instruction at 0x1f6c is: LD A,d8
+Instruction at 0x1f6c is: LD A,d8 4
 Instruction at 0x1f6e is: LDH (A8),A
 Instruction at 0x1f70 is: RET
 Instruction at 0x1f71 is: LD A,B
 Instruction at 0x1f72 is: LDH (A8),A
-Instruction at 0x1f74 is: LD A,d8
+Instruction at 0x1f74 is: LD A,d8 90
 Instruction at 0x1f76 is: LDH (A8),A
-Instruction at 0x1f78 is: LD A,d8
+Instruction at 0x1f78 is: LD A,d8 34
 Instruction at 0x1f7a is: LDH (A8),A
 Instruction at 0x1f7c is: RET
-Instruction at 0x1f7d is: LD B,d8
+Instruction at 0x1f7d is: LD B,d8 8
 Instruction at 0x1f7f is: PUSH HL
 Instruction at 0x1f80 is: LD A,(DE)
 Instruction at 0x1f81 is: LD (HL+),A
@@ -4318,13 +4318,13 @@ Instruction at 0x1f8d is: DEC C
 Instruction at 0x1f8e is: JR NZ,r8
 Instruction at 0x1f90 is: RET
 Instruction at 0x1f91 is: LDH A,A8
-Instruction at 0x1f93 is: CP D8
+Instruction at 0x1f93 is: CP D8 37
 Instruction at 0x1f95 is: RET NZ
 Instruction at 0x1f96 is: LDH A,A8
 Instruction at 0x1f98 is: AND A
 Instruction at 0x1f99 is: RET NZ
 Instruction at 0x1f9a is: LDH A,A8
-Instruction at 0x1f9c is: CP D8
+Instruction at 0x1f9c is: CP D8 5
 Instruction at 0x1f9e is: RET NZ
 Instruction at 0x1f9f is: LD HL,d16
 Instruction at 0x1fa2 is: LD BC,d16
@@ -4347,7 +4347,7 @@ Instruction at 0x1fbd is: LD DE,d16
 Instruction at 0x1fc0 is: LD A,(HL)
 Instruction at 0x1fc1 is: AND A
 Instruction at 0x1fc2 is: RET Z
-Instruction at 0x1fc3 is: LD (HL),d8
+Instruction at 0x1fc3 is: LD (HL),d8 0
 Instruction at 0x1fc5 is: LDH A,A8
 Instruction at 0x1fc7 is: LD B,A
 Instruction at 0x1fc8 is: INC B
@@ -4361,14 +4361,14 @@ Instruction at 0x1fd3 is: DEC B
 Instruction at 0x1fd4 is: JR NZ,r8
 Instruction at 0x1fd6 is: RET
 Instruction at 0x1fd7 is: PUSH AF
-Instruction at 0x1fd8 is: LD A,d8
+Instruction at 0x1fd8 is: LD A,d8 2
 Instruction at 0x1fda is: LDH (A8),A
 Instruction at 0x1fdc is: POP AF
 Instruction at 0x1fdd is: LD HL,d16
-Instruction at 0x1fe0 is: LD C,d8
+Instruction at 0x1fe0 is: LD C,d8 12
 Instruction at 0x1fe2 is: LD DE,d16
 Instruction at 0x1fe5 is: PUSH HL
-Instruction at 0x1fe6 is: LD B,d8
+Instruction at 0x1fe6 is: LD B,d8 a
 Instruction at 0x1fe8 is: LD (HL+),A
 Instruction at 0x1fe9 is: DEC B
 Instruction at 0x1fea is: JR NZ,r8
@@ -4379,9 +4379,9 @@ Instruction at 0x1fef is: JR NZ,r8
 Instruction at 0x1ff1 is: RET
 Instruction at 0x1ff2 is: LD HL,d16
 Instruction at 0x1ff5 is: LD DE,d16
-Instruction at 0x1ff8 is: LD C,d8
-Instruction at 0x1ffa is: LD A,d8
-Instruction at 0x1ffc is: LD B,d8
+Instruction at 0x1ff8 is: LD C,d8 2
+Instruction at 0x1ffa is: LD A,d8 2f
+Instruction at 0x1ffc is: LD B,d8 a
 Instruction at 0x1ffe is: LD (HL+),A
 Instruction at 0x1fff is: DEC B
 Instruction at 0x2000 is: JR NZ,r8
@@ -4390,15 +4390,15 @@ Instruction at 0x2003 is: DEC C
 Instruction at 0x2004 is: JR NZ,r8
 Instruction at 0x2006 is: RET
 Instruction at 0x2007 is: LD HL,d16
-Instruction at 0x200a is: LD (HL),d8
+Instruction at 0x200a is: LD (HL),d8 0
 Instruction at 0x200c is: INC L
-Instruction at 0x200d is: LD (HL),d8
+Instruction at 0x200d is: LD (HL),d8 18
 Instruction at 0x200f is: INC L
-Instruction at 0x2010 is: LD (HL),d8
+Instruction at 0x2010 is: LD (HL),d8 3f
 Instruction at 0x2012 is: INC L
 Instruction at 0x2013 is: LD A,(A16)
 Instruction at 0x2016 is: LD (HL),A
-Instruction at 0x2017 is: AND D8
+Instruction at 0x2017 is: AND D8 fc
 Instruction at 0x2019 is: LD C,A
 Instruction at 0x201a is: LDH A,A8
 Instruction at 0x201c is: AND A
@@ -4406,13 +4406,13 @@ Instruction at 0x201d is: JR NZ,r8
 Instruction at 0x201f is: LDH A,A8
 Instruction at 0x2021 is: AND A
 Instruction at 0x2022 is: JR Z,r8
-Instruction at 0x2024 is: LD H,d8
+Instruction at 0x2024 is: LD H,d8 c3
 Instruction at 0x2026 is: LDH A,A8
 Instruction at 0x2028 is: LD L,A
 Instruction at 0x2029 is: LD E,(HL)
 Instruction at 0x202a is: INC HL
 Instruction at 0x202b is: LD A,H
-Instruction at 0x202c is: CP D8
+Instruction at 0x202c is: CP D8 c4
 Instruction at 0x202e is: JR NZ,r8
 Instruction at 0x2030 is: LD HL,d16
 Instruction at 0x2033 is: LD A,L
@@ -4420,10 +4420,10 @@ Instruction at 0x2034 is: LDH (A8),A
 Instruction at 0x2036 is: LDH A,A8
 Instruction at 0x2038 is: AND A
 Instruction at 0x2039 is: JR Z,r8
-Instruction at 0x203b is: OR D8
+Instruction at 0x203b is: OR D8 80
 Instruction at 0x203d is: LDH (A8),A
 Instruction at 0x203f is: JR r8
-Instruction at 0x2041 is: LD H,d8
+Instruction at 0x2041 is: LD H,d8 3
 Instruction at 0x2043 is: LDH A,A8
 Instruction at 0x2045 is: LD B,A
 Instruction at 0x2046 is: XOR A
@@ -4433,7 +4433,7 @@ Instruction at 0x204a is: INC A
 Instruction at 0x204b is: INC A
 Instruction at 0x204c is: INC A
 Instruction at 0x204d is: INC A
-Instruction at 0x204e is: CP D8
+Instruction at 0x204e is: CP D8 1c
 Instruction at 0x2050 is: JR Z,r8
 Instruction at 0x2052 is: JR r8
 Instruction at 0x2054 is: LD D,A
@@ -4443,7 +4443,7 @@ Instruction at 0x2058 is: DEC H
 Instruction at 0x2059 is: JR Z,r8
 Instruction at 0x205b is: OR D
 Instruction at 0x205c is: OR C
-Instruction at 0x205d is: AND D8
+Instruction at 0x205d is: AND D8 fc
 Instruction at 0x205f is: CP C
 Instruction at 0x2060 is: JR Z,r8
 Instruction at 0x2062 is: LD A,D
@@ -4458,8 +4458,8 @@ Instruction at 0x2071 is: LD A,(A16)
 Instruction at 0x2074 is: AND A
 Instruction at 0x2075 is: JR Z,r8
 Instruction at 0x2077 is: LDH A,A8
-Instruction at 0x2079 is: AND D8
-Instruction at 0x207b is: CP D8
+Instruction at 0x2079 is: AND D8 b0
+Instruction at 0x207b is: CP D8 80
 Instruction at 0x207d is: JR NZ,r8
 Instruction at 0x207f is: XOR A
 Instruction at 0x2080 is: LD (A16),A
@@ -4472,17 +4472,17 @@ Instruction at 0x208b is: JR NZ,r8
 Instruction at 0x208d is: LDH A,A8
 Instruction at 0x208f is: AND A
 Instruction at 0x2090 is: JR NZ,r8
-Instruction at 0x2092 is: LD A,d8
+Instruction at 0x2092 is: LD A,d8 3
 Instruction at 0x2094 is: LDH (A8),A
 Instruction at 0x2096 is: LD HL,d16
 Instruction at 0x2099 is: INC (HL)
 Instruction at 0x209a is: JR r8
 Instruction at 0x209c is: LDH A,A8
-Instruction at 0x209e is: AND D8
-Instruction at 0x20a0 is: CP D8
+Instruction at 0x209e is: AND D8 b0
+Instruction at 0x20a0 is: CP D8 80
 Instruction at 0x20a2 is: JR Z,r8
 Instruction at 0x20a4 is: LD HL,d16
-Instruction at 0x20a7 is: LD (HL),d8
+Instruction at 0x20a7 is: LD (HL),d8 0
 Instruction at 0x20a9 is: LDH A,A8
 Instruction at 0x20ab is: AND A
 Instruction at 0x20ac is: JR Z,r8
@@ -4491,7 +4491,7 @@ Instruction at 0x20af is: LDH (A8),A
 Instruction at 0x20b1 is: CALL A16
 Instruction at 0x20b4 is: RET
 Instruction at 0x20b5 is: LDH A,A8
-Instruction at 0x20b7 is: CP D8
+Instruction at 0x20b7 is: CP D8 3
 Instruction at 0x20b9 is: RET Z
 Instruction at 0x20ba is: LDH A,A8
 Instruction at 0x20bc is: AND A
@@ -4501,7 +4501,7 @@ Instruction at 0x20c0 is: LDH (A8),A
 Instruction at 0x20c2 is: LD HL,d16
 Instruction at 0x20c5 is: LD A,(HL)
 Instruction at 0x20c6 is: LDH (A8),A
-Instruction at 0x20c8 is: ADD A,D8
+Instruction at 0x20c8 is: ADD A,D8 8
 Instruction at 0x20ca is: LD (HL),A
 Instruction at 0x20cb is: CALL A16
 Instruction at 0x20ce is: CALL A16
@@ -4511,7 +4511,7 @@ Instruction at 0x20d3 is: LDH A,A8
 Instruction at 0x20d5 is: LD HL,d16
 Instruction at 0x20d8 is: LD (HL),A
 Instruction at 0x20d9 is: CALL A16
-Instruction at 0x20dc is: LD A,d8
+Instruction at 0x20dc is: LD A,d8 1
 Instruction at 0x20de is: LDH (A8),A
 Instruction at 0x20e0 is: LD (A16),A
 Instruction at 0x20e3 is: LDH A,A8
@@ -4519,7 +4519,7 @@ Instruction at 0x20e5 is: AND A
 Instruction at 0x20e6 is: JR Z,r8
 Instruction at 0x20e8 is: LD C,A
 Instruction at 0x20e9 is: LDH A,A8
-Instruction at 0x20eb is: CP D8
+Instruction at 0x20eb is: CP D8 37
 Instruction at 0x20ed is: JR Z,r8
 Instruction at 0x20ef is: LD DE,d16
 Instruction at 0x20f2 is: LD A,(DE)
@@ -4527,7 +4527,7 @@ Instruction at 0x20f3 is: LD L,A
 Instruction at 0x20f4 is: INC DE
 Instruction at 0x20f5 is: LD A,(DE)
 Instruction at 0x20f6 is: LD H,A
-Instruction at 0x20f7 is: LD B,d8
+Instruction at 0x20f7 is: LD B,d8 0
 Instruction at 0x20f9 is: DEC C
 Instruction at 0x20fa is: ADD HL,BC
 Instruction at 0x20fb is: LD A,H
@@ -4538,19 +4538,19 @@ Instruction at 0x20ff is: LD (DE), A
 Instruction at 0x2100 is: XOR A
 Instruction at 0x2101 is: LDH (A8),A
 Instruction at 0x2103 is: LD A,(A16)
-Instruction at 0x2106 is: CP D8
+Instruction at 0x2106 is: CP D8 18
 Instruction at 0x2108 is: RET NZ
 Instruction at 0x2109 is: LD A,(A16)
-Instruction at 0x210c is: CP D8
+Instruction at 0x210c is: CP D8 3f
 Instruction at 0x210e is: RET NZ
 Instruction at 0x210f is: LD HL,d16
 Instruction at 0x2112 is: LD A,(HL)
-Instruction at 0x2113 is: CP D8
+Instruction at 0x2113 is: CP D8 1
 Instruction at 0x2115 is: JR NZ,r8
 Instruction at 0x2117 is: CALL A16
-Instruction at 0x211a is: LD A,d8
+Instruction at 0x211a is: LD A,d8 1
 Instruction at 0x211c is: LDH (A8),A
-Instruction at 0x211e is: LD A,d8
+Instruction at 0x211e is: LD A,d8 2
 Instruction at 0x2120 is: LD (A16),A
 Instruction at 0x2123 is: RET
 Instruction at 0x2124 is: INC (HL)
@@ -4562,26 +4562,26 @@ Instruction at 0x212a is: INC A
 Instruction at 0x212b is: DAA
 Instruction at 0x212c is: JR r8
 Instruction at 0x212e is: LD E,A
-Instruction at 0x212f is: LD D,d8
+Instruction at 0x212f is: LD D,d8 0
 Instruction at 0x2131 is: LD HL,d16
 Instruction at 0x2134 is: CALL A16
-Instruction at 0x2137 is: LD A,d8
+Instruction at 0x2137 is: LD A,d8 1
 Instruction at 0x2139 is: LD (A16),A
 Instruction at 0x213c is: JR r8
 Instruction at 0x213e is: LDH A,A8
-Instruction at 0x2140 is: CP D8
+Instruction at 0x2140 is: CP D8 2
 Instruction at 0x2142 is: RET NZ
-Instruction at 0x2143 is: LD A,d8
+Instruction at 0x2143 is: LD A,d8 2
 Instruction at 0x2145 is: LD (A16),A
 Instruction at 0x2148 is: XOR A
 Instruction at 0x2149 is: LDH (A8),A
 Instruction at 0x214b is: LD DE,d16
 Instruction at 0x214e is: LD HL,d16
-Instruction at 0x2151 is: LD B,d8
-Instruction at 0x2153 is: LD C,d8
+Instruction at 0x2151 is: LD B,d8 10
+Instruction at 0x2153 is: LD C,d8 a
 Instruction at 0x2155 is: PUSH HL
 Instruction at 0x2156 is: LD A,(HL+)
-Instruction at 0x2157 is: CP D8
+Instruction at 0x2157 is: CP D8 2f
 Instruction at 0x2159 is: JP Z,A16
 Instruction at 0x215c is: DEC C
 Instruction at 0x215d is: JR NZ,r8
@@ -4601,7 +4601,7 @@ Instruction at 0x216f is: ADD HL,DE
 Instruction at 0x2170 is: POP DE
 Instruction at 0x2171 is: DEC B
 Instruction at 0x2172 is: JR NZ,r8
-Instruction at 0x2174 is: LD A,d8
+Instruction at 0x2174 is: LD A,d8 3
 Instruction at 0x2176 is: LDH (A8),A
 Instruction at 0x2178 is: DEC A
 Instruction at 0x2179 is: LDH (A8),A
@@ -4611,20 +4611,20 @@ Instruction at 0x217e is: RET Z
 Instruction at 0x217f is: LD B,A
 Instruction at 0x2180 is: LD HL,d16
 Instruction at 0x2183 is: LDH A,A8
-Instruction at 0x2185 is: CP D8
+Instruction at 0x2185 is: CP D8 77
 Instruction at 0x2187 is: JR Z,r8
 Instruction at 0x2189 is: LD A,B
 Instruction at 0x218a is: ADD A,(HL
 Instruction at 0x218b is: DAA
 Instruction at 0x218c is: LD (HL+),A
-Instruction at 0x218d is: LD A,d8
+Instruction at 0x218d is: LD A,d8 0
 Instruction at 0x218f is: ADC A,(HL
 Instruction at 0x2190 is: DAA
 Instruction at 0x2191 is: LD (HL),A
 Instruction at 0x2192 is: JR NC,r8
-Instruction at 0x2194 is: LD (HL),d8
+Instruction at 0x2194 is: LD (HL),d8 99
 Instruction at 0x2196 is: DEC HL
-Instruction at 0x2197 is: LD (HL),d8
+Instruction at 0x2197 is: LD (HL),d8 99
 Instruction at 0x2199 is: JR r8
 Instruction at 0x219b is: LD A,(HL)
 Instruction at 0x219c is: OR A
@@ -4633,26 +4633,26 @@ Instruction at 0x219e is: JR Z,r8
 Instruction at 0x21a0 is: JR Z,r8 
 Instruction at 0x21a2 is: DAA
 Instruction at 0x21a3 is: LD (HL),A
-Instruction at 0x21a4 is: AND D8
-Instruction at 0x21a6 is: CP D8
+Instruction at 0x21a4 is: AND D8 f0
+Instruction at 0x21a6 is: CP D8 90
 Instruction at 0x21a8 is: JR Z,r8
 Instruction at 0x21aa is: LD A,B
-Instruction at 0x21ab is: LD C,d8
+Instruction at 0x21ab is: LD C,d8 6
 Instruction at 0x21ad is: LD HL,d16
-Instruction at 0x21b0 is: LD B,d8
-Instruction at 0x21b2 is: CP D8
+Instruction at 0x21b0 is: LD B,d8 0
+Instruction at 0x21b2 is: CP D8 1
 Instruction at 0x21b4 is: JR Z,r8
 Instruction at 0x21b6 is: LD HL,d16
-Instruction at 0x21b9 is: LD B,d8
-Instruction at 0x21bb is: CP D8
+Instruction at 0x21b9 is: LD B,d8 1
+Instruction at 0x21bb is: CP D8 2
 Instruction at 0x21bd is: JR Z,r8
 Instruction at 0x21bf is: LD HL,d16
-Instruction at 0x21c2 is: LD B,d8
-Instruction at 0x21c4 is: CP D8
+Instruction at 0x21c2 is: LD B,d8 2
+Instruction at 0x21c4 is: CP D8 3
 Instruction at 0x21c6 is: JR Z,r8
 Instruction at 0x21c8 is: LD HL,d16
-Instruction at 0x21cb is: LD B,d8
-Instruction at 0x21cd is: LD C,d8
+Instruction at 0x21cb is: LD B,d8 4
+Instruction at 0x21cd is: LD C,d8 7
 Instruction at 0x21cf is: INC (HL)
 Instruction at 0x21d0 is: LD A,B
 Instruction at 0x21d1 is: LDH (A8),A
@@ -4665,7 +4665,7 @@ Instruction at 0x21db is: XOR A
 Instruction at 0x21dc is: LDH (A8),A
 Instruction at 0x21de is: JR r8
 Instruction at 0x21e0 is: LDH A,A8
-Instruction at 0x21e2 is: CP D8
+Instruction at 0x21e2 is: CP D8 3
 Instruction at 0x21e4 is: RET NZ
 Instruction at 0x21e5 is: LDH A,A8
 Instruction at 0x21e7 is: AND A
@@ -4677,17 +4677,17 @@ Instruction at 0x21f0 is: JR NZ,r8
 Instruction at 0x21f2 is: LD A,(DE)
 Instruction at 0x21f3 is: AND A
 Instruction at 0x21f4 is: JR Z,r8
-Instruction at 0x21f6 is: SUB D8
+Instruction at 0x21f6 is: SUB D8 30
 Instruction at 0x21f8 is: LD H,A
 Instruction at 0x21f9 is: INC DE
 Instruction at 0x21fa is: LD A,(DE)
 Instruction at 0x21fb is: LD L,A
 Instruction at 0x21fc is: LDH A,A8
-Instruction at 0x21fe is: CP D8
-Instruction at 0x2200 is: LD A,d8
+Instruction at 0x21fe is: CP D8 6
+Instruction at 0x2200 is: LD A,d8 8c
 Instruction at 0x2202 is: JR NZ,r8
-Instruction at 0x2204 is: LD A,d8
-Instruction at 0x2206 is: LD C,d8
+Instruction at 0x2204 is: LD A,d8 2f
+Instruction at 0x2206 is: LD C,d8 a
 Instruction at 0x2208 is: LD (HL+),A
 Instruction at 0x2209 is: DEC C
 Instruction at 0x220a is: JR NZ,r8
@@ -4698,28 +4698,28 @@ Instruction at 0x220f is: JR NZ,r8
 Instruction at 0x2211 is: LDH A,A8
 Instruction at 0x2213 is: INC A
 Instruction at 0x2214 is: LDH (A8),A
-Instruction at 0x2216 is: CP D8
+Instruction at 0x2216 is: CP D8 7
 Instruction at 0x2218 is: JR Z,r8
-Instruction at 0x221a is: LD A,d8
+Instruction at 0x221a is: LD A,d8 a
 Instruction at 0x221c is: LDH (A8),A
 Instruction at 0x221e is: RET
 Instruction at 0x221f is: XOR A
 Instruction at 0x2220 is: LDH (A8),A
-Instruction at 0x2222 is: LD A,d8
+Instruction at 0x2222 is: LD A,d8 d
 Instruction at 0x2224 is: LDH (A8),A
-Instruction at 0x2226 is: LD A,d8
+Instruction at 0x2226 is: LD A,d8 1
 Instruction at 0x2228 is: LDH (A8),A
 Instruction at 0x222a is: XOR A
 Instruction at 0x222b is: LDH (A8),A
 Instruction at 0x222d is: RET
 Instruction at 0x222e is: LD A,(DE)
 Instruction at 0x222f is: LD H,A
-Instruction at 0x2230 is: SUB D8
+Instruction at 0x2230 is: SUB D8 30
 Instruction at 0x2232 is: LD C,A
 Instruction at 0x2233 is: INC DE
 Instruction at 0x2234 is: LD A,(DE)
 Instruction at 0x2235 is: LD L,A
-Instruction at 0x2236 is: LD B,d8
+Instruction at 0x2236 is: LD B,d8 a
 Instruction at 0x2238 is: LD A,(HL)
 Instruction at 0x2239 is: PUSH HL
 Instruction at 0x223a is: LD H,C
@@ -4739,7 +4739,7 @@ Instruction at 0x224d is: LDH A,A8
 Instruction at 0x224f is: AND A
 Instruction at 0x2250 is: RET NZ
 Instruction at 0x2251 is: LDH A,A8
-Instruction at 0x2253 is: CP D8
+Instruction at 0x2253 is: CP D8 1
 Instruction at 0x2255 is: RET NZ
 Instruction at 0x2256 is: LD DE,d16
 Instruction at 0x2259 is: LD A,(DE)
@@ -4753,7 +4753,7 @@ Instruction at 0x2260 is: LD BC,d16
 Instruction at 0x2263 is: ADD HL,BC
 Instruction at 0x2264 is: POP DE
 Instruction at 0x2265 is: PUSH HL
-Instruction at 0x2266 is: LD B,d8
+Instruction at 0x2266 is: LD B,d8 a
 Instruction at 0x2268 is: LD A,(HL+)
 Instruction at 0x2269 is: LD (DE), A
 Instruction at 0x226a is: INC DE
@@ -4765,7 +4765,7 @@ Instruction at 0x2270 is: POP DE
 Instruction at 0x2271 is: LD BC,d16
 Instruction at 0x2274 is: ADD HL,BC
 Instruction at 0x2275 is: LD A,H
-Instruction at 0x2276 is: CP D8
+Instruction at 0x2276 is: CP D8 c7
 Instruction at 0x2278 is: JR NZ,r8
 Instruction at 0x227a is: POP DE
 Instruction at 0x227b is: INC DE
@@ -4773,66 +4773,66 @@ Instruction at 0x227c is: LD A,(DE)
 Instruction at 0x227d is: AND A
 Instruction at 0x227e is: JR NZ,r8
 Instruction at 0x2280 is: LD HL,d16
-Instruction at 0x2283 is: LD A,d8
-Instruction at 0x2285 is: LD B,d8
+Instruction at 0x2283 is: LD A,d8 2f
+Instruction at 0x2285 is: LD B,d8 a
 Instruction at 0x2287 is: LD (HL+),A
 Instruction at 0x2288 is: DEC B
 Instruction at 0x2289 is: JR NZ,r8
 Instruction at 0x228b is: CALL A16
-Instruction at 0x228e is: LD A,d8
+Instruction at 0x228e is: LD A,d8 2
 Instruction at 0x2290 is: LDH (A8),A
 Instruction at 0x2292 is: RET
 Instruction at 0x2293 is: LD HL,d16
 Instruction at 0x2296 is: XOR A
-Instruction at 0x2297 is: LD B,d8
+Instruction at 0x2297 is: LD B,d8 9
 Instruction at 0x2299 is: LD (HL+),A
 Instruction at 0x229a is: DEC B
 Instruction at 0x229b is: JR NZ,r8
 Instruction at 0x229d is: RET
 Instruction at 0x229e is: LDH A,A8
-Instruction at 0x22a0 is: CP D8
+Instruction at 0x22a0 is: CP D8 2
 Instruction at 0x22a2 is: RET NZ
 Instruction at 0x22a3 is: LD HL,d16
 Instruction at 0x22a6 is: LD DE,d16
 Instruction at 0x22a9 is: CALL A16
 Instruction at 0x22ac is: RET
 Instruction at 0x22ad is: LDH A,A8
-Instruction at 0x22af is: CP D8
+Instruction at 0x22af is: CP D8 3
 Instruction at 0x22b1 is: RET NZ
 Instruction at 0x22b2 is: LD HL,d16
 Instruction at 0x22b5 is: LD DE,d16
 Instruction at 0x22b8 is: CALL A16
 Instruction at 0x22bb is: RET
 Instruction at 0x22bc is: LDH A,A8
-Instruction at 0x22be is: CP D8
+Instruction at 0x22be is: CP D8 4
 Instruction at 0x22c0 is: RET NZ
 Instruction at 0x22c1 is: LD HL,d16
 Instruction at 0x22c4 is: LD DE,d16
 Instruction at 0x22c7 is: CALL A16
 Instruction at 0x22ca is: RET
 Instruction at 0x22cb is: LDH A,A8
-Instruction at 0x22cd is: CP D8
+Instruction at 0x22cd is: CP D8 5
 Instruction at 0x22cf is: RET NZ
 Instruction at 0x22d0 is: LD HL,d16
 Instruction at 0x22d3 is: LD DE,d16
 Instruction at 0x22d6 is: CALL A16
 Instruction at 0x22d9 is: RET
 Instruction at 0x22da is: LDH A,A8
-Instruction at 0x22dc is: CP D8
+Instruction at 0x22dc is: CP D8 6
 Instruction at 0x22de is: RET NZ
 Instruction at 0x22df is: LD HL,d16
 Instruction at 0x22e2 is: LD DE,d16
 Instruction at 0x22e5 is: CALL A16
 Instruction at 0x22e8 is: RET
 Instruction at 0x22e9 is: LDH A,A8
-Instruction at 0x22eb is: CP D8
+Instruction at 0x22eb is: CP D8 7
 Instruction at 0x22ed is: RET NZ
 Instruction at 0x22ee is: LD HL,d16
 Instruction at 0x22f1 is: LD DE,d16
 Instruction at 0x22f4 is: CALL A16
 Instruction at 0x22f7 is: RET
 Instruction at 0x22f8 is: LDH A,A8
-Instruction at 0x22fa is: CP D8
+Instruction at 0x22fa is: CP D8 8
 Instruction at 0x22fc is: RET NZ
 Instruction at 0x22fd is: LD HL,d16
 Instruction at 0x2300 is: LD DE,d16
@@ -4843,68 +4843,68 @@ Instruction at 0x2309 is: LDH A,A8
 Instruction at 0x230b is: JR NZ,r8
 Instruction at 0x230d is: AND A
 Instruction at 0x230e is: RET NZ
-Instruction at 0x230f is: LD A,d8
+Instruction at 0x230f is: LD A,d8 1
 Instruction at 0x2311 is: LD (A16),A
 Instruction at 0x2314 is: RET
-Instruction at 0x2315 is: CP D8
+Instruction at 0x2315 is: CP D8 1a
 Instruction at 0x2317 is: RET NZ
 Instruction at 0x2318 is: LDH A,A8
 Instruction at 0x231a is: AND A
 Instruction at 0x231b is: JR Z,r8
-Instruction at 0x231d is: LD A,d8
+Instruction at 0x231d is: LD A,d8 5
 Instruction at 0x231f is: LD (A16),A
 Instruction at 0x2322 is: RET
 Instruction at 0x2323 is: LDH A,A8
-Instruction at 0x2325 is: CP D8
+Instruction at 0x2325 is: CP D8 9
 Instruction at 0x2327 is: RET NZ
 Instruction at 0x2328 is: LD HL,d16
 Instruction at 0x232b is: LD DE,d16
 Instruction at 0x232e is: CALL A16
 Instruction at 0x2331 is: RET
 Instruction at 0x2332 is: LDH A,A8
-Instruction at 0x2334 is: CP D8
+Instruction at 0x2334 is: CP D8 a
 Instruction at 0x2336 is: RET NZ
 Instruction at 0x2337 is: LD HL,d16
 Instruction at 0x233a is: LD DE,d16
 Instruction at 0x233d is: CALL A16
 Instruction at 0x2340 is: RET
 Instruction at 0x2341 is: LDH A,A8
-Instruction at 0x2343 is: CP D8
+Instruction at 0x2343 is: CP D8 b
 Instruction at 0x2345 is: RET NZ
 Instruction at 0x2346 is: LD HL,d16
 Instruction at 0x2349 is: LD DE,d16
 Instruction at 0x234c is: CALL A16
 Instruction at 0x234f is: RET
 Instruction at 0x2350 is: LDH A,A8
-Instruction at 0x2352 is: CP D8
+Instruction at 0x2352 is: CP D8 c
 Instruction at 0x2354 is: RET NZ
 Instruction at 0x2355 is: LD HL,d16
 Instruction at 0x2358 is: LD DE,d16
 Instruction at 0x235b is: CALL A16
 Instruction at 0x235e is: RET
 Instruction at 0x235f is: LDH A,A8
-Instruction at 0x2361 is: CP D8
+Instruction at 0x2361 is: CP D8 d
 Instruction at 0x2363 is: RET NZ
 Instruction at 0x2364 is: LD HL,d16
 Instruction at 0x2367 is: LD DE,d16
 Instruction at 0x236a is: CALL A16
 Instruction at 0x236d is: RET
 Instruction at 0x236e is: LDH A,A8
-Instruction at 0x2370 is: CP D8
+Instruction at 0x2370 is: CP D8 e
 Instruction at 0x2372 is: RET NZ
 Instruction at 0x2373 is: LD HL,d16
 Instruction at 0x2376 is: LD DE,d16
 Instruction at 0x2379 is: CALL A16
 Instruction at 0x237c is: RET
 Instruction at 0x237d is: LDH A,A8
-Instruction at 0x237f is: CP D8
+Instruction at 0x237f is: CP D8 f
 Instruction at 0x2381 is: RET NZ
 Instruction at 0x2382 is: LD HL,d16
 Instruction at 0x2385 is: LD DE,d16
 Instruction at 0x2388 is: CALL A16
 Instruction at 0x238b is: RET
 Instruction at 0x238c is: LDH A,A8
-Instruction at 0x238e is: CP D8
+Instruction at 0x238e is: CP D8 10
 Instruction at 0x2390 is: RET NZ
 Instruction at 0x2391 is: LD HL,d16
 Instruction at 0x2394 is: LD DE,d16
@@ -4912,18 +4912,18 @@ Instruction at 0x2397 is: CALL A16
 Instruction at 0x239a is: CALL A16
 Instruction at 0x239d is: RET
 Instruction at 0x239e is: LDH A,A8
-Instruction at 0x23a0 is: CP D8
+Instruction at 0x23a0 is: CP D8 11
 Instruction at 0x23a2 is: RET NZ
 Instruction at 0x23a3 is: LD HL,d16
 Instruction at 0x23a6 is: LD DE,d16
 Instruction at 0x23a9 is: CALL A16
 Instruction at 0x23ac is: LD HL,d16
 Instruction at 0x23af is: CALL A16
-Instruction at 0x23b2 is: LD A,d8
+Instruction at 0x23b2 is: LD A,d8 1
 Instruction at 0x23b4 is: LDH (A8),A
 Instruction at 0x23b6 is: RET
 Instruction at 0x23b7 is: LDH A,A8
-Instruction at 0x23b9 is: CP D8
+Instruction at 0x23b9 is: CP D8 12
 Instruction at 0x23bb is: RET NZ
 Instruction at 0x23bc is: LD HL,d16
 Instruction at 0x23bf is: LD DE,d16
@@ -4932,7 +4932,7 @@ Instruction at 0x23c5 is: LD HL,d16
 Instruction at 0x23c8 is: CALL A16
 Instruction at 0x23cb is: RET
 Instruction at 0x23cc is: LDH A,A8
-Instruction at 0x23ce is: CP D8
+Instruction at 0x23ce is: CP D8 13
 Instruction at 0x23d0 is: RET NZ
 Instruction at 0x23d1 is: LD (A16),A
 Instruction at 0x23d4 is: LD HL,d16
@@ -4948,23 +4948,23 @@ Instruction at 0x23e7 is: AND A
 Instruction at 0x23e8 is: RET NZ
 Instruction at 0x23e9 is: LD HL,d16
 Instruction at 0x23ec is: LD DE,d16
-Instruction at 0x23ef is: LD C,d8
+Instruction at 0x23ef is: LD C,d8 2
 Instruction at 0x23f1 is: LDH A,A8
-Instruction at 0x23f3 is: CP D8
+Instruction at 0x23f3 is: CP D8 37
 Instruction at 0x23f5 is: JR Z,r8
 Instruction at 0x23f7 is: LD HL,d16
 Instruction at 0x23fa is: LD DE,d16
-Instruction at 0x23fd is: LD C,d8
+Instruction at 0x23fd is: LD C,d8 1
 Instruction at 0x23ff is: CALL A16
 Instruction at 0x2402 is: LDH A,A8
-Instruction at 0x2404 is: CP D8
+Instruction at 0x2404 is: CP D8 37
 Instruction at 0x2406 is: JR Z,r8
 Instruction at 0x2408 is: LDH A,A8
 Instruction at 0x240a is: AND A
 Instruction at 0x240b is: JR NZ,r8
-Instruction at 0x240d is: LD A,d8
+Instruction at 0x240d is: LD A,d8 64
 Instruction at 0x240f is: LDH (A8),A
-Instruction at 0x2411 is: LD A,d8
+Instruction at 0x2411 is: LD A,d8 2
 Instruction at 0x2413 is: LD (A16),A
 Instruction at 0x2416 is: LDH A,A8
 Instruction at 0x2418 is: AND A
@@ -4972,15 +4972,15 @@ Instruction at 0x2419 is: JR Z,r8
 Instruction at 0x241b is: LDH (A8),A
 Instruction at 0x241d is: RET
 Instruction at 0x241e is: LDH A,A8
-Instruction at 0x2420 is: CP D8
-Instruction at 0x2422 is: LD A,d8
+Instruction at 0x2420 is: CP D8 9
+Instruction at 0x2422 is: LD A,d8 5
 Instruction at 0x2424 is: JR NZ,r8
-Instruction at 0x2426 is: LD A,d8
+Instruction at 0x2426 is: LD A,d8 22
 Instruction at 0x2428 is: LDH (A8),A
 Instruction at 0x242a is: RET
 Instruction at 0x242b is: CALL A16
 Instruction at 0x242e is: RET
-Instruction at 0x242f is: CP D8
+Instruction at 0x242f is: CP D8 1a
 Instruction at 0x2431 is: RET NZ
 Instruction at 0x2432 is: LDH A,A8
 Instruction at 0x2434 is: AND A
@@ -4992,7 +4992,7 @@ Instruction at 0x243b is: LDH A,A8
 Instruction at 0x243d is: AND A
 Instruction at 0x243e is: RET NZ
 Instruction at 0x243f is: LDH A,A8
-Instruction at 0x2441 is: CP D8
+Instruction at 0x2441 is: CP D8 37
 Instruction at 0x2443 is: RET NZ
 Instruction at 0x2444 is: LD DE,d16
 Instruction at 0x2447 is: CALL A16
@@ -5001,23 +5001,23 @@ Instruction at 0x244b is: LDH A,A8
 Instruction at 0x244d is: AND A
 Instruction at 0x244e is: RET NZ
 Instruction at 0x244f is: LDH A,A8
-Instruction at 0x2451 is: CP D8
+Instruction at 0x2451 is: CP D8 37
 Instruction at 0x2453 is: RET NZ
 Instruction at 0x2454 is: LD HL,d16
 Instruction at 0x2457 is: LD A,(HL)
-Instruction at 0x2458 is: CP D8
+Instruction at 0x2458 is: CP D8 14
 Instruction at 0x245a is: RET Z
 Instruction at 0x245b is: CALL A16
 Instruction at 0x245e is: LDH A,A8
 Instruction at 0x2460 is: LD D,A
-Instruction at 0x2461 is: AND D8
+Instruction at 0x2461 is: AND D8 f0
 Instruction at 0x2463 is: RET NZ
 Instruction at 0x2464 is: LD A,D
-Instruction at 0x2465 is: AND D8
+Instruction at 0x2465 is: AND D8 f
 Instruction at 0x2467 is: CBPREFIX
 Instruction at 0x2469 is: LD D,A
 Instruction at 0x246a is: LDH A,A8
-Instruction at 0x246c is: AND D8
+Instruction at 0x246c is: AND D8 f0
 Instruction at 0x246e is: CBPREFIX
 Instruction at 0x2470 is: OR D
 Instruction at 0x2471 is: CP B
@@ -5025,23 +5025,23 @@ Instruction at 0x2472 is: RET C
 Instruction at 0x2473 is: RET Z
 Instruction at 0x2474 is: INC (HL)
 Instruction at 0x2475 is: CALL A16
-Instruction at 0x2478 is: AND D8
+Instruction at 0x2478 is: AND D8 f
 Instruction at 0x247a is: LD C,A
 Instruction at 0x247b is: LD HL,d16
 Instruction at 0x247e is: LD (HL),C
-Instruction at 0x247f is: LD H,d8
+Instruction at 0x247f is: LD H,d8 9c
 Instruction at 0x2481 is: LD (HL),C
 Instruction at 0x2482 is: LD A,B
-Instruction at 0x2483 is: AND D8
+Instruction at 0x2483 is: AND D8 f0
 Instruction at 0x2485 is: JR Z,r8
 Instruction at 0x2487 is: CBPREFIX
 Instruction at 0x2489 is: LD C,A
 Instruction at 0x248a is: LD A,L
-Instruction at 0x248b is: CP D8
+Instruction at 0x248b is: CP D8 f0
 Instruction at 0x248d is: JR Z,r8
 Instruction at 0x248f is: LD HL,d16
 Instruction at 0x2492 is: JR r8
-Instruction at 0x2494 is: LD A,d8
+Instruction at 0x2494 is: LD A,d8 8
 Instruction at 0x2496 is: LD (A16),A
 Instruction at 0x2499 is: CALL A16
 Instruction at 0x249c is: RET
@@ -5058,7 +5058,7 @@ Instruction at 0x24a6 is: JR Z,r8
 Instruction at 0x24a8 is: JR r8
 Instruction at 0x24aa is: LD B,A
 Instruction at 0x24ab is: RET
-Instruction at 0x24ac is: LD B,d8
+Instruction at 0x24ac is: LD B,d8 a
 Instruction at 0x24ae is: LD A,(DE)
 Instruction at 0x24af is: LD (HL),A
 Instruction at 0x24b0 is: INC L
@@ -5071,9 +5071,9 @@ Instruction at 0x24b8 is: LDH (A8),A
 Instruction at 0x24ba is: RET
 Instruction at 0x24bb is: LD HL,d16
 Instruction at 0x24be is: LD A,(HL)
-Instruction at 0x24bf is: CP D8
+Instruction at 0x24bf is: CP D8 80
 Instruction at 0x24c1 is: RET Z
-Instruction at 0x24c2 is: LD L,d8
+Instruction at 0x24c2 is: LD L,d8 3
 Instruction at 0x24c4 is: LD A,(HL)
 Instruction at 0x24c5 is: LDH (A8),A
 Instruction at 0x24c7 is: LDH A,A8
@@ -5083,24 +5083,24 @@ Instruction at 0x24cc is: JR NZ,r8
 Instruction at 0x24ce is: CBPREFIX
 Instruction at 0x24d0 is: JR Z,r8
 Instruction at 0x24d2 is: LD A,(HL)
-Instruction at 0x24d3 is: AND D8
+Instruction at 0x24d3 is: AND D8 3
 Instruction at 0x24d5 is: JR Z,r8
 Instruction at 0x24d7 is: DEC (HL)
 Instruction at 0x24d8 is: JR r8
 Instruction at 0x24da is: LD A,(HL)
-Instruction at 0x24db is: OR D8
+Instruction at 0x24db is: OR D8 3
 Instruction at 0x24dd is: LD (HL),A
 Instruction at 0x24de is: JR r8
 Instruction at 0x24e0 is: LD A,(HL)
-Instruction at 0x24e1 is: AND D8
-Instruction at 0x24e3 is: CP D8
+Instruction at 0x24e1 is: AND D8 3
+Instruction at 0x24e3 is: CP D8 3
 Instruction at 0x24e5 is: JR Z,r8
 Instruction at 0x24e7 is: INC (HL)
 Instruction at 0x24e8 is: JR r8
 Instruction at 0x24ea is: LD A,(HL)
-Instruction at 0x24eb is: AND D8
+Instruction at 0x24eb is: AND D8 fc
 Instruction at 0x24ed is: LD (HL),A
-Instruction at 0x24ee is: LD A,d8
+Instruction at 0x24ee is: LD A,d8 3
 Instruction at 0x24f0 is: LD (A16),A
 Instruction at 0x24f3 is: CALL A16
 Instruction at 0x24f6 is: CALL A16
@@ -5120,7 +5120,7 @@ Instruction at 0x2511 is: LD C,A
 Instruction at 0x2512 is: LD A,(HL)
 Instruction at 0x2513 is: LDH (A8),A
 Instruction at 0x2515 is: CBPREFIX
-Instruction at 0x2517 is: LD A,d8
+Instruction at 0x2517 is: LD A,d8 17
 Instruction at 0x2519 is: JR NZ,r8
 Instruction at 0x251b is: CBPREFIX
 Instruction at 0x251d is: JR Z,r8
@@ -5128,13 +5128,13 @@ Instruction at 0x251f is: LDH A,A8
 Instruction at 0x2521 is: DEC A
 Instruction at 0x2522 is: LDH (A8),A
 Instruction at 0x2524 is: RET NZ
-Instruction at 0x2525 is: LD A,d8
+Instruction at 0x2525 is: LD A,d8 9
 Instruction at 0x2527 is: LDH (A8),A
 Instruction at 0x2529 is: LD A,(HL)
-Instruction at 0x252a is: ADD A,D8
+Instruction at 0x252a is: ADD A,D8 8
 Instruction at 0x252c is: LD (HL),A
 Instruction at 0x252d is: CALL A16
-Instruction at 0x2530 is: LD A,d8
+Instruction at 0x2530 is: LD A,d8 4
 Instruction at 0x2532 is: LD (A16),A
 Instruction at 0x2535 is: CALL A16
 Instruction at 0x2538 is: AND A
@@ -5145,11 +5145,11 @@ Instruction at 0x253e is: LD (A16),A
 Instruction at 0x2541 is: LDH A,A8
 Instruction at 0x2543 is: LD (HL),A
 Instruction at 0x2544 is: CALL A16
-Instruction at 0x2547 is: LD A,d8
+Instruction at 0x2547 is: LD A,d8 1
 Instruction at 0x2549 is: LDH (A8),A
 Instruction at 0x254b is: RET
 Instruction at 0x254c is: CBPREFIX
-Instruction at 0x254e is: LD A,d8
+Instruction at 0x254e is: LD A,d8 17
 Instruction at 0x2550 is: JR NZ,r8
 Instruction at 0x2552 is: CBPREFIX
 Instruction at 0x2554 is: JR Z,r8
@@ -5157,12 +5157,12 @@ Instruction at 0x2556 is: LDH A,A8
 Instruction at 0x2558 is: DEC A
 Instruction at 0x2559 is: LDH (A8),A
 Instruction at 0x255b is: RET NZ
-Instruction at 0x255c is: LD A,d8
+Instruction at 0x255c is: LD A,d8 9
 Instruction at 0x255e is: LDH (A8),A
 Instruction at 0x2560 is: LD A,(HL)
-Instruction at 0x2561 is: SUB D8
+Instruction at 0x2561 is: SUB D8 8
 Instruction at 0x2563 is: LD (HL),A
-Instruction at 0x2564 is: LD A,d8
+Instruction at 0x2564 is: LD A,d8 4
 Instruction at 0x2566 is: LD (A16),A
 Instruction at 0x2569 is: CALL A16
 Instruction at 0x256c is: CALL A16
@@ -5170,7 +5170,7 @@ Instruction at 0x256f is: AND A
 Instruction at 0x2570 is: RET Z
 Instruction at 0x2571 is: JR r8
 Instruction at 0x2573 is: LD HL,d16
-Instruction at 0x2576 is: LD B,d8
+Instruction at 0x2576 is: LD B,d8 4
 Instruction at 0x2578 is: LD A,(HL+)
 Instruction at 0x2579 is: LDH (A8),A
 Instruction at 0x257b is: LD A,(HL+)
@@ -5181,10 +5181,10 @@ Instruction at 0x2581 is: PUSH HL
 Instruction at 0x2582 is: PUSH BC
 Instruction at 0x2583 is: CALL A16
 Instruction at 0x2586 is: LD A,H
-Instruction at 0x2587 is: ADD A,D8
+Instruction at 0x2587 is: ADD A,D8 30
 Instruction at 0x2589 is: LD H,A
 Instruction at 0x258a is: LD A,(HL)
-Instruction at 0x258b is: CP D8
+Instruction at 0x258b is: CP D8 2f
 Instruction at 0x258d is: JR NZ,r8
 Instruction at 0x258f is: POP BC
 Instruction at 0x2590 is: POP HL
@@ -5197,14 +5197,14 @@ Instruction at 0x2597 is: LDH (A8),A
 Instruction at 0x2599 is: RET
 Instruction at 0x259a is: POP BC
 Instruction at 0x259b is: POP HL
-Instruction at 0x259c is: LD A,d8
+Instruction at 0x259c is: LD A,d8 1
 Instruction at 0x259e is: LDH (A8),A
 Instruction at 0x25a0 is: RET
 Instruction at 0x25a1 is: LDH A,A8
-Instruction at 0x25a3 is: CP D8
+Instruction at 0x25a3 is: CP D8 1
 Instruction at 0x25a5 is: RET NZ
 Instruction at 0x25a6 is: LD HL,d16
-Instruction at 0x25a9 is: LD B,d8
+Instruction at 0x25a9 is: LD B,d8 4
 Instruction at 0x25ab is: LD A,(HL+)
 Instruction at 0x25ac is: LDH (A8),A
 Instruction at 0x25ae is: LD A,(HL+)
@@ -5219,25 +5219,25 @@ Instruction at 0x25ba is: POP DE
 Instruction at 0x25bb is: POP BC
 Instruction at 0x25bc is: POP HL
 Instruction at 0x25bd is: LDH A,A8
-Instruction at 0x25bf is: AND D8
+Instruction at 0x25bf is: AND D8 3
 Instruction at 0x25c1 is: JR NZ,r8
 Instruction at 0x25c3 is: LD A,(HL)
 Instruction at 0x25c4 is: LD (DE), A
 Instruction at 0x25c5 is: LD A,D
-Instruction at 0x25c6 is: ADD A,D8
+Instruction at 0x25c6 is: ADD A,D8 30
 Instruction at 0x25c8 is: LD D,A
 Instruction at 0x25c9 is: LD A,(HL+)
 Instruction at 0x25ca is: LD (DE), A
 Instruction at 0x25cb is: INC L
 Instruction at 0x25cc is: DEC B
 Instruction at 0x25cd is: JR NZ,r8
-Instruction at 0x25cf is: LD A,d8
+Instruction at 0x25cf is: LD A,d8 2
 Instruction at 0x25d1 is: LDH (A8),A
 Instruction at 0x25d3 is: LD HL,d16
-Instruction at 0x25d6 is: LD (HL),d8
+Instruction at 0x25d6 is: LD (HL),d8 80
 Instruction at 0x25d8 is: RET
 Instruction at 0x25d9 is: LD A,(A16)
-Instruction at 0x25dc is: CP D8
+Instruction at 0x25dc is: CP D8 2
 Instruction at 0x25de is: JR Z,r8
 Instruction at 0x25e0 is: PUSH DE
 Instruction at 0x25e1 is: LD A,(HL)
@@ -5249,12 +5249,12 @@ Instruction at 0x25e7 is: LD A,(HL)
 Instruction at 0x25e8 is: INC A
 Instruction at 0x25e9 is: DAA
 Instruction at 0x25ea is: LD (HL),A
-Instruction at 0x25eb is: AND D8
+Instruction at 0x25eb is: AND D8 f
 Instruction at 0x25ed is: LD (BC),A
 Instruction at 0x25ee is: DEC C
 Instruction at 0x25ef is: LD A,(HL+)
 Instruction at 0x25f0 is: CBPREFIX
-Instruction at 0x25f2 is: AND D8
+Instruction at 0x25f2 is: AND D8 f
 Instruction at 0x25f4 is: JR Z,r8
 Instruction at 0x25f6 is: LD (BC),A
 Instruction at 0x25f7 is: PUSH BC
@@ -5284,80 +5284,80 @@ Instruction at 0x2619 is: CALL A16
 Instruction at 0x261c is: POP HL
 Instruction at 0x261d is: DEC B
 Instruction at 0x261e is: JR NZ,r8
-Instruction at 0x2620 is: LD A,d8
+Instruction at 0x2620 is: LD A,d8 2
 Instruction at 0x2622 is: LD (A16),A
 Instruction at 0x2625 is: RET
 Instruction at 0x2626 is: LD DE,d16
 Instruction at 0x2629 is: LD HL,d16
 Instruction at 0x262c is: CALL A16
-Instruction at 0x262f is: LD A,d8
+Instruction at 0x262f is: LD A,d8 2
 Instruction at 0x2631 is: LD (A16),A
 Instruction at 0x2634 is: XOR A
 Instruction at 0x2635 is: LD (A16),A
 Instruction at 0x2638 is: RET
 Instruction at 0x2639 is: POP DE
-Instruction at 0x263a is: LD A,d8
+Instruction at 0x263a is: LD A,d8 21
 Instruction at 0x263c is: LDH (A8),A
 Instruction at 0x263e is: XOR A
 Instruction at 0x263f is: LD (A16),A
 Instruction at 0x2642 is: LD A,(A16)
 Instruction at 0x2645 is: INC A
 Instruction at 0x2646 is: LD (A16),A
-Instruction at 0x2649 is: CP D8
+Instruction at 0x2649 is: CP D8 5
 Instruction at 0x264b is: RET NZ
-Instruction at 0x264c is: LD A,d8
+Instruction at 0x264c is: LD A,d8 4
 Instruction at 0x264e is: LDH (A8),A
 Instruction at 0x2650 is: RET
 Instruction at 0x2651 is: LD HL,d16
-Instruction at 0x2654 is: LD B,d8
+Instruction at 0x2654 is: LD B,d8 1b
 Instruction at 0x2656 is: XOR A
 Instruction at 0x2657 is: LD (HL+),A
 Instruction at 0x2658 is: DEC B
 Instruction at 0x2659 is: JR NZ,r8
 Instruction at 0x265b is: LD HL,d16
-Instruction at 0x265e is: LD B,d8
+Instruction at 0x265e is: LD B,d8 3
 Instruction at 0x2660 is: LD (HL+),A
 Instruction at 0x2661 is: DEC B
 Instruction at 0x2662 is: JR NZ,r8
 Instruction at 0x2664 is: RET
 Instruction at 0x2665 is: LD A,(HL)
-Instruction at 0x2666 is: AND D8
+Instruction at 0x2666 is: AND D8 f0
 Instruction at 0x2668 is: CBPREFIX
 Instruction at 0x266a is: LD (DE), A
 Instruction at 0x266b is: LD A,(HL)
-Instruction at 0x266c is: AND D8
+Instruction at 0x266c is: AND D8 f
 Instruction at 0x266e is: INC E
 Instruction at 0x266f is: LD (DE), A
 Instruction at 0x2670 is: RET
-Instruction at 0x2671 is: LD A,d8
+Instruction at 0x2671 is: LD A,d8 2
 Instruction at 0x2673 is: LDH (A8),A
 Instruction at 0x2675 is: XOR A
 Instruction at 0x2676 is: LDH (A8),A
-Instruction at 0x2678 is: LD A,d8
+Instruction at 0x2678 is: LD A,d8 c0
 Instruction at 0x267a is: LDH (A8),A
 Instruction at 0x267c is: LD HL,d16
 Instruction at 0x267f is: CALL A16
 Instruction at 0x2682 is: RET
-Instruction at 0x2683 is: LD A,d8
+Instruction at 0x2683 is: LD A,d8 1
 Instruction at 0x2685 is: LDH (A8),A
-Instruction at 0x2687 is: LD A,d8
+Instruction at 0x2687 is: LD A,d8 10
 Instruction at 0x2689 is: LDH (A8),A
-Instruction at 0x268b is: LD A,d8
+Instruction at 0x268b is: LD A,d8 c0
 Instruction at 0x268d is: LDH (A8),A
 Instruction at 0x268f is: LD HL,d16
 Instruction at 0x2692 is: CALL A16
 Instruction at 0x2695 is: RET
-Instruction at 0x2696 is: LD A,d8
+Instruction at 0x2696 is: LD A,d8 1
 Instruction at 0x2698 is: LDH (A8),A
-Instruction at 0x269a is: LD A,d8
+Instruction at 0x269a is: LD A,d8 20
 Instruction at 0x269c is: LDH (A8),A
-Instruction at 0x269e is: LD A,d8
+Instruction at 0x269e is: LD A,d8 c0
 Instruction at 0x26a0 is: LDH (A8),A
 Instruction at 0x26a2 is: LD HL,d16
 Instruction at 0x26a5 is: CALL A16
 Instruction at 0x26a8 is: RET
-Instruction at 0x26a9 is: LD B,d8
-Instruction at 0x26ab is: LD A,d8
+Instruction at 0x26a9 is: LD B,d8 20
+Instruction at 0x26ab is: LD A,d8 8e
 Instruction at 0x26ad is: LD DE,d16
 Instruction at 0x26b0 is: LD (HL),A
 Instruction at 0x26b1 is: ADD HL,DE
@@ -5365,7 +5365,7 @@ Instruction at 0x26b2 is: DEC B
 Instruction at 0x26b3 is: JR NZ,r8
 Instruction at 0x26b5 is: RET
 Instruction at 0x26b6 is: LD A,(DE)
-Instruction at 0x26b7 is: CP D8
+Instruction at 0x26b7 is: CP D8 ff
 Instruction at 0x26b9 is: RET Z
 Instruction at 0x26ba is: LD (HL+),A
 Instruction at 0x26bb is: INC DE
@@ -5439,12 +5439,12 @@ Instruction at 0x270a is: NOP
 Instruction at 0x270b is: NOP
 Instruction at 0x270c is: LD H,B
 Instruction at 0x270d is: LD H,B
-Instruction at 0x270e is: LD (HL),d8
+Instruction at 0x270e is: LD (HL),d8 80
 Instruction at 0x2710 is: NOP
 Instruction at 0x2711 is: NOP
 Instruction at 0x2712 is: LD H,B
 Instruction at 0x2713 is: LD (HL),D
-Instruction at 0x2714 is: LD (HL),d8
+Instruction at 0x2714 is: LD (HL),d8 80
 Instruction at 0x2716 is: JR NZ,r8
 Instruction at 0x2718 is: LD L,B
 Instruction at 0x2719 is: JR Z,r8 
@@ -5453,7 +5453,7 @@ Instruction at 0x271c is: NOP
 Instruction at 0x271d is: NOP
 Instruction at 0x271e is: LD H,B
 Instruction at 0x271f is: LD H,B
-Instruction at 0x2720 is: LD L,d8
+Instruction at 0x2720 is: LD L,d8 80
 Instruction at 0x2722 is: NOP
 Instruction at 0x2723 is: NOP
 Instruction at 0x2724 is: LD L,B
@@ -5566,7 +5566,7 @@ Instruction at 0x2794 is: JR NZ,r8
 Instruction at 0x2796 is: RST 38H
 Instruction at 0x2797 is: SBC A,E
 Instruction at 0x2798 is: LD BC,d16
-Instruction at 0x279b is: LD A,d8
+Instruction at 0x279b is: LD A,d8 2f
 Instruction at 0x279d is: LD (HL-),A
 Instruction at 0x279e is: DEC BC
 Instruction at 0x279f is: LD A,B
@@ -5611,9 +5611,9 @@ Instruction at 0x27e4 is: LD DE,d16
 Instruction at 0x27e7 is: CALL A16
 Instruction at 0x27ea is: RET
 Instruction at 0x27eb is: LD HL,d16
-Instruction at 0x27ee is: LD B,d8
+Instruction at 0x27ee is: LD B,d8 12
 Instruction at 0x27f0 is: PUSH HL
-Instruction at 0x27f1 is: LD C,d8
+Instruction at 0x27f1 is: LD C,d8 14
 Instruction at 0x27f3 is: LD A,(DE)
 Instruction at 0x27f4 is: LD (HL+),A
 Instruction at 0x27f5 is: INC DE
@@ -5627,10 +5627,10 @@ Instruction at 0x27ff is: POP DE
 Instruction at 0x2800 is: DEC B
 Instruction at 0x2801 is: JR NZ,r8
 Instruction at 0x2803 is: RET
-Instruction at 0x2804 is: LD B,d8
+Instruction at 0x2804 is: LD B,d8 a
 Instruction at 0x2806 is: PUSH HL
 Instruction at 0x2807 is: LD A,(DE)
-Instruction at 0x2808 is: CP D8
+Instruction at 0x2808 is: CP D8 ff
 Instruction at 0x280a is: JR Z,r8
 Instruction at 0x280c is: LD (HL+),A
 Instruction at 0x280d is: INC DE
@@ -5643,7 +5643,7 @@ Instruction at 0x2816 is: ADD HL,DE
 Instruction at 0x2817 is: POP DE
 Instruction at 0x2818 is: JR r8
 Instruction at 0x281a is: POP HL
-Instruction at 0x281b is: LD A,d8
+Instruction at 0x281b is: LD A,d8 2
 Instruction at 0x281d is: LDH (A8),A
 Instruction at 0x281f is: RET
 Instruction at 0x2820 is: LDH A,A8
@@ -5651,10 +5651,10 @@ Instruction at 0x2822 is: LDH (A8),A
 Instruction at 0x2824 is: CBPREFIX
 Instruction at 0x2826 is: LDH (A8),A
 Instruction at 0x2828 is: LDH A,A8
-Instruction at 0x282a is: CP D8
+Instruction at 0x282a is: CP D8 91
 Instruction at 0x282c is: JR NZ,r8
 Instruction at 0x282e is: LDH A,A8
-Instruction at 0x2830 is: AND D8
+Instruction at 0x2830 is: AND D8 7f
 Instruction at 0x2832 is: LDH (A8),A
 Instruction at 0x2834 is: LDH A,A8
 Instruction at 0x2836 is: LDH (A8),A
@@ -5709,7 +5709,7 @@ Instruction at 0x286a is: JR r8
 Instruction at 0x286c is: DEC E
 Instruction at 0x286d is: LD (DE), A
 Instruction at 0x286e is: RLA
-Instruction at 0x286f is: LD E, d8
+Instruction at 0x286f is: LD E, d8 e
 Instruction at 0x2871 is: ADD HL,HL
 Instruction at 0x2872 is: ADD HL,HL
 Instruction at 0x2873 is: ADD HL,HL
@@ -5721,7 +5721,7 @@ Instruction at 0x2878 is: ADD HL,HL
 Instruction at 0x2879 is: CPL
 Instruction at 0x287a is: CPL
 Instruction at 0x287b is: STOP 0
-Instruction at 0x287d is: LD D,d8
+Instruction at 0x287d is: LD D,d8 e
 Instruction at 0x287f is: CPL
 Instruction at 0x2880 is: CPL
 Instruction at 0x2881 is: CPL
@@ -5736,14 +5736,14 @@ Instruction at 0x2889 is: INC E
 Instruction at 0x288a is: LD (DE), A
 Instruction at 0x288b is: RLA
 Instruction at 0x288c is: STOP 0
-Instruction at 0x288e is: LD C,d8
+Instruction at 0x288e is: LD C,d8 2f
 Instruction at 0x2890 is: CPL
 Instruction at 0x2891 is: CPL
 Instruction at 0x2892 is: CPL
 Instruction at 0x2893 is: CPL
 Instruction at 0x2894 is: NOP
 Instruction at 0x2895 is: CPL
-Instruction at 0x2896 is: LD H,d8
+Instruction at 0x2896 is: LD H,d8 2f
 Instruction at 0x2898 is: INC B
 Instruction at 0x2899 is: NOP
 Instruction at 0x289a is: CPL
@@ -5763,14 +5763,14 @@ Instruction at 0x28a7 is: DEC C
 Instruction at 0x28a8 is: JR r8
 Instruction at 0x28aa is: DEC BC
 Instruction at 0x28ab is: DEC D
-Instruction at 0x28ac is: LD C,d8
+Instruction at 0x28ac is: LD C,d8 2f
 Instruction at 0x28ae is: CPL
 Instruction at 0x28af is: CPL
 Instruction at 0x28b0 is: CPL
 Instruction at 0x28b1 is: CPL
 Instruction at 0x28b2 is: NOP
 Instruction at 0x28b3 is: CPL
-Instruction at 0x28b4 is: LD H,d8
+Instruction at 0x28b4 is: LD H,d8 2f
 Instruction at 0x28b6 is: LD BC,d16
 Instruction at 0x28b9 is: CPL
 Instruction at 0x28ba is: CPL
@@ -5789,14 +5789,14 @@ Instruction at 0x28c6 is: DEC DE
 Instruction at 0x28c7 is: LD (DE), A
 Instruction at 0x28c8 is: ADD HL,DE
 Instruction at 0x28c9 is: DEC D
-Instruction at 0x28ca is: LD C,d8
+Instruction at 0x28ca is: LD C,d8 2f
 Instruction at 0x28cc is: CPL
 Instruction at 0x28cd is: CPL
 Instruction at 0x28ce is: CPL
 Instruction at 0x28cf is: CPL
 Instruction at 0x28d0 is: NOP
 Instruction at 0x28d1 is: CPL
-Instruction at 0x28d2 is: LD H,d8
+Instruction at 0x28d2 is: LD H,d8 2f
 Instruction at 0x28d4 is: INC BC
 Instruction at 0x28d5 is: NOP
 Instruction at 0x28d6 is: NOP
@@ -5813,7 +5813,7 @@ Instruction at 0x28e0 is: CPL
 Instruction at 0x28e1 is: NOP
 Instruction at 0x28e2 is: CPL
 Instruction at 0x28e3 is: DEC E
-Instruction at 0x28e4 is: LD C,d8
+Instruction at 0x28e4 is: LD C,d8 1d
 Instruction at 0x28e6 is: DEC DE
 Instruction at 0x28e7 is: LD (DE), A
 Instruction at 0x28e8 is: INC E
@@ -5824,7 +5824,7 @@ Instruction at 0x28ec is: CPL
 Instruction at 0x28ed is: CPL
 Instruction at 0x28ee is: NOP
 Instruction at 0x28ef is: CPL
-Instruction at 0x28f0 is: LD H,d8
+Instruction at 0x28f0 is: LD H,d8 2f
 Instruction at 0x28f2 is: LD BC,d16
 Instruction at 0x28f5 is: NOP
 Instruction at 0x28f6 is: CPL
@@ -5914,7 +5914,7 @@ Instruction at 0x294d is: LD H,L
 Instruction at 0x294e is: LD H,H
 Instruction at 0x294f is: CPL
 Instruction at 0x2950 is: STOP 0
-Instruction at 0x2952 is: LD D,d8
+Instruction at 0x2952 is: LD D,d8 e
 Instruction at 0x2954 is: CPL
 Instruction at 0x2955 is: LD H,L
 Instruction at 0x2956 is: LD H,H
@@ -5928,7 +5928,7 @@ Instruction at 0x295d is: LD H,L
 Instruction at 0x295e is: LD H,H
 Instruction at 0x295f is: CPL
 Instruction at 0x2960 is: JR r8
-Instruction at 0x2962 is: LD C,d8
+Instruction at 0x2962 is: LD C,d8 1b
 Instruction at 0x2964 is: CPL
 Instruction at 0x2965 is: LD H,L
 Instruction at 0x2966 is: LD H,H
@@ -5949,9 +5949,9 @@ Instruction at 0x2974 is: LD L,C
 Instruction at 0x2975 is: LD L,D
 Instruction at 0x2976 is: ADD HL,DE
 Instruction at 0x2977 is: DEC D
-Instruction at 0x2978 is: LD C,d8
+Instruction at 0x2978 is: LD C,d8 a
 Instruction at 0x297a is: INC E
-Instruction at 0x297b is: LD C,d8
+Instruction at 0x297b is: LD C,d8 2f
 Instruction at 0x297d is: CPL
 Instruction at 0x297e is: ADD HL,HL
 Instruction at 0x297f is: ADD HL,HL
@@ -5992,17 +5992,17 @@ Instruction at 0x29a2 is: ADD HL,HL
 Instruction at 0x29a3 is: ADD HL,HL
 Instruction at 0x29a4 is: ADD HL,HL
 Instruction at 0x29a5 is: CPL
-Instruction at 0x29a6 is: LD A,d8
+Instruction at 0x29a6 is: LD A,d8 20
 Instruction at 0x29a8 is: LDH (A8),A
 Instruction at 0x29aa is: LDH A,A8
 Instruction at 0x29ac is: LDH A,A8
 Instruction at 0x29ae is: LDH A,A8
 Instruction at 0x29b0 is: LDH A,A8
 Instruction at 0x29b2 is: CPL
-Instruction at 0x29b3 is: AND D8
+Instruction at 0x29b3 is: AND D8 f
 Instruction at 0x29b5 is: CBPREFIX
 Instruction at 0x29b7 is: LD B,A
-Instruction at 0x29b8 is: LD A,d8
+Instruction at 0x29b8 is: LD A,d8 10
 Instruction at 0x29ba is: LDH (A8),A
 Instruction at 0x29bc is: LDH A,A8
 Instruction at 0x29be is: LDH A,A8
@@ -6015,7 +6015,7 @@ Instruction at 0x29ca is: LDH A,A8
 Instruction at 0x29cc is: LDH A,A8
 Instruction at 0x29ce is: LDH A,A8
 Instruction at 0x29d0 is: CPL
-Instruction at 0x29d1 is: AND D8
+Instruction at 0x29d1 is: AND D8 f
 Instruction at 0x29d3 is: OR B
 Instruction at 0x29d4 is: LD C,A
 Instruction at 0x29d5 is: LDH A,A8
@@ -6024,23 +6024,23 @@ Instruction at 0x29d8 is: AND C
 Instruction at 0x29d9 is: LDH (A8),A
 Instruction at 0x29db is: LD A,C
 Instruction at 0x29dc is: LDH (A8),A
-Instruction at 0x29de is: LD A,d8
+Instruction at 0x29de is: LD A,d8 30
 Instruction at 0x29e0 is: LDH (A8),A
 Instruction at 0x29e2 is: RET
 Instruction at 0x29e3 is: LDH A,A8
-Instruction at 0x29e5 is: SUB D8
+Instruction at 0x29e5 is: SUB D8 10
 Instruction at 0x29e7 is: CBPREFIX
 Instruction at 0x29e9 is: CBPREFIX
 Instruction at 0x29eb is: CBPREFIX
 Instruction at 0x29ed is: LD DE,d16
 Instruction at 0x29f0 is: LD E,A
 Instruction at 0x29f1 is: LD HL,d16
-Instruction at 0x29f4 is: LD B,d8
+Instruction at 0x29f4 is: LD B,d8 20
 Instruction at 0x29f6 is: ADD HL,DE
 Instruction at 0x29f7 is: DEC B
 Instruction at 0x29f8 is: JR NZ,r8
 Instruction at 0x29fa is: LDH A,A8
-Instruction at 0x29fc is: SUB D8
+Instruction at 0x29fc is: SUB D8 8
 Instruction at 0x29fe is: CBPREFIX
 Instruction at 0x2a00 is: CBPREFIX
 Instruction at 0x2a02 is: CBPREFIX
@@ -6056,55 +6056,55 @@ Instruction at 0x2a10 is: LDH A,A8
 Instruction at 0x2a12 is: LD D,A
 Instruction at 0x2a13 is: LDH A,A8
 Instruction at 0x2a15 is: LD E,A
-Instruction at 0x2a16 is: LD B,d8
+Instruction at 0x2a16 is: LD B,d8 4
 Instruction at 0x2a18 is: CBPREFIX
 Instruction at 0x2a1a is: CBPREFIX
 Instruction at 0x2a1c is: DEC B
 Instruction at 0x2a1d is: JR NZ,r8
 Instruction at 0x2a1f is: LD A,E
-Instruction at 0x2a20 is: SUB D8
-Instruction at 0x2a22 is: AND D8
+Instruction at 0x2a20 is: SUB D8 84
+Instruction at 0x2a22 is: AND D8 fe
 Instruction at 0x2a24 is: RLCA
 Instruction at 0x2a25 is: RLCA
-Instruction at 0x2a26 is: ADD A,D8
+Instruction at 0x2a26 is: ADD A,D8 8
 Instruction at 0x2a28 is: LDH (A8),A
 Instruction at 0x2a2a is: LDH A,A8
-Instruction at 0x2a2c is: AND D8
+Instruction at 0x2a2c is: AND D8 1f
 Instruction at 0x2a2e is: RLA
 Instruction at 0x2a2f is: RLA
 Instruction at 0x2a30 is: RLA
-Instruction at 0x2a31 is: ADD A,D8
+Instruction at 0x2a31 is: ADD A,D8 8
 Instruction at 0x2a33 is: LDH (A8),A
 Instruction at 0x2a35 is: RET
 Instruction at 0x2a36 is: LDH A,A8
 Instruction at 0x2a38 is: AND A
 Instruction at 0x2a39 is: RET Z
-Instruction at 0x2a3a is: LD C,d8
+Instruction at 0x2a3a is: LD C,d8 3
 Instruction at 0x2a3c is: XOR A
 Instruction at 0x2a3d is: LDH (A8),A
 Instruction at 0x2a3f is: LD A,(DE)
 Instruction at 0x2a40 is: LD B,A
 Instruction at 0x2a41 is: CBPREFIX
-Instruction at 0x2a43 is: AND D8
+Instruction at 0x2a43 is: AND D8 f
 Instruction at 0x2a45 is: JR NZ,r8
 Instruction at 0x2a47 is: LDH A,A8
 Instruction at 0x2a49 is: AND A
-Instruction at 0x2a4a is: LD A,d8
+Instruction at 0x2a4a is: LD A,d8 0
 Instruction at 0x2a4c is: JR NZ,r8
-Instruction at 0x2a4e is: LD A,d8
+Instruction at 0x2a4e is: LD A,d8 2f
 Instruction at 0x2a50 is: LD (HL+),A
 Instruction at 0x2a51 is: LD A,B
-Instruction at 0x2a52 is: AND D8
+Instruction at 0x2a52 is: AND D8 f
 Instruction at 0x2a54 is: JR NZ,r8
 Instruction at 0x2a56 is: LDH A,A8
 Instruction at 0x2a58 is: AND A
-Instruction at 0x2a59 is: LD A,d8
+Instruction at 0x2a59 is: LD A,d8 0
 Instruction at 0x2a5b is: JR NZ,r8
-Instruction at 0x2a5d is: LD A,d8
+Instruction at 0x2a5d is: LD A,d8 1
 Instruction at 0x2a5f is: CP C
-Instruction at 0x2a60 is: LD A,d8
+Instruction at 0x2a60 is: LD A,d8 0
 Instruction at 0x2a62 is: JR Z,r8
-Instruction at 0x2a64 is: LD A,d8
+Instruction at 0x2a64 is: LD A,d8 2f
 Instruction at 0x2a66 is: LD (HL+),A
 Instruction at 0x2a67 is: DEC E
 Instruction at 0x2a68 is: DEC C
@@ -6113,18 +6113,18 @@ Instruction at 0x2a6b is: XOR A
 Instruction at 0x2a6c is: LDH (A8),A
 Instruction at 0x2a6e is: RET
 Instruction at 0x2a6f is: PUSH AF
-Instruction at 0x2a70 is: LD A,d8
+Instruction at 0x2a70 is: LD A,d8 1
 Instruction at 0x2a72 is: LDH (A8),A
 Instruction at 0x2a74 is: POP AF
 Instruction at 0x2a75 is: JR r8
 Instruction at 0x2a77 is: PUSH AF
-Instruction at 0x2a78 is: LD A,d8
+Instruction at 0x2a78 is: LD A,d8 1
 Instruction at 0x2a7a is: LDH (A8),A
 Instruction at 0x2a7c is: POP AF
 Instruction at 0x2a7d is: JR r8
-Instruction at 0x2a7f is: LD A,d8
+Instruction at 0x2a7f is: LD A,d8 c0
 Instruction at 0x2a81 is: LDH (A8),A
-Instruction at 0x2a83 is: LD A,d8
+Instruction at 0x2a83 is: LD A,d8 28
 Instruction at 0x2a85 is: DEC A
 Instruction at 0x2a86 is: JR NZ,r8
 Instruction at 0x2a88 is: RET
@@ -6135,7 +6135,7 @@ Instruction at 0x2a8d is: LDH (A8),A
 Instruction at 0x2a8f is: LD A,(HL)
 Instruction at 0x2a90 is: AND A
 Instruction at 0x2a91 is: JR Z,r8
-Instruction at 0x2a93 is: CP D8
+Instruction at 0x2a93 is: CP D8 80
 Instruction at 0x2a95 is: JR Z,r8
 Instruction at 0x2a97 is: LDH A,A8
 Instruction at 0x2a99 is: LD H,A
@@ -6152,7 +6152,7 @@ Instruction at 0x2aa9 is: XOR A
 Instruction at 0x2aaa is: LDH (A8),A
 Instruction at 0x2aac is: JR r8
 Instruction at 0x2aae is: LDH (A8),A
-Instruction at 0x2ab0 is: LD B,d8
+Instruction at 0x2ab0 is: LD B,d8 7
 Instruction at 0x2ab2 is: LD DE,d16
 Instruction at 0x2ab5 is: LD A,(HL+)
 Instruction at 0x2ab6 is: LD (DE), A
@@ -6163,7 +6163,7 @@ Instruction at 0x2abb is: LDH A,A8
 Instruction at 0x2abd is: LD HL,d16
 Instruction at 0x2ac0 is: RLCA
 Instruction at 0x2ac1 is: LD E,A
-Instruction at 0x2ac2 is: LD D,d8
+Instruction at 0x2ac2 is: LD D,d8 0
 Instruction at 0x2ac4 is: ADD HL,DE
 Instruction at 0x2ac5 is: LD E,(HL)
 Instruction at 0x2ac6 is: INC HL
@@ -6186,12 +6186,12 @@ Instruction at 0x2ad8 is: INC HL
 Instruction at 0x2ad9 is: LDH A,A8
 Instruction at 0x2adb is: LDH (A8),A
 Instruction at 0x2add is: LD A,(HL)
-Instruction at 0x2ade is: CP D8
+Instruction at 0x2ade is: CP D8 ff
 Instruction at 0x2ae0 is: JR Z,r8
-Instruction at 0x2ae2 is: CP D8
+Instruction at 0x2ae2 is: CP D8 fd
 Instruction at 0x2ae4 is: JR NZ,r8
 Instruction at 0x2ae6 is: LDH A,A8
-Instruction at 0x2ae8 is: XOR D8
+Instruction at 0x2ae8 is: XOR D8 20
 Instruction at 0x2aea is: LDH (A8),A
 Instruction at 0x2aec is: INC HL
 Instruction at 0x2aed is: LD A,(HL)
@@ -6199,7 +6199,7 @@ Instruction at 0x2aee is: JR r8
 Instruction at 0x2af0 is: INC DE
 Instruction at 0x2af1 is: INC DE
 Instruction at 0x2af2 is: JR r8
-Instruction at 0x2af4 is: CP D8
+Instruction at 0x2af4 is: CP D8 fe
 Instruction at 0x2af6 is: JR Z,r8
 Instruction at 0x2af8 is: LDH (A8),A
 Instruction at 0x2afa is: LDH A,A8
@@ -6220,7 +6220,7 @@ Instruction at 0x2b0f is: LD B,A
 Instruction at 0x2b10 is: POP AF
 Instruction at 0x2b11 is: SUB B
 Instruction at 0x2b12 is: SBC A,C
-Instruction at 0x2b13 is: SBC A,D8
+Instruction at 0x2b13 is: SBC A,D8 8
 Instruction at 0x2b15 is: LDH (A8),A
 Instruction at 0x2b17 is: LDH A,A8
 Instruction at 0x2b19 is: LD B,A
@@ -6242,7 +6242,7 @@ Instruction at 0x2b2e is: LD B,A
 Instruction at 0x2b2f is: POP AF
 Instruction at 0x2b30 is: SUB B
 Instruction at 0x2b31 is: SBC A,C
-Instruction at 0x2b32 is: SBC A,D8
+Instruction at 0x2b32 is: SBC A,D8 8
 Instruction at 0x2b34 is: LDH (A8),A
 Instruction at 0x2b36 is: PUSH HL
 Instruction at 0x2b37 is: LDH A,A8
@@ -6252,7 +6252,7 @@ Instruction at 0x2b3c is: LD L,A
 Instruction at 0x2b3d is: LDH A,A8
 Instruction at 0x2b3f is: AND A
 Instruction at 0x2b40 is: JR Z,r8
-Instruction at 0x2b42 is: LD A,d8
+Instruction at 0x2b42 is: LD A,d8 ff
 Instruction at 0x2b44 is: JR r8
 Instruction at 0x2b46 is: LDH A,A8
 Instruction at 0x2b48 is: LD (HL+),A
@@ -6354,14 +6354,14 @@ Instruction at 0x2bb4 is: RET NZ
 Instruction at 0x2bb5 is: INC L
 Instruction at 0x2bb6 is: CALL NZ,A16
 Instruction at 0x2bb9 is: INC L
-Instruction at 0x2bba is: CALL Z,A1
+Instruction at 0x2bba is: CALL Z,A16
 Instruction at 0x2bbd is: JR NC,r8
 Instruction at 0x2bbf is: INC L
 Instruction at 0x2bc0 is: RET NC
 Instruction at 0x2bc1 is: INC L
 Instruction at 0x2bc2 is: CALL NC,A16
 Instruction at 0x2bc5 is: INC L
-Instruction at 0x2bc6 is: CALL C,16
+Instruction at 0x2bc6 is: CALL C,a16
 Instruction at 0x2bc9 is: INC L
 Instruction at 0x2bca is: UNDEFINED
 Instruction at 0x2bcb is: INC L
@@ -6371,7 +6371,7 @@ Instruction at 0x2bd1 is: INC L
 Instruction at 0x2bd2 is: UNDEFINED
 Instruction at 0x2bd3 is: INC L
 Instruction at 0x2bd4 is: LD A,(C)
-Instruction at 0x2bd6 is: OR D8
+Instruction at 0x2bd6 is: OR D8 30
 Instruction at 0x2bd8 is: LDH A,A8
 Instruction at 0x2bda is: UNDEFINED
 Instruction at 0x2bdb is: INC L
@@ -6459,31 +6459,31 @@ Instruction at 0x2c47 is: LDH A,A8
 Instruction at 0x2c49 is: DEC L
 Instruction at 0x2c4a is: RST 28H
 Instruction at 0x2c4b is: LDH A,A8
-Instruction at 0x2c4d is: LD L,d8
+Instruction at 0x2c4d is: LD L,d8 ef
 Instruction at 0x2c4f is: LDH A,A8
-Instruction at 0x2c51 is: LD L,d8
+Instruction at 0x2c51 is: LD L,d8 ef
 Instruction at 0x2c53 is: LDH A,A8
-Instruction at 0x2c55 is: LD L,d8
+Instruction at 0x2c55 is: LD L,d8 ef
 Instruction at 0x2c57 is: LDH A,A8
-Instruction at 0x2c59 is: LD L,d8
+Instruction at 0x2c59 is: LD L,d8 ef
 Instruction at 0x2c5b is: LDH A,A8
-Instruction at 0x2c5d is: LD L,d8
+Instruction at 0x2c5d is: LD L,d8 ef
 Instruction at 0x2c5f is: LDH A,A8
-Instruction at 0x2c61 is: LD L,d8
+Instruction at 0x2c61 is: LD L,d8 ef
 Instruction at 0x2c63 is: LDH A,A8
-Instruction at 0x2c65 is: LD L,d8
+Instruction at 0x2c65 is: LD L,d8 ef
 Instruction at 0x2c67 is: LDH A,A8
-Instruction at 0x2c69 is: LD L,d8
+Instruction at 0x2c69 is: LD L,d8 ef
 Instruction at 0x2c6b is: LDH A,A8
-Instruction at 0x2c6d is: LD L,d8
+Instruction at 0x2c6d is: LD L,d8 ef
 Instruction at 0x2c6f is: LDH A,A8
-Instruction at 0x2c71 is: LD L,d8
+Instruction at 0x2c71 is: LD L,d8 ef
 Instruction at 0x2c73 is: LDH A,A8
-Instruction at 0x2c75 is: LD L,d8
+Instruction at 0x2c75 is: LD L,d8 ef
 Instruction at 0x2c77 is: LDH A,A8
-Instruction at 0x2c79 is: LD L,d8
+Instruction at 0x2c79 is: LD L,d8 ef
 Instruction at 0x2c7b is: LDH A,A8
-Instruction at 0x2c7d is: LD L,d8
+Instruction at 0x2c7d is: LD L,d8 ef
 Instruction at 0x2c7f is: LDH A,A8
 Instruction at 0x2c81 is: CPL
 Instruction at 0x2c82 is: RST 28H
@@ -6491,9 +6491,9 @@ Instruction at 0x2c83 is: LDH A,A8
 Instruction at 0x2c85 is: CPL
 Instruction at 0x2c86 is: RST 28H
 Instruction at 0x2c87 is: LDH A,A8
-Instruction at 0x2c89 is: LD L,d8
+Instruction at 0x2c89 is: LD L,d8 ef
 Instruction at 0x2c8b is: LDH A,A8
-Instruction at 0x2c8d is: LD L,d8
+Instruction at 0x2c8d is: LD L,d8 ef
 Instruction at 0x2c8f is: LDH A,A8
 Instruction at 0x2c91 is: CPL
 Instruction at 0x2c92 is: NOP
@@ -6574,7 +6574,7 @@ Instruction at 0x2cea is: LDH A,A8
 Instruction at 0x2cec is: UNDEFINED
 Instruction at 0x2ced is: CPL
 Instruction at 0x2cee is: LDH A,A8
-Instruction at 0x2cf0 is: XOR D8
+Instruction at 0x2cf0 is: XOR D8 2f
 Instruction at 0x2cf2 is: LDH A,A8
 Instruction at 0x2cf4 is: INC BC
 Instruction at 0x2cf5 is: JR NC,r8
@@ -6628,88 +6628,88 @@ Instruction at 0x2d54 is: LD E,L
 Instruction at 0x2d55 is: LD SP,d16
 Instruction at 0x2d58 is: XOR C
 Instruction at 0x2d59 is: LD SP,d16
-Instruction at 0x2d5c is: CP D8
-Instruction at 0x2d5e is: CP D8
-Instruction at 0x2d60 is: CP D8
+Instruction at 0x2d5c is: CP D8 fe
+Instruction at 0x2d5e is: CP D8 fe
+Instruction at 0x2d60 is: CP D8 fe
 Instruction at 0x2d62 is: ADD A,H
 Instruction at 0x2d63 is: ADD A,H
 Instruction at 0x2d64 is: ADD A,H
-Instruction at 0x2d65 is: CP D8
+Instruction at 0x2d65 is: CP D8 84
 Instruction at 0x2d67 is: RST 38H
 Instruction at 0x2d68 is: XOR C
 Instruction at 0x2d69 is: LD SP,d16
-Instruction at 0x2d6c is: CP D8
-Instruction at 0x2d6e is: CP D8
-Instruction at 0x2d70 is: CP D8
-Instruction at 0x2d72 is: CP D8
-Instruction at 0x2d74 is: CP D8
-Instruction at 0x2d76 is: CP D8
+Instruction at 0x2d6c is: CP D8 fe
+Instruction at 0x2d6e is: CP D8 84
+Instruction at 0x2d70 is: CP D8 fe
+Instruction at 0x2d72 is: CP D8 84
+Instruction at 0x2d74 is: CP D8 fe
+Instruction at 0x2d76 is: CP D8 84
 Instruction at 0x2d78 is: ADD A,H
 Instruction at 0x2d79 is: RST 38H
 Instruction at 0x2d7a is: XOR C
 Instruction at 0x2d7b is: LD SP,d16
-Instruction at 0x2d7e is: CP D8
-Instruction at 0x2d80 is: CP D8
+Instruction at 0x2d7e is: CP D8 fe
+Instruction at 0x2d80 is: CP D8 fe
 Instruction at 0x2d82 is: ADD A,H
-Instruction at 0x2d83 is: CP D8
+Instruction at 0x2d83 is: CP D8 84
 Instruction at 0x2d85 is: ADD A,H
 Instruction at 0x2d86 is: ADD A,H
-Instruction at 0x2d87 is: CP D8
+Instruction at 0x2d87 is: CP D8 ff
 Instruction at 0x2d89 is: XOR C
 Instruction at 0x2d8a is: LD SP,d16
-Instruction at 0x2d8d is: CP D8
+Instruction at 0x2d8d is: CP D8 fe
 Instruction at 0x2d8f is: ADD A,H
 Instruction at 0x2d90 is: ADD A,H
-Instruction at 0x2d91 is: CP D8
-Instruction at 0x2d93 is: CP D8
-Instruction at 0x2d95 is: CP D8
-Instruction at 0x2d97 is: CP D8
+Instruction at 0x2d91 is: CP D8 fe
+Instruction at 0x2d93 is: CP D8 84
+Instruction at 0x2d95 is: CP D8 fe
+Instruction at 0x2d97 is: CP D8 84
 Instruction at 0x2d99 is: RST 38H
 Instruction at 0x2d9a is: XOR C
 Instruction at 0x2d9b is: LD SP,d16
-Instruction at 0x2d9e is: CP D8
-Instruction at 0x2da0 is: CP D8
-Instruction at 0x2da2 is: CP D8
+Instruction at 0x2d9e is: CP D8 fe
+Instruction at 0x2da0 is: CP D8 fe
+Instruction at 0x2da2 is: CP D8 fe
 Instruction at 0x2da4 is: ADD A,C
 Instruction at 0x2da5 is: ADD A,C
 Instruction at 0x2da6 is: ADD A,C
-Instruction at 0x2da7 is: CP D8
-Instruction at 0x2da9 is: CP D8
+Instruction at 0x2da7 is: CP D8 fe
+Instruction at 0x2da9 is: CP D8 81
 Instruction at 0x2dab is: RST 38H
 Instruction at 0x2dac is: XOR C
 Instruction at 0x2dad is: LD SP,d16
-Instruction at 0x2db0 is: CP D8
-Instruction at 0x2db2 is: CP D8
+Instruction at 0x2db0 is: CP D8 fe
+Instruction at 0x2db2 is: CP D8 81
 Instruction at 0x2db4 is: ADD A,C
-Instruction at 0x2db5 is: CP D8
+Instruction at 0x2db5 is: CP D8 fe
 Instruction at 0x2db7 is: ADD A,C
-Instruction at 0x2db8 is: CP D8
-Instruction at 0x2dba is: CP D8
+Instruction at 0x2db8 is: CP D8 fe
+Instruction at 0x2dba is: CP D8 81
 Instruction at 0x2dbc is: RST 38H
 Instruction at 0x2dbd is: XOR C
 Instruction at 0x2dbe is: LD SP,d16
-Instruction at 0x2dc1 is: CP D8
+Instruction at 0x2dc1 is: CP D8 fe
 Instruction at 0x2dc3 is: ADD A,C
-Instruction at 0x2dc4 is: CP D8
-Instruction at 0x2dc6 is: CP D8
+Instruction at 0x2dc4 is: CP D8 fe
+Instruction at 0x2dc6 is: CP D8 81
 Instruction at 0x2dc8 is: ADD A,C
 Instruction at 0x2dc9 is: ADD A,C
 Instruction at 0x2dca is: RST 38H
 Instruction at 0x2dcb is: XOR C
 Instruction at 0x2dcc is: LD SP,d16
-Instruction at 0x2dcf is: CP D8
-Instruction at 0x2dd1 is: CP D8
-Instruction at 0x2dd3 is: CP D8
-Instruction at 0x2dd5 is: CP D8
-Instruction at 0x2dd7 is: CP D8
+Instruction at 0x2dcf is: CP D8 fe
+Instruction at 0x2dd1 is: CP D8 81
+Instruction at 0x2dd3 is: CP D8 fe
+Instruction at 0x2dd5 is: CP D8 81
+Instruction at 0x2dd7 is: CP D8 fe
 Instruction at 0x2dd9 is: ADD A,C
 Instruction at 0x2dda is: ADD A,C
 Instruction at 0x2ddb is: RST 38H
 Instruction at 0x2ddc is: XOR C
 Instruction at 0x2ddd is: LD SP,d16
-Instruction at 0x2de0 is: CP D8
-Instruction at 0x2de2 is: CP D8
-Instruction at 0x2de4 is: CP D8
+Instruction at 0x2de0 is: CP D8 fe
+Instruction at 0x2de2 is: CP D8 fe
+Instruction at 0x2de4 is: CP D8 fe
 Instruction at 0x2de6 is: ADC A,D
 Instruction at 0x2de7 is: ADC A,E
 Instruction at 0x2de8 is: ADC A,E
@@ -6717,18 +6717,18 @@ Instruction at 0x2de9 is: ADC A,A
 Instruction at 0x2dea is: RST 38H
 Instruction at 0x2deb is: XOR C
 Instruction at 0x2dec is: LD SP,d16
-Instruction at 0x2def is: CP D8
-Instruction at 0x2df1 is: CP D8
-Instruction at 0x2df3 is: CP D8
-Instruction at 0x2df5 is: CP D8
-Instruction at 0x2df7 is: CP D8
-Instruction at 0x2df9 is: CP D8
+Instruction at 0x2def is: CP D8 fe
+Instruction at 0x2df1 is: CP D8 88
+Instruction at 0x2df3 is: CP D8 fe
+Instruction at 0x2df5 is: CP D8 88
+Instruction at 0x2df7 is: CP D8 fe
+Instruction at 0x2df9 is: CP D8 89
 Instruction at 0x2dfb is: RST 38H
 Instruction at 0x2dfc is: XOR C
 Instruction at 0x2dfd is: LD SP,d16
-Instruction at 0x2e00 is: CP D8
-Instruction at 0x2e02 is: CP D8
-Instruction at 0x2e04 is: CP D8
+Instruction at 0x2e00 is: CP D8 fe
+Instruction at 0x2e02 is: CP D8 fe
+Instruction at 0x2e04 is: CP D8 fe
 Instruction at 0x2e06 is: ADC A,D
 Instruction at 0x2e07 is: ADC A,E
 Instruction at 0x2e08 is: ADC A,E
@@ -6736,177 +6736,177 @@ Instruction at 0x2e09 is: ADC A,A
 Instruction at 0x2e0a is: RST 38H
 Instruction at 0x2e0b is: XOR C
 Instruction at 0x2e0c is: LD SP,d16
-Instruction at 0x2e0f is: CP D8
-Instruction at 0x2e11 is: CP D8
-Instruction at 0x2e13 is: CP D8
-Instruction at 0x2e15 is: CP D8
-Instruction at 0x2e17 is: CP D8
-Instruction at 0x2e19 is: CP D8
+Instruction at 0x2e0f is: CP D8 fe
+Instruction at 0x2e11 is: CP D8 88
+Instruction at 0x2e13 is: CP D8 fe
+Instruction at 0x2e15 is: CP D8 88
+Instruction at 0x2e17 is: CP D8 fe
+Instruction at 0x2e19 is: CP D8 89
 Instruction at 0x2e1b is: RST 38H
 Instruction at 0x2e1c is: XOR C
 Instruction at 0x2e1d is: LD SP,d16
-Instruction at 0x2e20 is: CP D8
-Instruction at 0x2e22 is: CP D8
-Instruction at 0x2e24 is: CP D8
-Instruction at 0x2e26 is: CP D8
+Instruction at 0x2e20 is: CP D8 fe
+Instruction at 0x2e22 is: CP D8 fe
+Instruction at 0x2e24 is: CP D8 fe
+Instruction at 0x2e26 is: CP D8 83
 Instruction at 0x2e28 is: ADD A,E
-Instruction at 0x2e29 is: CP D8
+Instruction at 0x2e29 is: CP D8 fe
 Instruction at 0x2e2b is: ADD A,E
 Instruction at 0x2e2c is: ADD A,E
 Instruction at 0x2e2d is: RST 38H
 Instruction at 0x2e2e is: XOR C
 Instruction at 0x2e2f is: LD SP,d16
-Instruction at 0x2e32 is: CP D8
-Instruction at 0x2e34 is: CP D8
-Instruction at 0x2e36 is: CP D8
-Instruction at 0x2e38 is: CP D8
+Instruction at 0x2e32 is: CP D8 fe
+Instruction at 0x2e34 is: CP D8 fe
+Instruction at 0x2e36 is: CP D8 fe
+Instruction at 0x2e38 is: CP D8 83
 Instruction at 0x2e3a is: ADD A,E
-Instruction at 0x2e3b is: CP D8
+Instruction at 0x2e3b is: CP D8 fe
 Instruction at 0x2e3d is: ADD A,E
 Instruction at 0x2e3e is: ADD A,E
 Instruction at 0x2e3f is: RST 38H
 Instruction at 0x2e40 is: XOR C
 Instruction at 0x2e41 is: LD SP,d16
-Instruction at 0x2e44 is: CP D8
-Instruction at 0x2e46 is: CP D8
-Instruction at 0x2e48 is: CP D8
-Instruction at 0x2e4a is: CP D8
+Instruction at 0x2e44 is: CP D8 fe
+Instruction at 0x2e46 is: CP D8 fe
+Instruction at 0x2e48 is: CP D8 fe
+Instruction at 0x2e4a is: CP D8 83
 Instruction at 0x2e4c is: ADD A,E
-Instruction at 0x2e4d is: CP D8
+Instruction at 0x2e4d is: CP D8 fe
 Instruction at 0x2e4f is: ADD A,E
 Instruction at 0x2e50 is: ADD A,E
 Instruction at 0x2e51 is: RST 38H
 Instruction at 0x2e52 is: XOR C
 Instruction at 0x2e53 is: LD SP,d16
-Instruction at 0x2e56 is: CP D8
-Instruction at 0x2e58 is: CP D8
-Instruction at 0x2e5a is: CP D8
-Instruction at 0x2e5c is: CP D8
+Instruction at 0x2e56 is: CP D8 fe
+Instruction at 0x2e58 is: CP D8 fe
+Instruction at 0x2e5a is: CP D8 fe
+Instruction at 0x2e5c is: CP D8 83
 Instruction at 0x2e5e is: ADD A,E
-Instruction at 0x2e5f is: CP D8
+Instruction at 0x2e5f is: CP D8 fe
 Instruction at 0x2e61 is: ADD A,E
 Instruction at 0x2e62 is: ADD A,E
 Instruction at 0x2e63 is: RST 38H
 Instruction at 0x2e64 is: XOR C
 Instruction at 0x2e65 is: LD SP,d16
-Instruction at 0x2e68 is: CP D8
-Instruction at 0x2e6a is: CP D8
-Instruction at 0x2e6c is: CP D8
+Instruction at 0x2e68 is: CP D8 fe
+Instruction at 0x2e6a is: CP D8 fe
+Instruction at 0x2e6c is: CP D8 fe
 Instruction at 0x2e6e is: ADD A,D
 Instruction at 0x2e6f is: ADD A,D
-Instruction at 0x2e70 is: CP D8
-Instruction at 0x2e72 is: CP D8
+Instruction at 0x2e70 is: CP D8 fe
+Instruction at 0x2e72 is: CP D8 82
 Instruction at 0x2e74 is: ADD A,D
 Instruction at 0x2e75 is: RST 38H
 Instruction at 0x2e76 is: XOR C
 Instruction at 0x2e77 is: LD SP,d16
-Instruction at 0x2e7a is: CP D8
-Instruction at 0x2e7c is: CP D8
-Instruction at 0x2e7e is: CP D8
+Instruction at 0x2e7a is: CP D8 fe
+Instruction at 0x2e7c is: CP D8 82
+Instruction at 0x2e7e is: CP D8 fe
 Instruction at 0x2e80 is: ADD A,D
 Instruction at 0x2e81 is: ADD A,D
-Instruction at 0x2e82 is: CP D8
+Instruction at 0x2e82 is: CP D8 fe
 Instruction at 0x2e84 is: ADD A,D
 Instruction at 0x2e85 is: RST 38H
 Instruction at 0x2e86 is: XOR C
 Instruction at 0x2e87 is: LD SP,d16
-Instruction at 0x2e8a is: CP D8
-Instruction at 0x2e8c is: CP D8
-Instruction at 0x2e8e is: CP D8
+Instruction at 0x2e8a is: CP D8 fe
+Instruction at 0x2e8c is: CP D8 fe
+Instruction at 0x2e8e is: CP D8 fe
 Instruction at 0x2e90 is: ADD A,D
 Instruction at 0x2e91 is: ADD A,D
-Instruction at 0x2e92 is: CP D8
-Instruction at 0x2e94 is: CP D8
+Instruction at 0x2e92 is: CP D8 fe
+Instruction at 0x2e94 is: CP D8 82
 Instruction at 0x2e96 is: ADD A,D
 Instruction at 0x2e97 is: RST 38H
 Instruction at 0x2e98 is: XOR C
 Instruction at 0x2e99 is: LD SP,d16
-Instruction at 0x2e9c is: CP D8
-Instruction at 0x2e9e is: CP D8
-Instruction at 0x2ea0 is: CP D8
+Instruction at 0x2e9c is: CP D8 fe
+Instruction at 0x2e9e is: CP D8 82
+Instruction at 0x2ea0 is: CP D8 fe
 Instruction at 0x2ea2 is: ADD A,D
 Instruction at 0x2ea3 is: ADD A,D
-Instruction at 0x2ea4 is: CP D8
+Instruction at 0x2ea4 is: CP D8 fe
 Instruction at 0x2ea6 is: ADD A,D
 Instruction at 0x2ea7 is: RST 38H
 Instruction at 0x2ea8 is: XOR C
 Instruction at 0x2ea9 is: LD SP,d16
-Instruction at 0x2eac is: CP D8
-Instruction at 0x2eae is: CP D8
-Instruction at 0x2eb0 is: CP D8
-Instruction at 0x2eb2 is: CP D8
+Instruction at 0x2eac is: CP D8 fe
+Instruction at 0x2eae is: CP D8 fe
+Instruction at 0x2eb0 is: CP D8 fe
+Instruction at 0x2eb2 is: CP D8 86
 Instruction at 0x2eb4 is: ADD A,(HL
-Instruction at 0x2eb5 is: CP D8
+Instruction at 0x2eb5 is: CP D8 86
 Instruction at 0x2eb7 is: ADD A,(HL
 Instruction at 0x2eb8 is: RST 38H
 Instruction at 0x2eb9 is: XOR C
 Instruction at 0x2eba is: LD SP,d16
-Instruction at 0x2ebd is: CP D8
+Instruction at 0x2ebd is: CP D8 fe
 Instruction at 0x2ebf is: ADD A,(HL
-Instruction at 0x2ec0 is: CP D8
-Instruction at 0x2ec2 is: CP D8
+Instruction at 0x2ec0 is: CP D8 fe
+Instruction at 0x2ec2 is: CP D8 86
 Instruction at 0x2ec4 is: ADD A,(HL
-Instruction at 0x2ec5 is: CP D8
-Instruction at 0x2ec7 is: CP D8
+Instruction at 0x2ec5 is: CP D8 fe
+Instruction at 0x2ec7 is: CP D8 86
 Instruction at 0x2ec9 is: RST 38H
 Instruction at 0x2eca is: XOR C
 Instruction at 0x2ecb is: LD SP,d16
-Instruction at 0x2ece is: CP D8
-Instruction at 0x2ed0 is: CP D8
-Instruction at 0x2ed2 is: CP D8
-Instruction at 0x2ed4 is: CP D8
+Instruction at 0x2ece is: CP D8 fe
+Instruction at 0x2ed0 is: CP D8 fe
+Instruction at 0x2ed2 is: CP D8 fe
+Instruction at 0x2ed4 is: CP D8 86
 Instruction at 0x2ed6 is: ADD A,(HL
-Instruction at 0x2ed7 is: CP D8
+Instruction at 0x2ed7 is: CP D8 86
 Instruction at 0x2ed9 is: ADD A,(HL
 Instruction at 0x2eda is: RST 38H
 Instruction at 0x2edb is: XOR C
 Instruction at 0x2edc is: LD SP,d16
-Instruction at 0x2edf is: CP D8
+Instruction at 0x2edf is: CP D8 fe
 Instruction at 0x2ee1 is: ADD A,(HL
-Instruction at 0x2ee2 is: CP D8
-Instruction at 0x2ee4 is: CP D8
+Instruction at 0x2ee2 is: CP D8 fe
+Instruction at 0x2ee4 is: CP D8 86
 Instruction at 0x2ee6 is: ADD A,(HL
-Instruction at 0x2ee7 is: CP D8
-Instruction at 0x2ee9 is: CP D8
+Instruction at 0x2ee7 is: CP D8 fe
+Instruction at 0x2ee9 is: CP D8 86
 Instruction at 0x2eeb is: RST 38H
 Instruction at 0x2eec is: XOR C
 Instruction at 0x2eed is: LD SP,d16
-Instruction at 0x2ef0 is: CP D8
-Instruction at 0x2ef2 is: CP D8
-Instruction at 0x2ef4 is: CP D8
+Instruction at 0x2ef0 is: CP D8 fe
+Instruction at 0x2ef2 is: CP D8 85
+Instruction at 0x2ef4 is: CP D8 fe
 Instruction at 0x2ef6 is: ADD A,L
 Instruction at 0x2ef7 is: ADD A,L
 Instruction at 0x2ef8 is: ADD A,L
 Instruction at 0x2ef9 is: RST 38H
 Instruction at 0x2efa is: XOR C
 Instruction at 0x2efb is: LD SP,d16
-Instruction at 0x2efe is: CP D8
-Instruction at 0x2f00 is: CP D8
-Instruction at 0x2f02 is: CP D8
+Instruction at 0x2efe is: CP D8 fe
+Instruction at 0x2f00 is: CP D8 85
+Instruction at 0x2f02 is: CP D8 fe
 Instruction at 0x2f04 is: ADD A,L
 Instruction at 0x2f05 is: ADD A,L
-Instruction at 0x2f06 is: CP D8
-Instruction at 0x2f08 is: CP D8
+Instruction at 0x2f06 is: CP D8 fe
+Instruction at 0x2f08 is: CP D8 85
 Instruction at 0x2f0a is: RST 38H
 Instruction at 0x2f0b is: XOR C
 Instruction at 0x2f0c is: LD SP,d16
-Instruction at 0x2f0f is: CP D8
-Instruction at 0x2f11 is: CP D8
-Instruction at 0x2f13 is: CP D8
+Instruction at 0x2f0f is: CP D8 fe
+Instruction at 0x2f11 is: CP D8 fe
+Instruction at 0x2f13 is: CP D8 fe
 Instruction at 0x2f15 is: ADD A,L
 Instruction at 0x2f16 is: ADD A,L
 Instruction at 0x2f17 is: ADD A,L
-Instruction at 0x2f18 is: CP D8
+Instruction at 0x2f18 is: CP D8 fe
 Instruction at 0x2f1a is: ADD A,L
 Instruction at 0x2f1b is: RST 38H
 Instruction at 0x2f1c is: XOR C
 Instruction at 0x2f1d is: LD SP,d16
-Instruction at 0x2f20 is: CP D8
-Instruction at 0x2f22 is: CP D8
-Instruction at 0x2f24 is: CP D8
-Instruction at 0x2f26 is: CP D8
+Instruction at 0x2f20 is: CP D8 fe
+Instruction at 0x2f22 is: CP D8 85
+Instruction at 0x2f24 is: CP D8 fe
+Instruction at 0x2f26 is: CP D8 85
 Instruction at 0x2f28 is: ADD A,L
-Instruction at 0x2f29 is: CP D8
+Instruction at 0x2f29 is: CP D8 fe
 Instruction at 0x2f2b is: ADD A,L
 Instruction at 0x2f2c is: RST 38H
 Instruction at 0x2f2d is: RET
@@ -6914,19 +6914,19 @@ Instruction at 0x2f2e is: LD SP,d16
 Instruction at 0x2f31 is: DEC E
 Instruction at 0x2f32 is: LD (HL+),A
 Instruction at 0x2f33 is: ADD HL,DE
-Instruction at 0x2f34 is: LD C,d8
+Instruction at 0x2f34 is: LD C,d8 ff
 Instruction at 0x2f36 is: RET
 Instruction at 0x2f37 is: LD SP,d16
 Instruction at 0x2f3a is: DEC E
 Instruction at 0x2f3b is: LD (HL+),A
 Instruction at 0x2f3c is: ADD HL,DE
-Instruction at 0x2f3d is: LD C,d8
+Instruction at 0x2f3d is: LD C,d8 ff
 Instruction at 0x2f3f is: RET
 Instruction at 0x2f40 is: LD SP,d16
 Instruction at 0x2f43 is: DEC E
 Instruction at 0x2f44 is: LD (HL+),A
 Instruction at 0x2f45 is: ADD HL,DE
-Instruction at 0x2f46 is: LD C,d8
+Instruction at 0x2f46 is: LD C,d8 ff
 Instruction at 0x2f48 is: RET
 Instruction at 0x2f49 is: LD SP,d16
 Instruction at 0x2f4c is: RRCA
@@ -6980,10 +6980,10 @@ Instruction at 0x2f98 is: INC B
 Instruction at 0x2f99 is: RLA
 Instruction at 0x2f9a is: INC H
 Instruction at 0x2f9b is: DEC H
-Instruction at 0x2f9c is: LD H,d8
+Instruction at 0x2f9c is: LD H,d8 27
 Instruction at 0x2f9e is: INC (HL)
 Instruction at 0x2f9f is: DEC (HL)
-Instruction at 0x2fa0 is: LD (HL),d8
+Instruction at 0x2fa0 is: LD (HL),d8 2f
 Instruction at 0x2fa2 is: RST 38H
 Instruction at 0x2fa3 is: XOR C
 Instruction at 0x2fa4 is: LD SP,d16
@@ -6998,7 +6998,7 @@ Instruction at 0x2fb1 is: LD A,(HL+)
 Instruction at 0x2fb2 is: DEC HL
 Instruction at 0x2fb3 is: LD H,B
 Instruction at 0x2fb4 is: LD (HL),B
-Instruction at 0x2fb5 is: LD (HL),d8
+Instruction at 0x2fb5 is: LD (HL),d8 2f
 Instruction at 0x2fb7 is: RST 38H
 Instruction at 0x2fb8 is: RETI
 Instruction at 0x2fb9 is: LD SP,d16
@@ -7161,7 +7161,7 @@ Instruction at 0x3093 is: PUSH BC
 Instruction at 0x3094 is: RST 38H
 Instruction at 0x3095 is: RETI
 Instruction at 0x3096 is: LD SP,d16
-Instruction at 0x3099 is: CALL C,16
+Instruction at 0x3099 is: CALL C,a16
 Instruction at 0x309c is: RST 28H
 Instruction at 0x309d is: RST 38H
 Instruction at 0x309e is: RETI
@@ -7178,7 +7178,7 @@ Instruction at 0x30ae is: RST 28H
 Instruction at 0x30af is: RST 38H
 Instruction at 0x30b0 is: RETI
 Instruction at 0x30b1 is: LD SP,d16
-Instruction at 0x30b4 is: CALL C,16
+Instruction at 0x30b4 is: CALL C,a16
 Instruction at 0x30b7 is: POP AF
 Instruction at 0x30b8 is: RST 38H
 Instruction at 0x30b9 is: RETI
@@ -7194,7 +7194,7 @@ Instruction at 0x30c9 is: LDH (A8),A
 Instruction at 0x30cb is: PUSH AF
 Instruction at 0x30cc is: LD SP,d16
 Instruction at 0x30cf is: PUSH BC
-Instruction at 0x30d0 is: ADD A,D8
+Instruction at 0x30d0 is: ADD A,D8 cc
 Instruction at 0x30d2 is: CALL A16
 Instruction at 0x30d5 is: AND H
 Instruction at 0x30d6 is: AND L
@@ -7217,7 +7217,7 @@ Instruction at 0x30e6 is: SBC A,L
 Instruction at 0x30e7 is: SBC A,(HL)
 Instruction at 0x30e8 is: SBC A,A
 Instruction at 0x30e9 is: RST 38H
-Instruction at 0x30ea is: LD D,d8
+Instruction at 0x30ea is: LD D,d8 31
 Instruction at 0x30ec is: LD HL,SP+R8
 Instruction at 0x30ee is: INC E
 Instruction at 0x30ef is: LD SP,d16
@@ -7842,7 +7842,7 @@ Instruction at 0x33d7 is: INC C
 Instruction at 0x33d8 is: INC C
 Instruction at 0x33d9 is: INC C
 Instruction at 0x33da is: INC C
-Instruction at 0x33db is: CALL Z,A1
+Instruction at 0x33db is: CALL Z,A16
 Instruction at 0x33de is: INC C
 Instruction at 0x33df is: INC SP
 Instruction at 0x33e0 is: JR NC,r8
@@ -7855,13 +7855,13 @@ Instruction at 0x33ec is: LD (HL-),A
 Instruction at 0x33ed is: INC SP
 Instruction at 0x33ee is: JR NC,r8
 Instruction at 0x33f0 is: INC C
-Instruction at 0x33f1 is: CALL Z,A1
+Instruction at 0x33f1 is: CALL Z,A16
 Instruction at 0x33f4 is: INC C
-Instruction at 0x33f5 is: CALL Z,A1
+Instruction at 0x33f5 is: CALL Z,A16
 Instruction at 0x33f8 is: INC C
-Instruction at 0x33f9 is: CALL Z,A1
+Instruction at 0x33f9 is: CALL Z,A16
 Instruction at 0x33fc is: INC C
-Instruction at 0x33fd is: CALL Z,A1
+Instruction at 0x33fd is: CALL Z,A16
 Instruction at 0x3400 is: JR NC,r8
 Instruction at 0x3402 is: JR NC,r8
 Instruction at 0x3404 is: JR NC,r8
@@ -7889,7 +7889,7 @@ Instruction at 0x341b is: NOP
 Instruction at 0x341c is: NOP
 Instruction at 0x341d is: NOP
 Instruction at 0x341e is: NOP
-Instruction at 0x341f is: CALL Z,A1
+Instruction at 0x341f is: CALL Z,A16
 Instruction at 0x3422 is: LD C,H
 Instruction at 0x3423 is: INC C
 Instruction at 0x3424 is: INC C
@@ -7961,14 +7961,14 @@ Instruction at 0x3468 is: STOP 0
 Instruction at 0x346a is: ADD A,B
 Instruction at 0x346b is: RST 38H
 Instruction at 0x346c is: JP NZ,A16
-Instruction at 0x346f is: CP D8
-Instruction at 0x3471 is: CP D8
-Instruction at 0x3473 is: CP D8
-Instruction at 0x3475 is: CP D8
-Instruction at 0x3477 is: CP D8
-Instruction at 0x3479 is: CP D8
-Instruction at 0x347b is: CP D8
-Instruction at 0x347d is: CP D8
+Instruction at 0x346f is: CP D8 6
+Instruction at 0x3471 is: CP D8 46
+Instruction at 0x3473 is: CP D8 6
+Instruction at 0x3475 is: CP D8 6
+Instruction at 0x3477 is: CP D8 16
+Instruction at 0x3479 is: CP D8 86
+Instruction at 0x347b is: CP D8 6
+Instruction at 0x347d is: CP D8 6
 Instruction at 0x347f is: LD A,A
 Instruction at 0x3480 is: LD H,H
 Instruction at 0x3481 is: LD A,A
@@ -8183,7 +8183,7 @@ Instruction at 0x3573 is: LDH A,A8
 Instruction at 0x3575 is: LD HL,SP+R8
 Instruction at 0x3577 is: INC E
 Instruction at 0x3578 is: INC E
-Instruction at 0x3579 is: CALL Z,A1
+Instruction at 0x3579 is: CALL Z,A16
 Instruction at 0x357c is: INC C
 Instruction at 0x357d is: INC L
 Instruction at 0x357e is: INC C
@@ -8275,7 +8275,7 @@ Instruction at 0x35df is: INC L
 Instruction at 0x35e0 is: INC C
 Instruction at 0x35e1 is: LD L,H
 Instruction at 0x35e2 is: INC C
-Instruction at 0x35e3 is: CALL Z,A1
+Instruction at 0x35e3 is: CALL Z,A16
 Instruction at 0x35e6 is: INC E
 Instruction at 0x35e7 is: LD HL,SP+R8
 Instruction at 0x35e9 is: LDH A,A8
@@ -8731,7 +8731,7 @@ Instruction at 0x37f4 is: LD (BC),A
 Instruction at 0x37f5 is: RST 18H
 Instruction at 0x37f6 is: JR NZ,r8
 Instruction at 0x37f8 is: ADD A,H
-Instruction at 0x37f9 is: XOR D8
+Instruction at 0x37f9 is: XOR D8 11
 Instruction at 0x37fb is: CP E
 Instruction at 0x37fc is: LD B,H
 Instruction at 0x37fd is: RST 38H
@@ -8831,7 +8831,7 @@ Instruction at 0x3861 is: INC A
 Instruction at 0x3862 is: NOP
 Instruction at 0x3863 is: LD C,(HL)
 Instruction at 0x3864 is: NOP
-Instruction at 0x3865 is: LD C,d8
+Instruction at 0x3865 is: LD C,d8 0
 Instruction at 0x3867 is: INC A
 Instruction at 0x3868 is: NOP
 Instruction at 0x3869 is: LD (HL),B
@@ -8844,11 +8844,11 @@ Instruction at 0x386f is: NOP
 Instruction at 0x3870 is: NOP
 Instruction at 0x3871 is: LD A,H
 Instruction at 0x3872 is: NOP
-Instruction at 0x3873 is: LD C,d8
+Instruction at 0x3873 is: LD C,d8 0
 Instruction at 0x3875 is: INC A
 Instruction at 0x3876 is: NOP
-Instruction at 0x3877 is: LD C,d8
-Instruction at 0x3879 is: LD C,d8
+Instruction at 0x3877 is: LD C,d8 0
+Instruction at 0x3879 is: LD C,d8 0
 Instruction at 0x387b is: LD A,H
 Instruction at 0x387c is: NOP
 Instruction at 0x387d is: NOP
@@ -8877,7 +8877,7 @@ Instruction at 0x3893 is: LD H,B
 Instruction at 0x3894 is: NOP
 Instruction at 0x3895 is: LD A,H
 Instruction at 0x3896 is: NOP
-Instruction at 0x3897 is: LD C,d8
+Instruction at 0x3897 is: LD C,d8 0
 Instruction at 0x3899 is: LD C,(HL)
 Instruction at 0x389a is: NOP
 Instruction at 0x389b is: INC A
@@ -8904,7 +8904,7 @@ Instruction at 0x38af is: NOP
 Instruction at 0x38b0 is: NOP
 Instruction at 0x38b1 is: LD A,(HL)
 Instruction at 0x38b2 is: NOP
-Instruction at 0x38b3 is: LD B,d8
+Instruction at 0x38b3 is: LD B,d8 0
 Instruction at 0x38b5 is: INC C
 Instruction at 0x38b6 is: NOP
 Instruction at 0x38b7 is: JR r8
@@ -8936,8 +8936,8 @@ Instruction at 0x38d3 is: LD C,(HL)
 Instruction at 0x38d4 is: NOP
 Instruction at 0x38d5 is: LD C,(HL)
 Instruction at 0x38d6 is: NOP
-Instruction at 0x38d7 is: LD A,d8
-Instruction at 0x38d9 is: LD C,d8
+Instruction at 0x38d7 is: LD A,d8 0
+Instruction at 0x38d9 is: LD C,d8 0
 Instruction at 0x38db is: INC A
 Instruction at 0x38dc is: NOP
 Instruction at 0x38dd is: NOP
@@ -9018,7 +9018,7 @@ Instruction at 0x3927 is: LD L,(HL)
 Instruction at 0x3928 is: NOP
 Instruction at 0x3929 is: LD H,(HL)
 Instruction at 0x392a is: NOP
-Instruction at 0x392b is: LD A,d8
+Instruction at 0x392b is: LD A,d8 0
 Instruction at 0x392d is: NOP
 Instruction at 0x392e is: NOP
 Instruction at 0x392f is: NOP
@@ -9061,7 +9061,7 @@ Instruction at 0x3953 is: LD H,B
 Instruction at 0x3954 is: NOP
 Instruction at 0x3955 is: INC A
 Instruction at 0x3956 is: NOP
-Instruction at 0x3957 is: LD C,d8
+Instruction at 0x3957 is: LD C,d8 0
 Instruction at 0x3959 is: LD C,(HL)
 Instruction at 0x395a is: NOP
 Instruction at 0x395b is: INC A
@@ -9271,7 +9271,7 @@ Instruction at 0x3a32 is: JP NZ,A16
 Instruction at 0x3a35 is: LD A,A
 Instruction at 0x3a36 is: LD E,H
 Instruction at 0x3a37 is: CCF
-Instruction at 0x3a38 is: LD L,d8
+Instruction at 0x3a38 is: LD L,d8 7f
 Instruction at 0x3a3a is: LD H,E
 Instruction at 0x3a3b is: CP A
 Instruction at 0x3a3c is: LD HL,SP+R8
@@ -9383,9 +9383,9 @@ Instruction at 0x3ace is: NOP
 Instruction at 0x3acf is: NOP
 Instruction at 0x3ad0 is: NOP
 Instruction at 0x3ad1 is: NOP
-Instruction at 0x3ad2 is: LD C,d8
+Instruction at 0x3ad2 is: LD C,d8 1
 Instruction at 0x3ad4 is: DEC E
-Instruction at 0x3ad5 is: LD E, d8
+Instruction at 0x3ad5 is: LD E, d8 6
 Instruction at 0x3ad7 is: LD A,(HL+)
 Instruction at 0x3ad8 is: LD A,(HL+)
 Instruction at 0x3ad9 is: DAA
@@ -9467,7 +9467,7 @@ Instruction at 0x3b39 is: SUB D
 Instruction at 0x3b3a is: SUB D
 Instruction at 0x3b3b is: LD L,H
 Instruction at 0x3b3c is: LD L,H
-Instruction at 0x3b3d is: XOR D8
+Instruction at 0x3b3d is: XOR D8 ee
 Instruction at 0x3b3f is: RLCA
 Instruction at 0x3b40 is: RLCA
 Instruction at 0x3b41 is: RRA
@@ -9488,7 +9488,7 @@ Instruction at 0x3b51 is: LD H,H
 Instruction at 0x3b52 is: LD H,H
 Instruction at 0x3b53 is: INC A
 Instruction at 0x3b54 is: INC A
-Instruction at 0x3b55 is: LD L,d8
+Instruction at 0x3b55 is: LD L,d8 2e
 Instruction at 0x3b57 is: DAA
 Instruction at 0x3b58 is: DAA
 Instruction at 0x3b59 is: STOP 0
@@ -9503,9 +9503,9 @@ Instruction at 0x3b62 is: INC BC
 Instruction at 0x3b63 is: INC BC
 Instruction at 0x3b64 is: LD (BC),A
 Instruction at 0x3b65 is: RLCA
-Instruction at 0x3b66 is: LD B,d8
+Instruction at 0x3b66 is: LD B,d8 9
 Instruction at 0x3b68 is: ADD HL,BC
-Instruction at 0x3b69 is: LD D,d8
+Instruction at 0x3b69 is: LD D,d8 17
 Instruction at 0x3b6b is: LD (DE), A
 Instruction at 0x3b6c is: LD DE,d16
 Instruction at 0x3b6f is: LD (a16),SP
@@ -9514,8 +9514,8 @@ Instruction at 0x3b75 is: LD (a16),SP
 Instruction at 0x3b78 is: ADD HL,BC
 Instruction at 0x3b79 is: LD A,(BC)
 Instruction at 0x3b7a is: LD A,(BC)
-Instruction at 0x3b7b is: LD B,d8
-Instruction at 0x3b7d is: LD C,d8
+Instruction at 0x3b7b is: LD B,d8 6
+Instruction at 0x3b7d is: LD C,d8 e
 Instruction at 0x3b7f is: INC BC
 Instruction at 0x3b80 is: INC BC
 Instruction at 0x3b81 is: INC BC
@@ -9523,7 +9523,7 @@ Instruction at 0x3b82 is: INC BC
 Instruction at 0x3b83 is: INC BC
 Instruction at 0x3b84 is: LD (BC),A
 Instruction at 0x3b85 is: RRA
-Instruction at 0x3b86 is: LD E, d8
+Instruction at 0x3b86 is: LD E, d8 21
 Instruction at 0x3b88 is: LD HL,d16
 Instruction at 0x3b8b is: LD C,D
 Instruction at 0x3b8c is: LD (HL),L
@@ -9537,8 +9537,8 @@ Instruction at 0x3b95 is: LD (a16),SP
 Instruction at 0x3b98 is: ADD HL,BC
 Instruction at 0x3b99 is: LD A,(BC)
 Instruction at 0x3b9a is: LD A,(BC)
-Instruction at 0x3b9b is: LD B,d8
-Instruction at 0x3b9d is: LD C,d8
+Instruction at 0x3b9b is: LD B,d8 6
+Instruction at 0x3b9d is: LD C,d8 e
 Instruction at 0x3b9f is: NOP
 Instruction at 0x3ba0 is: NOP
 Instruction at 0x3ba1 is: LD H,(HL)
@@ -9667,7 +9667,7 @@ Instruction at 0x3c21 is: RST 38H
 Instruction at 0x3c22 is: NOP
 Instruction at 0x3c23 is: RST 38H
 Instruction at 0x3c24 is: LD BC,d16
-Instruction at 0x3c27 is: CP D8
+Instruction at 0x3c27 is: CP D8 2
 Instruction at 0x3c29 is: UNDEFINED
 Instruction at 0x3c2a is: INC B
 Instruction at 0x3c2b is: UNDEFINED
@@ -9706,9 +9706,9 @@ Instruction at 0x3c5b is: JR NZ,r8
 Instruction at 0x3c5d is: JR NZ,r8
 Instruction at 0x3c5f is: ADD A,A
 Instruction at 0x3c60 is: SBC A,B
-Instruction at 0x3c61 is: LD B,d8
-Instruction at 0x3c63 is: LD C,d8
-Instruction at 0x3c65 is: LD E, d8
+Instruction at 0x3c61 is: LD B,d8 39
+Instruction at 0x3c63 is: LD C,d8 71
+Instruction at 0x3c65 is: LD E, d8 e1
 Instruction at 0x3c67 is: INC A
 Instruction at 0x3c68 is: JP A16
 Instruction at 0x3c6b is: LD A,B
@@ -9801,9 +9801,9 @@ Instruction at 0x3ccf is: STOP 0
 Instruction at 0x3cd1 is: JR Z,r8 
 Instruction at 0x3cd3 is: LD A,H
 Instruction at 0x3cd4 is: NOP
-Instruction at 0x3cd5 is: CP D8
-Instruction at 0x3cd7 is: CP D8
-Instruction at 0x3cd9 is: CP D8
+Instruction at 0x3cd5 is: CP D8 0
+Instruction at 0x3cd7 is: CP D8 0
+Instruction at 0x3cd9 is: CP D8 0
 Instruction at 0x3cdb is: LD A,H
 Instruction at 0x3cdc is: NOP
 Instruction at 0x3cdd is: NOP
@@ -9839,7 +9839,7 @@ Instruction at 0x3d04 is: INC BC
 Instruction at 0x3d05 is: INC BC
 Instruction at 0x3d06 is: LD (BC),A
 Instruction at 0x3d07 is: RLCA
-Instruction at 0x3d08 is: LD B,d8
+Instruction at 0x3d08 is: LD B,d8 9
 Instruction at 0x3d0a is: ADD HL,BC
 Instruction at 0x3d0b is: LD (a16),SP
 Instruction at 0x3d0e is: DEC BC
@@ -9890,8 +9890,8 @@ Instruction at 0x3d47 is: ADD HL,BC
 Instruction at 0x3d48 is: ADD HL,BC
 Instruction at 0x3d49 is: ADD HL,BC
 Instruction at 0x3d4a is: ADD HL,BC
-Instruction at 0x3d4b is: LD B,d8
-Instruction at 0x3d4d is: LD C,d8
+Instruction at 0x3d4b is: LD B,d8 6
+Instruction at 0x3d4d is: LD C,d8 e
 Instruction at 0x3d4f is: UNDEFINED
 Instruction at 0x3d50 is: UNDEFINED
 Instruction at 0x3d51 is: LD (HL+),A
@@ -9919,10 +9919,10 @@ Instruction at 0x3d6d is: LD A,(HL)
 Instruction at 0x3d6e is: LD A,(HL)
 Instruction at 0x3d6f is: LD A,A
 Instruction at 0x3d70 is: NOP
-Instruction at 0x3d71 is: CP D8
+Instruction at 0x3d71 is: CP D8 fe
 Instruction at 0x3d73 is: LD A,(HL)
 Instruction at 0x3d74 is: LD A,(HL)
-Instruction at 0x3d75 is: CP D8
+Instruction at 0x3d75 is: CP D8 da
 Instruction at 0x3d77 is: LD A,(HL)
 Instruction at 0x3d78 is: LD E,D
 Instruction at 0x3d79 is: LD A,(HL)
@@ -9930,11 +9930,11 @@ Instruction at 0x3d7a is: LD A,(HL)
 Instruction at 0x3d7b is: UNDEFINED
 Instruction at 0x3d7c is: UNDEFINED
 Instruction at 0x3d7d is: LD HL,SP+R8
-Instruction at 0x3d7f is: CP D8
-Instruction at 0x3d81 is: CP D8
+Instruction at 0x3d7f is: CP D8 e
+Instruction at 0x3d81 is: CP D8 fe
 Instruction at 0x3d83 is: LD A,(HL)
 Instruction at 0x3d84 is: LD A,(HL)
-Instruction at 0x3d85 is: CP D8
+Instruction at 0x3d85 is: CP D8 da
 Instruction at 0x3d87 is: LD A,(HL)
 Instruction at 0x3d88 is: LD E,D
 Instruction at 0x3d89 is: LD A,(HL)
@@ -9949,7 +9949,7 @@ Instruction at 0x3d92 is: ADD A,E
 Instruction at 0x3d93 is: ADD A,E
 Instruction at 0x3d94 is: ADD A,E
 Instruction at 0x3d95 is: JP A16
-Instruction at 0x3d98 is: LD L,d8
+Instruction at 0x3d98 is: LD L,d8 97
 Instruction at 0x3d9a is: SUB A
 Instruction at 0x3d9b is: LD B,A
 Instruction at 0x3d9c is: LD B,H
@@ -9981,7 +9981,7 @@ Instruction at 0x3db7 is: RLA
 Instruction at 0x3db8 is: RLA
 Instruction at 0x3db9 is: RRCA
 Instruction at 0x3dba is: RRCA
-Instruction at 0x3dbb is: LD E, d8
+Instruction at 0x3dbb is: LD E, d8 1e
 Instruction at 0x3dbd is: NOP
 Instruction at 0x3dbe is: NOP
 Instruction at 0x3dbf is: UNDEFINED
@@ -10003,7 +10003,7 @@ Instruction at 0x3dd2 is: INC BC
 Instruction at 0x3dd3 is: INC BC
 Instruction at 0x3dd4 is: LD (BC),A
 Instruction at 0x3dd5 is: RRCA
-Instruction at 0x3dd6 is: LD C,d8
+Instruction at 0x3dd6 is: LD C,d8 11
 Instruction at 0x3dd8 is: LD DE,d16
 Instruction at 0x3ddb is: LD (HL),C
 Instruction at 0x3ddc is: LD D,D
@@ -10034,8 +10034,8 @@ Instruction at 0x3df7 is: ADD HL,BC
 Instruction at 0x3df8 is: ADD HL,BC
 Instruction at 0x3df9 is: ADD HL,BC
 Instruction at 0x3dfa is: ADD HL,BC
-Instruction at 0x3dfb is: LD B,d8
-Instruction at 0x3dfd is: LD C,d8
+Instruction at 0x3dfb is: LD B,d8 6
+Instruction at 0x3dfd is: LD C,d8 e
 Instruction at 0x3dff is: UNDEFINED
 Instruction at 0x3e00 is: UNDEFINED
 Instruction at 0x3e01 is: JR NZ,r8
@@ -10053,7 +10053,7 @@ Instruction at 0x3e12 is: INC BC
 Instruction at 0x3e13 is: INC BC
 Instruction at 0x3e14 is: LD (BC),A
 Instruction at 0x3e15 is: RLCA
-Instruction at 0x3e16 is: LD B,d8
+Instruction at 0x3e16 is: LD B,d8 9
 Instruction at 0x3e18 is: ADD HL,BC
 Instruction at 0x3e19 is: INC SP
 Instruction at 0x3e1a is: INC SP
@@ -10067,23 +10067,23 @@ Instruction at 0x3e22 is: RET C
 Instruction at 0x3e23 is: RET C
 Instruction at 0x3e24 is: RET C
 Instruction at 0x3e25 is: LD HL,SP+R8
-Instruction at 0x3e27 is: CALL C,16
+Instruction at 0x3e27 is: CALL C,a16
 Instruction at 0x3e2a is: CP H
 Instruction at 0x3e2b is: INC A
 Instruction at 0x3e2c is: INC A
 Instruction at 0x3e2d is: LD A,(HL)
 Instruction at 0x3e2e is: LD A,(HL)
 Instruction at 0x3e2f is: ADD HL,BC
-Instruction at 0x3e30 is: LD C,d8
+Instruction at 0x3e30 is: LD C,d8 7
 Instruction at 0x3e32 is: RLCA
 Instruction at 0x3e33 is: LD (a16),SP
 Instruction at 0x3e36 is: RRCA
 Instruction at 0x3e37 is: ADD HL,BC
 Instruction at 0x3e38 is: RRCA
 Instruction at 0x3e39 is: LD A,(BC)
-Instruction at 0x3e3a is: LD C,d8
-Instruction at 0x3e3c is: LD B,d8
-Instruction at 0x3e3e is: LD C,d8
+Instruction at 0x3e3a is: LD C,d8 6
+Instruction at 0x3e3c is: LD B,d8 e
+Instruction at 0x3e3e is: LD C,d8 0
 Instruction at 0x3e40 is: NOP
 Instruction at 0x3e41 is: INC BC
 Instruction at 0x3e42 is: INC BC
@@ -10192,7 +10192,7 @@ Instruction at 0x3eb0 is: LD B,H
 Instruction at 0x3eb1 is: INC E
 Instruction at 0x3eb2 is: INC C
 Instruction at 0x3eb3 is: JR r8
-Instruction at 0x3eb5 is: LD C,d8
+Instruction at 0x3eb5 is: LD C,d8 45
 Instruction at 0x3eb7 is: LD A,(HL+)
 Instruction at 0x3eb8 is: LD A,L
 Instruction at 0x3eb9 is: CPL
@@ -10281,9 +10281,9 @@ Instruction at 0x3f10 is: CPL
 Instruction at 0x3f11 is: CPL
 Instruction at 0x3f12 is: CPL
 Instruction at 0x3f13 is: LD A,E
-Instruction at 0x3f14 is: LD (HL),d8
-Instruction at 0x3f16 is: LD C,d8
-Instruction at 0x3f18 is: LD C,d8
+Instruction at 0x3f14 is: LD (HL),d8 15
+Instruction at 0x3f16 is: LD C,d8 1f
+Instruction at 0x3f18 is: LD C,d8 15
 Instruction at 0x3f1a is: SCF
 Instruction at 0x3f1b is: LD A,(HL+)
 Instruction at 0x3f1c is: LD A,H
@@ -10298,7 +10298,7 @@ Instruction at 0x3f24 is: CPL
 Instruction at 0x3f25 is: CPL
 Instruction at 0x3f26 is: CPL
 Instruction at 0x3f27 is: LD A,H
-Instruction at 0x3f28 is: LD (HL),d8
+Instruction at 0x3f28 is: LD (HL),d8 2f
 Instruction at 0x3f2a is: CPL
 Instruction at 0x3f2b is: CPL
 Instruction at 0x3f2c is: CPL
@@ -10337,10 +10337,10 @@ Instruction at 0x3f4c is: CPL
 Instruction at 0x3f4d is: CPL
 Instruction at 0x3f4e is: CPL
 Instruction at 0x3f4f is: LD A,E
-Instruction at 0x3f50 is: LD (HL),d8
+Instruction at 0x3f50 is: LD (HL),d8 15
 Instruction at 0x3f52 is: LD (DE), A
 Instruction at 0x3f53 is: RLA
-Instruction at 0x3f54 is: LD C,d8
+Instruction at 0x3f54 is: LD C,d8 1c
 Instruction at 0x3f56 is: SCF
 Instruction at 0x3f57 is: LD A,(HL+)
 Instruction at 0x3f58 is: LD A,H
@@ -10355,7 +10355,7 @@ Instruction at 0x3f60 is: CPL
 Instruction at 0x3f61 is: CPL
 Instruction at 0x3f62 is: CPL
 Instruction at 0x3f63 is: LD A,H
-Instruction at 0x3f64 is: LD (HL),d8
+Instruction at 0x3f64 is: LD (HL),d8 2f
 Instruction at 0x3f66 is: CPL
 Instruction at 0x3f67 is: CPL
 Instruction at 0x3f68 is: CPL
@@ -10495,8 +10495,8 @@ Instruction at 0x3fee is: CPL
 Instruction at 0x3fef is: LD A,L
 Instruction at 0x3ff0 is: DEC HL
 Instruction at 0x3ff1 is: DEC A
-Instruction at 0x3ff2 is: LD A,d8
-Instruction at 0x3ff4 is: LD A,d8
+Instruction at 0x3ff2 is: LD A,d8 3e
+Instruction at 0x3ff4 is: LD A,d8 3e
 Instruction at 0x3ff6 is: CCF
 Instruction at 0x3ff7 is: LD A,(HL+)
 Instruction at 0x3ff8 is: LD A,E
@@ -10526,9 +10526,9 @@ Instruction at 0x4014 is: CPL
 Instruction at 0x4015 is: CPL
 Instruction at 0x4016 is: CPL
 Instruction at 0x4017 is: LD A,H
-Instruction at 0x4018 is: LD (HL),d8
-Instruction at 0x401a is: LD C,d8
-Instruction at 0x401c is: LD C,d8
+Instruction at 0x4018 is: LD (HL),d8 15
+Instruction at 0x401a is: LD C,d8 1f
+Instruction at 0x401c is: LD C,d8 15
 Instruction at 0x401e is: SCF
 Instruction at 0x401f is: LD A,(HL+)
 Instruction at 0x4020 is: LD A,L
@@ -10543,7 +10543,7 @@ Instruction at 0x4028 is: CPL
 Instruction at 0x4029 is: CPL
 Instruction at 0x402a is: CPL
 Instruction at 0x402b is: LD A,L
-Instruction at 0x402c is: LD (HL),d8
+Instruction at 0x402c is: LD (HL),d8 2f
 Instruction at 0x402e is: CPL
 Instruction at 0x402f is: CPL
 Instruction at 0x4030 is: CPL
@@ -10582,7 +10582,7 @@ Instruction at 0x4050 is: CPL
 Instruction at 0x4051 is: CPL
 Instruction at 0x4052 is: CPL
 Instruction at 0x4053 is: LD A,H
-Instruction at 0x4054 is: LD (HL),d8
+Instruction at 0x4054 is: LD (HL),d8 11
 Instruction at 0x4056 is: LD (DE), A
 Instruction at 0x4057 is: STOP 0
 Instruction at 0x4059 is: CPL
@@ -10600,7 +10600,7 @@ Instruction at 0x4064 is: CPL
 Instruction at 0x4065 is: CPL
 Instruction at 0x4066 is: CPL
 Instruction at 0x4067 is: LD A,L
-Instruction at 0x4068 is: LD (HL),d8
+Instruction at 0x4068 is: LD (HL),d8 2f
 Instruction at 0x406a is: CPL
 Instruction at 0x406b is: CPL
 Instruction at 0x406c is: CPL
@@ -10674,10 +10674,10 @@ Instruction at 0x40b4 is: CPL
 Instruction at 0x40b5 is: CPL
 Instruction at 0x40b6 is: CPL
 Instruction at 0x40b7 is: LD A,E
-Instruction at 0x40b8 is: LD (HL),d8
+Instruction at 0x40b8 is: LD (HL),d8 15
 Instruction at 0x40ba is: LD (DE), A
 Instruction at 0x40bb is: RLA
-Instruction at 0x40bc is: LD C,d8
+Instruction at 0x40bc is: LD C,d8 1c
 Instruction at 0x40be is: SCF
 Instruction at 0x40bf is: LD A,(HL+)
 Instruction at 0x40c0 is: LD A,H
@@ -10692,7 +10692,7 @@ Instruction at 0x40c8 is: CPL
 Instruction at 0x40c9 is: CPL
 Instruction at 0x40ca is: CPL
 Instruction at 0x40cb is: LD A,H
-Instruction at 0x40cc is: LD (HL),d8
+Instruction at 0x40cc is: LD (HL),d8 2f
 Instruction at 0x40ce is: CPL
 Instruction at 0x40cf is: LD (BC),A
 Instruction at 0x40d0 is: DEC B
@@ -10832,8 +10832,8 @@ Instruction at 0x4156 is: CPL
 Instruction at 0x4157 is: LD A,L
 Instruction at 0x4158 is: DEC HL
 Instruction at 0x4159 is: DEC A
-Instruction at 0x415a is: LD A,d8
-Instruction at 0x415c is: LD A,d8
+Instruction at 0x415a is: LD A,d8 3e
+Instruction at 0x415c is: LD A,d8 3e
 Instruction at 0x415e is: CCF
 Instruction at 0x415f is: NOP
 Instruction at 0x4160 is: INC A
@@ -10851,14 +10851,14 @@ Instruction at 0x416e is: NOP
 Instruction at 0x416f is: NOP
 Instruction at 0x4170 is: INC A
 Instruction at 0x4171 is: LD C,(HL)
-Instruction at 0x4172 is: LD C,d8
+Instruction at 0x4172 is: LD C,d8 3c
 Instruction at 0x4174 is: LD (HL),B
 Instruction at 0x4175 is: LD A,(HL)
 Instruction at 0x4176 is: NOP
 Instruction at 0x4177 is: NOP
 Instruction at 0x4178 is: LD A,H
-Instruction at 0x4179 is: LD C,d8
-Instruction at 0x417b is: LD C,d8
+Instruction at 0x4179 is: LD C,d8 3c
+Instruction at 0x417b is: LD C,d8 e
 Instruction at 0x417d is: LD A,H
 Instruction at 0x417e is: NOP
 Instruction at 0x417f is: NOP
@@ -10873,7 +10873,7 @@ Instruction at 0x4187 is: NOP
 Instruction at 0x4188 is: LD A,H
 Instruction at 0x4189 is: LD H,B
 Instruction at 0x418a is: LD A,H
-Instruction at 0x418b is: LD C,d8
+Instruction at 0x418b is: LD C,d8 4e
 Instruction at 0x418d is: INC A
 Instruction at 0x418e is: NOP
 Instruction at 0x418f is: NOP
@@ -10886,7 +10886,7 @@ Instruction at 0x4195 is: INC A
 Instruction at 0x4196 is: NOP
 Instruction at 0x4197 is: NOP
 Instruction at 0x4198 is: LD A,(HL)
-Instruction at 0x4199 is: LD B,d8
+Instruction at 0x4199 is: LD B,d8 c
 Instruction at 0x419b is: JR r8
 Instruction at 0x419d is: JR Z,r8 
 Instruction at 0x419f is: NOP
@@ -10901,7 +10901,7 @@ Instruction at 0x41a7 is: NOP
 Instruction at 0x41a8 is: INC A
 Instruction at 0x41a9 is: LD C,(HL)
 Instruction at 0x41aa is: LD C,(HL)
-Instruction at 0x41ab is: LD A,d8
+Instruction at 0x41ab is: LD A,d8 e
 Instruction at 0x41ad is: INC A
 Instruction at 0x41ae is: NOP
 Instruction at 0x41af is: NOP
@@ -10958,7 +10958,7 @@ Instruction at 0x41e1 is: LD H,(HL)
 Instruction at 0x41e2 is: LD H,B
 Instruction at 0x41e3 is: LD L,(HL)
 Instruction at 0x41e4 is: LD H,(HL)
-Instruction at 0x41e5 is: LD A,d8
+Instruction at 0x41e5 is: LD A,d8 0
 Instruction at 0x41e7 is: NOP
 Instruction at 0x41e8 is: LD B,(HL)
 Instruction at 0x41e9 is: LD B,(HL)
@@ -10974,7 +10974,7 @@ Instruction at 0x41f3 is: JR r8
 Instruction at 0x41f5 is: INC A
 Instruction at 0x41f6 is: NOP
 Instruction at 0x41f7 is: NOP
-Instruction at 0x41f8 is: LD E, d8
+Instruction at 0x41f8 is: LD E, d8 c
 Instruction at 0x41fa is: INC C
 Instruction at 0x41fb is: LD L,H
 Instruction at 0x41fc is: LD L,H
@@ -11047,7 +11047,7 @@ Instruction at 0x423f is: NOP
 Instruction at 0x4240 is: INC A
 Instruction at 0x4241 is: LD H,B
 Instruction at 0x4242 is: INC A
-Instruction at 0x4243 is: LD C,d8
+Instruction at 0x4243 is: LD C,d8 4e
 Instruction at 0x4245 is: INC A
 Instruction at 0x4246 is: NOP
 Instruction at 0x4247 is: NOP
@@ -11093,7 +11093,7 @@ Instruction at 0x4273 is: JR r8
 Instruction at 0x4275 is: JR r8
 Instruction at 0x4277 is: NOP
 Instruction at 0x4278 is: LD A,(HL)
-Instruction at 0x4279 is: LD C,d8
+Instruction at 0x4279 is: LD C,d8 1c
 Instruction at 0x427b is: JR Z,r8 
 Instruction at 0x427d is: LD A,(HL)
 Instruction at 0x427e is: NOP
@@ -11121,14 +11121,14 @@ Instruction at 0x4293 is: LD (a16),SP
 Instruction at 0x4296 is: NOP
 Instruction at 0x4297 is: NOP
 Instruction at 0x4298 is: NOP
-Instruction at 0x4299 is: LD (HL),d8
+Instruction at 0x4299 is: LD (HL),d8 36
 Instruction at 0x429b is: LD E,A
 Instruction at 0x429c is: LD C,C
 Instruction at 0x429d is: LD E,A
 Instruction at 0x429e is: LD B,C
 Instruction at 0x429f is: LD A,A
 Instruction at 0x42a0 is: LD B,C
-Instruction at 0x42a1 is: LD A,d8
+Instruction at 0x42a1 is: LD A,d8 22
 Instruction at 0x42a3 is: INC E
 Instruction at 0x42a4 is: INC D
 Instruction at 0x42a5 is: LD (a16),SP
@@ -11163,14 +11163,14 @@ Instruction at 0x42c3 is: NOP
 Instruction at 0x42c4 is: NOP
 Instruction at 0x42c5 is: NOP
 Instruction at 0x42c6 is: NOP
-Instruction at 0x42c7 is: CP D8
-Instruction at 0x42c9 is: CP D8
-Instruction at 0x42cb is: CP D8
-Instruction at 0x42cd is: CP D8
-Instruction at 0x42cf is: CP D8
-Instruction at 0x42d1 is: CP D8
-Instruction at 0x42d3 is: CP D8
-Instruction at 0x42d5 is: CP D8
+Instruction at 0x42c7 is: CP D8 fe
+Instruction at 0x42c9 is: CP D8 fe
+Instruction at 0x42cb is: CP D8 fe
+Instruction at 0x42cd is: CP D8 fe
+Instruction at 0x42cf is: CP D8 fe
+Instruction at 0x42d1 is: CP D8 fe
+Instruction at 0x42d3 is: CP D8 fe
+Instruction at 0x42d5 is: CP D8 fe
 Instruction at 0x42d7 is: LD A,A
 Instruction at 0x42d8 is: LD A,A
 Instruction at 0x42d9 is: LD A,A
@@ -11268,8 +11268,8 @@ Instruction at 0x433d is: LD C,(HL)
 Instruction at 0x433e is: LD C,(HL)
 Instruction at 0x433f is: LD C,(HL)
 Instruction at 0x4340 is: LD C,(HL)
-Instruction at 0x4341 is: LD A,d8
-Instruction at 0x4343 is: LD C,d8
+Instruction at 0x4341 is: LD A,d8 3e
+Instruction at 0x4343 is: LD C,d8 e
 Instruction at 0x4345 is: INC A
 Instruction at 0x4346 is: INC A
 Instruction at 0x4347 is: NOP
@@ -11302,14 +11302,14 @@ Instruction at 0x4362 is: CP D
 Instruction at 0x4363 is: LD B,H
 Instruction at 0x4364 is: LD B,H
 Instruction at 0x4365 is: JR Z,r8 
-Instruction at 0x4367 is: ADD A,D8
-Instruction at 0x4369 is: AND D8
-Instruction at 0x436b is: AND D8
-Instruction at 0x436d is: SUB D8
-Instruction at 0x436f is: SUB D8
-Instruction at 0x4371 is: ADC A,D8
-Instruction at 0x4373 is: ADC A,D8
-Instruction at 0x4375 is: ADD A,D8
+Instruction at 0x4367 is: ADD A,D8 c6
+Instruction at 0x4369 is: AND D8 e6
+Instruction at 0x436b is: AND D8 e6
+Instruction at 0x436d is: SUB D8 d6
+Instruction at 0x436f is: SUB D8 d6
+Instruction at 0x4371 is: ADC A,D8 ce
+Instruction at 0x4373 is: ADC A,D8 ce
+Instruction at 0x4375 is: ADD A,D8 c6
 Instruction at 0x4377 is: RET NZ
 Instruction at 0x4378 is: RET NZ
 Instruction at 0x4379 is: RET NZ
@@ -11436,7 +11436,7 @@ Instruction at 0x43f8 is: RST 38H
 Instruction at 0x43f9 is: RST 38H
 Instruction at 0x43fa is: RST 38H
 Instruction at 0x43fb is: LD BC,d16
-Instruction at 0x43fe is: CP D8
+Instruction at 0x43fe is: CP D8 fe
 Instruction at 0x4400 is: LD (BC),A
 Instruction at 0x4401 is: INC B
 Instruction at 0x4402 is: UNDEFINED
@@ -11464,7 +11464,7 @@ Instruction at 0x4419 is: RST 38H
 Instruction at 0x441a is: NOP
 Instruction at 0x441b is: RST 38H
 Instruction at 0x441c is: LD BC,d16
-Instruction at 0x441f is: CP D8
+Instruction at 0x441f is: CP D8 2
 Instruction at 0x4421 is: UNDEFINED
 Instruction at 0x4422 is: INC B
 Instruction at 0x4423 is: UNDEFINED
@@ -11525,8 +11525,8 @@ Instruction at 0x4463 is: RST 38H
 Instruction at 0x4464 is: ADD A,B
 Instruction at 0x4465 is: RST 38H
 Instruction at 0x4466 is: ADD A,B
-Instruction at 0x4467 is: CP D8
-Instruction at 0x4469 is: CP D8
+Instruction at 0x4467 is: CP D8 2
+Instruction at 0x4469 is: CP D8 2
 Instruction at 0x446b is: RST 38H
 Instruction at 0x446c is: INC BC
 Instruction at 0x446d is: UNDEFINED
@@ -11535,7 +11535,7 @@ Instruction at 0x446f is: LD HL,SP+R8
 Instruction at 0x4471 is: POP AF
 Instruction at 0x4472 is: LD (DE), A
 Instruction at 0x4473 is: POP HL
-Instruction at 0x4474 is: LD H,d8
+Instruction at 0x4474 is: LD H,d8 c3
 Instruction at 0x4476 is: LD C,H
 Instruction at 0x4477 is: LD A,A
 Instruction at 0x4478 is: RET NZ
@@ -11550,7 +11550,7 @@ Instruction at 0x4480 is: LD (HL),B
 Instruction at 0x4481 is: XOR A
 Instruction at 0x4482 is: LD E,B
 Instruction at 0x4483 is: DAA
-Instruction at 0x4484 is: CALL C,16
+Instruction at 0x4484 is: CALL C,a16
 Instruction at 0x4487 is: RST 38H
 Instruction at 0x4488 is: NOP
 Instruction at 0x4489 is: RST 38H
@@ -11563,9 +11563,9 @@ Instruction at 0x4493 is: LDH (A8),A
 Instruction at 0x4495 is: LDH (A8),A
 Instruction at 0x4497 is: ADD A,A
 Instruction at 0x4498 is: SBC A,B
-Instruction at 0x4499 is: LD B,d8
-Instruction at 0x449b is: LD C,d8
-Instruction at 0x449d is: LD E, d8
+Instruction at 0x4499 is: LD B,d8 39
+Instruction at 0x449b is: LD C,d8 71
+Instruction at 0x449d is: LD E, d8 e1
 Instruction at 0x449f is: INC A
 Instruction at 0x44a0 is: JP A16
 Instruction at 0x44a3 is: LD A,B
@@ -11599,7 +11599,7 @@ Instruction at 0x44c2 is: CP B
 Instruction at 0x44c3 is: LD H,A
 Instruction at 0x44c4 is: SBC A,H
 Instruction at 0x44c5 is: SCF
-Instruction at 0x44c6 is: CALL Z,A1
+Instruction at 0x44c6 is: CALL Z,A16
 Instruction at 0x44c9 is: RET NZ
 Instruction at 0x44ca is: LD C,A
 Instruction at 0x44cb is: ADD A,B
@@ -11628,15 +11628,15 @@ Instruction at 0x44e9 is: LD A,(HL)
 Instruction at 0x44ea is: ADD A,C
 Instruction at 0x44eb is: LD A,(HL)
 Instruction at 0x44ec is: ADD A,C
-Instruction at 0x44ed is: LD A,d8
+Instruction at 0x44ed is: LD A,d8 c1
 Instruction at 0x44ef is: CCF
 Instruction at 0x44f0 is: RET NZ
 Instruction at 0x44f1 is: RRA
 Instruction at 0x44f2 is: LDH (A8),A
 Instruction at 0x44f4 is: LDH (A8),A
 Instruction at 0x44f6 is: LDH (A8),A
-Instruction at 0x44f8 is: ADC A,D8
-Instruction at 0x44fa is: AND D8
+Instruction at 0x44f8 is: ADC A,D8 1b
+Instruction at 0x44fa is: AND D8 9
 Instruction at 0x44fc is: RST 30H
 Instruction at 0x44fd is: DEC C
 Instruction at 0x44fe is: DI
@@ -11678,8 +11678,8 @@ Instruction at 0x4527 is: RRCA
 Instruction at 0x4528 is: LDH A,A8
 Instruction at 0x452a is: LDH A,A8
 Instruction at 0x452c is: POP AF
-Instruction at 0x452d is: LD C,d8
-Instruction at 0x452f is: LD B,d8
+Instruction at 0x452d is: LD C,d8 f1
+Instruction at 0x452f is: LD B,d8 f9
 Instruction at 0x4531 is: RST 38H
 Instruction at 0x4532 is: RST 38H
 Instruction at 0x4533 is: PUSH BC
@@ -11687,9 +11687,9 @@ Instruction at 0x4534 is: CCF
 Instruction at 0x4535 is: RST 38H
 Instruction at 0x4536 is: RST 38H
 Instruction at 0x4537 is: DEC DE
-Instruction at 0x4538 is: AND D8
-Instruction at 0x453a is: XOR D8
-Instruction at 0x453c is: CALL Z,A1
+Instruction at 0x4538 is: AND D8 13
+Instruction at 0x453a is: XOR D8 37
+Instruction at 0x453c is: CALL Z,A16
 Instruction at 0x453f is: LD C,A
 Instruction at 0x4540 is: CP B
 Instruction at 0x4541 is: UNDEFINED
@@ -11697,8 +11697,8 @@ Instruction at 0x4542 is: DI
 Instruction at 0x4543 is: UNDEFINED
 Instruction at 0x4544 is: AND E
 Instruction at 0x4545 is: LDH (A8),A
-Instruction at 0x4547 is: CP D8
-Instruction at 0x4549 is: CP D8
+Instruction at 0x4547 is: CP D8 2
+Instruction at 0x4549 is: CP D8 2
 Instruction at 0x454b is: CP A
 Instruction at 0x454c is: LD B,E
 Instruction at 0x454d is: INC E
@@ -11710,7 +11710,7 @@ Instruction at 0x4552 is: LD D,D
 Instruction at 0x4553 is: AND C
 Instruction at 0x4554 is: LD H,(HL)
 Instruction at 0x4555 is: LD B,E
-Instruction at 0x4556 is: CALL Z,A1
+Instruction at 0x4556 is: CALL Z,A16
 Instruction at 0x4559 is: RST 38H
 Instruction at 0x455a is: NOP
 Instruction at 0x455b is: RST 38H
@@ -11734,13 +11734,13 @@ Instruction at 0x456e is: INC B
 Instruction at 0x456f is: EI
 Instruction at 0x4570 is: INC B
 Instruction at 0x4571 is: POP AF
-Instruction at 0x4572 is: LD C,d8
-Instruction at 0x4574 is: LD C,d8
-Instruction at 0x4576 is: LD C,d8
+Instruction at 0x4572 is: LD C,d8 f1
+Instruction at 0x4574 is: LD C,d8 f1
+Instruction at 0x4576 is: LD C,d8 83
 Instruction at 0x4578 is: LD A,H
 Instruction at 0x4579 is: LD BC,d16
-Instruction at 0x457c is: CP D8
-Instruction at 0x457e is: CP D8
+Instruction at 0x457c is: CP D8 1
+Instruction at 0x457e is: CP D8 83
 Instruction at 0x4580 is: LD A,H
 Instruction at 0x4581 is: RST 38H
 Instruction at 0x4582 is: NOP
@@ -11749,7 +11749,7 @@ Instruction at 0x4584 is: LD A,H
 Instruction at 0x4585 is: ADD A,E
 Instruction at 0x4586 is: LD A,H
 Instruction at 0x4587 is: POP AF
-Instruction at 0x4588 is: LD C,d8
+Instruction at 0x4588 is: LD C,d8 e0
 Instruction at 0x458a is: RRA
 Instruction at 0x458b is: LDH (A8),A
 Instruction at 0x458d is: LDH (A8),A
@@ -11991,14 +11991,14 @@ Instruction at 0x4693 is: POP AF
 Instruction at 0x4694 is: POP AF
 Instruction at 0x4695 is: LD SP,HL
 Instruction at 0x4696 is: LD SP,HL
-Instruction at 0x4697 is: CP D8
-Instruction at 0x4699 is: CP D8
-Instruction at 0x469b is: CP D8
-Instruction at 0x469d is: CP D8
-Instruction at 0x469f is: CP D8
-Instruction at 0x46a1 is: CP D8
-Instruction at 0x46a3 is: CP D8
-Instruction at 0x46a5 is: CP D8
+Instruction at 0x4697 is: CP D8 fe
+Instruction at 0x4699 is: CP D8 fe
+Instruction at 0x469b is: CP D8 fe
+Instruction at 0x469d is: CP D8 fe
+Instruction at 0x469f is: CP D8 fe
+Instruction at 0x46a1 is: CP D8 fe
+Instruction at 0x46a3 is: CP D8 fe
+Instruction at 0x46a5 is: CP D8 fe
 Instruction at 0x46a7 is: LD A,(HL)
 Instruction at 0x46a8 is: LD A,(HL)
 Instruction at 0x46a9 is: LD A,A
@@ -12080,13 +12080,13 @@ Instruction at 0x4705 is: POP HL
 Instruction at 0x4706 is: LD H,C
 Instruction at 0x4707 is: NOP
 Instruction at 0x4708 is: NOP
-Instruction at 0x4709 is: CP D8
-Instruction at 0x470b is: LD B,d8
-Instruction at 0x470d is: LD B,d8
-Instruction at 0x470f is: LD B,d8
-Instruction at 0x4711 is: LD B,d8
-Instruction at 0x4713 is: LD B,d8
-Instruction at 0x4715 is: CP D8
+Instruction at 0x4709 is: CP D8 fe
+Instruction at 0x470b is: LD B,d8 6
+Instruction at 0x470d is: LD B,d8 6
+Instruction at 0x470f is: LD B,d8 6
+Instruction at 0x4711 is: LD B,d8 6
+Instruction at 0x4713 is: LD B,d8 6
+Instruction at 0x4715 is: CP D8 6
 Instruction at 0x4717 is: NOP
 Instruction at 0x4718 is: NOP
 Instruction at 0x4719 is: DEC DE
@@ -12177,14 +12177,14 @@ Instruction at 0x4773 is: POP BC
 Instruction at 0x4774 is: POP BC
 Instruction at 0x4775 is: ADD A,C
 Instruction at 0x4776 is: ADD A,C
-Instruction at 0x4777 is: CP D8
-Instruction at 0x4779 is: CP D8
-Instruction at 0x477b is: CP D8
-Instruction at 0x477d is: CP D8
-Instruction at 0x477f is: CP D8
-Instruction at 0x4781 is: CP D8
-Instruction at 0x4783 is: CP D8
-Instruction at 0x4785 is: LD B,d8
+Instruction at 0x4777 is: CP D8 6
+Instruction at 0x4779 is: CP D8 6
+Instruction at 0x477b is: CP D8 6
+Instruction at 0x477d is: CP D8 6
+Instruction at 0x477f is: CP D8 6
+Instruction at 0x4781 is: CP D8 6
+Instruction at 0x4783 is: CP D8 6
+Instruction at 0x4785 is: LD B,d8 fe
 Instruction at 0x4787 is: RST 38H
 Instruction at 0x4788 is: ADD A,E
 Instruction at 0x4789 is: RST 38H
@@ -12249,13 +12249,13 @@ Instruction at 0x47cd is: LD BC,d16
 Instruction at 0x47d0 is: LD BC,d16
 Instruction at 0x47d3 is: LD BC,d16
 Instruction at 0x47d6 is: LD BC,d16
-Instruction at 0x47d9 is: LD B,d8
-Instruction at 0x47db is: LD B,d8
-Instruction at 0x47dd is: LD B,d8
-Instruction at 0x47df is: LD B,d8
-Instruction at 0x47e1 is: LD B,d8
-Instruction at 0x47e3 is: LD B,d8
-Instruction at 0x47e5 is: CP D8
+Instruction at 0x47d9 is: LD B,d8 fe
+Instruction at 0x47db is: LD B,d8 fe
+Instruction at 0x47dd is: LD B,d8 fe
+Instruction at 0x47df is: LD B,d8 fe
+Instruction at 0x47e1 is: LD B,d8 fe
+Instruction at 0x47e3 is: LD B,d8 fe
+Instruction at 0x47e5 is: CP D8 fe
 Instruction at 0x47e7 is: LD (a16),SP
 Instruction at 0x47ea is: LD B,A
 Instruction at 0x47eb is: LD H,H
@@ -12272,7 +12272,7 @@ Instruction at 0x47f5 is: LD A,(HL)
 Instruction at 0x47f6 is: LD A,(HL)
 Instruction at 0x47f7 is: INC C
 Instruction at 0x47f8 is: UNDEFINED
-Instruction at 0x47f9 is: LD B,d8
+Instruction at 0x47f9 is: LD B,d8 fe
 Instruction at 0x47fb is: INC BC
 Instruction at 0x47fc is: RST 38H
 Instruction at 0x47fd is: LD BC,d16
@@ -12798,7 +12798,7 @@ Instruction at 0x4a19 is: CPL
 Instruction at 0x4a1a is: CPL
 Instruction at 0x4a1b is: SBC A,E
 Instruction at 0x4a1c is: DEC E
-Instruction at 0x4a1d is: LD D,d8
+Instruction at 0x4a1d is: LD D,d8 2f
 Instruction at 0x4a1f is: LD A,(BC)
 Instruction at 0x4a20 is: RLA
 Instruction at 0x4a21 is: DEC C
@@ -12807,12 +12807,12 @@ Instruction at 0x4a23 is: INC SP
 Instruction at 0x4a24 is: LD BC,d16
 Instruction at 0x4a27 is: RLCA
 Instruction at 0x4a28 is: CPL
-Instruction at 0x4a29 is: LD C,d8
+Instruction at 0x4a29 is: LD C,d8 15
 Instruction at 0x4a2b is: JR r8
 Instruction at 0x4a2d is: STOP 0
 Instruction at 0x4a2f is: CPL
 Instruction at 0x4a30 is: DEC E
-Instruction at 0x4a31 is: LD C,d8
+Instruction at 0x4a31 is: LD C,d8 1d
 Instruction at 0x4a33 is: DEC DE
 Instruction at 0x4a34 is: LD (DE), A
 Instruction at 0x4a35 is: INC E
@@ -12820,9 +12820,9 @@ Instruction at 0x4a36 is: CPL
 Instruction at 0x4a37 is: DEC D
 Instruction at 0x4a38 is: LD (DE), A
 Instruction at 0x4a39 is: INC C
-Instruction at 0x4a3a is: LD C,d8
+Instruction at 0x4a3a is: LD C,d8 17
 Instruction at 0x4a3c is: INC E
-Instruction at 0x4a3d is: LD C,d8
+Instruction at 0x4a3d is: LD C,d8 d
 Instruction at 0x4a3f is: CPL
 Instruction at 0x4a40 is: DEC E
 Instruction at 0x4a41 is: JR r8
@@ -12831,9 +12831,9 @@ Instruction at 0x4a44 is: CPL
 Instruction at 0x4a45 is: CPL
 Instruction at 0x4a46 is: CPL
 Instruction at 0x4a47 is: DEC BC
-Instruction at 0x4a48 is: LD E, d8
+Instruction at 0x4a48 is: LD E, d8 15
 Instruction at 0x4a4a is: DEC D
-Instruction at 0x4a4b is: LD C,d8
+Instruction at 0x4a4b is: LD C,d8 1d
 Instruction at 0x4a4d is: DEC H
 Instruction at 0x4a4e is: ADD HL,DE
 Instruction at 0x4a4f is: DEC DE
@@ -12852,7 +12852,7 @@ Instruction at 0x4a5c is: JR r8
 Instruction at 0x4a5e is: DEC E
 Instruction at 0x4a5f is: JR NZ,r8
 Instruction at 0x4a61 is: DEC DE
-Instruction at 0x4a62 is: LD C,d8
+Instruction at 0x4a62 is: LD C,d8 2f
 Instruction at 0x4a64 is: LD A,(BC)
 Instruction at 0x4a65 is: RLA
 Instruction at 0x4a66 is: DEC C
@@ -12864,14 +12864,14 @@ Instruction at 0x4a6b is: CPL
 Instruction at 0x4a6c is: CPL
 Instruction at 0x4a6d is: CPL
 Instruction at 0x4a6e is: INC E
-Instruction at 0x4a6f is: LD E, d8
+Instruction at 0x4a6f is: LD E, d8 b
 Instruction at 0x4a71 is: DEC H
 Instruction at 0x4a72 is: DEC D
 Instruction at 0x4a73 is: LD (DE), A
 Instruction at 0x4a74 is: INC C
-Instruction at 0x4a75 is: LD C,d8
+Instruction at 0x4a75 is: LD C,d8 17
 Instruction at 0x4a77 is: INC E
-Instruction at 0x4a78 is: LD C,d8
+Instruction at 0x4a78 is: LD C,d8 d
 Instruction at 0x4a7a is: CPL
 Instruction at 0x4a7b is: DEC E
 Instruction at 0x4a7c is: JR r8
@@ -12886,7 +12886,7 @@ Instruction at 0x4a85 is: RLA
 Instruction at 0x4a86 is: LD (DE), A
 Instruction at 0x4a87 is: RLA
 Instruction at 0x4a88 is: DEC E
-Instruction at 0x4a89 is: LD C,d8
+Instruction at 0x4a89 is: LD C,d8 17
 Instruction at 0x4a8b is: DEC C
 Instruction at 0x4a8c is: JR r8
 Instruction at 0x4a8e is: CPL
@@ -12920,9 +12920,9 @@ Instruction at 0x4aa9 is: LD BC,d16
 Instruction at 0x4aac is: ADD HL,BC
 Instruction at 0x4aad is: CPL
 Instruction at 0x4aae is: DEC BC
-Instruction at 0x4aaf is: LD E, d8
+Instruction at 0x4aaf is: LD E, d8 15
 Instruction at 0x4ab1 is: DEC D
-Instruction at 0x4ab2 is: LD C,d8
+Instruction at 0x4ab2 is: LD C,d8 1d
 Instruction at 0x4ab4 is: DEC H
 Instruction at 0x4ab5 is: ADD HL,DE
 Instruction at 0x4ab6 is: DEC DE
@@ -12940,7 +12940,7 @@ Instruction at 0x4ac2 is: JR r8
 Instruction at 0x4ac4 is: DEC E
 Instruction at 0x4ac5 is: JR NZ,r8
 Instruction at 0x4ac7 is: DEC DE
-Instruction at 0x4ac8 is: LD C,d8
+Instruction at 0x4ac8 is: LD C,d8 24
 Instruction at 0x4aca is: CPL
 Instruction at 0x4acb is: CPL
 Instruction at 0x4acc is: CPL
@@ -12954,7 +12954,7 @@ Instruction at 0x4ad3 is: JR NC,r8
 Instruction at 0x4ad5 is: LD (HL-),A
 Instruction at 0x4ad6 is: LD SP,d16
 Instruction at 0x4ad9 is: DEC (HL)
-Instruction at 0x4ada is: LD (HL),d8
+Instruction at 0x4ada is: LD (HL),d8 37
 Instruction at 0x4adc is: JR Z,r8 
 Instruction at 0x4ade is: CPL
 Instruction at 0x4adf is: CPL
@@ -12992,10 +12992,10 @@ Instruction at 0x4aff is: DEC E
 Instruction at 0x4b00 is: INC E
 Instruction at 0x4b01 is: CPL
 Instruction at 0x4b02 is: DEC DE
-Instruction at 0x4b03 is: LD C,d8
-Instruction at 0x4b05 is: LD C,d8
+Instruction at 0x4b03 is: LD C,d8 1c
+Instruction at 0x4b05 is: LD C,d8 1b
 Instruction at 0x4b07 is: RRA
-Instruction at 0x4b08 is: LD C,d8
+Instruction at 0x4b08 is: LD C,d8 d
 Instruction at 0x4b0a is: INC H
 Instruction at 0x4b0b is: CPL
 Instruction at 0x4b0c is: CPL
@@ -13029,13 +13029,13 @@ Instruction at 0x4b29 is: CPL
 Instruction at 0x4b2a is: INC C
 Instruction at 0x4b2b is: JR r8
 Instruction at 0x4b2d is: INC C
-Instruction at 0x4b2e is: LD C,d8
+Instruction at 0x4b2e is: LD C,d8 19
 Instruction at 0x4b30 is: DEC E
 Instruction at 0x4b31 is: SBC A,H
 Instruction at 0x4b32 is: CPL
 Instruction at 0x4b33 is: CPL
 Instruction at 0x4b34 is: DEC C
-Instruction at 0x4b35 is: LD C,d8
+Instruction at 0x4b35 is: LD C,d8 1c
 Instruction at 0x4b37 is: LD (DE), A
 Instruction at 0x4b38 is: STOP 0
 Instruction at 0x4b3a is: CPL
@@ -13048,14 +13048,14 @@ Instruction at 0x4b40 is: DEC DE
 Instruction at 0x4b41 is: JR r8
 Instruction at 0x4b43 is: DEC DE
 Instruction at 0x4b44 is: LD A,(BC)
-Instruction at 0x4b45 is: LD D,d8
+Instruction at 0x4b45 is: LD D,d8 2f
 Instruction at 0x4b47 is: DEC BC
 Instruction at 0x4b48 is: LD (HL+),A
 Instruction at 0x4b49 is: CPL
 Instruction at 0x4b4a is: LD A,(BC)
 Instruction at 0x4b4b is: DEC D
-Instruction at 0x4b4c is: LD C,d8
-Instruction at 0x4b4e is: LD C,d8
+Instruction at 0x4b4c is: LD C,d8 21
+Instruction at 0x4b4e is: LD C,d8 22
 Instruction at 0x4b50 is: CPL
 Instruction at 0x4b51 is: ADD HL,DE
 Instruction at 0x4b52 is: LD A,(BC)
@@ -13239,7 +13239,7 @@ Instruction at 0x4c06 is: INC A
 Instruction at 0x4c07 is: INC A
 Instruction at 0x4c08 is: INC A
 Instruction at 0x4c09 is: DEC A
-Instruction at 0x4c0a is: LD A,d8
+Instruction at 0x4c0a is: LD A,d8 3c
 Instruction at 0x4c0c is: INC A
 Instruction at 0x4c0d is: INC A
 Instruction at 0x4c0e is: ADC A,(HL
@@ -13370,7 +13370,7 @@ Instruction at 0x4c8a is: ADD HL,DE
 Instruction at 0x4c8b is: DEC D
 Instruction at 0x4c8c is: LD A,(BC)
 Instruction at 0x4c8d is: LD (HL+),A
-Instruction at 0x4c8e is: LD C,d8
+Instruction at 0x4c8e is: LD C,d8 1b
 Instruction at 0x4c90 is: CPL
 Instruction at 0x4c91 is: CPL
 Instruction at 0x4c92 is: CPL
@@ -13379,7 +13379,7 @@ Instruction at 0x4c94 is: ADD HL,DE
 Instruction at 0x4c95 is: DEC D
 Instruction at 0x4c96 is: LD A,(BC)
 Instruction at 0x4c97 is: LD (HL+),A
-Instruction at 0x4c98 is: LD C,d8
+Instruction at 0x4c98 is: LD C,d8 1b
 Instruction at 0x4c9a is: CPL
 Instruction at 0x4c9b is: CPL
 Instruction at 0x4c9c is: CPL
@@ -13410,7 +13410,7 @@ Instruction at 0x4cb4 is: JR NC,r8
 Instruction at 0x4cb6 is: LD (HL-),A
 Instruction at 0x4cb7 is: LD SP,d16
 Instruction at 0x4cba is: DEC (HL)
-Instruction at 0x4cbb is: LD (HL),d8
+Instruction at 0x4cbb is: LD (HL),d8 37
 Instruction at 0x4cbd is: JR Z,r8 
 Instruction at 0x4cbf is: CPL
 Instruction at 0x4cc0 is: CPL
@@ -13502,12 +13502,12 @@ Instruction at 0x4d15 is: INC L
 Instruction at 0x4d16 is: INC L
 Instruction at 0x4d17 is: LD D,E
 Instruction at 0x4d18 is: STOP 0
-Instruction at 0x4d1a is: LD D,d8
+Instruction at 0x4d1a is: LD D,d8 e
 Instruction at 0x4d1c is: CPL
 Instruction at 0x4d1d is: DEC E
 Instruction at 0x4d1e is: LD (HL+),A
 Instruction at 0x4d1f is: ADD HL,DE
-Instruction at 0x4d20 is: LD C,d8
+Instruction at 0x4d20 is: LD C,d8 54
 Instruction at 0x4d22 is: INC L
 Instruction at 0x4d23 is: INC L
 Instruction at 0x4d24 is: INC L
@@ -13570,7 +13570,7 @@ Instruction at 0x4d5c is: LD C,A
 Instruction at 0x4d5d is: LD C,A
 Instruction at 0x4d5e is: LD C,A
 Instruction at 0x4d5f is: LD C,A
-Instruction at 0x4d60 is: LD L,d8
+Instruction at 0x4d60 is: LD L,d8 2c
 Instruction at 0x4d62 is: LD C,E
 Instruction at 0x4d63 is: LD C,D
 Instruction at 0x4d64 is: INC L
@@ -13637,7 +13637,7 @@ Instruction at 0x4da0 is: INC L
 Instruction at 0x4da1 is: INC L
 Instruction at 0x4da2 is: INC L
 Instruction at 0x4da3 is: LD D,E
-Instruction at 0x4da4 is: LD D,d8
+Instruction at 0x4da4 is: LD D,d8 1e
 Instruction at 0x4da6 is: INC E
 Instruction at 0x4da7 is: LD (DE), A
 Instruction at 0x4da8 is: INC C
@@ -13645,7 +13645,7 @@ Instruction at 0x4da9 is: CPL
 Instruction at 0x4daa is: DEC E
 Instruction at 0x4dab is: LD (HL+),A
 Instruction at 0x4dac is: ADD HL,DE
-Instruction at 0x4dad is: LD C,d8
+Instruction at 0x4dad is: LD C,d8 54
 Instruction at 0x4daf is: INC L
 Instruction at 0x4db0 is: INC L
 Instruction at 0x4db1 is: INC L
@@ -13747,7 +13747,7 @@ Instruction at 0x4e10 is: LD C,A
 Instruction at 0x4e11 is: LD C,A
 Instruction at 0x4e12 is: LD C,A
 Instruction at 0x4e13 is: LD C,A
-Instruction at 0x4e14 is: LD L,d8
+Instruction at 0x4e14 is: LD L,d8 2c
 Instruction at 0x4e16 is: LD C,E
 Instruction at 0x4e17 is: LD C,D
 Instruction at 0x4e18 is: INC L
@@ -13816,7 +13816,7 @@ Instruction at 0x4e56 is: DEC H
 Instruction at 0x4e57 is: DEC E
 Instruction at 0x4e58 is: LD (HL+),A
 Instruction at 0x4e59 is: ADD HL,DE
-Instruction at 0x4e5a is: LD C,d8
+Instruction at 0x4e5a is: LD C,d8 2f
 Instruction at 0x4e5c is: INC L
 Instruction at 0x4e5d is: INC L
 Instruction at 0x4e5e is: INC L
@@ -13876,8 +13876,8 @@ Instruction at 0x4e93 is: INC L
 Instruction at 0x4e94 is: INC L
 Instruction at 0x4e95 is: LD D,E
 Instruction at 0x4e96 is: DEC D
-Instruction at 0x4e97 is: LD C,d8
-Instruction at 0x4e99 is: LD C,d8
+Instruction at 0x4e97 is: LD C,d8 1f
+Instruction at 0x4e99 is: LD C,d8 15
 Instruction at 0x4e9b is: LD D,H
 Instruction at 0x4e9c is: INC L
 Instruction at 0x4e9d is: INC L
@@ -13980,7 +13980,7 @@ Instruction at 0x4efd is: LD L,E
 Instruction at 0x4efe is: LD C,A
 Instruction at 0x4eff is: LD L,E
 Instruction at 0x4f00 is: LD C,A
-Instruction at 0x4f01 is: LD L,d8
+Instruction at 0x4f01 is: LD L,d8 2c
 Instruction at 0x4f03 is: INC L
 Instruction at 0x4f04 is: INC L
 Instruction at 0x4f05 is: INC L
@@ -14016,7 +14016,7 @@ Instruction at 0x4f23 is: DEC H
 Instruction at 0x4f24 is: INC E
 Instruction at 0x4f25 is: INC C
 Instruction at 0x4f26 is: JR r8
-Instruction at 0x4f28 is: LD C,d8
+Instruction at 0x4f28 is: LD C,d8 54
 Instruction at 0x4f2a is: INC L
 Instruction at 0x4f2b is: INC L
 Instruction at 0x4f2c is: INC L
@@ -14118,7 +14118,7 @@ Instruction at 0x4f8d is: LD C,A
 Instruction at 0x4f8e is: LD C,A
 Instruction at 0x4f8f is: LD C,A
 Instruction at 0x4f90 is: LD C,A
-Instruction at 0x4f91 is: LD L,d8
+Instruction at 0x4f91 is: LD L,d8 4b
 Instruction at 0x4f93 is: LD C,H
 Instruction at 0x4f94 is: LD C,L
 Instruction at 0x4f95 is: LD C,L
@@ -14166,7 +14166,7 @@ Instruction at 0x4fbe is: DEC H
 Instruction at 0x4fbf is: DEC E
 Instruction at 0x4fc0 is: LD (HL+),A
 Instruction at 0x4fc1 is: ADD HL,DE
-Instruction at 0x4fc2 is: LD C,d8
+Instruction at 0x4fc2 is: LD C,d8 2f
 Instruction at 0x4fc4 is: INC L
 Instruction at 0x4fc5 is: INC L
 Instruction at 0x4fc6 is: INC L
@@ -14223,8 +14223,8 @@ Instruction at 0x4ff8 is: INC L
 Instruction at 0x4ff9 is: INC L
 Instruction at 0x4ffa is: LD D,E
 Instruction at 0x4ffb is: DEC D
-Instruction at 0x4ffc is: LD C,d8
-Instruction at 0x4ffe is: LD C,d8
+Instruction at 0x4ffc is: LD C,d8 1f
+Instruction at 0x4ffe is: LD C,d8 15
 Instruction at 0x5000 is: LD D,H
 Instruction at 0x5001 is: INC L
 Instruction at 0x5002 is: INC L
@@ -14323,13 +14323,13 @@ Instruction at 0x5062 is: LD L,E
 Instruction at 0x5063 is: LD C,A
 Instruction at 0x5064 is: LD L,E
 Instruction at 0x5065 is: LD C,A
-Instruction at 0x5066 is: LD L,d8
+Instruction at 0x5066 is: LD L,d8 2d
 Instruction at 0x5068 is: LD C,A
 Instruction at 0x5069 is: LD L,E
 Instruction at 0x506a is: LD C,A
 Instruction at 0x506b is: LD L,E
 Instruction at 0x506c is: LD C,A
-Instruction at 0x506d is: LD L,d8
+Instruction at 0x506d is: LD L,d8 4b
 Instruction at 0x506f is: LD C,D
 Instruction at 0x5070 is: INC L
 Instruction at 0x5071 is: INC L
@@ -14361,7 +14361,7 @@ Instruction at 0x508b is: DEC H
 Instruction at 0x508c is: INC E
 Instruction at 0x508d is: INC C
 Instruction at 0x508e is: JR r8
-Instruction at 0x5090 is: LD C,d8
+Instruction at 0x5090 is: LD C,d8 54
 Instruction at 0x5092 is: INC L
 Instruction at 0x5093 is: INC L
 Instruction at 0x5094 is: INC L
@@ -14463,7 +14463,7 @@ Instruction at 0x50f5 is: LD C,A
 Instruction at 0x50f6 is: LD C,A
 Instruction at 0x50f7 is: LD C,A
 Instruction at 0x50f8 is: LD C,A
-Instruction at 0x50f9 is: LD L,d8
+Instruction at 0x50f9 is: LD L,d8 4b
 Instruction at 0x50fb is: LD C,H
 Instruction at 0x50fc is: LD C,L
 Instruction at 0x50fd is: LD C,L
@@ -14502,7 +14502,7 @@ Instruction at 0x5128 is: ADC A,H
 Instruction at 0x5129 is: ADC A,H
 Instruction at 0x512a is: ADC A,H
 Instruction at 0x512b is: ADC A,H
-Instruction at 0x512c is: ADC A,D8
+Instruction at 0x512c is: ADC A,D8 d7
 Instruction at 0x512e is: RST 10H
 Instruction at 0x512f is: RST 10H
 Instruction at 0x5130 is: RST 10H
@@ -14547,7 +14547,7 @@ Instruction at 0x515a is: LD A,H
 Instruction at 0x515b is: CPL
 Instruction at 0x515c is: CPL
 Instruction at 0x515d is: PUSH DE
-Instruction at 0x515e is: SUB D8
+Instruction at 0x515e is: SUB D8 7d
 Instruction at 0x5160 is: LD A,L
 Instruction at 0x5161 is: LD A,L
 Instruction at 0x5162 is: LD A,L
@@ -14769,7 +14769,7 @@ Instruction at 0x523b is: LD C,E
 Instruction at 0x523c is: LD C,D
 Instruction at 0x523d is: INC L
 Instruction at 0x523e is: INC L
-Instruction at 0x523f is: LD D,d8
+Instruction at 0x523f is: LD D,d8 a
 Instruction at 0x5241 is: DEC DE
 Instruction at 0x5242 is: LD (DE), A
 Instruction at 0x5243 is: JR r8
@@ -14777,7 +14777,7 @@ Instruction at 0x5245 is: RRA
 Instruction at 0x5246 is: INC E
 Instruction at 0x5247 is: INC H
 Instruction at 0x5248 is: DEC D
-Instruction at 0x5249 is: LD E, d8
+Instruction at 0x5249 is: LD E, d8 12
 Instruction at 0x524b is: STOP 0
 Instruction at 0x524d is: INC L
 Instruction at 0x524e is: INC L
@@ -14884,7 +14884,7 @@ Instruction at 0x52b6 is: INC L
 Instruction at 0x52b7 is: DEC L
 Instruction at 0x52b8 is: LD C,A
 Instruction at 0x52b9 is: LD C,A
-Instruction at 0x52ba is: LD L,d8
+Instruction at 0x52ba is: LD L,d8 2c
 Instruction at 0x52bc is: INC L
 Instruction at 0x52bd is: INC L
 Instruction at 0x52be is: LD E,E
@@ -14900,7 +14900,7 @@ Instruction at 0x52c7 is: LD C,E
 Instruction at 0x52c8 is: LD C,D
 Instruction at 0x52c9 is: INC L
 Instruction at 0x52ca is: INC L
-Instruction at 0x52cb is: LD D,d8
+Instruction at 0x52cb is: LD D,d8 a
 Instruction at 0x52cd is: DEC DE
 Instruction at 0x52ce is: LD (DE), A
 Instruction at 0x52cf is: JR r8
@@ -14911,7 +14911,7 @@ Instruction at 0x52d4 is: LD L,E
 Instruction at 0x52d5 is: LD C,A
 Instruction at 0x52d6 is: LD L,E
 Instruction at 0x52d7 is: LD C,A
-Instruction at 0x52d8 is: LD L,d8
+Instruction at 0x52d8 is: LD L,d8 2c
 Instruction at 0x52da is: INC L
 Instruction at 0x52db is: LD C,E
 Instruction at 0x52dc is: LD C,D
@@ -15016,7 +15016,7 @@ Instruction at 0x5342 is: INC L
 Instruction at 0x5343 is: DEC L
 Instruction at 0x5344 is: LD C,A
 Instruction at 0x5345 is: LD C,A
-Instruction at 0x5346 is: LD L,d8
+Instruction at 0x5346 is: LD L,d8 2c
 Instruction at 0x5348 is: INC L
 Instruction at 0x5349 is: INC L
 Instruction at 0x534a is: LD E,E
@@ -15033,7 +15033,7 @@ Instruction at 0x5354 is: LD C,D
 Instruction at 0x5355 is: INC L
 Instruction at 0x5356 is: INC L
 Instruction at 0x5357 is: DEC D
-Instruction at 0x5358 is: LD E, d8
+Instruction at 0x5358 is: LD E, d8 12
 Instruction at 0x535a is: STOP 0
 Instruction at 0x535c is: INC L
 Instruction at 0x535d is: INC L
@@ -15043,7 +15043,7 @@ Instruction at 0x5360 is: LD L,E
 Instruction at 0x5361 is: LD C,A
 Instruction at 0x5362 is: LD L,E
 Instruction at 0x5363 is: LD C,A
-Instruction at 0x5364 is: LD L,d8
+Instruction at 0x5364 is: LD L,d8 2c
 Instruction at 0x5366 is: INC L
 Instruction at 0x5367 is: LD C,E
 Instruction at 0x5368 is: LD C,H
@@ -15094,7 +15094,7 @@ Instruction at 0x5399 is: CPL
 Instruction at 0x539a is: CPL
 Instruction at 0x539b is: CPL
 Instruction at 0x539c is: OR L
-Instruction at 0x539d is: LD (HL),d8
+Instruction at 0x539d is: LD (HL),d8 2f
 Instruction at 0x539f is: CPL
 Instruction at 0x53a0 is: CPL
 Instruction at 0x53a1 is: CPL
@@ -15113,7 +15113,7 @@ Instruction at 0x53ad is: CPL
 Instruction at 0x53ae is: CPL
 Instruction at 0x53af is: CPL
 Instruction at 0x53b0 is: OR L
-Instruction at 0x53b1 is: LD (HL),d8
+Instruction at 0x53b1 is: LD (HL),d8 2f
 Instruction at 0x53b3 is: CPL
 Instruction at 0x53b4 is: CPL
 Instruction at 0x53b5 is: CPL
@@ -15152,7 +15152,7 @@ Instruction at 0x53d5 is: CPL
 Instruction at 0x53d6 is: CPL
 Instruction at 0x53d7 is: CPL
 Instruction at 0x53d8 is: OR L
-Instruction at 0x53d9 is: LD (HL),d8
+Instruction at 0x53d9 is: LD (HL),d8 11
 Instruction at 0x53db is: LD (DE), A
 Instruction at 0x53dc is: STOP 0
 Instruction at 0x53de is: CPL
@@ -15170,7 +15170,7 @@ Instruction at 0x53e9 is: CPL
 Instruction at 0x53ea is: CPL
 Instruction at 0x53eb is: CPL
 Instruction at 0x53ec is: OR L
-Instruction at 0x53ed is: LD (HL),d8
+Instruction at 0x53ed is: LD (HL),d8 2f
 Instruction at 0x53ef is: CPL
 Instruction at 0x53f0 is: CPL
 Instruction at 0x53f1 is: CPL
@@ -15244,10 +15244,10 @@ Instruction at 0x5439 is: CPL
 Instruction at 0x543a is: CPL
 Instruction at 0x543b is: CPL
 Instruction at 0x543c is: OR L
-Instruction at 0x543d is: LD (HL),d8
+Instruction at 0x543d is: LD (HL),d8 15
 Instruction at 0x543f is: LD (DE), A
 Instruction at 0x5440 is: RLA
-Instruction at 0x5441 is: LD C,d8
+Instruction at 0x5441 is: LD C,d8 1c
 Instruction at 0x5443 is: SCF
 Instruction at 0x5444 is: ADC A,(HL
 Instruction at 0x5445 is: OR B
@@ -15262,7 +15262,7 @@ Instruction at 0x544d is: CPL
 Instruction at 0x544e is: CPL
 Instruction at 0x544f is: CPL
 Instruction at 0x5450 is: OR L
-Instruction at 0x5451 is: LD (HL),d8
+Instruction at 0x5451 is: LD (HL),d8 2f
 Instruction at 0x5453 is: CPL
 Instruction at 0x5454 is: CPL
 Instruction at 0x5455 is: CPL
@@ -15402,8 +15402,8 @@ Instruction at 0x54db is: CPL
 Instruction at 0x54dc is: OR H
 Instruction at 0x54dd is: DEC HL
 Instruction at 0x54de is: DEC A
-Instruction at 0x54df is: LD A,d8
-Instruction at 0x54e1 is: LD A,d8
+Instruction at 0x54df is: LD A,d8 3e
+Instruction at 0x54e1 is: LD A,d8 3e
 Instruction at 0x54e3 is: CCF
 Instruction at 0x54e4 is: RLCA
 Instruction at 0x54e5 is: RLCA
@@ -15426,9 +15426,9 @@ Instruction at 0x54f5 is: ADD A,A
 Instruction at 0x54f6 is: ADD A,(HL
 Instruction at 0x54f7 is: RLCA
 Instruction at 0x54f8 is: RLCA
-Instruction at 0x54f9 is: LD E, d8
-Instruction at 0x54fb is: LD E, d8
-Instruction at 0x54fd is: LD E, d8
+Instruction at 0x54f9 is: LD E, d8 1e
+Instruction at 0x54fb is: LD E, d8 1e
+Instruction at 0x54fd is: LD E, d8 79
 Instruction at 0x54ff is: CPL
 Instruction at 0x5500 is: CPL
 Instruction at 0x5501 is: ADC A,L
@@ -15446,7 +15446,7 @@ Instruction at 0x550c is: RLCA
 Instruction at 0x550d is: OR H
 Instruction at 0x550e is: OR L
 Instruction at 0x550f is: CP E
-Instruction at 0x5510 is: LD L,d8
+Instruction at 0x5510 is: LD L,d8 bc
 Instruction at 0x5512 is: LD A,C
 Instruction at 0x5513 is: CPL
 Instruction at 0x5514 is: CPL
@@ -15481,26 +15481,26 @@ Instruction at 0x5530 is: ADC A,D
 Instruction at 0x5531 is: ADC A,D
 Instruction at 0x5532 is: ADC A,E
 Instruction at 0x5533 is: RLCA
-Instruction at 0x5534 is: LD B,d8
-Instruction at 0x5536 is: LD B,d8
-Instruction at 0x5538 is: LD B,d8
-Instruction at 0x553a is: LD B,d8
-Instruction at 0x553c is: LD B,d8
-Instruction at 0x553e is: LD B,d8
-Instruction at 0x5540 is: LD B,d8
-Instruction at 0x5542 is: LD B,d8
-Instruction at 0x5544 is: LD B,d8
-Instruction at 0x5546 is: LD B,d8
-Instruction at 0x5548 is: LD D,d8
-Instruction at 0x554a is: LD D,d8
-Instruction at 0x554c is: LD D,d8
-Instruction at 0x554e is: LD D,d8
-Instruction at 0x5550 is: LD D,d8
-Instruction at 0x5552 is: LD D,d8
-Instruction at 0x5554 is: LD D,d8
-Instruction at 0x5556 is: LD D,d8
-Instruction at 0x5558 is: LD D,d8
-Instruction at 0x555a is: LD D,d8
+Instruction at 0x5534 is: LD B,d8 6
+Instruction at 0x5536 is: LD B,d8 6
+Instruction at 0x5538 is: LD B,d8 6
+Instruction at 0x553a is: LD B,d8 6
+Instruction at 0x553c is: LD B,d8 6
+Instruction at 0x553e is: LD B,d8 6
+Instruction at 0x5540 is: LD B,d8 6
+Instruction at 0x5542 is: LD B,d8 6
+Instruction at 0x5544 is: LD B,d8 6
+Instruction at 0x5546 is: LD B,d8 6
+Instruction at 0x5548 is: LD D,d8 16
+Instruction at 0x554a is: LD D,d8 16
+Instruction at 0x554c is: LD D,d8 16
+Instruction at 0x554e is: LD D,d8 16
+Instruction at 0x5550 is: LD D,d8 16
+Instruction at 0x5552 is: LD D,d8 16
+Instruction at 0x5554 is: LD D,d8 16
+Instruction at 0x5556 is: LD D,d8 16
+Instruction at 0x5558 is: LD D,d8 16
+Instruction at 0x555a is: LD D,d8 16
 Instruction at 0x555c is: RLCA
 Instruction at 0x555d is: RLCA
 Instruction at 0x555e is: RLCA
@@ -15522,9 +15522,9 @@ Instruction at 0x556d is: ADD A,A
 Instruction at 0x556e is: ADD A,(HL
 Instruction at 0x556f is: RLCA
 Instruction at 0x5570 is: RLCA
-Instruction at 0x5571 is: LD E, d8
-Instruction at 0x5573 is: LD E, d8
-Instruction at 0x5575 is: LD E, d8
+Instruction at 0x5571 is: LD E, d8 1e
+Instruction at 0x5573 is: LD E, d8 1e
+Instruction at 0x5575 is: LD E, d8 79
 Instruction at 0x5577 is: CPL
 Instruction at 0x5578 is: CPL
 Instruction at 0x5579 is: ADC A,L
@@ -15541,8 +15541,8 @@ Instruction at 0x5583 is: RLCA
 Instruction at 0x5584 is: RLCA
 Instruction at 0x5585 is: CP L
 Instruction at 0x5586 is: OR D
-Instruction at 0x5587 is: LD L,d8
-Instruction at 0x5589 is: LD L,d8
+Instruction at 0x5587 is: LD L,d8 be
+Instruction at 0x5589 is: LD L,d8 79
 Instruction at 0x558b is: CPL
 Instruction at 0x558c is: CPL
 Instruction at 0x558d is: ADC A,L
@@ -15599,9 +15599,9 @@ Instruction at 0x55c8 is: LD HL,d16
 Instruction at 0x55cb is: LD A,A
 Instruction at 0x55cc is: LD A,(C)
 Instruction at 0x55ce is: LD (DE), A
-Instruction at 0x55cf is: LD E, d8
-Instruction at 0x55d1 is: LD E, d8
-Instruction at 0x55d3 is: LD E, d8
+Instruction at 0x55cf is: LD E, d8 12
+Instruction at 0x55d1 is: LD E, d8 12
+Instruction at 0x55d3 is: LD E, d8 7e
 Instruction at 0x55d5 is: LD A,(HL)
 Instruction at 0x55d6 is: RST 38H
 Instruction at 0x55d7 is: ADD A,E
@@ -15625,8 +15625,8 @@ Instruction at 0x55eb is: LD A,A
 Instruction at 0x55ec is: INC B
 Instruction at 0x55ed is: UNDEFINED
 Instruction at 0x55ee is: LD (BC),A
-Instruction at 0x55ef is: CP D8
-Instruction at 0x55f1 is: CP D8
+Instruction at 0x55ef is: CP D8 2
+Instruction at 0x55f1 is: CP D8 7
 Instruction at 0x55f3 is: UNDEFINED
 Instruction at 0x55f4 is: RLCA
 Instruction at 0x55f5 is: UNDEFINED
@@ -15727,8 +15727,8 @@ Instruction at 0x5662 is: JR NZ,r8
 Instruction at 0x5664 is: JR NC,r8
 Instruction at 0x5666 is: RRA
 Instruction at 0x5667 is: DEC E
-Instruction at 0x5668 is: LD A,d8
-Instruction at 0x566a is: LD A,d8
+Instruction at 0x5668 is: LD A,d8 22
+Instruction at 0x566a is: LD A,d8 22
 Instruction at 0x566c is: ADD A,B
 Instruction at 0x566d is: ADD A,B
 Instruction at 0x566e is: ADD A,B
@@ -15767,7 +15767,7 @@ Instruction at 0x5690 is: LD H,B
 Instruction at 0x5691 is: LD H,B
 Instruction at 0x5692 is: INC A
 Instruction at 0x5693 is: INC A
-Instruction at 0x5694 is: LD C,d8
+Instruction at 0x5694 is: LD C,d8 e
 Instruction at 0x5696 is: LD C,(HL)
 Instruction at 0x5697 is: LD C,(HL)
 Instruction at 0x5698 is: INC A
@@ -15848,8 +15848,8 @@ Instruction at 0x56ec is: JR r8
 Instruction at 0x56ee is: INC B
 Instruction at 0x56ef is: UNDEFINED
 Instruction at 0x56f0 is: LD (BC),A
-Instruction at 0x56f1 is: CP D8
-Instruction at 0x56f3 is: CP D8
+Instruction at 0x56f1 is: CP D8 2
+Instruction at 0x56f3 is: CP D8 7
 Instruction at 0x56f5 is: UNDEFINED
 Instruction at 0x56f6 is: RLCA
 Instruction at 0x56f7 is: UNDEFINED
@@ -15989,13 +15989,13 @@ Instruction at 0x5797 is: RST 38H
 Instruction at 0x5798 is: NOP
 Instruction at 0x5799 is: NOP
 Instruction at 0x579a is: NOP
-Instruction at 0x579b is: XOR D8
+Instruction at 0x579b is: XOR D8 b4
 Instruction at 0x579d is: OR H
 Instruction at 0x579e is: LD H,H
 Instruction at 0x579f is: LD H,H
 Instruction at 0x57a0 is: INC A
 Instruction at 0x57a1 is: INC A
-Instruction at 0x57a2 is: LD L,d8
+Instruction at 0x57a2 is: LD L,d8 2e
 Instruction at 0x57a4 is: DAA
 Instruction at 0x57a5 is: DAA
 Instruction at 0x57a6 is: LD (HL),B
@@ -16017,7 +16017,7 @@ Instruction at 0x57b9 is: LD (BC),A
 Instruction at 0x57ba is: LD (BC),A
 Instruction at 0x57bb is: LD (BC),A
 Instruction at 0x57bc is: CCF
-Instruction at 0x57bd is: LD L,d8
+Instruction at 0x57bd is: LD L,d8 7f
 Instruction at 0x57bf is: LD H,E
 Instruction at 0x57c0 is: RST 38H
 Instruction at 0x57c1 is: SBC A,B
@@ -16037,7 +16037,7 @@ Instruction at 0x57ce is: LD BC,d16
 Instruction at 0x57d1 is: LD BC,d16
 Instruction at 0x57d4 is: NOP
 Instruction at 0x57d5 is: NOP
-Instruction at 0x57d6 is: LD B,d8
+Instruction at 0x57d6 is: LD B,d8 6
 Instruction at 0x57d8 is: DEC B
 Instruction at 0x57d9 is: DEC B
 Instruction at 0x57da is: RLCA
@@ -16085,11 +16085,11 @@ Instruction at 0x580b is: CP A
 Instruction at 0x580c is: RST 38H
 Instruction at 0x580d is: UNDEFINED
 Instruction at 0x580e is: RST 38H
-Instruction at 0x580f is: LD A,d8
+Instruction at 0x580f is: LD A,d8 ef
 Instruction at 0x5811 is: JR Z,r8 
 Instruction at 0x5813 is: LD HL,SP+R8
 Instruction at 0x5815 is: EI
-Instruction at 0x5816 is: LD C,d8
+Instruction at 0x5816 is: LD C,d8 fa
 Instruction at 0x5818 is: INC C
 Instruction at 0x5819 is: UNDEFINED
 Instruction at 0x581a is: INC B
@@ -16134,11 +16134,11 @@ Instruction at 0x584a is: JR NZ,r8
 Instruction at 0x584c is: RST 38H
 Instruction at 0x584d is: UNDEFINED
 Instruction at 0x584e is: RST 38H
-Instruction at 0x584f is: LD A,d8
+Instruction at 0x584f is: LD A,d8 ef
 Instruction at 0x5851 is: JR Z,r8 
 Instruction at 0x5853 is: LD SP,HL
-Instruction at 0x5854 is: LD C,d8
-Instruction at 0x5856 is: LD C,d8
+Instruction at 0x5854 is: LD C,d8 fa
+Instruction at 0x5856 is: LD C,d8 fa
 Instruction at 0x5858 is: INC C
 Instruction at 0x5859 is: UNDEFINED
 Instruction at 0x585a is: INC B
@@ -16247,9 +16247,9 @@ Instruction at 0x58ca is: RST 38H
 Instruction at 0x58cb is: RST 38H
 Instruction at 0x58cc is: RLCA
 Instruction at 0x58cd is: RLCA
-Instruction at 0x58ce is: LD B,d8
-Instruction at 0x58d0 is: LD B,d8
-Instruction at 0x58d2 is: LD B,d8
+Instruction at 0x58ce is: LD B,d8 7
+Instruction at 0x58d0 is: LD B,d8 7
+Instruction at 0x58d2 is: LD B,d8 7
 Instruction at 0x58d4 is: RLCA
 Instruction at 0x58d5 is: RLCA
 Instruction at 0x58d6 is: NOP
@@ -16301,8 +16301,8 @@ Instruction at 0x5909 is: RST 38H
 Instruction at 0x590a is: RST 38H
 Instruction at 0x590b is: RST 38H
 Instruction at 0x590c is: LD (BC),A
-Instruction at 0x590d is: CP D8
-Instruction at 0x590f is: CP D8
+Instruction at 0x590d is: CP D8 2
+Instruction at 0x590f is: CP D8 4
 Instruction at 0x5911 is: UNDEFINED
 Instruction at 0x5912 is: INC B
 Instruction at 0x5913 is: UNDEFINED
@@ -16338,7 +16338,7 @@ Instruction at 0x5931 is: NOP
 Instruction at 0x5932 is: UNDEFINED
 Instruction at 0x5933 is: LD (BC),A
 Instruction at 0x5934 is: CALL A16
-Instruction at 0x5937 is: OR D8
+Instruction at 0x5937 is: OR D8 8
 Instruction at 0x5939 is: RST 30H
 Instruction at 0x593a is: NOP
 Instruction at 0x593b is: RST 38H
@@ -16354,7 +16354,7 @@ Instruction at 0x5944 is: RST 38H
 Instruction at 0x5945 is: NOP
 Instruction at 0x5946 is: UNDEFINED
 Instruction at 0x5947 is: INC BC
-Instruction at 0x5948 is: CALL Z,A1
+Instruction at 0x5948 is: CALL Z,A16
 Instruction at 0x594b is: RST 30H
 Instruction at 0x594c is: LD A,H
 Instruction at 0x594d is: LD B,H
@@ -16368,14 +16368,14 @@ Instruction at 0x5956 is: ADD HL,DE
 Instruction at 0x5957 is: RRA
 Instruction at 0x5958 is: CCF
 Instruction at 0x5959 is: CCF
-Instruction at 0x595a is: LD A,d8
-Instruction at 0x595c is: ADC A,D8
+Instruction at 0x595a is: LD A,d8 3e
+Instruction at 0x595c is: ADC A,D8 f2
 Instruction at 0x595e is: ADC A,(HL
 Instruction at 0x595f is: JP C,A16
 Instruction at 0x5962 is: ADD HL,BC
 Instruction at 0x5963 is: LD SP,HL
 Instruction at 0x5964 is: LD C,(HL)
-Instruction at 0x5965 is: CP D8
+Instruction at 0x5965 is: CP D8 98
 Instruction at 0x5967 is: LD HL,SP+R8
 Instruction at 0x5969 is: UNDEFINED
 Instruction at 0x596a is: LD A,H
@@ -16422,10 +16422,10 @@ Instruction at 0x5998 is: JR r8
 Instruction at 0x599a is: NOP
 Instruction at 0x599b is: NOP
 Instruction at 0x599c is: LD (DE), A
-Instruction at 0x599d is: LD E, d8
-Instruction at 0x599f is: LD E, d8
-Instruction at 0x59a1 is: LD E, d8
-Instruction at 0x59a3 is: LD E, d8
+Instruction at 0x599d is: LD E, d8 12
+Instruction at 0x599f is: LD E, d8 12
+Instruction at 0x59a1 is: LD E, d8 12
+Instruction at 0x59a3 is: LD E, d8 7e
 Instruction at 0x59a5 is: LD A,(HL)
 Instruction at 0x59a6 is: CP A
 Instruction at 0x59a7 is: ADD A,E
@@ -16444,7 +16444,7 @@ Instruction at 0x59b5 is: UNDEFINED
 Instruction at 0x59b6 is: LD HL,SP+R8
 Instruction at 0x59b8 is: INC L
 Instruction at 0x59b9 is: INC (HL)
-Instruction at 0x59ba is: LD L,d8
+Instruction at 0x59ba is: LD L,d8 32
 Instruction at 0x59bc is: NOP
 Instruction at 0x59bd is: NOP
 Instruction at 0x59be is: LD B,(HL)
@@ -16462,14 +16462,14 @@ Instruction at 0x59ca is: NOP
 Instruction at 0x59cb is: NOP
 Instruction at 0x59cc is: NOP
 Instruction at 0x59cd is: NOP
-Instruction at 0x59ce is: LD (HL),d8
+Instruction at 0x59ce is: LD (HL),d8 36
 Instruction at 0x59d0 is: LD E,A
 Instruction at 0x59d1 is: LD C,C
 Instruction at 0x59d2 is: LD E,A
 Instruction at 0x59d3 is: LD B,C
 Instruction at 0x59d4 is: LD A,A
 Instruction at 0x59d5 is: LD B,C
-Instruction at 0x59d6 is: LD A,d8
+Instruction at 0x59d6 is: LD A,d8 22
 Instruction at 0x59d8 is: INC E
 Instruction at 0x59d9 is: INC D
 Instruction at 0x59da is: LD (a16),SP
@@ -16483,7 +16483,7 @@ Instruction at 0x59e3 is: RRA
 Instruction at 0x59e4 is: RST 38H
 Instruction at 0x59e5 is: UNDEFINED
 Instruction at 0x59e6 is: RST 38H
-Instruction at 0x59e7 is: CP D8
+Instruction at 0x59e7 is: CP D8 ef
 Instruction at 0x59e9 is: JR Z,r8 
 Instruction at 0x59eb is: ADD HL,SP 
 Instruction at 0x59ec is: NOP
@@ -16496,7 +16496,7 @@ Instruction at 0x59f2 is: LD BC,d16
 Instruction at 0x59f5 is: DEC B
 Instruction at 0x59f6 is: INC BC
 Instruction at 0x59f7 is: RLCA
-Instruction at 0x59f8 is: LD B,d8
+Instruction at 0x59f8 is: LD B,d8 6
 Instruction at 0x59fa is: INC C
 Instruction at 0x59fb is: INC C
 Instruction at 0x59fc is: JP Z,A16
@@ -16537,7 +16537,7 @@ Instruction at 0x5a35 is: XOR B
 Instruction at 0x5a36 is: LD (a16),SP
 Instruction at 0x5a39 is: XOR B
 Instruction at 0x5a3a is: LD (a16),SP
-Instruction at 0x5a3d is: CP D8
+Instruction at 0x5a3d is: CP D8 0
 Instruction at 0x5a3f is: RST 38H
 Instruction at 0x5a40 is: LD A,A
 Instruction at 0x5a41 is: RST 38H
@@ -16584,7 +16584,7 @@ Instruction at 0x5a6e is: UNDEFINED
 Instruction at 0x5a6f is: UNDEFINED
 Instruction at 0x5a70 is: CP H
 Instruction at 0x5a71 is: CP H
-Instruction at 0x5a72 is: XOR D8
+Instruction at 0x5a72 is: XOR D8 6e
 Instruction at 0x5a74 is: RST 20H
 Instruction at 0x5a75 is: DAA
 Instruction at 0x5a76 is: LDH A,A8
@@ -16633,11 +16633,11 @@ Instruction at 0x5aa3 is: RLCA
 Instruction at 0x5aa4 is: INC B
 Instruction at 0x5aa5 is: RLCA
 Instruction at 0x5aa6 is: INC B
-Instruction at 0x5aa7 is: LD B,d8
+Instruction at 0x5aa7 is: LD B,d8 4
 Instruction at 0x5aa9 is: DEC B
 Instruction at 0x5aaa is: INC B
 Instruction at 0x5aab is: RLCA
-Instruction at 0x5aac is: ADC A,D8
+Instruction at 0x5aac is: ADC A,D8 fa
 Instruction at 0x5aae is: INC C
 Instruction at 0x5aaf is: UNDEFINED
 Instruction at 0x5ab0 is: LD (a16),SP
@@ -16704,16 +16704,16 @@ Instruction at 0x5b06 is: JR Z,r8
 Instruction at 0x5b08 is: JR Z,r8
 Instruction at 0x5b0a is: LD L,B
 Instruction at 0x5b0b is: LD H,B
-Instruction at 0x5b0c is: SBC A,D8
-Instruction at 0x5b0e is: LD L,d8
+Instruction at 0x5b0c is: SBC A,D8 2b
+Instruction at 0x5b0e is: LD L,d8 17
 Instruction at 0x5b10 is: LD L,(HL)
 Instruction at 0x5b11 is: RLA
-Instruction at 0x5b12 is: LD L,d8
+Instruction at 0x5b12 is: LD L,d8 17
 Instruction at 0x5b14 is: LD L,(HL)
 Instruction at 0x5b15 is: RLA
-Instruction at 0x5b16 is: LD L,d8
-Instruction at 0x5b18 is: LD L,d8
-Instruction at 0x5b1a is: LD L,d8
+Instruction at 0x5b16 is: LD L,d8 17
+Instruction at 0x5b18 is: LD L,d8 d7
+Instruction at 0x5b1a is: LD L,d8 17
 Instruction at 0x5b1c is: SBC A,B
 Instruction at 0x5b1d is: LD C,B
 Instruction at 0x5b1e is: OR B
@@ -16824,7 +16824,7 @@ Instruction at 0x5b93 is: RST 38H
 Instruction at 0x5b94 is: RST 30H
 Instruction at 0x5b95 is: UNDEFINED
 Instruction at 0x5b96 is: RST 38H
-Instruction at 0x5b97 is: CP D8
+Instruction at 0x5b97 is: CP D8 ef
 Instruction at 0x5b99 is: JR Z,r8 
 Instruction at 0x5b9b is: JR Z,r8 
 Instruction at 0x5b9d is: LD BC,d16
@@ -16857,7 +16857,7 @@ Instruction at 0x5bc1 is: LD B,E
 Instruction at 0x5bc2 is: JR r8
 Instruction at 0x5bc4 is: JR r8
 Instruction at 0x5bc6 is: LD (a16),SP
-Instruction at 0x5bc9 is: LD (HL),d8
+Instruction at 0x5bc9 is: LD (HL),d8 8
 Instruction at 0x5bcb is: INC (HL)
 Instruction at 0x5bcc is: JR r8
 Instruction at 0x5bce is: JR r8
@@ -16882,7 +16882,7 @@ Instruction at 0x5beb is: JR Z,r8
 Instruction at 0x5bed is: NOP
 Instruction at 0x5bee is: ADD A,B
 Instruction at 0x5bef is: ADD A,B
-Instruction at 0x5bf0 is: CALL C,16
+Instruction at 0x5bf0 is: CALL C,a16
 Instruction at 0x5bf3 is: LD (HL+),A
 Instruction at 0x5bf4 is: LD (HL-),A
 Instruction at 0x5bf5 is: LD (C),A
@@ -16909,7 +16909,7 @@ Instruction at 0x5c0f is: LD D,B
 Instruction at 0x5c10 is: ADD HL,SP 
 Instruction at 0x5c11 is: JR NC,r8
 Instruction at 0x5c13 is: LD C,H
-Instruction at 0x5c14 is: XOR D8
+Instruction at 0x5c14 is: XOR D8 82
 Instruction at 0x5c16 is: RET NZ
 Instruction at 0x5c17 is: ADD A,H
 Instruction at 0x5c18 is: LD H,B
@@ -16924,7 +16924,7 @@ Instruction at 0x5c22 is: LD H,C
 Instruction at 0x5c23 is: LD B,C
 Instruction at 0x5c24 is: JP A16
 Instruction at 0x5c27 is: INC B
-Instruction at 0x5c28 is: XOR D8
+Instruction at 0x5c28 is: XOR D8 8
 Instruction at 0x5c2a is: SBC A,H
 Instruction at 0x5c2b is: LD H,B
 Instruction at 0x5c2c is: SUB B
@@ -16993,7 +16993,7 @@ Instruction at 0x5c70 is: NOP
 Instruction at 0x5c71 is: NOP
 Instruction at 0x5c72 is: NOP
 Instruction at 0x5c73 is: NOP
-Instruction at 0x5c74 is: LD C,d8
+Instruction at 0x5c74 is: LD C,d8 e
 Instruction at 0x5c76 is: LD DE,d16
 Instruction at 0x5c79 is: LD DE,d16
 Instruction at 0x5c7c is: DI
@@ -17023,7 +17023,7 @@ Instruction at 0x5c9e is: RET
 Instruction at 0x5c9f is: RETI
 Instruction at 0x5ca0 is: ADD HL,BC
 Instruction at 0x5ca1 is: LD SP,HL
-Instruction at 0x5ca2 is: LD C,d8
+Instruction at 0x5ca2 is: LD C,d8 fe
 Instruction at 0x5ca4 is: LD C,B
 Instruction at 0x5ca5 is: LD HL,SP+R8
 Instruction at 0x5ca7 is: LD HL,SP+R8
@@ -17101,16 +17101,16 @@ Instruction at 0x5cf8 is: LD B,B
 Instruction at 0x5cf9 is: LD B,B
 Instruction at 0x5cfa is: LD B,B
 Instruction at 0x5cfb is: LD B,B
-Instruction at 0x5cfc is: LD C,d8
-Instruction at 0x5cfe is: LD C,d8
-Instruction at 0x5d00 is: LD C,d8
-Instruction at 0x5d02 is: LD C,d8
+Instruction at 0x5cfc is: LD C,d8 32
+Instruction at 0x5cfe is: LD C,d8 32
+Instruction at 0x5d00 is: LD C,d8 32
+Instruction at 0x5d02 is: LD C,d8 32
 Instruction at 0x5d04 is: RRCA
 Instruction at 0x5d05 is: INC SP
 Instruction at 0x5d06 is: ADC A,A
 Instruction at 0x5d07 is: OR E
-Instruction at 0x5d08 is: ADC A,D8
-Instruction at 0x5d0a is: XOR D8
+Instruction at 0x5d08 is: ADC A,D8 f3
+Instruction at 0x5d0a is: XOR D8 73
 Instruction at 0x5d0c is: NOP
 Instruction at 0x5d0d is: NOP
 Instruction at 0x5d0e is: NOP
@@ -17197,12 +17197,12 @@ Instruction at 0x5d76 is: ADD HL,DE
 Instruction at 0x5d77 is: RRA
 Instruction at 0x5d78 is: CCF
 Instruction at 0x5d79 is: CCF
-Instruction at 0x5d7a is: LD A,d8
+Instruction at 0x5d7a is: LD A,d8 3e
 Instruction at 0x5d7c is: LD (DE), A
-Instruction at 0x5d7d is: LD E, d8
-Instruction at 0x5d7f is: LD E, d8
-Instruction at 0x5d81 is: LD E, d8
-Instruction at 0x5d83 is: LD E, d8
+Instruction at 0x5d7d is: LD E, d8 12
+Instruction at 0x5d7f is: LD E, d8 12
+Instruction at 0x5d81 is: LD E, d8 12
+Instruction at 0x5d83 is: LD E, d8 7e
 Instruction at 0x5d85 is: LD A,(HL)
 Instruction at 0x5d86 is: RST 38H
 Instruction at 0x5d87 is: ADD A,E
@@ -17482,7 +17482,7 @@ Instruction at 0x5eb1 is: LD A,H
 Instruction at 0x5eb2 is: LD (C),A
 Instruction at 0x5eb4 is: LD A,(A16)
 Instruction at 0x5eb7 is: INC C
-Instruction at 0x5eb8 is: SBC A,D8
+Instruction at 0x5eb8 is: SBC A,D8 46
 Instruction at 0x5eba is: RST 18H
 Instruction at 0x5ebb is: LD C,L
 Instruction at 0x5ebc is: RST 38H
@@ -17492,7 +17492,7 @@ Instruction at 0x5ebf is: JP NZ,A16
 Instruction at 0x5ec2 is: LD A,A
 Instruction at 0x5ec3 is: LD E,H
 Instruction at 0x5ec4 is: CCF
-Instruction at 0x5ec5 is: LD L,d8
+Instruction at 0x5ec5 is: LD L,d8 3f
 Instruction at 0x5ec7 is: INC HL
 Instruction at 0x5ec8 is: RRA
 Instruction at 0x5ec9 is: JR r8
@@ -17501,8 +17501,8 @@ Instruction at 0x5ecc is: RST 38H
 Instruction at 0x5ecd is: DEC B
 Instruction at 0x5ece is: RST 38H
 Instruction at 0x5ecf is: LD B,E
-Instruction at 0x5ed0 is: CP D8
-Instruction at 0x5ed2 is: CP D8
+Instruction at 0x5ed0 is: CP D8 2a
+Instruction at 0x5ed2 is: CP D8 3a
 Instruction at 0x5ed4 is: UNDEFINED
 Instruction at 0x5ed5 is: LD (HL),H
 Instruction at 0x5ed6 is: UNDEFINED
@@ -17526,9 +17526,9 @@ Instruction at 0x5eec is: LDH (A8),A
 Instruction at 0x5eee is: LD HL,SP+R8
 Instruction at 0x5ef0 is: LD A,H
 Instruction at 0x5ef1 is: INC B
-Instruction at 0x5ef2 is: CP D8
-Instruction at 0x5ef4 is: CP D8
-Instruction at 0x5ef6 is: LD C,d8
+Instruction at 0x5ef2 is: CP D8 f2
+Instruction at 0x5ef4 is: CP D8 fa
+Instruction at 0x5ef6 is: LD C,d8 e
 Instruction at 0x5ef8 is: LD B,L
 Instruction at 0x5ef9 is: LD B,L
 Instruction at 0x5efa is: DEC C
@@ -17539,7 +17539,7 @@ Instruction at 0x5efe is: LD H,H
 Instruction at 0x5eff is: LD H,H
 Instruction at 0x5f00 is: INC A
 Instruction at 0x5f01 is: INC A
-Instruction at 0x5f02 is: LD L,d8
+Instruction at 0x5f02 is: LD L,d8 2e
 Instruction at 0x5f04 is: DAA
 Instruction at 0x5f05 is: DAA
 Instruction at 0x5f06 is: STOP 0
@@ -17549,7 +17549,7 @@ Instruction at 0x5f0a is: INC BC
 Instruction at 0x5f0b is: INC BC
 Instruction at 0x5f0c is: DEC L
 Instruction at 0x5f0d is: DEC L
-Instruction at 0x5f0e is: LD H,d8
+Instruction at 0x5f0e is: LD H,d8 26
 Instruction at 0x5f10 is: INC A
 Instruction at 0x5f11 is: INC A
 Instruction at 0x5f12 is: LD (HL),H
@@ -17595,12 +17595,12 @@ Instruction at 0x5f40 is: RLCA
 Instruction at 0x5f41 is: INC B
 Instruction at 0x5f42 is: INC B
 Instruction at 0x5f43 is: INC B
-Instruction at 0x5f44 is: LD B,d8
+Instruction at 0x5f44 is: LD B,d8 6
 Instruction at 0x5f46 is: DEC B
 Instruction at 0x5f47 is: DEC B
 Instruction at 0x5f48 is: DEC B
 Instruction at 0x5f49 is: DEC B
-Instruction at 0x5f4a is: LD B,d8
+Instruction at 0x5f4a is: LD B,d8 6
 Instruction at 0x5f4c is: RLCA
 Instruction at 0x5f4d is: INC B
 Instruction at 0x5f4e is: RLCA
@@ -17615,9 +17615,9 @@ Instruction at 0x5f56 is: RLCA
 Instruction at 0x5f57 is: RLCA
 Instruction at 0x5f58 is: RLCA
 Instruction at 0x5f59 is: RLCA
-Instruction at 0x5f5a is: LD B,d8
-Instruction at 0x5f5c is: LD B,d8
-Instruction at 0x5f5e is: LD B,d8
+Instruction at 0x5f5a is: LD B,d8 6
+Instruction at 0x5f5c is: LD B,d8 6
+Instruction at 0x5f5e is: LD B,d8 6
 Instruction at 0x5f60 is: INC B
 Instruction at 0x5f61 is: INC B
 Instruction at 0x5f62 is: RLCA
@@ -17628,7 +17628,7 @@ Instruction at 0x5f66 is: INC BC
 Instruction at 0x5f67 is: INC BC
 Instruction at 0x5f68 is: DEC B
 Instruction at 0x5f69 is: DEC B
-Instruction at 0x5f6a is: LD C,d8
+Instruction at 0x5f6a is: LD C,d8 e
 Instruction at 0x5f6c is: RRCA
 Instruction at 0x5f6d is: RRA
 Instruction at 0x5f6e is: LD BC,d16
@@ -17652,7 +17652,7 @@ Instruction at 0x5f87 is: XOR L
 Instruction at 0x5f88 is: LD H,D
 Instruction at 0x5f89 is: RST 08H
 Instruction at 0x5f8a is: LD A,(HL)
-Instruction at 0x5f8b is: CP D8
+Instruction at 0x5f8b is: CP D8 ec
 Instruction at 0x5f8d is: SUB B
 Instruction at 0x5f8e is: RST 28H
 Instruction at 0x5f8f is: SBC A,A
@@ -17708,14 +17708,14 @@ Instruction at 0x5fdb is: SUB B
 Instruction at 0x5fdc is: JR r8
 Instruction at 0x5fde is: INC C
 Instruction at 0x5fdf is: INC C
-Instruction at 0x5fe0 is: LD B,d8
+Instruction at 0x5fe0 is: LD B,d8 c6
 Instruction at 0x5fe2 is: INC BC
 Instruction at 0x5fe3 is: JP A16
 Instruction at 0x5fe6 is: RST 38H
 Instruction at 0x5fe7 is: RST 38H
 Instruction at 0x5fe8 is: POP BC
 Instruction at 0x5fe9 is: POP BC
-Instruction at 0x5fea is: LD B,d8
+Instruction at 0x5fea is: LD B,d8 46
 Instruction at 0x5fec is: NOP
 Instruction at 0x5fed is: INC B
 Instruction at 0x5fee is: NOP
@@ -17746,13 +17746,13 @@ Instruction at 0x600e is: LD A,(HL)
 Instruction at 0x600f is: INC SP
 Instruction at 0x6010 is: CP (HL)
 Instruction at 0x6011 is: SUB E
-Instruction at 0x6012 is: CP D8
+Instruction at 0x6012 is: CP D8 d3
 Instruction at 0x6014 is: LD A,(HL)
 Instruction at 0x6015 is: LD D,E
-Instruction at 0x6016 is: LD A,d8
+Instruction at 0x6016 is: LD A,d8 b
 Instruction at 0x6018 is: LD A,(HL)
 Instruction at 0x6019 is: LD C,E
-Instruction at 0x601a is: LD A,d8
+Instruction at 0x601a is: LD A,d8 b
 Instruction at 0x601c is: AND B
 Instruction at 0x601d is: JR NZ,r8
 Instruction at 0x601f is: JR NC,r8
@@ -17803,9 +17803,9 @@ Instruction at 0x6052 is: LD (BC),A
 Instruction at 0x6053 is: INC BC
 Instruction at 0x6054 is: LD (BC),A
 Instruction at 0x6055 is: LD (BC),A
-Instruction at 0x6056 is: LD B,d8
-Instruction at 0x6058 is: LD C,d8
-Instruction at 0x605a is: LD C,d8
+Instruction at 0x6056 is: LD B,d8 6
+Instruction at 0x6058 is: LD C,d8 a
+Instruction at 0x605a is: LD C,d8 a
 Instruction at 0x605c is: DEC BC
 Instruction at 0x605d is: LD A,(BC)
 Instruction at 0x605e is: DEC BC
@@ -17814,7 +17814,7 @@ Instruction at 0x6060 is: RRCA
 Instruction at 0x6061 is: LD A,(BC)
 Instruction at 0x6062 is: LD A,(BC)
 Instruction at 0x6063 is: LD A,(BC)
-Instruction at 0x6064 is: LD B,d8
+Instruction at 0x6064 is: LD B,d8 6
 Instruction at 0x6066 is: LD A,(BC)
 Instruction at 0x6067 is: LD A,(BC)
 Instruction at 0x6068 is: LD A,(DE)
@@ -18031,8 +18031,8 @@ Instruction at 0x6153 is: SBC A,A
 Instruction at 0x6154 is: LD (HL),B
 Instruction at 0x6155 is: LD A,A
 Instruction at 0x6156 is: LD DE,d16
-Instruction at 0x6159 is: LD A,d8
-Instruction at 0x615b is: LD A,d8
+Instruction at 0x6159 is: LD A,d8 3e
+Instruction at 0x615b is: LD A,d8 0
 Instruction at 0x615d is: NOP
 Instruction at 0x615e is: LD A,H
 Instruction at 0x615f is: LD A,H
@@ -18092,11 +18092,11 @@ Instruction at 0x6194 is: LD L,(HL)
 Instruction at 0x6195 is: LD L,(HL)
 Instruction at 0x6196 is: LD H,(HL)
 Instruction at 0x6197 is: LD H,(HL)
-Instruction at 0x6198 is: LD A,d8
+Instruction at 0x6198 is: LD A,d8 3e
 Instruction at 0x619a is: NOP
 Instruction at 0x619b is: NOP
 Instruction at 0x619c is: NOP
-Instruction at 0x619d is: XOR D8
+Instruction at 0x619d is: XOR D8 0
 Instruction at 0x619f is: NOP
 Instruction at 0x61a0 is: RST 38H
 Instruction at 0x61a1 is: RST 38H
@@ -18194,10 +18194,10 @@ Instruction at 0x6210 is: INC C
 Instruction at 0x6211 is: INC (HL)
 Instruction at 0x6212 is: INC B
 Instruction at 0x6213 is: UNDEFINED
-Instruction at 0x6214 is: LD C,d8
-Instruction at 0x6216 is: LD C,d8
-Instruction at 0x6218 is: LD C,d8
-Instruction at 0x621a is: LD C,d8
+Instruction at 0x6214 is: LD C,d8 32
+Instruction at 0x6216 is: LD C,d8 32
+Instruction at 0x6218 is: LD C,d8 32
+Instruction at 0x621a is: LD C,d8 32
 Instruction at 0x621c is: NOP
 Instruction at 0x621d is: NOP
 Instruction at 0x621e is: NOP
@@ -18296,7 +18296,7 @@ Instruction at 0x6286 is: DEC D
 Instruction at 0x6287 is: POP BC
 Instruction at 0x6288 is: RLA
 Instruction at 0x6289 is: LD B,E
-Instruction at 0x628a is: LD D,d8
+Instruction at 0x628a is: LD D,d8 46
 Instruction at 0x628c is: INC H
 Instruction at 0x628d is: INC C
 Instruction at 0x628e is: INC (HL)
@@ -18304,10 +18304,10 @@ Instruction at 0x628f is: INC C
 Instruction at 0x6290 is: INC (HL)
 Instruction at 0x6291 is: INC B
 Instruction at 0x6292 is: UNDEFINED
-Instruction at 0x6293 is: LD C,d8
-Instruction at 0x6295 is: LD C,d8
-Instruction at 0x6297 is: LD C,d8
-Instruction at 0x6299 is: LD C,d8
+Instruction at 0x6293 is: LD C,d8 32
+Instruction at 0x6295 is: LD C,d8 32
+Instruction at 0x6297 is: LD C,d8 32
+Instruction at 0x6299 is: LD C,d8 32
 Instruction at 0x629b is: NOP
 Instruction at 0x629c is: NOP
 Instruction at 0x629d is: NOP
@@ -18341,19 +18341,19 @@ Instruction at 0x62bd is: INC BC
 Instruction at 0x62be is: JR NZ,r8
 Instruction at 0x62c0 is: NOP
 Instruction at 0x62c1 is: JR NZ,r8
-Instruction at 0x62c3 is: LD B,d8
+Instruction at 0x62c3 is: LD B,d8 0
 Instruction at 0x62c5 is: LD A,(BC)
 Instruction at 0x62c6 is: ADD A,B
 Instruction at 0x62c7 is: RLA
 Instruction at 0x62c8 is: NOP
-Instruction at 0x62c9 is: LD B,d8
-Instruction at 0x62cb is: LD B,d8
+Instruction at 0x62c9 is: LD B,d8 1
+Instruction at 0x62cb is: LD B,d8 0
 Instruction at 0x62cd is: INC B
 Instruction at 0x62ce is: LD BC,d16
-Instruction at 0x62d1 is: LD E, d8
+Instruction at 0x62d1 is: LD E, d8 80
 Instruction at 0x62d3 is: DEC BC
 Instruction at 0x62d4 is: NOP
-Instruction at 0x62d5 is: LD B,d8
+Instruction at 0x62d5 is: LD B,d8 80
 Instruction at 0x62d7 is: INC E
 Instruction at 0x62d8 is: NOP
 Instruction at 0x62d9 is: LD A,(BC)
@@ -18413,12 +18413,12 @@ Instruction at 0x6320 is: NOP
 Instruction at 0x6321 is: INC D
 Instruction at 0x6322 is: STOP 0
 Instruction at 0x6324 is: NOP
-Instruction at 0x6325 is: LD C,d8
-Instruction at 0x6327 is: LD D,d8
+Instruction at 0x6325 is: LD C,d8 80
+Instruction at 0x6327 is: LD D,d8 0
 Instruction at 0x6329 is: LD A,(BC)
 Instruction at 0x632a is: STOP 0
 Instruction at 0x632c is: LD DE,d16
-Instruction at 0x632f is: LD D,d8
+Instruction at 0x632f is: LD D,d8 0
 Instruction at 0x6331 is: INC DE
 Instruction at 0x6332 is: ADD A,B
 Instruction at 0x6333 is: DEC H
@@ -18428,7 +18428,7 @@ Instruction at 0x6336 is: LD BC,d16
 Instruction at 0x6339 is: INC BC
 Instruction at 0x633a is: JR NZ,r8
 Instruction at 0x633c is: NOP
-Instruction at 0x633d is: LD C,d8
+Instruction at 0x633d is: LD C,d8 20
 Instruction at 0x633f is: INC BC
 Instruction at 0x6340 is: NOP
 Instruction at 0x6341 is: INC B
@@ -18445,7 +18445,7 @@ Instruction at 0x6351 is: DEC B
 Instruction at 0x6352 is: LD BC,d16
 Instruction at 0x6355 is: INC B
 Instruction at 0x6356 is: LD BC,d16
-Instruction at 0x6359 is: LD B,d8
+Instruction at 0x6359 is: LD B,d8 20
 Instruction at 0x635b is: INC BC
 Instruction at 0x635c is: NOP
 Instruction at 0x635d is: DEC B
@@ -18454,7 +18454,7 @@ Instruction at 0x6360 is: NOP
 Instruction at 0x6361 is: INC E
 Instruction at 0x6362 is: JR NZ,r8
 Instruction at 0x6364 is: NOP
-Instruction at 0x6365 is: LD C,d8
+Instruction at 0x6365 is: LD C,d8 80
 Instruction at 0x6367 is: LD (DE), A
 Instruction at 0x6368 is: NOP
 Instruction at 0x6369 is: INC C
@@ -18524,12 +18524,12 @@ Instruction at 0x63c3 is: DEC B
 Instruction at 0x63c4 is: NOP
 Instruction at 0x63c5 is: CPL
 Instruction at 0x63c6 is: ADD A,B
-Instruction at 0x63c7 is: LD D,d8
+Instruction at 0x63c7 is: LD D,d8 0
 Instruction at 0x63c9 is: RLA
 Instruction at 0x63ca is: JR NZ,r8
 Instruction at 0x63cc is: NOP
-Instruction at 0x63cd is: LD B,d8
-Instruction at 0x63cf is: LD B,d8
+Instruction at 0x63cd is: LD B,d8 20
+Instruction at 0x63cf is: LD B,d8 0
 Instruction at 0x63d1 is: STOP 0
 Instruction at 0x63d3 is: JR r8
 Instruction at 0x63d5 is: INC (HL)
@@ -18544,7 +18544,7 @@ Instruction at 0x63e4 is: NOP
 Instruction at 0x63e5 is: DEC HL
 Instruction at 0x63e6 is: JR NZ,r8
 Instruction at 0x63e8 is: NOP
-Instruction at 0x63e9 is: LD B,d8
+Instruction at 0x63e9 is: LD B,d8 20
 Instruction at 0x63eb is: DEC B
 Instruction at 0x63ec is: NOP
 Instruction at 0x63ed is: DEC B
@@ -18568,7 +18568,7 @@ Instruction at 0x6403 is: INC E
 Instruction at 0x6404 is: NOP
 Instruction at 0x6405 is: LD (HL),L
 Instruction at 0x6406 is: LD BC,d16
-Instruction at 0x6409 is: LD C,d8
+Instruction at 0x6409 is: LD C,d8 80
 Instruction at 0x640b is: RRA
 Instruction at 0x640c is: NOP
 Instruction at 0x640d is: LD A,(DE)
@@ -18660,7 +18660,7 @@ Instruction at 0x647d is: INC D
 Instruction at 0x647e is: JR r8
 Instruction at 0x6480 is: XOR D
 Instruction at 0x6481 is: LD H,L
-Instruction at 0x6482 is: ADD A,D8
+Instruction at 0x6482 is: ADD A,D8 65
 Instruction at 0x6484 is: UNDEFINED
 Instruction at 0x6485 is: LD H,(HL)
 Instruction at 0x6486 is: JR Z,r8
@@ -18674,11 +18674,11 @@ Instruction at 0x648e is: LD D,H
 Instruction at 0x648f is: LD H,(HL)
 Instruction at 0x6490 is: OR D
 Instruction at 0x6491 is: LD H,L
-Instruction at 0x6492 is: ADC A,D8
+Instruction at 0x6492 is: ADC A,D8 65
 Instruction at 0x6494 is: INC D
 Instruction at 0x6495 is: LD H,A
-Instruction at 0x6496 is: ADC A,D8
-Instruction at 0x6498 is: ADC A,D8
+Instruction at 0x6496 is: ADC A,D8 65
+Instruction at 0x6498 is: ADC A,D8 65
 Instruction at 0x649a is: JP A16
 Instruction at 0x649d is: LD H,L
 Instruction at 0x649e is: LD H,B
@@ -18735,9 +18735,9 @@ Instruction at 0x64d4 is: PUSH BC
 Instruction at 0x64d5 is: PUSH DE
 Instruction at 0x64d6 is: PUSH HL
 Instruction at 0x64d7 is: LD A,(A16)
-Instruction at 0x64da is: CP D8
+Instruction at 0x64da is: CP D8 1
 Instruction at 0x64dc is: JR Z,r8
-Instruction at 0x64de is: CP D8
+Instruction at 0x64de is: CP D8 2
 Instruction at 0x64e0 is: JR Z,r8
 Instruction at 0x64e2 is: LD A,(A16)
 Instruction at 0x64e5 is: AND A
@@ -18783,7 +18783,7 @@ Instruction at 0x6540 is: LD HL,d16
 Instruction at 0x6543 is: CBPREFIX
 Instruction at 0x6545 is: LD HL,d16
 Instruction at 0x6548 is: CALL A16
-Instruction at 0x654b is: LD A,d8
+Instruction at 0x654b is: LD A,d8 30
 Instruction at 0x654d is: LD (A16),A
 Instruction at 0x6550 is: LD HL,d16
 Instruction at 0x6553 is: CALL A16
@@ -18796,13 +18796,13 @@ Instruction at 0x6561 is: JR r8
 Instruction at 0x6563 is: LD HL,d16
 Instruction at 0x6566 is: DEC (HL)
 Instruction at 0x6567 is: LD A,(HL)
-Instruction at 0x6568 is: CP D8
+Instruction at 0x6568 is: CP D8 28
 Instruction at 0x656a is: JR Z,r8
-Instruction at 0x656c is: CP D8
+Instruction at 0x656c is: CP D8 20
 Instruction at 0x656e is: JR Z,r8
-Instruction at 0x6570 is: CP D8
+Instruction at 0x6570 is: CP D8 18
 Instruction at 0x6572 is: JR Z,r8
-Instruction at 0x6574 is: CP D8
+Instruction at 0x6574 is: CP D8 10
 Instruction at 0x6576 is: JR NZ,r8
 Instruction at 0x6578 is: INC (HL)
 Instruction at 0x6579 is: JR r8
@@ -18815,16 +18815,16 @@ Instruction at 0x6580 is: UNDEFINED
 Instruction at 0x6581 is: POP BC
 Instruction at 0x6582 is: RST 00H
 Instruction at 0x6583 is: LD A,(A16)
-Instruction at 0x6586 is: CP D8
+Instruction at 0x6586 is: CP D8 1
 Instruction at 0x6588 is: RET
 Instruction at 0x6589 is: LD A,(A16)
-Instruction at 0x658c is: CP D8
+Instruction at 0x658c is: CP D8 5
 Instruction at 0x658e is: RET
 Instruction at 0x658f is: LD A,(A16)
-Instruction at 0x6592 is: CP D8
+Instruction at 0x6592 is: CP D8 7
 Instruction at 0x6594 is: RET
 Instruction at 0x6595 is: LD A,(A16)
-Instruction at 0x6598 is: CP D8
+Instruction at 0x6598 is: CP D8 8
 Instruction at 0x659a is: RET
 Instruction at 0x659b is: NOP
 Instruction at 0x659c is: OR L
@@ -18840,7 +18840,7 @@ Instruction at 0x65a6 is: OR (HL)
 Instruction at 0x65a7 is: AND C
 Instruction at 0x65a8 is: ADD A,B
 Instruction at 0x65a9 is: RST 00H
-Instruction at 0x65aa is: LD A,d8
+Instruction at 0x65aa is: LD A,d8 5
 Instruction at 0x65ac is: LD HL,d16
 Instruction at 0x65af is: JP A16
 Instruction at 0x65b2 is: CALL A16
@@ -18849,11 +18849,11 @@ Instruction at 0x65b6 is: RET NZ
 Instruction at 0x65b7 is: LD HL,d16
 Instruction at 0x65ba is: INC (HL)
 Instruction at 0x65bb is: LD A,(HL)
-Instruction at 0x65bc is: CP D8
+Instruction at 0x65bc is: CP D8 2
 Instruction at 0x65be is: JR Z,r8
 Instruction at 0x65c0 is: LD HL,d16
 Instruction at 0x65c3 is: JP A16
-Instruction at 0x65c6 is: LD A,d8
+Instruction at 0x65c6 is: LD A,d8 3
 Instruction at 0x65c8 is: LD HL,d16
 Instruction at 0x65cb is: JP A16
 Instruction at 0x65ce is: CALL A16
@@ -18862,9 +18862,9 @@ Instruction at 0x65d2 is: RET NZ
 Instruction at 0x65d3 is: XOR A
 Instruction at 0x65d4 is: LD (A16),A
 Instruction at 0x65d7 is: LDH (A8),A
-Instruction at 0x65d9 is: LD A,d8
+Instruction at 0x65d9 is: LD A,d8 8
 Instruction at 0x65db is: LDH (A8),A
-Instruction at 0x65dd is: LD A,d8
+Instruction at 0x65dd is: LD A,d8 80
 Instruction at 0x65df is: LDH (A8),A
 Instruction at 0x65e1 is: LD HL,d16
 Instruction at 0x65e4 is: CBPREFIX
@@ -18884,16 +18884,16 @@ Instruction at 0x65f4 is: JP A16
 Instruction at 0x65f7 is: LD HL,d16
 Instruction at 0x65fa is: INC (HL)
 Instruction at 0x65fb is: LD A,(HL)
-Instruction at 0x65fc is: CP D8
+Instruction at 0x65fc is: CP D8 4
 Instruction at 0x65fe is: JR Z,r8
-Instruction at 0x6600 is: CP D8
+Instruction at 0x6600 is: CP D8 b
 Instruction at 0x6602 is: JR Z,r8
-Instruction at 0x6604 is: CP D8
+Instruction at 0x6604 is: CP D8 f
 Instruction at 0x6606 is: JR Z,r8
-Instruction at 0x6608 is: CP D8
+Instruction at 0x6608 is: CP D8 18
 Instruction at 0x660a is: JP Z,A16
 Instruction at 0x660d is: RET
-Instruction at 0x660e is: LD A,d8
+Instruction at 0x660e is: LD A,d8 1
 Instruction at 0x6610 is: LD HL,d16
 Instruction at 0x6613 is: LD (HL),A
 Instruction at 0x6614 is: JP A16
@@ -18914,7 +18914,7 @@ Instruction at 0x6630 is: CALL A16
 Instruction at 0x6633 is: RET Z
 Instruction at 0x6634 is: CALL A16
 Instruction at 0x6637 is: RET Z
-Instruction at 0x6638 is: LD A,d8
+Instruction at 0x6638 is: LD A,d8 2
 Instruction at 0x663a is: LD HL,d16
 Instruction at 0x663d is: JP A16
 Instruction at 0x6640 is: NOP
@@ -18928,7 +18928,7 @@ Instruction at 0x6647 is: POP AF
 Instruction at 0x6648 is: CALL NZ,A16
 Instruction at 0x664b is: OR B
 Instruction at 0x664c is: POP AF
-Instruction at 0x664d is: ADC A,D8
+Instruction at 0x664d is: ADC A,D8 c7
 Instruction at 0x664f is: NOP
 Instruction at 0x6650 is: OR B
 Instruction at 0x6651 is: POP AF
@@ -18936,7 +18936,7 @@ Instruction at 0x6652 is: UNDEFINED
 Instruction at 0x6653 is: RST 00H
 Instruction at 0x6654 is: CALL A16
 Instruction at 0x6657 is: RET Z
-Instruction at 0x6658 is: LD A,d8
+Instruction at 0x6658 is: LD A,d8 7
 Instruction at 0x665a is: LD HL,d16
 Instruction at 0x665d is: JP A16
 Instruction at 0x6660 is: CALL A16
@@ -18945,15 +18945,15 @@ Instruction at 0x6664 is: RET NZ
 Instruction at 0x6665 is: LD HL,d16
 Instruction at 0x6668 is: INC (HL)
 Instruction at 0x6669 is: LD A,(HL)
-Instruction at 0x666a is: CP D8
+Instruction at 0x666a is: CP D8 1
 Instruction at 0x666c is: JR Z,r8
-Instruction at 0x666e is: CP D8
+Instruction at 0x666e is: CP D8 2
 Instruction at 0x6670 is: JR Z,r8
-Instruction at 0x6672 is: CP D8
+Instruction at 0x6672 is: CP D8 3
 Instruction at 0x6674 is: JR Z,r8
-Instruction at 0x6676 is: CP D8
+Instruction at 0x6676 is: CP D8 4
 Instruction at 0x6678 is: JR Z,r8
-Instruction at 0x667a is: CP D8
+Instruction at 0x667a is: CP D8 5
 Instruction at 0x667c is: JP Z,A16
 Instruction at 0x667f is: RET
 Instruction at 0x6680 is: LD HL,d16
@@ -18964,7 +18964,7 @@ Instruction at 0x668a is: LD HL,d16
 Instruction at 0x668d is: JR r8
 Instruction at 0x668f is: LD HL,d16
 Instruction at 0x6692 is: JP A16
-Instruction at 0x6695 is: LD A,d8
+Instruction at 0x6695 is: LD A,d8 80
 Instruction at 0x6697 is: UNDEFINED
 Instruction at 0x6698 is: NOP
 Instruction at 0x6699 is: CALL NZ,A16
@@ -18991,7 +18991,7 @@ Instruction at 0x66b3 is: CALL A16
 Instruction at 0x66b6 is: RET Z
 Instruction at 0x66b7 is: CALL A16
 Instruction at 0x66ba is: RET Z
-Instruction at 0x66bb is: LD A,d8
+Instruction at 0x66bb is: LD A,d8 6
 Instruction at 0x66bd is: LD HL,d16
 Instruction at 0x66c0 is: JP A16
 Instruction at 0x66c3 is: CALL A16
@@ -19000,7 +19000,7 @@ Instruction at 0x66c7 is: RET NZ
 Instruction at 0x66c8 is: LD HL,d16
 Instruction at 0x66cb is: LD C,(HL)
 Instruction at 0x66cc is: INC (HL)
-Instruction at 0x66cd is: LD B,d8
+Instruction at 0x66cd is: LD B,d8 0
 Instruction at 0x66cf is: LD HL,d16
 Instruction at 0x66d2 is: ADD HL,BC
 Instruction at 0x66d3 is: LD A,(HL)
@@ -19011,8 +19011,8 @@ Instruction at 0x66d9 is: LD HL,d16
 Instruction at 0x66dc is: ADD HL,BC
 Instruction at 0x66dd is: LD A,(HL)
 Instruction at 0x66de is: LD D,A
-Instruction at 0x66df is: LD B,d8
-Instruction at 0x66e1 is: LD C,d8
+Instruction at 0x66df is: LD B,d8 86
+Instruction at 0x66e1 is: LD C,d8 12
 Instruction at 0x66e3 is: LD A,E
 Instruction at 0x66e4 is: LD (C),A
 Instruction at 0x66e6 is: LD A,D
@@ -19043,7 +19043,7 @@ Instruction at 0x6704 is: CALL A16
 Instruction at 0x6707 is: RET Z
 Instruction at 0x6708 is: CALL A16
 Instruction at 0x670b is: RET Z
-Instruction at 0x670c is: LD A,d8
+Instruction at 0x670c is: LD A,d8 3
 Instruction at 0x670e is: LD HL,d16
 Instruction at 0x6711 is: JP A16
 Instruction at 0x6714 is: CALL A16
@@ -19052,7 +19052,7 @@ Instruction at 0x6718 is: RET NZ
 Instruction at 0x6719 is: LD HL,d16
 Instruction at 0x671c is: LD C,(HL)
 Instruction at 0x671d is: INC (HL)
-Instruction at 0x671e is: LD B,d8
+Instruction at 0x671e is: LD B,d8 0
 Instruction at 0x6720 is: LD HL,d16
 Instruction at 0x6723 is: ADD HL,BC
 Instruction at 0x6724 is: LD A,(HL)
@@ -19063,11 +19063,11 @@ Instruction at 0x672a is: LD HL,d16
 Instruction at 0x672d is: ADD HL,BC
 Instruction at 0x672e is: LD A,(HL)
 Instruction at 0x672f is: LD D,A
-Instruction at 0x6730 is: LD B,d8
+Instruction at 0x6730 is: LD B,d8 87
 Instruction at 0x6732 is: JR r8
 Instruction at 0x6734 is: CALL A16
 Instruction at 0x6737 is: RET Z
-Instruction at 0x6738 is: LD A,d8
+Instruction at 0x6738 is: LD A,d8 28
 Instruction at 0x673a is: LD HL,d16
 Instruction at 0x673d is: JP A16
 Instruction at 0x6740 is: OR A
@@ -19159,7 +19159,7 @@ Instruction at 0x679e is: JR NC,r8
 Instruction at 0x67a0 is: LD C,L
 Instruction at 0x67a1 is: LD H,A
 Instruction at 0x67a2 is: JP A16
-Instruction at 0x67a5 is: LD A,d8
+Instruction at 0x67a5 is: LD A,d8 30
 Instruction at 0x67a7 is: LD HL,d16
 Instruction at 0x67aa is: JP A16
 Instruction at 0x67ad is: CALL A16
@@ -19168,10 +19168,10 @@ Instruction at 0x67b1 is: RET NZ
 Instruction at 0x67b2 is: LD HL,d16
 Instruction at 0x67b5 is: LD A,(HL)
 Instruction at 0x67b6 is: LD C,A
-Instruction at 0x67b7 is: CP D8
+Instruction at 0x67b7 is: CP D8 24
 Instruction at 0x67b9 is: JP Z,A16
 Instruction at 0x67bc is: INC (HL)
-Instruction at 0x67bd is: LD B,d8
+Instruction at 0x67bd is: LD B,d8 0
 Instruction at 0x67bf is: PUSH BC
 Instruction at 0x67c0 is: LD HL,d16
 Instruction at 0x67c3 is: ADD HL,BC
@@ -19182,13 +19182,13 @@ Instruction at 0x67c8 is: LD HL,d16
 Instruction at 0x67cb is: ADD HL,BC
 Instruction at 0x67cc is: LD A,(HL)
 Instruction at 0x67cd is: LDH (A8),A
-Instruction at 0x67cf is: LD A,d8
+Instruction at 0x67cf is: LD A,d8 80
 Instruction at 0x67d1 is: LDH (A8),A
 Instruction at 0x67d3 is: RET
-Instruction at 0x67d4 is: LD A,d8
+Instruction at 0x67d4 is: LD A,d8 20
 Instruction at 0x67d6 is: LD HL,d16
 Instruction at 0x67d9 is: JP A16
-Instruction at 0x67dc is: LD A,d8
+Instruction at 0x67dc is: LD A,d8 12
 Instruction at 0x67de is: LD HL,d16
 Instruction at 0x67e1 is: JP A16
 Instruction at 0x67e4 is: CALL A16
@@ -19196,9 +19196,9 @@ Instruction at 0x67e7 is: AND A
 Instruction at 0x67e8 is: RET NZ
 Instruction at 0x67e9 is: XOR A
 Instruction at 0x67ea is: LD (A16),A
-Instruction at 0x67ed is: LD A,d8
+Instruction at 0x67ed is: LD A,d8 8
 Instruction at 0x67ef is: LDH (A8),A
-Instruction at 0x67f1 is: LD A,d8
+Instruction at 0x67f1 is: LD A,d8 80
 Instruction at 0x67f3 is: LDH (A8),A
 Instruction at 0x67f5 is: LD HL,d16
 Instruction at 0x67f8 is: CBPREFIX
@@ -19206,49 +19206,49 @@ Instruction at 0x67fa is: RET
 Instruction at 0x67fb is: ADD A,B
 Instruction at 0x67fc is: LD A,(HL-) 
 Instruction at 0x67fd is: JR NZ,r8
-Instruction at 0x67ff is: ADD A,D8
+Instruction at 0x67ff is: ADD A,D8 21
 Instruction at 0x6801 is: RETI
 Instruction at 0x6802 is: LD L,(HL)
 Instruction at 0x6803 is: CALL A16
 Instruction at 0x6806 is: LDH A,A8
-Instruction at 0x6808 is: AND D8
+Instruction at 0x6808 is: AND D8 1f
 Instruction at 0x680a is: LD B,A
-Instruction at 0x680b is: LD A,d8
+Instruction at 0x680b is: LD A,d8 d0
 Instruction at 0x680d is: ADD A,B
 Instruction at 0x680e is: LD (A16),A
 Instruction at 0x6811 is: LD HL,d16
 Instruction at 0x6814 is: JP A16
 Instruction at 0x6817 is: LDH A,A8
-Instruction at 0x6819 is: AND D8
+Instruction at 0x6819 is: AND D8 f
 Instruction at 0x681b is: LD B,A
 Instruction at 0x681c is: LD HL,d16
 Instruction at 0x681f is: INC (HL)
 Instruction at 0x6820 is: LD A,(HL)
 Instruction at 0x6821 is: LD HL,d16
-Instruction at 0x6824 is: CP D8
+Instruction at 0x6824 is: CP D8 e
 Instruction at 0x6826 is: JR NC,r8
 Instruction at 0x6828 is: INC (HL)
 Instruction at 0x6829 is: INC (HL)
 Instruction at 0x682a is: LD A,(HL)
-Instruction at 0x682b is: AND D8
+Instruction at 0x682b is: AND D8 f0
 Instruction at 0x682d is: OR B
-Instruction at 0x682e is: LD C,d8
+Instruction at 0x682e is: LD C,d8 1d
 Instruction at 0x6830 is: LD (C),A
-Instruction at 0x6832 is: CP D8
+Instruction at 0x6832 is: CP D8 1e
 Instruction at 0x6834 is: JP Z,A16
 Instruction at 0x6837 is: DEC (HL)
 Instruction at 0x6838 is: DEC (HL)
 Instruction at 0x6839 is: DEC (HL)
 Instruction at 0x683a is: JR r8
 Instruction at 0x683c is: LD A,(A16)
-Instruction at 0x683f is: CP D8
+Instruction at 0x683f is: CP D8 1
 Instruction at 0x6841 is: JP Z,A16
-Instruction at 0x6844 is: CP D8
+Instruction at 0x6844 is: CP D8 2
 Instruction at 0x6846 is: JP Z,A16
 Instruction at 0x6849 is: LD A,(A16)
-Instruction at 0x684c is: CP D8
+Instruction at 0x684c is: CP D8 1
 Instruction at 0x684e is: JP Z,A16
-Instruction at 0x6851 is: CP D8
+Instruction at 0x6851 is: CP D8 2
 Instruction at 0x6853 is: JP Z,A16
 Instruction at 0x6856 is: RET
 Instruction at 0x6857 is: ADD A,B
@@ -19264,7 +19264,7 @@ Instruction at 0x6862 is: EI
 Instruction at 0x6863 is: JR NZ,r8
 Instruction at 0x6865 is: ADD A,A
 Instruction at 0x6866 is: ADD A,B
-Instruction at 0x6867 is: OR D8
+Instruction at 0x6867 is: OR D8 20
 Instruction at 0x6869 is: SUB L
 Instruction at 0x686a is: ADD A,A
 Instruction at 0x686b is: LD HL,d16
@@ -19272,25 +19272,25 @@ Instruction at 0x686e is: CALL A16
 Instruction at 0x6871 is: LD HL,d16
 Instruction at 0x6874 is: LD A,(HL)
 Instruction at 0x6875 is: LD (A16),A
-Instruction at 0x6878 is: LD A,d8
+Instruction at 0x6878 is: LD A,d8 1
 Instruction at 0x687a is: LD (A16),A
 Instruction at 0x687d is: LD HL,d16
 Instruction at 0x6880 is: JP A16
-Instruction at 0x6883 is: LD A,d8
+Instruction at 0x6883 is: LD A,d8 0
 Instruction at 0x6885 is: LD (A16),A
 Instruction at 0x6888 is: LD HL,d16
 Instruction at 0x688b is: LD A,(HL)
 Instruction at 0x688c is: LD (A16),A
 Instruction at 0x688f is: LD HL,d16
 Instruction at 0x6892 is: JR r8
-Instruction at 0x6894 is: LD A,d8
+Instruction at 0x6894 is: LD A,d8 1
 Instruction at 0x6896 is: LD (A16),A
 Instruction at 0x6899 is: LD HL,d16
 Instruction at 0x689c is: LD A,(HL)
 Instruction at 0x689d is: LD (A16),A
 Instruction at 0x68a0 is: LD HL,d16
 Instruction at 0x68a3 is: JR r8
-Instruction at 0x68a5 is: LD A,d8
+Instruction at 0x68a5 is: LD A,d8 2
 Instruction at 0x68a7 is: LD (A16),A
 Instruction at 0x68aa is: LD HL,d16
 Instruction at 0x68ad is: LD A,(HL)
@@ -19300,20 +19300,20 @@ Instruction at 0x68b4 is: JR r8
 Instruction at 0x68b6 is: LD HL,d16
 Instruction at 0x68b9 is: INC (HL)
 Instruction at 0x68ba is: LD A,(HL+)
-Instruction at 0x68bb is: CP D8
+Instruction at 0x68bb is: CP D8 9
 Instruction at 0x68bd is: JR Z,r8
-Instruction at 0x68bf is: CP D8
+Instruction at 0x68bf is: CP D8 13
 Instruction at 0x68c1 is: JR Z,r8
-Instruction at 0x68c3 is: CP D8
+Instruction at 0x68c3 is: CP D8 17
 Instruction at 0x68c5 is: JR Z,r8
-Instruction at 0x68c7 is: CP D8
+Instruction at 0x68c7 is: CP D8 20
 Instruction at 0x68c9 is: JR Z,r8
 Instruction at 0x68cb is: LD A,(HL+)
-Instruction at 0x68cc is: CP D8
+Instruction at 0x68cc is: CP D8 0
 Instruction at 0x68ce is: RET Z
-Instruction at 0x68cf is: CP D8
+Instruction at 0x68cf is: CP D8 1
 Instruction at 0x68d1 is: JR Z,r8
-Instruction at 0x68d3 is: CP D8
+Instruction at 0x68d3 is: CP D8 2
 Instruction at 0x68d5 is: JR Z,r8
 Instruction at 0x68d7 is: RET
 Instruction at 0x68d8 is: INC (HL)
@@ -19336,7 +19336,7 @@ Instruction at 0x68f5 is: CBPREFIX
 Instruction at 0x68f7 is: LD HL,d16
 Instruction at 0x68fa is: CBPREFIX
 Instruction at 0x68fc is: LD A,(A16)
-Instruction at 0x68ff is: CP D8
+Instruction at 0x68ff is: CP D8 5
 Instruction at 0x6901 is: JR Z,r8
 Instruction at 0x6903 is: LD HL,d16
 Instruction at 0x6906 is: JR r8
@@ -19377,28 +19377,28 @@ Instruction at 0x6945 is: LD (DE), A
 Instruction at 0x6946 is: INC E
 Instruction at 0x6947 is: LD (DE), A
 Instruction at 0x6948 is: LD A,E
-Instruction at 0x6949 is: CP D8
+Instruction at 0x6949 is: CP D8 e5
 Instruction at 0x694b is: JR Z,r8
-Instruction at 0x694d is: CP D8
+Instruction at 0x694d is: CP D8 f5
 Instruction at 0x694f is: JR Z,r8
-Instruction at 0x6951 is: CP D8
+Instruction at 0x6951 is: CP D8 fd
 Instruction at 0x6953 is: JR Z,r8
 Instruction at 0x6955 is: RET
 Instruction at 0x6956 is: PUSH BC
-Instruction at 0x6957 is: LD C,d8
-Instruction at 0x6959 is: LD B,d8
+Instruction at 0x6957 is: LD C,d8 10
+Instruction at 0x6959 is: LD B,d8 5
 Instruction at 0x695b is: JR r8
 Instruction at 0x695d is: PUSH BC
-Instruction at 0x695e is: LD C,d8
-Instruction at 0x6960 is: LD B,d8
+Instruction at 0x695e is: LD C,d8 16
+Instruction at 0x6960 is: LD B,d8 4
 Instruction at 0x6962 is: JR r8
 Instruction at 0x6964 is: PUSH BC
-Instruction at 0x6965 is: LD C,d8
-Instruction at 0x6967 is: LD B,d8
+Instruction at 0x6965 is: LD C,d8 1a
+Instruction at 0x6967 is: LD B,d8 5
 Instruction at 0x6969 is: JR r8
 Instruction at 0x696b is: PUSH BC
-Instruction at 0x696c is: LD C,d8
-Instruction at 0x696e is: LD B,d8
+Instruction at 0x696c is: LD C,d8 20
+Instruction at 0x696e is: LD B,d8 4
 Instruction at 0x6970 is: LD A,(HL+)
 Instruction at 0x6971 is: LD (C),A
 Instruction at 0x6973 is: DEC B
@@ -19411,7 +19411,7 @@ Instruction at 0x697c is: INC E
 Instruction at 0x697d is: DEC A
 Instruction at 0x697e is: CBPREFIX
 Instruction at 0x6980 is: LD C,A
-Instruction at 0x6981 is: LD B,d8
+Instruction at 0x6981 is: LD B,d8 0
 Instruction at 0x6983 is: ADD HL,BC
 Instruction at 0x6984 is: LD C,(HL)
 Instruction at 0x6985 is: INC HL
@@ -19433,11 +19433,11 @@ Instruction at 0x6995 is: LD (HL),A
 Instruction at 0x6996 is: POP DE
 Instruction at 0x6997 is: RET
 Instruction at 0x6998 is: PUSH BC
-Instruction at 0x6999 is: LD C,d8
+Instruction at 0x6999 is: LD C,d8 30
 Instruction at 0x699b is: LD A,(HL+)
 Instruction at 0x699c is: LD (C),A
 Instruction at 0x699e is: LD A,C
-Instruction at 0x699f is: CP D8
+Instruction at 0x699f is: CP D8 40
 Instruction at 0x69a1 is: JR NZ,r8
 Instruction at 0x69a3 is: POP BC
 Instruction at 0x69a4 is: RET
@@ -19450,15 +19450,15 @@ Instruction at 0x69b2 is: LD (A16),A
 Instruction at 0x69b5 is: LD (A16),A
 Instruction at 0x69b8 is: LD (A16),A
 Instruction at 0x69bb is: LD (A16),A
-Instruction at 0x69be is: LD A,d8
+Instruction at 0x69be is: LD A,d8 ff
 Instruction at 0x69c0 is: LDH (A8),A
-Instruction at 0x69c2 is: LD A,d8
+Instruction at 0x69c2 is: LD A,d8 3
 Instruction at 0x69c4 is: LD (A16),A
-Instruction at 0x69c7 is: LD A,d8
+Instruction at 0x69c7 is: LD A,d8 8
 Instruction at 0x69c9 is: LDH (A8),A
 Instruction at 0x69cb is: LDH (A8),A
 Instruction at 0x69cd is: LDH (A8),A
-Instruction at 0x69cf is: LD A,d8
+Instruction at 0x69cf is: LD A,d8 80
 Instruction at 0x69d1 is: LDH (A8),A
 Instruction at 0x69d3 is: LDH (A8),A
 Instruction at 0x69d5 is: LDH (A8),A
@@ -19506,12 +19506,12 @@ Instruction at 0x6a21 is: LD HL,d16
 Instruction at 0x6a24 is: LD A,(HL+)
 Instruction at 0x6a25 is: AND A
 Instruction at 0x6a26 is: RET Z
-Instruction at 0x6a27 is: CP D8
+Instruction at 0x6a27 is: CP D8 ff
 Instruction at 0x6a29 is: JR Z,r8
 Instruction at 0x6a2b is: LD (HL),A
 Instruction at 0x6a2c is: LD B,A
 Instruction at 0x6a2d is: LD HL,d16
-Instruction at 0x6a30 is: AND D8
+Instruction at 0x6a30 is: AND D8 1f
 Instruction at 0x6a32 is: CALL A16
 Instruction at 0x6a35 is: CALL A16
 Instruction at 0x6a38 is: CALL A16
@@ -19544,16 +19544,16 @@ Instruction at 0x6a68 is: AND A
 Instruction at 0x6a69 is: JR Z,r8
 Instruction at 0x6a6b is: LD HL,d16
 Instruction at 0x6a6e is: LD A,(A16)
-Instruction at 0x6a71 is: CP D8
+Instruction at 0x6a71 is: CP D8 1
 Instruction at 0x6a73 is: JR Z,r8
-Instruction at 0x6a75 is: CP D8
+Instruction at 0x6a75 is: CP D8 3
 Instruction at 0x6a77 is: JR Z,r8
 Instruction at 0x6a79 is: INC (HL)
 Instruction at 0x6a7a is: LD A,(HL+)
 Instruction at 0x6a7b is: CP (HL)
 Instruction at 0x6a7c is: JR NZ,r8
 Instruction at 0x6a7e is: DEC L
-Instruction at 0x6a7f is: LD (HL),d8
+Instruction at 0x6a7f is: LD (HL),d8 0
 Instruction at 0x6a81 is: INC L
 Instruction at 0x6a82 is: INC L
 Instruction at 0x6a83 is: INC (HL)
@@ -19575,7 +19575,7 @@ Instruction at 0x6aa2 is: CBPREFIX
 Instruction at 0x6aa4 is: LD A,B
 Instruction at 0x6aa5 is: LDH (A8),A
 Instruction at 0x6aa7 is: RET
-Instruction at 0x6aa8 is: LD A,d8
+Instruction at 0x6aa8 is: LD A,d8 ff
 Instruction at 0x6aaa is: JR r8
 Instruction at 0x6aac is: LD A,(A16)
 Instruction at 0x6aaf is: JR r8
@@ -19647,7 +19647,7 @@ Instruction at 0x6b16 is: XOR A
 Instruction at 0x6b17 is: LD (A16),A
 Instruction at 0x6b1a is: LD (A16),A
 Instruction at 0x6b1d is: LD DE,d16
-Instruction at 0x6b20 is: LD B,d8
+Instruction at 0x6b20 is: LD B,d8 0
 Instruction at 0x6b22 is: LD A,(HL+)
 Instruction at 0x6b23 is: LD (DE), A
 Instruction at 0x6b24 is: INC E
@@ -19674,7 +19674,7 @@ Instruction at 0x6b5e is: LD DE,d16
 Instruction at 0x6b61 is: CALL A16
 Instruction at 0x6b64 is: LD BC,d16
 Instruction at 0x6b67 is: LD HL,d16
-Instruction at 0x6b6a is: LD (HL),d8
+Instruction at 0x6b6a is: LD (HL),d8 1
 Instruction at 0x6b6c is: LD A,C
 Instruction at 0x6b6d is: ADD A,L
 Instruction at 0x6b6e is: LD L,A
@@ -19717,7 +19717,7 @@ Instruction at 0x6ba9 is: PUSH HL
 Instruction at 0x6baa is: LD HL,d16
 Instruction at 0x6bad is: LD A,(HL)
 Instruction at 0x6bae is: POP HL
-Instruction at 0x6baf is: CP D8
+Instruction at 0x6baf is: CP D8 3
 Instruction at 0x6bb1 is: JR Z,r8
 Instruction at 0x6bb3 is: CALL A16
 Instruction at 0x6bb6 is: JP A16
@@ -19751,25 +19751,25 @@ Instruction at 0x6bd4 is: RET
 Instruction at 0x6bd5 is: POP HL
 Instruction at 0x6bd6 is: JR r8
 Instruction at 0x6bd8 is: LD A,(A16)
-Instruction at 0x6bdb is: CP D8
+Instruction at 0x6bdb is: CP D8 3
 Instruction at 0x6bdd is: JR NZ,r8
 Instruction at 0x6bdf is: LD A,(A16)
 Instruction at 0x6be2 is: CBPREFIX
 Instruction at 0x6be4 is: JR Z,r8
 Instruction at 0x6be6 is: LD A,(HL)
-Instruction at 0x6be7 is: CP D8
+Instruction at 0x6be7 is: CP D8 6
 Instruction at 0x6be9 is: JR NZ,r8
-Instruction at 0x6beb is: LD A,d8
+Instruction at 0x6beb is: LD A,d8 40
 Instruction at 0x6bed is: LDH (A8),A
 Instruction at 0x6bef is: PUSH HL
 Instruction at 0x6bf0 is: LD A,L
-Instruction at 0x6bf1 is: ADD A,D8
+Instruction at 0x6bf1 is: ADD A,D8 9
 Instruction at 0x6bf3 is: LD L,A
 Instruction at 0x6bf4 is: LD A,(HL)
 Instruction at 0x6bf5 is: AND A
 Instruction at 0x6bf6 is: JR NZ,r8
 Instruction at 0x6bf8 is: LD A,L
-Instruction at 0x6bf9 is: ADD A,D8
+Instruction at 0x6bf9 is: ADD A,D8 4
 Instruction at 0x6bfb is: LD L,A
 Instruction at 0x6bfc is: CBPREFIX
 Instruction at 0x6bfe is: JR NZ,r8
@@ -19784,13 +19784,13 @@ Instruction at 0x6c0b is: DEC L
 Instruction at 0x6c0c is: DEC L
 Instruction at 0x6c0d is: CALL A16
 Instruction at 0x6c10 is: LD A,L
-Instruction at 0x6c11 is: ADD A,D8
+Instruction at 0x6c11 is: ADD A,D8 4
 Instruction at 0x6c13 is: LD E,A
 Instruction at 0x6c14 is: LD D,H
 Instruction at 0x6c15 is: CALL A16
-Instruction at 0x6c18 is: CP D8
+Instruction at 0x6c18 is: CP D8 0
 Instruction at 0x6c1a is: JR Z,r8
-Instruction at 0x6c1c is: CP D8
+Instruction at 0x6c1c is: CP D8 ff
 Instruction at 0x6c1e is: JR Z,r8
 Instruction at 0x6c20 is: INC L
 Instruction at 0x6c21 is: JP A16
@@ -19809,14 +19809,14 @@ Instruction at 0x6c37 is: LD A,D
 Instruction at 0x6c38 is: LD (HL-),A
 Instruction at 0x6c39 is: JR r8
 Instruction at 0x6c3b is: LD HL,d16
-Instruction at 0x6c3e is: LD (HL),d8
+Instruction at 0x6c3e is: LD (HL),d8 0
 Instruction at 0x6c40 is: CALL A16
 Instruction at 0x6c43 is: RET
 Instruction at 0x6c44 is: LD HL,d16
 Instruction at 0x6c47 is: LD A,(HL)
 Instruction at 0x6c48 is: AND A
 Instruction at 0x6c49 is: RET Z
-Instruction at 0x6c4a is: LD A,d8
+Instruction at 0x6c4a is: LD A,d8 1
 Instruction at 0x6c4c is: LD (A16),A
 Instruction at 0x6c4f is: LD HL,d16
 Instruction at 0x6c52 is: INC L
@@ -19828,17 +19828,17 @@ Instruction at 0x6c59 is: JP NZ,A16
 Instruction at 0x6c5c is: INC L
 Instruction at 0x6c5d is: INC L
 Instruction at 0x6c5e is: CALL A16
-Instruction at 0x6c61 is: CP D8
+Instruction at 0x6c61 is: CP D8 0
 Instruction at 0x6c63 is: JP Z,A16
-Instruction at 0x6c66 is: CP D8
+Instruction at 0x6c66 is: CP D8 9d
 Instruction at 0x6c68 is: JP Z,A16
-Instruction at 0x6c6b is: AND D8
-Instruction at 0x6c6d is: CP D8
+Instruction at 0x6c6b is: AND D8 f0
+Instruction at 0x6c6d is: CP D8 a0
 Instruction at 0x6c6f is: JR NZ,r8
 Instruction at 0x6c71 is: LD A,B
-Instruction at 0x6c72 is: AND D8
+Instruction at 0x6c72 is: AND D8 f
 Instruction at 0x6c74 is: LD C,A
-Instruction at 0x6c75 is: LD B,d8
+Instruction at 0x6c75 is: LD B,d8 0
 Instruction at 0x6c77 is: PUSH HL
 Instruction at 0x6c78 is: LD DE,d16
 Instruction at 0x6c7b is: LD A,(DE)
@@ -19855,23 +19855,23 @@ Instruction at 0x6c85 is: CALL A16
 Instruction at 0x6c88 is: CALL A16
 Instruction at 0x6c8b is: LD A,B
 Instruction at 0x6c8c is: LD C,A
-Instruction at 0x6c8d is: LD B,d8
+Instruction at 0x6c8d is: LD B,d8 0
 Instruction at 0x6c8f is: CALL A16
 Instruction at 0x6c92 is: LD A,(A16)
-Instruction at 0x6c95 is: CP D8
+Instruction at 0x6c95 is: CP D8 4
 Instruction at 0x6c97 is: JP Z,A16
 Instruction at 0x6c9a is: PUSH HL
 Instruction at 0x6c9b is: LD A,L
-Instruction at 0x6c9c is: ADD A,D8
+Instruction at 0x6c9c is: ADD A,D8 5
 Instruction at 0x6c9e is: LD L,A
 Instruction at 0x6c9f is: LD E,L
 Instruction at 0x6ca0 is: LD D,H
 Instruction at 0x6ca1 is: INC L
 Instruction at 0x6ca2 is: INC L
 Instruction at 0x6ca3 is: LD A,C
-Instruction at 0x6ca4 is: CP D8
+Instruction at 0x6ca4 is: CP D8 1
 Instruction at 0x6ca6 is: JR Z,r8
-Instruction at 0x6ca8 is: LD (HL),d8
+Instruction at 0x6ca8 is: LD (HL),d8 0
 Instruction at 0x6caa is: LD HL,d16
 Instruction at 0x6cad is: ADD HL,BC
 Instruction at 0x6cae is: LD A,(HL+)
@@ -19881,7 +19881,7 @@ Instruction at 0x6cb1 is: LD A,(HL)
 Instruction at 0x6cb2 is: LD (DE), A
 Instruction at 0x6cb3 is: POP HL
 Instruction at 0x6cb4 is: JP A16
-Instruction at 0x6cb7 is: LD (HL),d8
+Instruction at 0x6cb7 is: LD (HL),d8 1
 Instruction at 0x6cb9 is: POP HL
 Instruction at 0x6cba is: JR r8
 Instruction at 0x6cbc is: PUSH HL
@@ -19892,18 +19892,18 @@ Instruction at 0x6cc4 is: LD A,(HL+)
 Instruction at 0x6cc5 is: LD (DE), A
 Instruction at 0x6cc6 is: INC E
 Instruction at 0x6cc7 is: LD A,E
-Instruction at 0x6cc8 is: CP D8
+Instruction at 0x6cc8 is: CP D8 cb
 Instruction at 0x6cca is: JR NZ,r8
-Instruction at 0x6ccc is: LD C,d8
+Instruction at 0x6ccc is: LD C,d8 20
 Instruction at 0x6cce is: LD HL,d16
 Instruction at 0x6cd1 is: JR r8
 Instruction at 0x6cd3 is: PUSH HL
 Instruction at 0x6cd4 is: LD A,(A16)
-Instruction at 0x6cd7 is: CP D8
+Instruction at 0x6cd7 is: CP D8 1
 Instruction at 0x6cd9 is: JR Z,r8
-Instruction at 0x6cdb is: CP D8
+Instruction at 0x6cdb is: CP D8 2
 Instruction at 0x6cdd is: JR Z,r8
-Instruction at 0x6cdf is: LD C,d8
+Instruction at 0x6cdf is: LD C,d8 1a
 Instruction at 0x6ce1 is: LD A,(A16)
 Instruction at 0x6ce4 is: CBPREFIX
 Instruction at 0x6ce6 is: JR NZ,r8
@@ -19917,12 +19917,12 @@ Instruction at 0x6cf0 is: INC L
 Instruction at 0x6cf1 is: INC L
 Instruction at 0x6cf2 is: LD A,(HL+)
 Instruction at 0x6cf3 is: LD E,A
-Instruction at 0x6cf4 is: LD D,d8
+Instruction at 0x6cf4 is: LD D,d8 0
 Instruction at 0x6cf6 is: JR r8
-Instruction at 0x6cf8 is: LD C,d8
+Instruction at 0x6cf8 is: LD C,d8 16
 Instruction at 0x6cfa is: JR r8
-Instruction at 0x6cfc is: LD C,d8
-Instruction at 0x6cfe is: LD A,d8
+Instruction at 0x6cfc is: LD C,d8 10
+Instruction at 0x6cfe is: LD A,d8 0
 Instruction at 0x6d00 is: INC C
 Instruction at 0x6d01 is: INC L
 Instruction at 0x6d02 is: INC L
@@ -19941,10 +19941,10 @@ Instruction at 0x6d0f is: INC L
 Instruction at 0x6d10 is: LD A,(HL+)
 Instruction at 0x6d11 is: AND A
 Instruction at 0x6d12 is: JR Z,r8
-Instruction at 0x6d14 is: LD E, d8
+Instruction at 0x6d14 is: LD E, d8 1
 Instruction at 0x6d16 is: INC L
 Instruction at 0x6d17 is: INC L
-Instruction at 0x6d18 is: LD (HL),d8
+Instruction at 0x6d18 is: LD (HL),d8 0
 Instruction at 0x6d1a is: INC L
 Instruction at 0x6d1b is: LD A,(HL)
 Instruction at 0x6d1c is: POP HL
@@ -19957,9 +19957,9 @@ Instruction at 0x6d25 is: LD (C),A
 Instruction at 0x6d27 is: LD A,(HL+)
 Instruction at 0x6d28 is: LD (C),A
 Instruction at 0x6d2a is: LD A,(HL)
-Instruction at 0x6d2b is: OR D8
+Instruction at 0x6d2b is: OR D8 80
 Instruction at 0x6d2d is: LD (C),A
-Instruction at 0x6d2f is: OR D8
+Instruction at 0x6d2f is: OR D8 5
 Instruction at 0x6d31 is: LD L,A
 Instruction at 0x6d32 is: CBPREFIX
 Instruction at 0x6d34 is: POP HL
@@ -19969,7 +19969,7 @@ Instruction at 0x6d37 is: LD (HL-),A
 Instruction at 0x6d38 is: DEC L
 Instruction at 0x6d39 is: LD DE,d16
 Instruction at 0x6d3c is: LD A,(DE)
-Instruction at 0x6d3d is: CP D8
+Instruction at 0x6d3d is: CP D8 4
 Instruction at 0x6d3f is: JR Z,r8
 Instruction at 0x6d41 is: INC A
 Instruction at 0x6d42 is: LD (DE), A
@@ -19983,7 +19983,7 @@ Instruction at 0x6d51 is: INC (HL)
 Instruction at 0x6d52 is: LD HL,d16
 Instruction at 0x6d55 is: INC (HL)
 Instruction at 0x6d56 is: RET
-Instruction at 0x6d57 is: LD B,d8
+Instruction at 0x6d57 is: LD B,d8 0
 Instruction at 0x6d59 is: PUSH HL
 Instruction at 0x6d5a is: POP HL
 Instruction at 0x6d5b is: INC L
@@ -19991,27 +19991,27 @@ Instruction at 0x6d5c is: JR r8
 Instruction at 0x6d5e is: LD A,B
 Instruction at 0x6d5f is: CBPREFIX
 Instruction at 0x6d61 is: LD L,A
-Instruction at 0x6d62 is: LD H,d8
+Instruction at 0x6d62 is: LD H,d8 0
 Instruction at 0x6d64 is: ADD HL,DE
 Instruction at 0x6d65 is: LD E,(HL)
 Instruction at 0x6d66 is: RET
 Instruction at 0x6d67 is: PUSH HL
 Instruction at 0x6d68 is: LD A,L
-Instruction at 0x6d69 is: ADD A,D8
+Instruction at 0x6d69 is: ADD A,D8 6
 Instruction at 0x6d6b is: LD L,A
 Instruction at 0x6d6c is: LD A,(HL)
-Instruction at 0x6d6d is: AND D8
+Instruction at 0x6d6d is: AND D8 f
 Instruction at 0x6d6f is: JR Z,r8
 Instruction at 0x6d71 is: LD (A16),A
 Instruction at 0x6d74 is: LD A,(A16)
-Instruction at 0x6d77 is: LD C,d8
-Instruction at 0x6d79 is: CP D8
+Instruction at 0x6d77 is: LD C,d8 13
+Instruction at 0x6d79 is: CP D8 1
 Instruction at 0x6d7b is: JR Z,r8
-Instruction at 0x6d7d is: LD C,d8
-Instruction at 0x6d7f is: CP D8
+Instruction at 0x6d7d is: LD C,d8 18
+Instruction at 0x6d7f is: CP D8 2
 Instruction at 0x6d81 is: JR Z,r8
-Instruction at 0x6d83 is: LD C,d8
-Instruction at 0x6d85 is: CP D8
+Instruction at 0x6d83 is: LD C,d8 1d
+Instruction at 0x6d85 is: CP D8 3
 Instruction at 0x6d87 is: JR Z,r8
 Instruction at 0x6d89 is: POP HL
 Instruction at 0x6d8a is: RET
@@ -20022,13 +20022,13 @@ Instruction at 0x6d8e is: LD A,(HL)
 Instruction at 0x6d8f is: LD D,A
 Instruction at 0x6d90 is: PUSH DE
 Instruction at 0x6d91 is: LD A,L
-Instruction at 0x6d92 is: ADD A,D8
+Instruction at 0x6d92 is: ADD A,D8 4
 Instruction at 0x6d94 is: LD L,A
 Instruction at 0x6d95 is: LD B,(HL)
 Instruction at 0x6d96 is: LD A,(A16)
-Instruction at 0x6d99 is: CP D8
+Instruction at 0x6d99 is: CP D8 1
 Instruction at 0x6d9b is: JR r8
-Instruction at 0x6d9d is: CP D8
+Instruction at 0x6d9d is: CP D8 3
 Instruction at 0x6d9f is: JR r8
 Instruction at 0x6da1 is: LD HL,d16
 Instruction at 0x6da4 is: JR r8
@@ -20038,13 +20038,13 @@ Instruction at 0x6dac is: CBPREFIX
 Instruction at 0x6dae is: JR NZ,r8
 Instruction at 0x6db0 is: CBPREFIX
 Instruction at 0x6db2 is: LD A,E
-Instruction at 0x6db3 is: AND D8
+Instruction at 0x6db3 is: AND D8 f
 Instruction at 0x6db5 is: CBPREFIX
 Instruction at 0x6db7 is: JR Z,r8
-Instruction at 0x6db9 is: LD H,d8
-Instruction at 0x6dbb is: OR D8
+Instruction at 0x6db9 is: LD H,d8 ff
+Instruction at 0x6dbb is: OR D8 f0
 Instruction at 0x6dbd is: JR r8
-Instruction at 0x6dbf is: LD H,d8
+Instruction at 0x6dbf is: LD H,d8 0
 Instruction at 0x6dc1 is: LD L,A
 Instruction at 0x6dc2 is: POP DE
 Instruction at 0x6dc3 is: ADD HL,DE
@@ -20095,14 +20095,14 @@ Instruction at 0x6e04 is: INC L
 Instruction at 0x6e05 is: NOP
 Instruction at 0x6e06 is: SBC A,H
 Instruction at 0x6e07 is: NOP
-Instruction at 0x6e08 is: LD B,d8
+Instruction at 0x6e08 is: LD B,d8 1
 Instruction at 0x6e0a is: LD L,E
 Instruction at 0x6e0b is: LD BC,d16
 Instruction at 0x6e0e is: INC HL
 Instruction at 0x6e0f is: LD (BC),A
 Instruction at 0x6e10 is: LD (HL),A
 Instruction at 0x6e11 is: LD (BC),A
-Instruction at 0x6e12 is: ADD A,D8
+Instruction at 0x6e12 is: ADD A,D8 2
 Instruction at 0x6e14 is: LD (DE), A
 Instruction at 0x6e15 is: INC BC
 Instruction at 0x6e16 is: LD D,(HL)
@@ -20127,22 +20127,22 @@ Instruction at 0x6e2c is: ADC A,C
 Instruction at 0x6e2d is: DEC B
 Instruction at 0x6e2e is: XOR H
 Instruction at 0x6e2f is: DEC B
-Instruction at 0x6e30 is: ADC A,D8
+Instruction at 0x6e30 is: ADC A,D8 5
 Instruction at 0x6e32 is: UNDEFINED
 Instruction at 0x6e33 is: DEC B
 Instruction at 0x6e34 is: LD A,(BC)
-Instruction at 0x6e35 is: LD B,d8
-Instruction at 0x6e37 is: LD B,d8
-Instruction at 0x6e39 is: LD B,d8
-Instruction at 0x6e3b is: LD B,d8
-Instruction at 0x6e3d is: LD B,d8
-Instruction at 0x6e3f is: LD B,d8
-Instruction at 0x6e41 is: LD B,d8
-Instruction at 0x6e43 is: LD B,d8
-Instruction at 0x6e45 is: LD B,d8
-Instruction at 0x6e47 is: LD B,d8
-Instruction at 0x6e49 is: LD B,d8
-Instruction at 0x6e4b is: LD B,d8
+Instruction at 0x6e35 is: LD B,d8 27
+Instruction at 0x6e37 is: LD B,d8 42
+Instruction at 0x6e39 is: LD B,d8 5b
+Instruction at 0x6e3b is: LD B,d8 72
+Instruction at 0x6e3d is: LD B,d8 89
+Instruction at 0x6e3f is: LD B,d8 9e
+Instruction at 0x6e41 is: LD B,d8 b2
+Instruction at 0x6e43 is: LD B,d8 c4
+Instruction at 0x6e45 is: LD B,d8 d6
+Instruction at 0x6e47 is: LD B,d8 e7
+Instruction at 0x6e49 is: LD B,d8 f7
+Instruction at 0x6e4b is: LD B,d8 6
 Instruction at 0x6e4d is: RLCA
 Instruction at 0x6e4e is: INC D
 Instruction at 0x6e4f is: RLCA
@@ -20193,7 +20193,7 @@ Instruction at 0x6e7d is: RLCA
 Instruction at 0x6e7e is: CALL NZ,A16
 Instruction at 0x6e81 is: RLCA
 Instruction at 0x6e82 is: CBPREFIX
-Instruction at 0x6e84 is: ADC A,D8
+Instruction at 0x6e84 is: ADC A,D8 7
 Instruction at 0x6e86 is: POP DE
 Instruction at 0x6e87 is: RLCA
 Instruction at 0x6e88 is: CALL NC,A16
@@ -20231,7 +20231,7 @@ Instruction at 0x6eab is: LD B,L
 Instruction at 0x6eac is: LD H,A
 Instruction at 0x6ead is: SBC A,D
 Instruction at 0x6eae is: CP H
-Instruction at 0x6eaf is: SBC A,D8
+Instruction at 0x6eaf is: SBC A,D8 fe
 Instruction at 0x6eb1 is: SBC A,B
 Instruction at 0x6eb2 is: LD A,D
 Instruction at 0x6eb3 is: OR A
@@ -20259,7 +20259,7 @@ Instruction at 0x6ecc is: LD H,A
 Instruction at 0x6ecd is: ADC A,C
 Instruction at 0x6ece is: XOR E
 Instruction at 0x6ecf is: CALL A16
-Instruction at 0x6ed2 is: CALL C,16
+Instruction at 0x6ed2 is: CALL C,a16
 Instruction at 0x6ed5 is: HALT
 Instruction at 0x6ed6 is: LD D,H
 Instruction at 0x6ed7 is: LD (HL-),A
@@ -20286,7 +20286,7 @@ Instruction at 0x6eef is: HALT
 Instruction at 0x6ef0 is: LD H,A
 Instruction at 0x6ef1 is: SBC A,D
 Instruction at 0x6ef2 is: RST 18H
-Instruction at 0x6ef3 is: CP D8
+Instruction at 0x6ef3 is: CP D8 c9
 Instruction at 0x6ef5 is: ADD A,L
 Instruction at 0x6ef6 is: LD B,D
 Instruction at 0x6ef7 is: LD DE,d16
@@ -20302,9 +20302,9 @@ Instruction at 0x6f07 is: LD A,(BC)
 Instruction at 0x6f08 is: INC D
 Instruction at 0x6f09 is: JR Z,r8
 Instruction at 0x6f0b is: RRCA
-Instruction at 0x6f0c is: LD E, d8
+Instruction at 0x6f0c is: LD E, d8 3c
 Instruction at 0x6f0e is: INC BC
-Instruction at 0x6f0f is: LD B,d8
+Instruction at 0x6f0f is: LD B,d8 c
 Instruction at 0x6f11 is: JR r8
 Instruction at 0x6f13 is: LD H,B
 Instruction at 0x6f14 is: LD (DE), A
@@ -20312,7 +20312,7 @@ Instruction at 0x6f15 is: INC H
 Instruction at 0x6f16 is: LD C,B
 Instruction at 0x6f17 is: LD (a16),SP
 Instruction at 0x6f1a is: RLCA
-Instruction at 0x6f1b is: LD C,d8
+Instruction at 0x6f1b is: LD C,d8 1c
 Instruction at 0x6f1d is: JR Z,r8 
 Instruction at 0x6f1f is: DEC D
 Instruction at 0x6f20 is: LD A,(HL+)
@@ -20330,17 +20330,17 @@ Instruction at 0x6f2e is: INC H
 Instruction at 0x6f2f is: LD C,B
 Instruction at 0x6f30 is: SUB B
 Instruction at 0x6f31 is: DEC DE
-Instruction at 0x6f32 is: LD (HL),d8
+Instruction at 0x6f32 is: LD (HL),d8 6c
 Instruction at 0x6f34 is: INC C
 Instruction at 0x6f35 is: JR r8
 Instruction at 0x6f37 is: LD A,(BC)
 Instruction at 0x6f38 is: INC D
 Instruction at 0x6f39 is: JR Z,r8
 Instruction at 0x6f3b is: AND B
-Instruction at 0x6f3c is: LD E, d8
+Instruction at 0x6f3c is: LD E, d8 3c
 Instruction at 0x6f3e is: LD A,B
 Instruction at 0x6f3f is: NOP
-Instruction at 0x6f40 is: LD C,d8
+Instruction at 0x6f40 is: LD C,d8 6f
 Instruction at 0x6f42 is: LD SP,HL
 Instruction at 0x6f43 is: LD A,H
 Instruction at 0x6f44 is: RST 38H
@@ -20359,7 +20359,7 @@ Instruction at 0x6f52 is: LD A,(HL)
 Instruction at 0x6f53 is: LD C,H
 Instruction at 0x6f54 is: LD A,(HL)
 Instruction at 0x6f55 is: NOP
-Instruction at 0x6f56 is: LD C,d8
+Instruction at 0x6f56 is: LD C,d8 6f
 Instruction at 0x6f58 is: DEC SP
 Instruction at 0x6f59 is: HALT
 Instruction at 0x6f5a is: INC SP
@@ -20380,7 +20380,7 @@ Instruction at 0x6f68 is: HALT
 Instruction at 0x6f69 is: NOP
 Instruction at 0x6f6a is: NOP
 Instruction at 0x6f6b is: NOP
-Instruction at 0x6f6c is: LD C,d8
+Instruction at 0x6f6c is: LD C,d8 6f
 Instruction at 0x6f6e is: LD C,H
 Instruction at 0x6f6f is: LD (HL),C
 Instruction at 0x6f70 is: LD B,D
@@ -20390,14 +20390,14 @@ Instruction at 0x6f73 is: LD (HL),C
 Instruction at 0x6f74 is: LD H,D
 Instruction at 0x6f75 is: LD (HL),C
 Instruction at 0x6f76 is: NOP
-Instruction at 0x6f77 is: LD C,d8
-Instruction at 0x6f79 is: ADD A,D8
+Instruction at 0x6f77 is: LD C,d8 6f
+Instruction at 0x6f79 is: ADD A,D8 72
 Instruction at 0x6f7b is: CP B
 Instruction at 0x6f7c is: LD (HL),D
 Instruction at 0x6f7d is: CALL NC,A16
 Instruction at 0x6f80 is: LD (HL),E
 Instruction at 0x6f81 is: NOP
-Instruction at 0x6f82 is: LD C,d8
+Instruction at 0x6f82 is: LD C,d8 6f
 Instruction at 0x6f84 is: LD (a16),SP
 Instruction at 0x6f87 is: LD L,A
 Instruction at 0x6f88 is: NOP
@@ -20416,7 +20416,7 @@ Instruction at 0x6f94 is: LD A,(HL)
 Instruction at 0x6f95 is: OR L
 Instruction at 0x6f96 is: LD A,(HL)
 Instruction at 0x6f97 is: NOP
-Instruction at 0x6f98 is: LD C,d8
+Instruction at 0x6f98 is: LD C,d8 6f
 Instruction at 0x6f9a is: JR Z,r8
 Instruction at 0x6f9c is: INC H
 Instruction at 0x6f9d is: LD A,H
@@ -20425,7 +20425,7 @@ Instruction at 0x6f9f is: LD A,H
 Instruction at 0x6fa0 is: INC L
 Instruction at 0x6fa1 is: LD A,H
 Instruction at 0x6fa2 is: NOP
-Instruction at 0x6fa3 is: LD C,d8
+Instruction at 0x6fa3 is: LD C,d8 6f
 Instruction at 0x6fa5 is: NOP
 Instruction at 0x6fa6 is: NOP
 Instruction at 0x6fa7 is: NOP
@@ -20435,16 +20435,16 @@ Instruction at 0x6faa is: NOP
 Instruction at 0x6fab is: NOP
 Instruction at 0x6fac is: NOP
 Instruction at 0x6fad is: NOP
-Instruction at 0x6fae is: LD C,d8
+Instruction at 0x6fae is: LD C,d8 6f
 Instruction at 0x6fb0 is: NOP
 Instruction at 0x6fb1 is: NOP
-Instruction at 0x6fb2 is: LD H,d8
+Instruction at 0x6fb2 is: LD H,d8 7a
 Instruction at 0x6fb4 is: LD A,(HL+)
 Instruction at 0x6fb5 is: LD A,D
 Instruction at 0x6fb6 is: NOP
 Instruction at 0x6fb7 is: NOP
 Instruction at 0x6fb8 is: NOP
-Instruction at 0x6fb9 is: LD C,d8
+Instruction at 0x6fb9 is: LD C,d8 6f
 Instruction at 0x6fbb is: LD (HL),E
 Instruction at 0x6fbc is: LD A,D
 Instruction at 0x6fbd is: LD L,A
@@ -20454,7 +20454,7 @@ Instruction at 0x6fc0 is: LD A,D
 Instruction at 0x6fc1 is: NOP
 Instruction at 0x6fc2 is: NOP
 Instruction at 0x6fc3 is: NOP
-Instruction at 0x6fc4 is: LD C,d8
+Instruction at 0x6fc4 is: LD C,d8 6f
 Instruction at 0x6fc6 is: RST 18H
 Instruction at 0x6fc7 is: LD A,D
 Instruction at 0x6fc8 is: UNDEFINED
@@ -20464,7 +20464,7 @@ Instruction at 0x6fcb is: LD A,D
 Instruction at 0x6fcc is: RST 20H
 Instruction at 0x6fcd is: LD A,D
 Instruction at 0x6fce is: NOP
-Instruction at 0x6fcf is: LD C,d8
+Instruction at 0x6fcf is: LD C,d8 6f
 Instruction at 0x6fd1 is: LD H,L
 Instruction at 0x6fd2 is: LD A,E
 Instruction at 0x6fd3 is: LD L,E
@@ -20474,7 +20474,7 @@ Instruction at 0x6fd6 is: LD A,E
 Instruction at 0x6fd7 is: LD (HL),E
 Instruction at 0x6fd8 is: LD A,E
 Instruction at 0x6fd9 is: NOP
-Instruction at 0x6fda is: LD C,d8
+Instruction at 0x6fda is: LD C,d8 6f
 Instruction at 0x6fdc is: LD L,H
 Instruction at 0x6fdd is: LD A,B
 Instruction at 0x6fde is: HALT
@@ -20495,7 +20495,7 @@ Instruction at 0x6fec is: LD (HL),L
 Instruction at 0x6fed is: NOP
 Instruction at 0x6fee is: NOP
 Instruction at 0x6fef is: NOP
-Instruction at 0x6ff0 is: LD C,d8
+Instruction at 0x6ff0 is: LD C,d8 6f
 Instruction at 0x6ff2 is: ADC A,L
 Instruction at 0x6ff3 is: LD (HL),L
 Instruction at 0x6ff4 is: SUB L
@@ -20504,10 +20504,10 @@ Instruction at 0x6ff6 is: SBC A,E
 Instruction at 0x6ff7 is: LD (HL),L
 Instruction at 0x6ff8 is: NOP
 Instruction at 0x6ff9 is: NOP
-Instruction at 0x6ffa is: LD D,d8
+Instruction at 0x6ffa is: LD D,d8 70
 Instruction at 0x6ffc is: INC (HL)
 Instruction at 0x6ffd is: LD (HL),B
-Instruction at 0x6ffe is: LD D,d8
+Instruction at 0x6ffe is: LD D,d8 70
 Instruction at 0x7000 is: LD C,L
 Instruction at 0x7001 is: LD (HL),B
 Instruction at 0x7002 is: SUB E
@@ -20539,7 +20539,7 @@ Instruction at 0x701f is: LD B,D
 Instruction at 0x7020 is: LD C,H
 Instruction at 0x7021 is: LD B,H
 Instruction at 0x7022 is: LD C,H
-Instruction at 0x7023 is: LD A,d8
+Instruction at 0x7023 is: LD A,d8 4c
 Instruction at 0x7025 is: INC A
 Instruction at 0x7026 is: LD C,H
 Instruction at 0x7027 is: LD B,H
@@ -20550,14 +20550,14 @@ Instruction at 0x702b is: LD B,D
 Instruction at 0x702c is: LD C,H
 Instruction at 0x702d is: LD B,H
 Instruction at 0x702e is: LD C,H
-Instruction at 0x702f is: LD A,d8
+Instruction at 0x702f is: LD A,d8 4c
 Instruction at 0x7031 is: INC A
 Instruction at 0x7032 is: LD C,H
 Instruction at 0x7033 is: NOP
 Instruction at 0x7034 is: LD B,H
 Instruction at 0x7035 is: LD C,H
 Instruction at 0x7036 is: LD B,H
-Instruction at 0x7037 is: LD A,d8
+Instruction at 0x7037 is: LD A,d8 4e
 Instruction at 0x7039 is: LD C,B
 Instruction at 0x703a is: LD B,D
 Instruction at 0x703b is: LD C,B
@@ -20565,11 +20565,11 @@ Instruction at 0x703c is: LD B,D
 Instruction at 0x703d is: LD A,(HL-) 
 Instruction at 0x703e is: LD C,H
 Instruction at 0x703f is: LD B,H
-Instruction at 0x7040 is: LD A,d8
+Instruction at 0x7040 is: LD A,d8 4c
 Instruction at 0x7042 is: LD C,B
 Instruction at 0x7043 is: LD B,H
 Instruction at 0x7044 is: LD B,D
-Instruction at 0x7045 is: LD A,d8
+Instruction at 0x7045 is: LD A,d8 3c
 Instruction at 0x7047 is: INC (HL)
 Instruction at 0x7048 is: INC A
 Instruction at 0x7049 is: LD B,D
@@ -20579,7 +20579,7 @@ Instruction at 0x704c is: NOP
 Instruction at 0x704d is: LD B,H
 Instruction at 0x704e is: LD C,H
 Instruction at 0x704f is: LD B,H
-Instruction at 0x7050 is: LD A,d8
+Instruction at 0x7050 is: LD A,d8 4e
 Instruction at 0x7052 is: LD C,B
 Instruction at 0x7053 is: LD B,D
 Instruction at 0x7054 is: LD C,B
@@ -20601,28 +20601,28 @@ Instruction at 0x7063 is: LD H,H
 Instruction at 0x7064 is: NOP
 Instruction at 0x7065 is: LD B,C
 Instruction at 0x7066 is: AND E
-Instruction at 0x7067 is: LD H,d8
+Instruction at 0x7067 is: LD H,d8 3e
 Instruction at 0x7069 is: INC A
-Instruction at 0x706a is: LD H,d8
+Instruction at 0x706a is: LD H,d8 2c
 Instruction at 0x706c is: INC (HL)
-Instruction at 0x706d is: LD A,d8
+Instruction at 0x706d is: LD A,d8 36
 Instruction at 0x706f is: INC (HL)
-Instruction at 0x7070 is: LD A,d8
+Instruction at 0x7070 is: LD A,d8 2c
 Instruction at 0x7072 is: INC (HL)
 Instruction at 0x7073 is: NOP
-Instruction at 0x7074 is: LD H,d8
+Instruction at 0x7074 is: LD H,d8 3e
 Instruction at 0x7076 is: JR NC,r8
 Instruction at 0x7078 is: LD A,(HL-) 
 Instruction at 0x7079 is: INC L
-Instruction at 0x707a is: LD E, d8
+Instruction at 0x707a is: LD E, d8 36
 Instruction at 0x707c is: JR NC,r8
 Instruction at 0x707e is: INC (HL)
-Instruction at 0x707f is: LD (HL),d8
+Instruction at 0x707f is: LD (HL),d8 34
 Instruction at 0x7081 is: JR NC,r8
 Instruction at 0x7083 is: LD A,(HL+)
 Instruction at 0x7084 is: NOP
 Instruction at 0x7085 is: AND E
-Instruction at 0x7086 is: LD H,d8
+Instruction at 0x7086 is: LD H,d8 3e
 Instruction at 0x7088 is: JR NC,r8
 Instruction at 0x708a is: LD A,(HL-) 
 Instruction at 0x708b is: LD A,(HL+)
@@ -20754,7 +20754,7 @@ Instruction at 0x710c is: LD A,(HL-)
 Instruction at 0x710d is: INC L
 Instruction at 0x710e is: INC (HL)
 Instruction at 0x710f is: INC L
-Instruction at 0x7110 is: LD H,d8
+Instruction at 0x7110 is: LD H,d8 3e
 Instruction at 0x7112 is: JR Z,r8 
 Instruction at 0x7114 is: JR Z,r8 
 Instruction at 0x7116 is: JR Z,r8 
@@ -20768,9 +20768,9 @@ Instruction at 0x711f is: LD A,(HL-)
 Instruction at 0x7120 is: LD B,D
 Instruction at 0x7121 is: LD A,(HL-) 
 Instruction at 0x7122 is: JR NC,r8
-Instruction at 0x7124 is: LD L,d8
-Instruction at 0x7126 is: LD H,d8
-Instruction at 0x7128 is: LD L,d8
+Instruction at 0x7124 is: LD L,d8 34
+Instruction at 0x7126 is: LD H,d8 34
+Instruction at 0x7128 is: LD L,d8 34
 Instruction at 0x712a is: XOR B
 Instruction at 0x712b is: JR NC,r8
 Instruction at 0x712d is: LD (HL-),A
@@ -20787,7 +20787,7 @@ Instruction at 0x713a is: JR NZ,r8
 Instruction at 0x713c is: INC L
 Instruction at 0x713d is: JR NC,r8
 Instruction at 0x713f is: XOR B
-Instruction at 0x7140 is: LD H,d8
+Instruction at 0x7140 is: LD H,d8 0
 Instruction at 0x7142 is: LD L,B
 Instruction at 0x7143 is: LD (HL),C
 Instruction at 0x7144 is: LD L,B
@@ -20897,7 +20897,7 @@ Instruction at 0x71b1 is: ADD A,C
 Instruction at 0x71b2 is: AND H
 Instruction at 0x71b3 is: LD A,(HL-) 
 Instruction at 0x71b4 is: LD (HL-),A
-Instruction at 0x71b5 is: LD (HL),d8
+Instruction at 0x71b5 is: LD (HL),d8 30
 Instruction at 0x71b7 is: AND H
 Instruction at 0x71b8 is: LD (HL-),A
 Instruction at 0x71b9 is: INC L
@@ -20906,7 +20906,7 @@ Instruction at 0x71bb is: LD A,(HL+)
 Instruction at 0x71bc is: AND E
 Instruction at 0x71bd is: LD BC,d16
 Instruction at 0x71c0 is: LD (HL-),A
-Instruction at 0x71c1 is: LD (HL),d8
+Instruction at 0x71c1 is: LD (HL),d8 30
 Instruction at 0x71c3 is: AND E
 Instruction at 0x71c4 is: LD (HL-),A
 Instruction at 0x71c5 is: LD A,(HL-) 
@@ -21009,7 +21009,7 @@ Instruction at 0x7233 is: INC L
 Instruction at 0x7234 is: LD (HL-),A
 Instruction at 0x7235 is: AND H
 Instruction at 0x7236 is: LD A,(HL-) 
-Instruction at 0x7237 is: LD (HL),d8
+Instruction at 0x7237 is: LD (HL),d8 1
 Instruction at 0x7239 is: NOP
 Instruction at 0x723a is: SBC A,L
 Instruction at 0x723b is: RET
@@ -21046,9 +21046,9 @@ Instruction at 0x725a is: LD B,H
 Instruction at 0x725b is: INC L
 Instruction at 0x725c is: LD B,H
 Instruction at 0x725d is: JR NC,r8
-Instruction at 0x725f is: LD (HL),d8
+Instruction at 0x725f is: LD (HL),d8 1e
 Instruction at 0x7261 is: LD BC,d16
-Instruction at 0x7264 is: LD E, d8
+Instruction at 0x7264 is: LD E, d8 2c
 Instruction at 0x7266 is: INC H
 Instruction at 0x7267 is: LD A,(DE)
 Instruction at 0x7268 is: LD (HL-),A
@@ -21098,15 +21098,15 @@ Instruction at 0x729f is: LD D,D
 Instruction at 0x72a0 is: AND H
 Instruction at 0x72a1 is: LD BC,d16
 Instruction at 0x72a4 is: LD BC,d16
-Instruction at 0x72a7 is: LD B,d8
+Instruction at 0x72a7 is: LD B,d8 1
 Instruction at 0x72a9 is: AND C
-Instruction at 0x72aa is: LD B,d8
+Instruction at 0x72aa is: LD B,d8 6
 Instruction at 0x72ac is: AND D
 Instruction at 0x72ad is: LD BC,d16
-Instruction at 0x72b0 is: LD B,d8
-Instruction at 0x72b2 is: LD B,d8
-Instruction at 0x72b4 is: LD B,d8
-Instruction at 0x72b6 is: LD B,d8
+Instruction at 0x72b0 is: LD B,d8 1
+Instruction at 0x72b2 is: LD B,d8 1
+Instruction at 0x72b4 is: LD B,d8 6
+Instruction at 0x72b6 is: LD B,d8 0
 Instruction at 0x72b8 is: DEC BC
 Instruction at 0x72b9 is: LD (HL),E
 Instruction at 0x72ba is: CCF
@@ -21131,7 +21131,7 @@ Instruction at 0x72ce is: LD C,E
 Instruction at 0x72cf is: LD (HL),H
 Instruction at 0x72d0 is: RST 38H
 Instruction at 0x72d1 is: RST 38H
-Instruction at 0x72d2 is: ADD A,D8
+Instruction at 0x72d2 is: ADD A,D8 72
 Instruction at 0x72d4 is: RRA
 Instruction at 0x72d5 is: LD (HL),E
 Instruction at 0x72d6 is: LD D,E
@@ -21150,18 +21150,18 @@ Instruction at 0x72e2 is: OR L
 Instruction at 0x72e3 is: LD (HL),E
 Instruction at 0x72e4 is: RET NZ
 Instruction at 0x72e5 is: LD (HL),H
-Instruction at 0x72e6 is: SBC A,D8
-Instruction at 0x72e8 is: SBC A,D8
-Instruction at 0x72ea is: SBC A,D8
-Instruction at 0x72ec is: XOR D8
-Instruction at 0x72ee is: CP D8
-Instruction at 0x72f0 is: CP D8
-Instruction at 0x72f2 is: LD C,d8
-Instruction at 0x72f4 is: LD C,d8
-Instruction at 0x72f6 is: LD E, d8
-Instruction at 0x72f8 is: LD E, d8
-Instruction at 0x72fa is: LD C,d8
-Instruction at 0x72fc is: LD L,d8
+Instruction at 0x72e6 is: SBC A,D8 74
+Instruction at 0x72e8 is: SBC A,D8 74
+Instruction at 0x72ea is: SBC A,D8 74
+Instruction at 0x72ec is: XOR D8 74
+Instruction at 0x72ee is: CP D8 74
+Instruction at 0x72f0 is: CP D8 74
+Instruction at 0x72f2 is: LD C,d8 75
+Instruction at 0x72f4 is: LD C,d8 75
+Instruction at 0x72f6 is: LD E, d8 75
+Instruction at 0x72f8 is: LD E, d8 75
+Instruction at 0x72fa is: LD C,d8 75
+Instruction at 0x72fc is: LD L,d8 75
 Instruction at 0x72fe is: RST 38H
 Instruction at 0x72ff is: RST 38H
 Instruction at 0x7300 is: CALL NC,A16
@@ -21208,10 +21208,10 @@ Instruction at 0x732f is: AND D
 Instruction at 0x7330 is: JR NC,r8
 Instruction at 0x7332 is: NOP
 Instruction at 0x7333 is: AND D
-Instruction at 0x7334 is: LD B,d8
-Instruction at 0x7336 is: LD B,d8
+Instruction at 0x7334 is: LD B,d8 a1
+Instruction at 0x7336 is: LD B,d8 6
 Instruction at 0x7338 is: AND D
-Instruction at 0x7339 is: LD B,d8
+Instruction at 0x7339 is: LD B,d8 6
 Instruction at 0x733b is: NOP
 Instruction at 0x733c is: AND L
 Instruction at 0x733d is: LD BC,d16
@@ -21272,17 +21272,17 @@ Instruction at 0x7379 is: LD B,B
 Instruction at 0x737a is: LD B,B
 Instruction at 0x737b is: AND D
 Instruction at 0x737c is: LD B,H
-Instruction at 0x737d is: LD A,d8
+Instruction at 0x737d is: LD A,d8 40
 Instruction at 0x737f is: AND C
 Instruction at 0x7380 is: LD A,(HL-) 
 Instruction at 0x7381 is: LD A,(HL-) 
 Instruction at 0x7382 is: AND D
-Instruction at 0x7383 is: LD A,d8
+Instruction at 0x7383 is: LD A,d8 38
 Instruction at 0x7385 is: LD A,(HL-) 
 Instruction at 0x7386 is: JR NC,r8
 Instruction at 0x7388 is: JR Z,r8 
 Instruction at 0x738a is: JR NC,r8
-Instruction at 0x738c is: LD A,d8
+Instruction at 0x738c is: LD A,d8 0
 Instruction at 0x738e is: SBC A,L
 Instruction at 0x738f is: LD D,E
 Instruction at 0x7390 is: NOP
@@ -21293,17 +21293,17 @@ Instruction at 0x7395 is: LD B,B
 Instruction at 0x7396 is: LD B,H
 Instruction at 0x7397 is: LD B,B
 Instruction at 0x7398 is: AND C
-Instruction at 0x7399 is: LD A,d8
+Instruction at 0x7399 is: LD A,d8 40
 Instruction at 0x739b is: AND D
 Instruction at 0x739c is: LD B,H
-Instruction at 0x739d is: LD A,d8
+Instruction at 0x739d is: LD A,d8 40
 Instruction at 0x739f is: AND C
 Instruction at 0x73a0 is: JR Z,r8 
 Instruction at 0x73a2 is: AND D
-Instruction at 0x73a3 is: LD A,d8
+Instruction at 0x73a3 is: LD A,d8 38
 Instruction at 0x73a5 is: LD A,(HL-) 
 Instruction at 0x73a6 is: AND C
-Instruction at 0x73a7 is: LD L,d8
+Instruction at 0x73a7 is: LD L,d8 30
 Instruction at 0x73a9 is: AND D
 Instruction at 0x73aa is: JR Z,r8 
 Instruction at 0x73ac is: JR NC,r8
@@ -21333,24 +21333,24 @@ Instruction at 0x73c8 is: NOP
 Instruction at 0x73c9 is: XOR B
 Instruction at 0x73ca is: LD A,(HL-) 
 Instruction at 0x73cb is: AND D
-Instruction at 0x73cc is: LD A,d8
+Instruction at 0x73cc is: LD A,d8 38
 Instruction at 0x73ce is: XOR B
 Instruction at 0x73cf is: LD A,(HL-) 
 Instruction at 0x73d0 is: AND E
-Instruction at 0x73d1 is: LD A,d8
+Instruction at 0x73d1 is: LD A,d8 a2
 Instruction at 0x73d3 is: LD B,B
 Instruction at 0x73d4 is: AND C
 Instruction at 0x73d5 is: LD B,B
 Instruction at 0x73d6 is: LD B,B
 Instruction at 0x73d7 is: AND D
 Instruction at 0x73d8 is: LD B,H
-Instruction at 0x73d9 is: LD A,d8
+Instruction at 0x73d9 is: LD A,d8 40
 Instruction at 0x73db is: AND C
 Instruction at 0x73dc is: LD B,B
 Instruction at 0x73dd is: LD B,B
 Instruction at 0x73de is: AND D
 Instruction at 0x73df is: LD B,H
-Instruction at 0x73e0 is: LD A,d8
+Instruction at 0x73e0 is: LD A,d8 a8
 Instruction at 0x73e2 is: LD B,B
 Instruction at 0x73e3 is: AND E
 Instruction at 0x73e4 is: LD B,H
@@ -21417,32 +21417,32 @@ Instruction at 0x7420 is: LD C,D
 Instruction at 0x7421 is: AND D
 Instruction at 0x7422 is: LD C,D
 Instruction at 0x7423 is: LD B,H
-Instruction at 0x7424 is: LD A,d8
+Instruction at 0x7424 is: LD A,d8 40
 Instruction at 0x7426 is: LD B,H
-Instruction at 0x7427 is: LD (HL),d8
+Instruction at 0x7427 is: LD (HL),d8 44
 Instruction at 0x7429 is: AND C
 Instruction at 0x742a is: LD B,B
 Instruction at 0x742b is: LD B,B
 Instruction at 0x742c is: AND D
-Instruction at 0x742d is: LD (HL),d8
+Instruction at 0x742d is: LD (HL),d8 a3
 Instruction at 0x742f is: LD B,B
 Instruction at 0x7430 is: AND C
-Instruction at 0x7431 is: LD (HL),d8
+Instruction at 0x7431 is: LD (HL),d8 3a
 Instruction at 0x7433 is: AND D
-Instruction at 0x7434 is: LD (HL),d8
+Instruction at 0x7434 is: LD (HL),d8 30
 Instruction at 0x7436 is: LD B,H
 Instruction at 0x7437 is: AND C
 Instruction at 0x7438 is: LD B,B
 Instruction at 0x7439 is: LD B,B
 Instruction at 0x743a is: AND D
-Instruction at 0x743b is: LD (HL),d8
+Instruction at 0x743b is: LD (HL),d8 a3
 Instruction at 0x743d is: LD B,B
 Instruction at 0x743e is: AND C
-Instruction at 0x743f is: LD (HL),d8
+Instruction at 0x743f is: LD (HL),d8 3a
 Instruction at 0x7441 is: AND D
-Instruction at 0x7442 is: LD (HL),d8
+Instruction at 0x7442 is: LD (HL),d8 2e
 Instruction at 0x7444 is: AND L
-Instruction at 0x7445 is: LD (HL),d8
+Instruction at 0x7445 is: LD (HL),d8 a8
 Instruction at 0x7447 is: LD BC,d16
 Instruction at 0x744a is: NOP
 Instruction at 0x744b is: XOR B
@@ -21450,63 +21450,63 @@ Instruction at 0x744c is: JR NC,r8
 Instruction at 0x744e is: JR NC,r8
 Instruction at 0x7450 is: XOR B
 Instruction at 0x7451 is: JR NC,r8
-Instruction at 0x7453 is: LD (HL),d8
+Instruction at 0x7453 is: LD (HL),d8 a5
 Instruction at 0x7455 is: LD BC,d16
 Instruction at 0x7458 is: AND E
-Instruction at 0x7459 is: LD A,d8
+Instruction at 0x7459 is: LD A,d8 a2
 Instruction at 0x745b is: LD B,B
 Instruction at 0x745c is: AND C
 Instruction at 0x745d is: LD B,B
 Instruction at 0x745e is: LD B,B
 Instruction at 0x745f is: AND D
 Instruction at 0x7460 is: LD B,H
-Instruction at 0x7461 is: LD A,d8
+Instruction at 0x7461 is: LD A,d8 40
 Instruction at 0x7463 is: AND C
 Instruction at 0x7464 is: LD B,B
 Instruction at 0x7465 is: LD B,B
 Instruction at 0x7466 is: AND D
 Instruction at 0x7467 is: LD B,H
-Instruction at 0x7468 is: LD A,d8
-Instruction at 0x746a is: LD (HL),d8
+Instruction at 0x7468 is: LD A,d8 a8
+Instruction at 0x746a is: LD (HL),d8 a3
 Instruction at 0x746c is: LD A,(HL-) 
 Instruction at 0x746d is: AND D
-Instruction at 0x746e is: LD A,d8
+Instruction at 0x746e is: LD A,d8 a1
 Instruction at 0x7470 is: LD B,B
 Instruction at 0x7471 is: LD B,H
 Instruction at 0x7472 is: AND D
-Instruction at 0x7473 is: LD A,d8
+Instruction at 0x7473 is: LD A,d8 44
 Instruction at 0x7475 is: LD C,B
 Instruction at 0x7476 is: LD C,B
 Instruction at 0x7477 is: LD C,B
 Instruction at 0x7478 is: LD A,(HL-) 
-Instruction at 0x7479 is: LD A,d8
+Instruction at 0x7479 is: LD A,d8 a1
 Instruction at 0x747b is: LD B,B
 Instruction at 0x747c is: LD B,H
 Instruction at 0x747d is: AND D
-Instruction at 0x747e is: LD A,d8
+Instruction at 0x747e is: LD A,d8 44
 Instruction at 0x7480 is: LD B,(HL)
 Instruction at 0x7481 is: LD B,(HL)
 Instruction at 0x7482 is: LD B,(HL)
 Instruction at 0x7483 is: LD A,(HL-) 
-Instruction at 0x7484 is: LD A,d8
+Instruction at 0x7484 is: LD A,d8 a1
 Instruction at 0x7486 is: LD B,B
 Instruction at 0x7487 is: LD B,H
 Instruction at 0x7488 is: AND D
-Instruction at 0x7489 is: LD A,d8
+Instruction at 0x7489 is: LD A,d8 44
 Instruction at 0x748b is: LD A,(HL-) 
 Instruction at 0x748c is: AND C
-Instruction at 0x748d is: LD A,d8
+Instruction at 0x748d is: LD A,d8 40
 Instruction at 0x748f is: AND D
 Instruction at 0x7490 is: LD A,(HL-) 
 Instruction at 0x7491 is: LD B,B
 Instruction at 0x7492 is: LD A,(HL-) 
 Instruction at 0x7493 is: AND C
-Instruction at 0x7494 is: LD A,d8
+Instruction at 0x7494 is: LD A,d8 40
 Instruction at 0x7496 is: AND D
-Instruction at 0x7497 is: LD A,d8
+Instruction at 0x7497 is: LD A,d8 3e
 Instruction at 0x7499 is: INC L
 Instruction at 0x749a is: LD A,(HL-) 
-Instruction at 0x749b is: LD A,d8
+Instruction at 0x749b is: LD A,d8 26
 Instruction at 0x749d is: JR NC,r8
 Instruction at 0x749f is: JR NC,r8
 Instruction at 0x74a1 is: AND D
@@ -21515,16 +21515,16 @@ Instruction at 0x74a4 is: JR NC,r8
 Instruction at 0x74a6 is: JR NC,r8
 Instruction at 0x74a8 is: AND D
 Instruction at 0x74a9 is: JR NC,r8
-Instruction at 0x74ab is: LD L,d8
-Instruction at 0x74ad is: LD L,d8
+Instruction at 0x74ab is: LD L,d8 a1
+Instruction at 0x74ad is: LD L,d8 2e
 Instruction at 0x74af is: AND D
-Instruction at 0x74b0 is: LD L,d8
-Instruction at 0x74b2 is: LD L,d8
-Instruction at 0x74b4 is: LD L,d8
+Instruction at 0x74b0 is: LD L,d8 a3
+Instruction at 0x74b2 is: LD L,d8 a1
+Instruction at 0x74b4 is: LD L,d8 32
 Instruction at 0x74b6 is: AND D
-Instruction at 0x74b7 is: LD L,d8
+Instruction at 0x74b7 is: LD L,d8 28
 Instruction at 0x74b9 is: AND L
-Instruction at 0x74ba is: LD H,d8
+Instruction at 0x74ba is: LD H,d8 a8
 Instruction at 0x74bc is: LD BC,d16
 Instruction at 0x74bf is: NOP
 Instruction at 0x74c0 is: AND D
@@ -21554,22 +21554,22 @@ Instruction at 0x74d8 is: LD A,(HL-)
 Instruction at 0x74d9 is: LD A,(HL-) 
 Instruction at 0x74da is: AND D
 Instruction at 0x74db is: INC L
-Instruction at 0x74dc is: LD E, d8
+Instruction at 0x74dc is: LD E, d8 0
 Instruction at 0x74de is: AND D
 Instruction at 0x74df is: JR Z,r8
 Instruction at 0x74e1 is: LD B,B
 Instruction at 0x74e2 is: JR Z,r8
-Instruction at 0x74e4 is: LD E, d8
+Instruction at 0x74e4 is: LD E, d8 36
 Instruction at 0x74e6 is: JR Z,r8
 Instruction at 0x74e8 is: LD B,B
 Instruction at 0x74e9 is: JR Z,r8
-Instruction at 0x74eb is: LD E, d8
+Instruction at 0x74eb is: LD E, d8 36
 Instruction at 0x74ed is: NOP
 Instruction at 0x74ee is: AND D
 Instruction at 0x74ef is: JR Z,r8
 Instruction at 0x74f1 is: LD B,B
 Instruction at 0x74f2 is: JR Z,r8
-Instruction at 0x74f4 is: LD E, d8
+Instruction at 0x74f4 is: LD E, d8 36
 Instruction at 0x74f6 is: JR Z,r8
 Instruction at 0x74f8 is: LD B,B
 Instruction at 0x74f9 is: JR Z,r8
@@ -21577,24 +21577,24 @@ Instruction at 0x74fb is: INC L
 Instruction at 0x74fc is: LD B,H
 Instruction at 0x74fd is: NOP
 Instruction at 0x74fe is: AND D
-Instruction at 0x74ff is: LD E, d8
-Instruction at 0x7501 is: LD (HL),d8
+Instruction at 0x74ff is: LD E, d8 a1
+Instruction at 0x7501 is: LD (HL),d8 1e
 Instruction at 0x7503 is: AND D
-Instruction at 0x7504 is: LD E, d8
+Instruction at 0x7504 is: LD E, d8 36
 Instruction at 0x7506 is: JR Z,r8
 Instruction at 0x7508 is: LD B,B
 Instruction at 0x7509 is: JR Z,r8
 Instruction at 0x750b is: JR Z,r8
 Instruction at 0x750d is: NOP
 Instruction at 0x750e is: AND D
-Instruction at 0x750f is: LD E, d8
-Instruction at 0x7511 is: LD (HL),d8
+Instruction at 0x750f is: LD E, d8 a1
+Instruction at 0x7511 is: LD (HL),d8 1e
 Instruction at 0x7513 is: AND D
-Instruction at 0x7514 is: LD E, d8
-Instruction at 0x7516 is: LD E, d8
-Instruction at 0x7518 is: LD (HL),d8
+Instruction at 0x7514 is: LD E, d8 36
+Instruction at 0x7516 is: LD E, d8 a1
+Instruction at 0x7518 is: LD (HL),d8 1e
 Instruction at 0x751a is: AND D
-Instruction at 0x751b is: LD E, d8
+Instruction at 0x751b is: LD E, d8 36
 Instruction at 0x751d is: NOP
 Instruction at 0x751e is: AND D
 Instruction at 0x751f is: LD (HL+),A
@@ -21613,16 +21613,16 @@ Instruction at 0x752b is: LD (HL+),A
 Instruction at 0x752c is: LD A,(HL-) 
 Instruction at 0x752d is: NOP
 Instruction at 0x752e is: AND D
-Instruction at 0x752f is: LD E, d8
-Instruction at 0x7531 is: LD (HL),d8
+Instruction at 0x752f is: LD E, d8 a1
+Instruction at 0x7531 is: LD (HL),d8 1e
 Instruction at 0x7533 is: AND D
-Instruction at 0x7534 is: LD E, d8
-Instruction at 0x7536 is: LD E, d8
-Instruction at 0x7538 is: LD (HL),d8
+Instruction at 0x7534 is: LD E, d8 36
+Instruction at 0x7536 is: LD E, d8 a1
+Instruction at 0x7538 is: LD (HL),d8 1e
 Instruction at 0x753a is: AND D
 Instruction at 0x753b is: AND H
-Instruction at 0x753c is: LD A,d8
-Instruction at 0x753e is: LD (HL),d8
+Instruction at 0x753c is: LD A,d8 0
+Instruction at 0x753e is: LD (HL),d8 3e
 Instruction at 0x7540 is: LD B,H
 Instruction at 0x7541 is: AND H
 Instruction at 0x7542 is: LD B,H
@@ -21674,7 +21674,7 @@ Instruction at 0x7574 is: INC (HL)
 Instruction at 0x7575 is: INC A
 Instruction at 0x7576 is: LD B,(HL)
 Instruction at 0x7577 is: LD B,B
-Instruction at 0x7578 is: LD L,d8
+Instruction at 0x7578 is: LD L,d8 34
 Instruction at 0x757a is: LD B,B
 Instruction at 0x757b is: NOP
 Instruction at 0x757c is: SBC A,L
@@ -21706,7 +21706,7 @@ Instruction at 0x7597 is: RST 38H
 Instruction at 0x7598 is: RST 38H
 Instruction at 0x7599 is: SUB L
 Instruction at 0x759a is: LD (HL),L
-Instruction at 0x759b is: XOR D8
+Instruction at 0x759b is: XOR D8 75
 Instruction at 0x759d is: RST 38H
 Instruction at 0x759e is: RST 38H
 Instruction at 0x759f is: SBC A,E
@@ -21769,14 +21769,14 @@ Instruction at 0x75da is: LD B,(HL)
 Instruction at 0x75db is: LD D,B
 Instruction at 0x75dc is: LD B,(HL)
 Instruction at 0x75dd is: LD D,B
-Instruction at 0x75de is: LD A,d8
-Instruction at 0x75e0 is: LD A,d8
-Instruction at 0x75e2 is: LD A,d8
-Instruction at 0x75e4 is: LD A,d8
-Instruction at 0x75e6 is: LD A,d8
-Instruction at 0x75e8 is: LD A,d8
-Instruction at 0x75ea is: LD A,d8
-Instruction at 0x75ec is: LD A,d8
+Instruction at 0x75de is: LD A,d8 4c
+Instruction at 0x75e0 is: LD A,d8 4c
+Instruction at 0x75e2 is: LD A,d8 4a
+Instruction at 0x75e4 is: LD A,d8 4a
+Instruction at 0x75e6 is: LD A,d8 46
+Instruction at 0x75e8 is: LD A,d8 4a
+Instruction at 0x75ea is: LD A,d8 50
+Instruction at 0x75ec is: LD A,d8 0
 Instruction at 0x75ee is: SBC A,L
 Instruction at 0x75ef is: JP (HL)
 Instruction at 0x75f0 is: LD L,(HL)
@@ -21866,14 +21866,14 @@ Instruction at 0x7649 is: UNDEFINED
 Instruction at 0x764a is: LD (HL),A
 Instruction at 0x764b is: UNDEFINED
 Instruction at 0x764c is: LD (HL),A
-Instruction at 0x764d is: CP D8
+Instruction at 0x764d is: CP D8 77
 Instruction at 0x764f is: PUSH AF
 Instruction at 0x7650 is: LD (HL),A
 Instruction at 0x7651 is: UNDEFINED
 Instruction at 0x7652 is: LD (HL),A
 Instruction at 0x7653 is: UNDEFINED
 Instruction at 0x7654 is: LD (HL),A
-Instruction at 0x7655 is: CP D8
+Instruction at 0x7655 is: CP D8 77
 Instruction at 0x7657 is: PUSH AF
 Instruction at 0x7658 is: LD (HL),A
 Instruction at 0x7659 is: RLCA
@@ -21900,13 +21900,13 @@ Instruction at 0x766f is: SBC A,L
 Instruction at 0x7670 is: JP A16
 Instruction at 0x7673 is: AND D
 Instruction at 0x7674 is: INC A
-Instruction at 0x7675 is: LD A,d8
-Instruction at 0x7677 is: LD A,d8
+Instruction at 0x7675 is: LD A,d8 3c
+Instruction at 0x7677 is: LD A,d8 38
 Instruction at 0x7679 is: LD D,B
 Instruction at 0x767a is: AND E
 Instruction at 0x767b is: LD BC,d16
-Instruction at 0x767e is: LD A,d8
-Instruction at 0x7680 is: LD A,d8
+Instruction at 0x767e is: LD A,d8 3c
+Instruction at 0x7680 is: LD A,d8 38
 Instruction at 0x7682 is: LD D,B
 Instruction at 0x7683 is: AND E
 Instruction at 0x7684 is: LD BC,d16
@@ -21923,13 +21923,13 @@ Instruction at 0x7694 is: JR Z,r8
 Instruction at 0x7696 is: INC A
 Instruction at 0x7697 is: LD BC,d16
 Instruction at 0x769a is: LD B,D
-Instruction at 0x769b is: LD A,d8
+Instruction at 0x769b is: LD A,d8 42
 Instruction at 0x769d is: INC A
 Instruction at 0x769e is: LD D,H
 Instruction at 0x769f is: AND E
 Instruction at 0x76a0 is: LD BC,d16
 Instruction at 0x76a3 is: LD B,D
-Instruction at 0x76a4 is: LD A,d8
+Instruction at 0x76a4 is: LD A,d8 42
 Instruction at 0x76a6 is: INC A
 Instruction at 0x76a7 is: LD D,H
 Instruction at 0x76a8 is: AND E
@@ -21950,32 +21950,32 @@ Instruction at 0x76c0 is: LD (HL),H
 Instruction at 0x76c1 is: NOP
 Instruction at 0x76c2 is: ADD A,B
 Instruction at 0x76c3 is: AND D
-Instruction at 0x76c4 is: LD (HL),d8
-Instruction at 0x76c6 is: LD (HL),d8
-Instruction at 0x76c8 is: LD L,d8
+Instruction at 0x76c4 is: LD (HL),d8 38
+Instruction at 0x76c6 is: LD (HL),d8 38
+Instruction at 0x76c8 is: LD L,d8 3e
 Instruction at 0x76ca is: AND E
 Instruction at 0x76cb is: LD BC,d16
 Instruction at 0x76ce is: JR Z,r8 
 Instruction at 0x76d0 is: JR Z,r8 
-Instruction at 0x76d2 is: LD A,d8
+Instruction at 0x76d2 is: LD A,d8 a3
 Instruction at 0x76d4 is: LD BC,d16
-Instruction at 0x76d7 is: LD (HL),d8
-Instruction at 0x76d9 is: LD (HL),d8
+Instruction at 0x76d7 is: LD (HL),d8 1
+Instruction at 0x76d9 is: LD (HL),d8 1
 Instruction at 0x76db is: LD (HL-),A
 Instruction at 0x76dc is: LD BC,d16
 Instruction at 0x76df is: LD (HL-),A
 Instruction at 0x76e0 is: LD (HL-),A
 Instruction at 0x76e1 is: JR NC,r8
-Instruction at 0x76e3 is: LD (HL),d8
+Instruction at 0x76e3 is: LD (HL),d8 1
 Instruction at 0x76e5 is: AND D
 Instruction at 0x76e6 is: JR Z,r8 
 Instruction at 0x76e8 is: JR Z,r8 
-Instruction at 0x76ea is: LD (HL),d8
+Instruction at 0x76ea is: LD (HL),d8 4e
 Instruction at 0x76ec is: AND E
 Instruction at 0x76ed is: LD BC,d16
 Instruction at 0x76f0 is: INC A
 Instruction at 0x76f1 is: JR Z,r8 
-Instruction at 0x76f3 is: LD (HL),d8
+Instruction at 0x76f3 is: LD (HL),d8 4e
 Instruction at 0x76f5 is: AND E
 Instruction at 0x76f6 is: LD BC,d16
 Instruction at 0x76f9 is: LD D,B
@@ -21997,47 +21997,47 @@ Instruction at 0x7711 is: LD C,B
 Instruction at 0x7712 is: LD B,(HL)
 Instruction at 0x7713 is: LD C,B
 Instruction at 0x7714 is: LD B,(HL)
-Instruction at 0x7715 is: LD A,d8
+Instruction at 0x7715 is: LD A,d8 20
 Instruction at 0x7717 is: AND E
 Instruction at 0x7718 is: LD BC,d16
 Instruction at 0x771b is: LD B,(HL)
 Instruction at 0x771c is: LD C,B
 Instruction at 0x771d is: LD B,(HL)
-Instruction at 0x771e is: LD A,d8
+Instruction at 0x771e is: LD A,d8 20
 Instruction at 0x7720 is: AND E
 Instruction at 0x7721 is: LD BC,d16
 Instruction at 0x7724 is: INC A
-Instruction at 0x7725 is: LD L,d8
+Instruction at 0x7725 is: LD L,d8 24
 Instruction at 0x7727 is: INC H
 Instruction at 0x7728 is: INC H
 Instruction at 0x7729 is: INC H
 Instruction at 0x772a is: INC A
 Instruction at 0x772b is: LD A,(HL+)
-Instruction at 0x772c is: LD A,d8
-Instruction at 0x772e is: LD A,d8
-Instruction at 0x7730 is: LD L,d8
+Instruction at 0x772c is: LD A,d8 2a
+Instruction at 0x772e is: LD A,d8 a6
+Instruction at 0x7730 is: LD L,d8 a3
 Instruction at 0x7732 is: LD BC,d16
 Instruction at 0x7735 is: AND D
 Instruction at 0x7736 is: LD C,B
 Instruction at 0x7737 is: LD B,(HL)
 Instruction at 0x7738 is: LD C,B
 Instruction at 0x7739 is: LD B,(HL)
-Instruction at 0x773a is: LD L,d8
+Instruction at 0x773a is: LD L,d8 2e
 Instruction at 0x773c is: AND E
 Instruction at 0x773d is: LD BC,d16
 Instruction at 0x7740 is: LD B,(HL)
 Instruction at 0x7741 is: LD C,B
 Instruction at 0x7742 is: LD B,(HL)
-Instruction at 0x7743 is: LD L,d8
+Instruction at 0x7743 is: LD L,d8 2e
 Instruction at 0x7745 is: AND E
 Instruction at 0x7746 is: LD BC,d16
 Instruction at 0x7749 is: INC A
 Instruction at 0x774a is: LD A,(HL+)
 Instruction at 0x774b is: INC A
-Instruction at 0x774c is: LD L,d8
-Instruction at 0x774e is: LD L,d8
-Instruction at 0x7750 is: LD L,d8
-Instruction at 0x7752 is: LD L,d8
+Instruction at 0x774c is: LD L,d8 3e
+Instruction at 0x774e is: LD L,d8 3e
+Instruction at 0x7750 is: LD L,d8 42
+Instruction at 0x7752 is: LD L,d8 42
 Instruction at 0x7754 is: AND (HL)
 Instruction at 0x7755 is: JR Z,r8 
 Instruction at 0x7757 is: LD BC,d16
@@ -22090,7 +22090,7 @@ Instruction at 0x7797 is: LD B,D
 Instruction at 0x7798 is: AND A
 Instruction at 0x7799 is: LD BC,d16
 Instruction at 0x779c is: JR Z,r8 
-Instruction at 0x779e is: LD (HL),d8
+Instruction at 0x779e is: LD (HL),d8 a2
 Instruction at 0x77a0 is: LD BC,d16
 Instruction at 0x77a3 is: AND A
 Instruction at 0x77a4 is: LD B,D
@@ -22126,30 +22126,30 @@ Instruction at 0x77c9 is: AND A
 Instruction at 0x77ca is: LD BC,d16
 Instruction at 0x77cd is: LD (HL-),A
 Instruction at 0x77ce is: AND H
-Instruction at 0x77cf is: LD L,d8
+Instruction at 0x77cf is: LD L,d8 a2
 Instruction at 0x77d1 is: LD BC,d16
 Instruction at 0x77d4 is: AND C
-Instruction at 0x77d5 is: LD (HL),d8
+Instruction at 0x77d5 is: LD (HL),d8 38
 Instruction at 0x77d7 is: AND H
 Instruction at 0x77d8 is: LD (HL-),A
 Instruction at 0x77d9 is: AND A
 Instruction at 0x77da is: LD BC,d16
 Instruction at 0x77dd is: LD (HL-),A
 Instruction at 0x77de is: AND H
-Instruction at 0x77df is: LD L,d8
+Instruction at 0x77df is: LD L,d8 a2
 Instruction at 0x77e1 is: LD BC,d16
 Instruction at 0x77e4 is: AND A
 Instruction at 0x77e5 is: JR NC,r8
-Instruction at 0x77e7 is: LD L,d8
+Instruction at 0x77e7 is: LD L,d8 a2
 Instruction at 0x77e9 is: LD BC,d16
 Instruction at 0x77ec is: JR Z,r8 
 Instruction at 0x77ee is: LD BC,d16
 Instruction at 0x77f1 is: JR Z,r8 
 Instruction at 0x77f3 is: JR Z,r8 
-Instruction at 0x77f5 is: LD L,d8
+Instruction at 0x77f5 is: LD L,d8 2e
 Instruction at 0x77f7 is: LD BC,d16
-Instruction at 0x77fa is: LD L,d8
-Instruction at 0x77fc is: LD L,d8
+Instruction at 0x77fa is: LD L,d8 1
+Instruction at 0x77fc is: LD L,d8 0
 Instruction at 0x77fe is: LD A,(HL+)
 Instruction at 0x77ff is: LD A,(HL+)
 Instruction at 0x7800 is: LD BC,d16
@@ -22158,15 +22158,15 @@ Instruction at 0x7804 is: LD BC,d16
 Instruction at 0x7807 is: AND D
 Instruction at 0x7808 is: JR Z,r8 
 Instruction at 0x780a is: LD BC,d16
-Instruction at 0x780d is: LD (HL),d8
-Instruction at 0x780f is: LD (HL),d8
+Instruction at 0x780d is: LD (HL),d8 1
+Instruction at 0x780f is: LD (HL),d8 0
 Instruction at 0x7811 is: LD (HL-),A
 Instruction at 0x7812 is: LD (HL-),A
 Instruction at 0x7813 is: LD BC,d16
-Instruction at 0x7816 is: LD L,d8
-Instruction at 0x7818 is: LD L,d8
+Instruction at 0x7816 is: LD L,d8 1
+Instruction at 0x7818 is: LD L,d8 0
 Instruction at 0x781a is: AND D
-Instruction at 0x781b is: LD B,d8
+Instruction at 0x781b is: LD B,d8 b
 Instruction at 0x781d is: LD BC,d16
 Instruction at 0x7820 is: DEC BC
 Instruction at 0x7821 is: LD BC,d16
@@ -22247,10 +22247,10 @@ Instruction at 0x7882 is: PUSH DE
 Instruction at 0x7883 is: LD A,B
 Instruction at 0x7884 is: UNDEFINED
 Instruction at 0x7885 is: LD A,C
-Instruction at 0x7886 is: CP D8
+Instruction at 0x7886 is: CP D8 78
 Instruction at 0x7888 is: ADD A,H
 Instruction at 0x7889 is: LD A,C
-Instruction at 0x788a is: CP D8
+Instruction at 0x788a is: CP D8 78
 Instruction at 0x788c is: ADD A,H
 Instruction at 0x788d is: LD A,C
 Instruction at 0x788e is: SBC A,L
@@ -22357,7 +22357,7 @@ Instruction at 0x78f9 is: LD C,B
 Instruction at 0x78fa is: AND D
 Instruction at 0x78fb is: LD C,H
 Instruction at 0x78fc is: LD BC,d16
-Instruction at 0x78ff is: LD B,d8
+Instruction at 0x78ff is: LD B,d8 a7
 Instruction at 0x7901 is: LD BC,d16
 Instruction at 0x7904 is: DEC BC
 Instruction at 0x7905 is: DEC BC
@@ -22435,10 +22435,10 @@ Instruction at 0x7952 is: AND C
 Instruction at 0x7953 is: LD A,(HL-) 
 Instruction at 0x7954 is: LD A,(HL-) 
 Instruction at 0x7955 is: AND D
-Instruction at 0x7956 is: LD (HL),d8
-Instruction at 0x7958 is: LD (HL),d8
+Instruction at 0x7956 is: LD (HL),d8 a1
+Instruction at 0x7958 is: LD (HL),d8 36
 Instruction at 0x795a is: AND D
-Instruction at 0x795b is: LD (HL),d8
+Instruction at 0x795b is: LD (HL),d8 1
 Instruction at 0x795d is: NOP
 Instruction at 0x795e is: LD C,B
 Instruction at 0x795f is: AND C
@@ -22866,7 +22866,7 @@ Instruction at 0x7b35 is: LD E,H
 Instruction at 0x7b36 is: LD D,(HL)
 Instruction at 0x7b37 is: LD C,(HL)
 Instruction at 0x7b38 is: LD B,H
-Instruction at 0x7b39 is: LD A,d8
+Instruction at 0x7b39 is: LD A,d8 44
 Instruction at 0x7b3b is: AND D
 Instruction at 0x7b3c is: LD E,H
 Instruction at 0x7b3d is: AND C
@@ -22903,7 +22903,7 @@ Instruction at 0x7b61 is: DEC BC
 Instruction at 0x7b62 is: LD BC,d16
 Instruction at 0x7b65 is: LD (HL),A
 Instruction at 0x7b66 is: LD A,E
-Instruction at 0x7b67 is: ADC A,D8
+Instruction at 0x7b67 is: ADC A,D8 7b
 Instruction at 0x7b69 is: NOP
 Instruction at 0x7b6a is: NOP
 Instruction at 0x7b6b is: SUB (HL)
@@ -22970,7 +22970,7 @@ Instruction at 0x7bb4 is: LD BC,d16
 Instruction at 0x7bb7 is: LD C,B
 Instruction at 0x7bb8 is: LD C,H
 Instruction at 0x7bb9 is: LD BC,d16
-Instruction at 0x7bbc is: LD B,d8
+Instruction at 0x7bbc is: LD B,d8 a7
 Instruction at 0x7bbe is: LD BC,d16
 Instruction at 0x7bc1 is: DEC BC
 Instruction at 0x7bc2 is: DEC BC
@@ -23129,7 +23129,7 @@ Instruction at 0x7c85 is: AND C
 Instruction at 0x7c86 is: JR Z,r8 
 Instruction at 0x7c88 is: LD A,(HL-) 
 Instruction at 0x7c89 is: AND C
-Instruction at 0x7c8a is: LD A,d8
+Instruction at 0x7c8a is: LD A,d8 a6
 Instruction at 0x7c8c is: LD B,D
 Instruction at 0x7c8d is: AND C
 Instruction at 0x7c8e is: LD B,H
@@ -23174,7 +23174,7 @@ Instruction at 0x7cb6 is: LD BC,d16
 Instruction at 0x7cb9 is: AND C
 Instruction at 0x7cba is: LD A,(HL-) 
 Instruction at 0x7cbb is: AND (HL)
-Instruction at 0x7cbc is: LD A,d8
+Instruction at 0x7cbc is: LD A,d8 a1
 Instruction at 0x7cbe is: LD B,D
 Instruction at 0x7cbf is: AND (HL)
 Instruction at 0x7cc0 is: LD B,H
@@ -23191,34 +23191,34 @@ Instruction at 0x7cca is: LD A,(HL-)
 Instruction at 0x7ccb is: AND (HL)
 Instruction at 0x7ccc is: DEC BC
 Instruction at 0x7ccd is: AND C
-Instruction at 0x7cce is: LD B,d8
+Instruction at 0x7cce is: LD B,d8 a6
 Instruction at 0x7cd0 is: DEC BC
 Instruction at 0x7cd1 is: AND C
-Instruction at 0x7cd2 is: LD B,d8
+Instruction at 0x7cd2 is: LD B,d8 a6
 Instruction at 0x7cd4 is: DEC BC
 Instruction at 0x7cd5 is: AND C
-Instruction at 0x7cd6 is: LD B,d8
+Instruction at 0x7cd6 is: LD B,d8 a3
 Instruction at 0x7cd8 is: LD BC,d16
 Instruction at 0x7cdb is: AND C
-Instruction at 0x7cdc is: LD B,d8
+Instruction at 0x7cdc is: LD B,d8 a6
 Instruction at 0x7cde is: DEC BC
 Instruction at 0x7cdf is: AND C
-Instruction at 0x7ce0 is: LD B,d8
+Instruction at 0x7ce0 is: LD B,d8 a6
 Instruction at 0x7ce2 is: DEC BC
 Instruction at 0x7ce3 is: AND C
-Instruction at 0x7ce4 is: LD B,d8
+Instruction at 0x7ce4 is: LD B,d8 a3
 Instruction at 0x7ce6 is: LD BC,d16
 Instruction at 0x7ce9 is: AND C
-Instruction at 0x7cea is: LD B,d8
+Instruction at 0x7cea is: LD B,d8 a6
 Instruction at 0x7cec is: DEC BC
 Instruction at 0x7ced is: AND C
-Instruction at 0x7cee is: LD B,d8
+Instruction at 0x7cee is: LD B,d8 a6
 Instruction at 0x7cf0 is: DEC BC
 Instruction at 0x7cf1 is: AND C
-Instruction at 0x7cf2 is: LD B,d8
+Instruction at 0x7cf2 is: LD B,d8 a3
 Instruction at 0x7cf4 is: LD BC,d16
 Instruction at 0x7cf7 is: AND C
-Instruction at 0x7cf8 is: LD B,d8
+Instruction at 0x7cf8 is: LD B,d8 2e
 Instruction at 0x7cfa is: LD A,L
 Instruction at 0x7cfb is: RST 38H
 Instruction at 0x7cfc is: RST 38H
@@ -23234,7 +23234,7 @@ Instruction at 0x7d07 is: LD E,E
 Instruction at 0x7d08 is: LD A,L
 Instruction at 0x7d09 is: AND H
 Instruction at 0x7d0a is: LD A,L
-Instruction at 0x7d0b is: ADD A,D8
+Instruction at 0x7d0b is: ADD A,D8 7d
 Instruction at 0x7d0d is: RST 38H
 Instruction at 0x7d0e is: RST 38H
 Instruction at 0x7d0f is: INC BC
@@ -23255,7 +23255,7 @@ Instruction at 0x7d1d is: RST 38H
 Instruction at 0x7d1e is: RST 38H
 Instruction at 0x7d1f is: INC DE
 Instruction at 0x7d20 is: LD A,L
-Instruction at 0x7d21 is: LD A,d8
+Instruction at 0x7d21 is: LD A,d8 7d
 Instruction at 0x7d23 is: LD B,C
 Instruction at 0x7d24 is: LD A,L
 Instruction at 0x7d25 is: RST 38H
@@ -23279,17 +23279,17 @@ Instruction at 0x7d3b is: AND L
 Instruction at 0x7d3c is: LD BC,d16
 Instruction at 0x7d3f is: LD BC,d16
 Instruction at 0x7d42 is: LD BC,d16
-Instruction at 0x7d45 is: LD B,d8
+Instruction at 0x7d45 is: LD B,d8 1
 Instruction at 0x7d47 is: AND D
-Instruction at 0x7d48 is: LD B,d8
+Instruction at 0x7d48 is: LD B,d8 6
 Instruction at 0x7d4a is: AND E
 Instruction at 0x7d4b is: LD BC,d16
 Instruction at 0x7d4e is: LD BC,d16
-Instruction at 0x7d51 is: LD B,d8
+Instruction at 0x7d51 is: LD B,d8 1
 Instruction at 0x7d53 is: AND D
-Instruction at 0x7d54 is: LD B,d8
+Instruction at 0x7d54 is: LD B,d8 6
 Instruction at 0x7d56 is: LD BC,d16
-Instruction at 0x7d59 is: LD B,d8
+Instruction at 0x7d59 is: LD B,d8 0
 Instruction at 0x7d5b is: AND A
 Instruction at 0x7d5c is: LD E,D
 Instruction at 0x7d5d is: AND D
@@ -23568,15 +23568,15 @@ Instruction at 0x7e7a is: AND E
 Instruction at 0x7e7b is: LD E,B
 Instruction at 0x7e7c is: LD BC,d16
 Instruction at 0x7e7f is: AND C
-Instruction at 0x7e80 is: LD B,d8
+Instruction at 0x7e80 is: LD B,d8 6
 Instruction at 0x7e82 is: AND (HL)
 Instruction at 0x7e83 is: DEC BC
 Instruction at 0x7e84 is: AND C
-Instruction at 0x7e85 is: LD B,d8
-Instruction at 0x7e87 is: LD B,d8
-Instruction at 0x7e89 is: LD B,d8
-Instruction at 0x7e8b is: LD B,d8
-Instruction at 0x7e8d is: LD B,d8
+Instruction at 0x7e85 is: LD B,d8 a0
+Instruction at 0x7e87 is: LD B,d8 6
+Instruction at 0x7e89 is: LD B,d8 6
+Instruction at 0x7e8b is: LD B,d8 6
+Instruction at 0x7e8d is: LD B,d8 6
 Instruction at 0x7e8f is: AND E
 Instruction at 0x7e90 is: LD BC,d16
 Instruction at 0x7e93 is: JR Z,r8
@@ -23694,19 +23694,19 @@ Instruction at 0x7f0e is: LD C,D
 Instruction at 0x7f0f is: LD D,D
 Instruction at 0x7f10 is: NOP
 Instruction at 0x7f11 is: AND D
-Instruction at 0x7f12 is: LD B,d8
-Instruction at 0x7f14 is: LD B,d8
-Instruction at 0x7f16 is: LD B,d8
-Instruction at 0x7f18 is: LD B,d8
-Instruction at 0x7f1a is: LD B,d8
-Instruction at 0x7f1c is: LD B,d8
-Instruction at 0x7f1e is: LD B,d8
+Instruction at 0x7f12 is: LD B,d8 b
+Instruction at 0x7f14 is: LD B,d8 b
+Instruction at 0x7f16 is: LD B,d8 b
+Instruction at 0x7f18 is: LD B,d8 b
+Instruction at 0x7f1a is: LD B,d8 b
+Instruction at 0x7f1c is: LD B,d8 b
+Instruction at 0x7f1e is: LD B,d8 a1
 Instruction at 0x7f20 is: DEC BC
 Instruction at 0x7f21 is: DEC BC
-Instruction at 0x7f22 is: LD B,d8
+Instruction at 0x7f22 is: LD B,d8 a2
 Instruction at 0x7f24 is: DEC BC
 Instruction at 0x7f25 is: AND C
-Instruction at 0x7f26 is: LD B,d8
+Instruction at 0x7f26 is: LD B,d8 0
 Instruction at 0x7f28 is: AND D
 Instruction at 0x7f29 is: LD E,(HL)
 Instruction at 0x7f2a is: AND C

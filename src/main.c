@@ -3,6 +3,8 @@
 #include "disassemble.h"
 #include <inttypes.h>
 #include "instructions.h"
+#include "cpu.h"
+#include <endian.h>
 //
 const instruction instructions[256] =
     {
@@ -275,12 +277,89 @@ int main(int argc, char *argv[])
 
     FILE * out = fopen( "tetris.asm", "w");
 
+    cpu_state state;
+    init_cpu(&state, r);
+    state.regs.pc = 0x100;
+
     for(int i =0x100; i < r->sizeInBytes; i += instructions[r->bytes[i]].length)
     {
-        printf("Instruction at 0x%x is: %s\n", i, instructions[r->bytes[i]].mnmemonic);
-        fprintf(out,"Instruction at 0x%x is: %s\n", i, instructions[r->bytes[i]].mnmemonic);
+        //printf("Instruction at 0x%x is: %s\n", i, instructions[r->bytes[i]].mnmemonic);
+        switch(instructions[r->bytes[i]].d_type)
+        {
+            case d8:
+            if(instructions[r->bytes[i]].length == 2)
+            {
+                fprintf(out,"Instruction at 0x%x is: %s %hhx\n", i, instructions[r->bytes[i]].mnmemonic, r->bytes[i+1]);
+            }
+            break;
+
+            default:
+            fprintf(out,"Instruction at 0x%x is: %s\n", i, instructions[r->bytes[i]].mnmemonic);
+        }
+        
     }
-    printf("size of ins: %d", sizeof(instructions));
+
+
+        printf("CPU STATE :\n");
+        printf("PC: %x\n", state.regs.pc);
+
+    while(1==1)
+    {
+        printf("PC: %x\n", state.regs.pc);
+        printf("A:%d B:%d C:%d D:%d E:%d H:%d L:%d \n", state.regs.a, state.regs.b, state.regs.c, state.regs.d, state.regs.e, state.regs.h, state.regs.l);
+        printf("Flags: %d%d%d%d\n", (state.regs.f & (1 << 0)), (state.regs.f & (2 << 0)), (state.regs.f & (3 << 0)), (state.regs.f & (4 << 0)));
+        printf("Stack Pointer: %x\n", state.regs.sp);
+        switch(instructions[r->bytes[state.regs.pc]].op_code)
+        {
+            case 0x0:
+            //NOP
+            state.regs.pc++;
+            break;
+
+            case 0xaf:
+            //XOR A
+            uint8_t result = state.regs.b ^ state.regs.a;
+            state.regs.a = result;
+//
+            if(result == 0)
+            {
+                set_flag(1, 0, &state);
+            }
+            else
+            {
+                set_flag(0, 0, &state);
+            }
+
+            set_flag(0, 1, &state);
+            set_flag(0, 2,&state);
+            set_flag(0, 3, &state);
+            state.regs.pc++;
+            break;
+            case 0xc3:
+            //Jump unconditional, absolute
+            uint8_t d1 = r->bytes[state.regs.pc + 1];
+            uint8_t d2 = r->bytes[state.regs.pc + 2];
+
+            uint16_t toConvert = (d2 << 8) | d1;
+
+            uint16_t converted = toConvert;
+//  
+
+            state.regs.pc = converted;
+            break;
+
+
+
+            default:
+            printf("Non implemented instruction 0x%hhx %s\n", instructions[r->bytes[state.regs.pc]].op_code, instructions[r->bytes[state.regs.pc]].mnmemonic);
+            exit(0);
+            break;
+        }
+    }  
+
+
+
+    printf("Disassembly written to: %s\n", "tetris.asm");
     //printf("Title = %s", r->metaData.title);
     
     //for(int i = 0; i < 48; i++)

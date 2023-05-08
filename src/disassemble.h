@@ -32,6 +32,6 @@ struct romMetaData
 int getSizeInBytes(char * fileName);//Get size in bytes of fileName
 struct romBytes getBytes(char * fileName); //Get bytes from file
 struct romMetaData getMetaData(struct romBytes * bytes);//Used for loading meta data into romByte struct
-
+void printd8(uint16_t addr, struct romBytes * bytes);//
 
 #endif

@@ -2,7 +2,7 @@
 #define CPU_H
 #include <inttypes.h>
 #include "instructions.h"
-#include <disassemble.h>
+#include "disassemble.h"
 typedef struct 
 {
     //8 bit registers. Can also be addressed in 16 bit pairs.
@@ -33,7 +33,9 @@ typedef struct
 
 }cpu_state;
 
-void init_cpu();
+void init_cpu(cpu_state * state, struct romBytes * bytes);
 int step_cpu();
 int decode_instruction(cpu_state * state, struct romBytes * bytes);
+void set_flag(int num, int position, cpu_state * state);
 #endif
+//

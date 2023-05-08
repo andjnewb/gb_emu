@@ -33,3 +33,9 @@ int decode_instruction(cpu_state * state, struct romBytes *bytes)
 
     return 0;
 }
+void set_flag(int num, int position, cpu_state * state)
+{
+    int mask = 1 << position;
+    state->regs.f = num | mask;
+
+}
