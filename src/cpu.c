@@ -39,3 +39,24 @@ void set_flag(int num, int position, cpu_state * state)
     state->regs.f = num | mask;
 
 }
+void call_func(cpu_state * state, instruction ins)
+{
+    switch(ins.op_code)
+    {
+        case 0xc3:
+        jp_nocond(state);
+
+        case 0x0:
+        break;
+
+        default:
+        printf("Non implemented instruction at %x: 0x%hhx %s\n", state->regs.pc , ins.op_code, ins.mnmemonic);
+        state->halt = 1;//
+        break;
+    }
+}
+
+void jp_nocond(cpu_state * state)
+{
+    state->regs.pc = state->fetched_data;
+}

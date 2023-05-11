@@ -3,6 +3,8 @@
 #include <inttypes.h>
 #include "disassemble.h"
 
+
+
 enum data_type
 {
     NONE, //Instruction is not followed by data or an address.
@@ -21,6 +23,7 @@ typedef struct instruction
     int d_type;
     char flags[4];
     char cycles[4];
+    
 } instruction;
 
 

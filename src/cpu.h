@@ -37,5 +37,9 @@ void init_cpu(cpu_state * state, struct romBytes * bytes);
 int step_cpu();
 int decode_instruction(cpu_state * state, struct romBytes * bytes);
 void set_flag(int num, int position, cpu_state * state);
+void call_func(cpu_state * state, instruction ins);
+
+void jp_nocond(cpu_state * state);
+
 #endif
 //
