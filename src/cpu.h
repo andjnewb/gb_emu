@@ -7,7 +7,6 @@ typedef struct
 {
     //8 bit registers. Can also be addressed in 16 bit pairs.
     uint8_t a;
-    uint8_t f;
     uint8_t b;
     uint8_t c;
     uint8_t d;
@@ -18,6 +17,13 @@ typedef struct
     //16 bit registers. 
     uint16_t pc;
     uint16_t sp;
+
+    //Flags register
+    uint8_t z_flag;
+    uint8_t n_flag;
+    uint8_t c_flag;
+    uint8_t h_flag;
+    
 }registers;
 
 typedef struct 
@@ -36,10 +42,18 @@ typedef struct
 void init_cpu(cpu_state * state, struct romBytes * bytes);
 int step_cpu();
 int decode_instruction(cpu_state * state, struct romBytes * bytes);
-void set_flag(int num, int position, cpu_state * state);
+void set_flag(int toSet, char flag[2], cpu_state * state);
 void call_func(cpu_state * state, instruction ins);
 
+//CPU INSTRUCTIONS
+
+//JUMPS
 void jp_nocond(cpu_state * state);
+
+//Logical/Arithmetic
+void xor_a(cpu_state * state);
+
+
 
 #endif
 //

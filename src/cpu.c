@@ -8,7 +8,7 @@ void init_cpu(cpu_state * state, struct romBytes * bytes)
     state->regs.c = 0x0;
     state->regs.d = 0x0;
     state->regs.e = 0x0;
-    state->regs.f = 0x0;
+    
     state->regs.h = 0x0;
     state->regs.l = 0x0;
     state->regs.pc = 0x100;
@@ -33,11 +33,27 @@ int decode_instruction(cpu_state * state, struct romBytes *bytes)
 
     return 0;
 }
-void set_flag(int num, int position, cpu_state * state)
+void set_flag(int toSet, char flag[2], cpu_state * state)
 {
-    int mask = 1 << position;
-    state->regs.f = num | mask;
+   if(flag == "z")
+   {
+        state->regs.z_flag = toSet;
+   }
 
+   else if(flag == "n")
+    {
+        state->regs.n_flag = toSet;
+    }
+
+    else if(flag == "h")
+    {
+        state->regs.h_flag = toSet;
+    }
+
+    else if(flag == "c")
+    {
+        state->regs.c_flag == toSet;
+    }
 }
 void call_func(cpu_state * state, instruction ins)
 {
@@ -45,6 +61,11 @@ void call_func(cpu_state * state, instruction ins)
     {
         case 0xc3:
         jp_nocond(state);
+        break;
+
+        case 0xaf:
+        xor_a(state);
+        break;
 
         case 0x0:
         break;
@@ -59,4 +80,24 @@ void call_func(cpu_state * state, instruction ins)
 void jp_nocond(cpu_state * state)
 {
     state->regs.pc = state->fetched_data;
+}
+
+void xor_a(cpu_state * state)
+{
+    //This is effectively a NOP
+
+    uint8_t result = state->regs.a ^ state->regs.a;
+
+    if(result == 0)
+    {
+        set_flag(1, "z", state);
+    }
+    else
+    {
+        set_flag(0, "z", state);
+    }
+
+    set_flag(0,"n",state);
+    set_flag(0,"h",state);
+    set_flag(0,"c",state);
 }

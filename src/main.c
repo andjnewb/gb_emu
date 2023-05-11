@@ -345,9 +345,9 @@ int main(int argc, char *argv[])
     {
 
         system("clear");
-        printf("\nPC: %d\n", state.regs.pc);
+        printf("\nPC: %x\n", state.regs.pc);
         printf("A:%d B:%d C:%d D:%d E:%d H:%d L:%d \n", state.regs.a, state.regs.b, state.regs.c, state.regs.d, state.regs.e, state.regs.h, state.regs.l);
-        printf("Flags: %d%d%d%d\n", (state.regs.f & (1 << 0)), (state.regs.f & (2 << 0)), (state.regs.f & (3 << 0)), (state.regs.f & (4 << 0)));
+        printf("Flags: %d%d%d%d\n", state.regs.z_flag , state.regs.n_flag, state.regs.h_flag, state.regs.c_flag);
         printf("Stack Pointer: %x\n", state.regs.sp);
         printf("Fetched Data: %x \n", state.fetched_data);
         printf("Halted: %d\n", state.halt);
