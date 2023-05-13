@@ -60,13 +60,23 @@ void call_func(cpu_state * state, instruction ins)
     switch(ins.op_code)
     {
 
+        case 0x5:
+        dec_b(state);
+
+
+        case 0x32:
+        ld_hl_decrement_a(state);
+        state->regs.pc += ins.length;
+
+        break;
+
         case 0x6:
         ld_b_d8(state);
         state->regs.pc += ins.length;
         break;
+
         case 0xc3:
         jp_nocond(state);
-        
         break;
 
         case 0xe:
@@ -135,4 +145,16 @@ void ld_c_d8(cpu_state * state)
 void ld_b_d8(cpu_state * state)
 {
     state->regs.b = state->fetched_data;
+}
+
+void ld_hl_decrement_a(cpu_state * state)
+{
+
+    state->address_space[state->regs.hl] = state->regs.a;
+    state->regs.hl--;
+}
+
+void dec_b(cpu_state * state)
+{
+    state->regs.b--;
 }

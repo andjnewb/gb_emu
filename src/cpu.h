@@ -67,7 +67,7 @@ typedef struct
     uint16_t memory_dest;//Instructions may or may not interact with this. Only trust it's value if the current instruction interacts with it.
     instruction curr_inst;
 
-    uint8_t work_ram[8192];
+    uint8_t address_space[0xffff];
 
     int halt;//If this is true, no instructions will execute.
     int step;//If we are in stepping mode, only execute one instruction and wait.
@@ -92,6 +92,7 @@ void xor_a(cpu_state * state);
 void ld_hl_d16(cpu_state * state);
 void ld_c_d8(cpu_state * state);
 void ld_b_d8(cpu_state * state);
-
+void ld_hl_decrement_a(cpu_state * state);
+void dec_b(cpu_state * state);
 #endif
 //

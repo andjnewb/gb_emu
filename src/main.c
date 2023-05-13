@@ -322,22 +322,22 @@ int main(int argc, char *argv[])
         // SDL_UpdateWindowSurface(window);
     }
 
-    for (int i = 0x100; i < r->sizeInBytes; i += instructions[r->bytes[i]].length)
-    {
-        // printf("Instruction at 0x%x is: %s\n", i, instructions[r->bytes[i]].mnmemonic);
-        switch (instructions[r->bytes[i]].d_type)
-        {
-        case d8:
-            if (instructions[r->bytes[i]].length == 2)
-            {
-                fprintf(out, "Instruction at 0x%x is: %s %hhx\n", i, instructions[r->bytes[i]].mnmemonic, r->bytes[i + 1]);
-            }
-            break;
+    // for (int i = 0x100; i < r->sizeInBytes; i += instructions[r->bytes[i]].length)
+    // {
+    //     // printf("Instruction at 0x%x is: %s\n", i, instructions[r->bytes[i]].mnmemonic);
+    //     switch (instructions[r->bytes[i]].d_type)
+    //     {
+    //     case d8:
+    //         if (instructions[r->bytes[i]].length == 2)
+    //         {
+    //             fprintf(out, "Instruction at 0x%x is: %s %hhx\n", i, instructions[r->bytes[i]].mnmemonic, r->bytes[i + 1]);
+    //         }
+    //         break;
 
-        default:
-            fprintf(out, "Instruction at 0x%x is: %s\n", i, instructions[r->bytes[i]].mnmemonic);
-        }
-    }
+    //     default:
+    //         fprintf(out, "Instruction at 0x%x is: %s\n", i, instructions[r->bytes[i]].mnmemonic);
+    //     }
+    // }
 
     int cycle = 0;
 
@@ -353,6 +353,8 @@ int main(int argc, char *argv[])
         printf("Halted: %d\n", state.halt);
         printf("Cycle: %d\n\n", cycle);
         state.curr_inst = instructions[state.regs.pc];
+        
+
 
         switch (instructions[r->bytes[state.regs.pc]].d_type)
         {
@@ -397,7 +399,7 @@ int main(int argc, char *argv[])
             // exit(0);
             break;
         }
-
+        //fprintf(out, "0x%x : %x %s %x \n", state.regs.pc,  state.curr_inst.op_code, state.curr_inst.mnmemonic ,state.fetched_data);
         call_func(&state, instructions[r->bytes[state.regs.pc]]);
         cycle++;
     }
