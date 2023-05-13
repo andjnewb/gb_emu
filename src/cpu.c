@@ -63,11 +63,19 @@ void call_func(cpu_state * state, instruction ins)
         jp_nocond(state);
         break;
 
+        case 0x21:
+        ld_hl_d16(state);
+        state->regs.pc += ins.length;
+
+        break;
+
         case 0xaf:
         xor_a(state);
+        state->regs.pc += ins.length;
         break;
 
         case 0x0:
+        state->regs.pc += ins.length;
         break;
 
         default:
@@ -88,7 +96,7 @@ void xor_a(cpu_state * state)
 
     uint8_t result = state->regs.a ^ state->regs.a;
 
-    if(result == 0)
+    if(result == 1)
     {
         set_flag(1, "z", state);
     }
@@ -100,4 +108,9 @@ void xor_a(cpu_state * state)
     set_flag(0,"n",state);
     set_flag(0,"h",state);
     set_flag(0,"c",state);
+}
+
+void ld_hl_d16(cpu_state * state)
+{
+    state->regs.hl = state->fetched_data;
 }

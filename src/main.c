@@ -345,8 +345,8 @@ int main(int argc, char *argv[])
     {
 
         system("clear");
-        printf("\nPC: %x\n", state.regs.pc);
-        printf("A:%d B:%d C:%d D:%d E:%d H:%d L:%d \n", state.regs.a, state.regs.b, state.regs.c, state.regs.d, state.regs.e, state.regs.h, state.regs.l);
+        printf("\nPC: 0x%x\n", state.regs.pc);
+        printf("A:%d B:%d C:%d D:%d E:%d H:%x L:%x \n", state.regs.a, state.regs.b, state.regs.c, state.regs.d, state.regs.e, state.regs.h, state.regs.l);
         printf("Flags: %d%d%d%d\n", state.regs.z_flag , state.regs.n_flag, state.regs.h_flag, state.regs.c_flag);
         printf("Stack Pointer: %x\n", state.regs.sp);
         printf("Fetched Data: %x \n", state.fetched_data);
@@ -374,6 +374,7 @@ int main(int argc, char *argv[])
             uint8_t d4 = r->bytes[state.regs.pc + 2];
 
             uint16_t toConvert1 = (d4 << 8) | d3;
+            
 
             state.fetched_data = toConvert1;
             break;
@@ -389,7 +390,7 @@ int main(int argc, char *argv[])
 
         case NONE:
             state.fetched_data = 0x0;
-            state.regs.pc++;
+            
             break;
 
         default:
@@ -400,7 +401,7 @@ int main(int argc, char *argv[])
         call_func(&state, instructions[r->bytes[state.regs.pc]]);
         cycle++;
     }
-//
+////
     printf("Disassembly written to: %s\n", "tetris.asm");
     // printf("Title = %s", r->metaData.title);
 

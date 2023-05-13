@@ -3,16 +3,49 @@
 #include <inttypes.h>
 #include "instructions.h"
 #include "disassemble.h"
+#include <byteswap.h>
 typedef struct 
 {
     //8 bit registers. Can also be addressed in 16 bit pairs.
-    uint8_t a;
-    uint8_t b;
-    uint8_t c;
-    uint8_t d;
-    uint8_t e;
-    uint8_t h;
-    uint8_t l;
+    struct {
+		union {
+			struct {
+				unsigned char f;
+				unsigned char a;
+			};
+			unsigned short af;
+		};
+	};
+	
+	struct {
+		union {
+			struct {
+				unsigned char c;
+				unsigned char b;
+			};
+			unsigned short bc;
+		};
+	};
+	
+	struct {
+		union {
+			struct {
+				unsigned char e;
+				unsigned char d;
+			};
+			unsigned short de;
+		};
+	};
+	
+	struct {
+		union {
+			struct {
+				unsigned char l;
+				unsigned char h;
+			};
+			unsigned short hl;
+		};
+	};
 
     //16 bit registers. 
     uint16_t pc;
@@ -23,7 +56,7 @@ typedef struct
     uint8_t n_flag;
     uint8_t c_flag;
     uint8_t h_flag;
-    
+
 }registers;
 
 typedef struct 
@@ -33,6 +66,8 @@ typedef struct
     uint16_t fetched_data;//Data fetched by current instruction.
     uint16_t memory_dest;//Instructions may or may not interact with this. Only trust it's value if the current instruction interacts with it.
     instruction curr_inst;
+
+    uint8_t work_ram[8192];
 
     int halt;//If this is true, no instructions will execute.
     int step;//If we are in stepping mode, only execute one instruction and wait.
@@ -52,6 +87,9 @@ void jp_nocond(cpu_state * state);
 
 //Logical/Arithmetic
 void xor_a(cpu_state * state);
+
+//Load/Store
+void ld_hl_d16(cpu_state * state);
 
 
 
