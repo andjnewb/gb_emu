@@ -59,9 +59,21 @@ void call_func(cpu_state * state, instruction ins)
 {
     switch(ins.op_code)
     {
+
+        case 0x6:
+        ld_b_d8(state);
+        state->regs.pc += ins.length;
+        break;
         case 0xc3:
         jp_nocond(state);
+        
         break;
+
+        case 0xe:
+        ld_c_d8(state);
+        state->regs.pc += ins.length;
+        break;
+
 
         case 0x21:
         ld_hl_d16(state);
@@ -79,7 +91,7 @@ void call_func(cpu_state * state, instruction ins)
         break;
 
         default:
-        printf("Non implemented instruction at %x: 0x%hhx %s\n", state->regs.pc , ins.op_code, ins.mnmemonic);
+        printf("Non implemented instruction at 0x%x: 0x%x %s\n", state->regs.pc , ins.op_code, ins.mnmemonic);
         state->halt = 1;//
         break;
     }
@@ -113,4 +125,14 @@ void xor_a(cpu_state * state)
 void ld_hl_d16(cpu_state * state)
 {
     state->regs.hl = state->fetched_data;
+}
+
+void ld_c_d8(cpu_state * state)
+{
+    state->regs.c = state->fetched_data;
+}
+
+void ld_b_d8(cpu_state * state)
+{
+    state->regs.b = state->fetched_data;
 }
