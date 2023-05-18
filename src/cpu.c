@@ -62,7 +62,8 @@ void call_func(cpu_state * state, instruction ins)
 
         case 0x5:
         dec_b(state);
-
+        state->regs.pc += ins.length;
+        break;
 
         case 0x32:
         ld_hl_decrement_a(state);
@@ -156,5 +157,31 @@ void ld_hl_decrement_a(cpu_state * state)
 
 void dec_b(cpu_state * state)
 {
-    state->regs.b--;
+    //state->regs.b--;
+
+
+    int result, carry_per_bit = state->regs.b - 1;
+    state->regs.b = result;
+
+    if(result == 0)
+    {
+        set_flag(1, "z", state);
+    }
+    else
+    {
+        set_flag(0, "z", state);
+    }
+
+    set_flag(1, "n", state);
+
+    if(carry_per_bit & (1<<3))
+    {
+        set_flag(1, "h", state);
+    }
+    else
+    {
+        set_flag(0, "h", state);
+    }
+
+
 }
