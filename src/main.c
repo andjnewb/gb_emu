@@ -344,7 +344,7 @@ int main(int argc, char *argv[])
     while (state.halt != 1)
     {
 
-        system("clear");
+        //system("clear");
         printf("\nPC: 0x%x\n", state.regs.pc);
         printf("A:%x B:%x C:%x D:%x E:%x H:%x L:%x \n", state.regs.a, state.regs.b, state.regs.c, state.regs.d, state.regs.e, state.regs.h, state.regs.l);
         printf("Flags: %d%d%d%d\n", state.regs.z_flag , state.regs.n_flag, state.regs.h_flag, state.regs.c_flag);
@@ -352,7 +352,8 @@ int main(int argc, char *argv[])
         printf("Fetched Data: %x \n", state.fetched_data);
         printf("Halted: %d\n", state.halt);
         printf("Cycle: %d\n\n", cycle);
-        state.curr_inst = instructions[state.regs.pc];
+        
+        state.curr_inst = instructions[r->bytes[state.regs.pc]];
         
 
 
@@ -400,6 +401,7 @@ int main(int argc, char *argv[])
             break;
         }
         //fprintf(out, "0x%x : %x %s %x \n", state.regs.pc,  state.curr_inst.op_code, state.curr_inst.mnmemonic ,state.fetched_data);
+        printf("Current instruction: %s %x\n", state.curr_inst.mnmemonic, state.fetched_data);
         call_func(&state, instructions[r->bytes[state.regs.pc]]);
         cycle++;
     }
