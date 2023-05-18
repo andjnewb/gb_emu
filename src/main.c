@@ -388,7 +388,7 @@ int main(int argc, char *argv[])
 
         case r8:
             state.fetched_data = r->bytes[state.regs.pc + 1];
-            state.regs.pc += r->bytes[state.regs.pc + 1];
+            //state.regs.pc += r->bytes[state.regs.pc + 1];
             break;
 
         case NONE:
@@ -400,8 +400,8 @@ int main(int argc, char *argv[])
             // exit(0);
             break;
         }
-        //fprintf(out, "0x%x : %x %s %x \n", state.regs.pc,  state.curr_inst.op_code, state.curr_inst.mnmemonic ,state.fetched_data);
-        printf("Current instruction: %s %x\n", state.curr_inst.mnmemonic, state.fetched_data);
+        fprintf(out, "0x%x : 0x%x %s %x \n", state.regs.pc,  state.curr_inst.op_code, state.curr_inst.mnmemonic ,state.fetched_data);
+        printf("Current instruction: 0x%x: %s %x\n", state.curr_inst.op_code, state.curr_inst.mnmemonic, state.fetched_data);
         call_func(&state, instructions[r->bytes[state.regs.pc]]);
         cycle++;
     }

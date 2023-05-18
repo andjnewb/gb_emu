@@ -63,7 +63,7 @@ typedef struct
 {
     registers regs;//Current state of CPU registers.
 
-    uint16_t fetched_data;//Data fetched by current instruction.
+    int16_t fetched_data;//Data fetched by current instruction.
     uint16_t memory_dest;//Instructions may or may not interact with this. Only trust it's value if the current instruction interacts with it.
     instruction curr_inst;
 
@@ -84,15 +84,22 @@ void call_func(cpu_state * state, instruction ins);
 
 //JUMPS
 void jp_nocond(cpu_state * state);
+void jr_nz_r8(cpu_state * state);
 
 //Logical/Arithmetic
 void xor_a(cpu_state * state);
+void dec_b(cpu_state * state);
+void dec_e(cpu_state * state);
+void dec_h(cpu_state * state);
+void rra(cpu_state * state);
+void or_b(cpu_state * state);
 
 //Load/Store
 void ld_hl_d16(cpu_state * state);
 void ld_c_d8(cpu_state * state);
 void ld_b_d8(cpu_state * state);
+void ld_d_d8(cpu_state * state);
 void ld_hl_decrement_a(cpu_state * state);
-void dec_b(cpu_state * state);
+
+
 #endif
-//

@@ -60,6 +60,34 @@ void call_func(cpu_state * state, instruction ins)
     switch(ins.op_code)
     {
 
+        case 0xb0:
+        or_b(state);
+        state->regs.pc += ins.length;
+        break;
+
+        case 0x25:
+        dec_h(state);
+        state->regs.pc += ins.length;
+
+        case 0x1f:
+        rra(state);
+        state->regs.pc += ins.length;
+        break;
+
+        case 0x16:
+        ld_d_d8(state);
+        state->regs.pc += ins.length;
+        break;
+
+        case 0x1d:
+        dec_e(state);
+        state->regs.pc += ins.length;
+        break;
+
+        case 0x20:
+        jr_nz_r8(state);
+        break;
+
         case 0x5:
         dec_b(state);
         state->regs.pc += ins.length;
@@ -108,6 +136,39 @@ void call_func(cpu_state * state, instruction ins)
     }
 }
 
+void or_b(cpu_state * state)
+{
+    uint8_t result = state->regs.a | state->regs.b;
+
+    state->regs.a = result;
+
+    if(result == 0)
+    {
+        set_flag(1, "z", state);
+    }
+    else
+    {
+        set_flag(0, "z", state);
+    }
+
+    state->regs.n_flag = 0;
+    state->regs.h_flag = 0;
+    state->regs.c_flag = 0;
+}
+
+void rra(cpu_state * state)
+{
+    state->regs.c_flag = (state->regs.a >> 0) & 1;
+
+    state->regs.a = (state->regs.a >> 1)|(state -> regs.a << (8 - 1));
+
+    state->regs.z_flag = 0;
+    state->regs.n_flag = 0;
+    state->regs.h_flag = 0;
+
+}
+
+
 void jp_nocond(cpu_state * state)
 {
     state->regs.pc = state->fetched_data;
@@ -148,6 +209,12 @@ void ld_b_d8(cpu_state * state)
     state->regs.b = state->fetched_data;
 }
 
+void ld_d_d8(cpu_state * state)
+{
+    state->regs.b = state->fetched_data;
+}
+
+
 void ld_hl_decrement_a(cpu_state * state)
 {
 
@@ -184,4 +251,76 @@ void dec_b(cpu_state * state)
     }
 
 
+}
+
+void dec_h(cpu_state * state)
+{
+    //state->regs.b--;
+
+
+    int result, carry_per_bit = state->regs.h - 1;
+    state->regs.h = result;
+
+    if(result == 0)
+    {
+        set_flag(1, "z", state);
+    }
+    else
+    {
+        set_flag(0, "z", state);
+    }
+
+    set_flag(1, "n", state);
+
+    if(carry_per_bit & (1<<3))
+    {
+        set_flag(1, "h", state);
+    }
+    else
+    {
+        set_flag(0, "h", state);
+    }
+
+
+}
+
+void dec_e(cpu_state * state)
+{
+    //state->regs.b--;
+
+
+    int result, carry_per_bit = state->regs.e - 1;
+    state->regs.e = result;
+
+    if(result == 0)
+    {
+        set_flag(1, "z", state);
+    }
+    else
+    {
+        set_flag(0, "z", state);
+    }
+
+    set_flag(1, "n", state);
+
+    if(carry_per_bit & (1<<3))
+    {
+        set_flag(1, "h", state);
+    }
+    else
+    {
+        set_flag(0, "h", state);
+    }
+
+
+}
+
+void jr_nz_r8(cpu_state * state)
+{
+
+    
+    if(state->regs.n_flag == 1 && state->regs.h_flag == 1)
+    {
+        state->regs.pc += state->fetched_data;
+    }
 }
