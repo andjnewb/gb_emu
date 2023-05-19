@@ -258,7 +258,7 @@ void dec_b(cpu_state * state)
     //state->regs.b--;
 
 
-    int result, carry_per_bit = state->regs.b - 1;
+    unsigned char result, carry_per_bit = state->regs.b - 1;
     state->regs.b = result;
 
     if(result == 0)
@@ -289,7 +289,7 @@ void dec_h(cpu_state * state)
     //state->regs.b--;
 
 
-    int result, carry_per_bit = state->regs.h - 1;
+    unsigned char result, carry_per_bit = state->regs.h - 1;
     state->regs.h = result;
 
     if(result == 0)
@@ -320,7 +320,7 @@ void dec_e(cpu_state * state)
     //state->regs.b--;
 
 
-    int result, carry_per_bit = state->regs.e - 1;
+    unsigned char result, carry_per_bit = state->regs.e - 1;
     state->regs.e = result;
 
     if(result == 0)
