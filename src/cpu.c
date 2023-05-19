@@ -392,7 +392,7 @@ void dec_e(cpu_state * state)
 
 void jr_nz_r8(cpu_state * state)
 {
-
+///FIX ME
     
     if(state->regs.n_flag == 1 && state->regs.h_flag == 1)
     {
