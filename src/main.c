@@ -401,11 +401,11 @@ int main(int argc, char *argv[])
             break;
         }
         fprintf(out, "0x%x : 0x%x %s %x \n", state.regs.pc,  state.curr_inst.op_code, state.curr_inst.mnmemonic ,state.fetched_data);
-        printf("Current instruction: 0x%x: %s %x\n", state.curr_inst.op_code, state.curr_inst.mnmemonic, state.fetched_data);
+        printf("Current instruction: 0x%x: %s %x\n", state.curr_inst.op_code, state.curr_inst.mnmemonic, (state.curr_inst.length > 1) ? state.fetched_data : 0);
         call_func(&state, instructions[r->bytes[state.regs.pc]]);
         cycle++;
         int d;
-        scanf("%d",d);
+        
     }
 ////
     printf("Disassembly written to: %s\n", "tetris.asm");

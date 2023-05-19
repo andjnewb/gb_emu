@@ -59,6 +59,16 @@ void call_func(cpu_state * state, instruction ins)
 {
     switch(ins.op_code)
     {
+        case 0x15:
+        dec_d(state);
+        state->regs.pc += ins.length;
+        break;
+
+        case 0x7b:
+        ld_a_e(state);
+        state->regs.pc += ins.length;
+        break;
+
         case 0x14:
         inc_d(state);
         state->regs.pc += ins.length;
@@ -162,7 +172,36 @@ void or_b(cpu_state * state)
 
 void inc_d(cpu_state *state)
 {
-    unsigned char result, carry_per_bit = state->regs.d + 1;
+    unsigned char result = state->regs.d + 1;
+    state->regs.d = result;
+    //printf("Result: %uc", state->regs.d);
+
+    if(result == 0)
+    {
+        set_flag(1, "z", state);
+    }
+    else
+    {
+        set_flag(0, "z", state);
+    }
+
+    set_flag(1, "n", state);
+
+    if(result & (1<<3))
+    {
+        set_flag(1, "h", state);
+    }
+    else
+    {
+        set_flag(0, "h", state);
+    }
+
+}
+
+void dec_d(cpu_state *state)
+{
+
+    unsigned char result= state->regs.d - 1;
     state->regs.d = result;
 
     if(result == 0)
@@ -176,7 +215,7 @@ void inc_d(cpu_state *state)
 
     set_flag(1, "n", state);
 
-    if(carry_per_bit & (1<<3))
+    if(result & (1<<3))
     {
         set_flag(1, "h", state);
     }
@@ -242,7 +281,7 @@ void ld_b_d8(cpu_state * state)
 
 void ld_d_d8(cpu_state * state)
 {
-    state->regs.b = state->fetched_data;
+    state->regs.d = state->fetched_data;
 }
 
 
@@ -253,12 +292,17 @@ void ld_hl_decrement_a(cpu_state * state)
     state->regs.hl--;
 }
 
+void ld_a_e(cpu_state *state)
+{
+    state->regs.a = state->regs.e;
+}
+
 void dec_b(cpu_state * state)
 {
     //state->regs.b--;
 
 
-    unsigned char result, carry_per_bit = state->regs.b - 1;
+    unsigned char result= state->regs.b - 1;
     state->regs.b = result;
 
     if(result == 0)
@@ -272,7 +316,7 @@ void dec_b(cpu_state * state)
 
     set_flag(1, "n", state);
 
-    if(carry_per_bit & (1<<3))
+    if(result & (1<<3))
     {
         set_flag(1, "h", state);
     }
@@ -289,7 +333,7 @@ void dec_h(cpu_state * state)
     //state->regs.b--;
 
 
-    unsigned char result, carry_per_bit = state->regs.h - 1;
+    unsigned char result = state->regs.h - 1;
     state->regs.h = result;
 
     if(result == 0)
@@ -303,7 +347,7 @@ void dec_h(cpu_state * state)
 
     set_flag(1, "n", state);
 
-    if(carry_per_bit & (1<<3))
+    if(result & (1<<3))
     {
         set_flag(1, "h", state);
     }
@@ -320,7 +364,7 @@ void dec_e(cpu_state * state)
     //state->regs.b--;
 
 
-    unsigned char result, carry_per_bit = state->regs.e - 1;
+    unsigned char result = state->regs.e - 1;
     state->regs.e = result;
 
     if(result == 0)
@@ -334,7 +378,7 @@ void dec_e(cpu_state * state)
 
     set_flag(1, "n", state);
 
-    if(carry_per_bit & (1<<3))
+    if(result & (1<<3))
     {
         set_flag(1, "h", state);
     }
