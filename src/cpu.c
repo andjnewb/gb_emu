@@ -59,6 +59,10 @@ void call_func(cpu_state * state, instruction ins)
 {
     switch(ins.op_code)
     {
+        case 0x14:
+        inc_d(state);
+        state->regs.pc += ins.length;
+        break;
 
         case 0xb0:
         or_b(state);
@@ -154,6 +158,33 @@ void or_b(cpu_state * state)
     state->regs.n_flag = 0;
     state->regs.h_flag = 0;
     state->regs.c_flag = 0;
+}
+
+void inc_d(cpu_state *state)
+{
+    unsigned char result, carry_per_bit = state->regs.d + 1;
+    state->regs.d = result;
+
+    if(result == 0)
+    {
+        set_flag(1, "z", state);
+    }
+    else
+    {
+        set_flag(0, "z", state);
+    }
+
+    set_flag(1, "n", state);
+
+    if(carry_per_bit & (1<<3))
+    {
+        set_flag(1, "h", state);
+    }
+    else
+    {
+        set_flag(0, "h", state);
+    }
+
 }
 
 void rra(cpu_state * state)

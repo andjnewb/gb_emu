@@ -404,6 +404,8 @@ int main(int argc, char *argv[])
         printf("Current instruction: 0x%x: %s %x\n", state.curr_inst.op_code, state.curr_inst.mnmemonic, state.fetched_data);
         call_func(&state, instructions[r->bytes[state.regs.pc]]);
         cycle++;
+        int d;
+        scanf("%d",d);
     }
 ////
     printf("Disassembly written to: %s\n", "tetris.asm");

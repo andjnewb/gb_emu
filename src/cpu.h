@@ -93,6 +93,7 @@ void dec_e(cpu_state * state);
 void dec_h(cpu_state * state);
 void rra(cpu_state * state);
 void or_b(cpu_state * state);
+void inc_d(cpu_state * state);
 
 //Load/Store
 void ld_hl_d16(cpu_state * state);
