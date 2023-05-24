@@ -3,16 +3,14 @@
 
 void init_cpu(cpu_state * state, struct romBytes * bytes)
 {
-    state->regs.a = 0;
-    state->regs.b = 0x0;
-    state->regs.c = 0x0;
-    state->regs.d = 0x0;
-    state->regs.e = 0x0;
-    
-    state->regs.h = 0x0;
-    state->regs.l = 0x0;
+
+    //These initial register values are based on the DMG(original) gameboy.
+    state->regs.af = 0x01b0;
+    state->regs.bc = 0x0013;
+    state->regs.de = 0x00d8;
+    state->regs.hl = 0x014d;
     state->regs.pc = 0x100;
-    state->regs.sp = 0x0;
+    state->regs.sp = 0xFFFE;
 
     state->fetched_data = 0x0;
     state->curr_inst.op_code = bytes->bytes[state->regs.pc];
@@ -55,7 +53,7 @@ void set_flag(int toSet, char flag[2], cpu_state * state)
         state->regs.c_flag == toSet;
     }
 }
-void call_func(cpu_state * state, instruction ins)
+void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
 {
     switch(ins.op_code)
     {
@@ -99,7 +97,7 @@ void call_func(cpu_state * state, instruction ins)
         break;
 
         case 0x20:
-        jr_nz_r8(state);
+        jr_nz_r8(state, bytes);
         break;
 
         case 0x5:
@@ -172,8 +170,8 @@ void or_b(cpu_state * state)
 
 void inc_d(cpu_state *state)
 {
-    unsigned char result = state->regs.d + 1;
-    state->regs.d = result;
+    int result = state->regs.d + 1;
+    state->regs.d = (unsigned char)result;
     //printf("Result: %uc", state->regs.d);
 
     if(result == 0)
@@ -201,11 +199,12 @@ void inc_d(cpu_state *state)
 void dec_d(cpu_state *state)
 {
 
-    unsigned char result= state->regs.d - 1;
-    state->regs.d = result;
+    int result = state->regs.d - 1;
+    state->regs.d = (unsigned char)result;
 
     if(result == 0)
     {
+        state->regs.d = 0;
         set_flag(1, "z", state);
     }
     else
@@ -302,11 +301,14 @@ void dec_b(cpu_state * state)
     //state->regs.b--;
 
 
-    unsigned char result= state->regs.b - 1;
-    state->regs.b = result;
+    int result = state->regs.b - 1;
+    state->regs.b = (unsigned char)result;
+    
 
-    if(result == 0)
+    if(result <= 0)
     {
+        //printf("RESULT WAS ZERO");
+        state->regs.b = 0;
         set_flag(1, "z", state);
     }
     else
@@ -333,11 +335,12 @@ void dec_h(cpu_state * state)
     //state->regs.b--;
 
 
-    unsigned char result = state->regs.h - 1;
-    state->regs.h = result;
+    int result = state->regs.h - 1;
+    state->regs.h = (unsigned char)result;
 
     if(result == 0)
     {
+        state->regs.h = 0;
         set_flag(1, "z", state);
     }
     else
@@ -364,11 +367,12 @@ void dec_e(cpu_state * state)
     //state->regs.b--;
 
 
-    unsigned char result = state->regs.e - 1;
-    state->regs.e = result;
+    int result = state->regs.e - 1;
+    state->regs.e = (unsigned char)result;
 
     if(result == 0)
     {
+        state->regs.e = 0;
         set_flag(1, "z", state);
     }
     else
@@ -390,12 +394,19 @@ void dec_e(cpu_state * state)
 
 }
 
-void jr_nz_r8(cpu_state * state)
+void jr_nz_r8(cpu_state * state, struct romBytes * bytes)
 {
-///FIX ME
+
+    int8_t toJump = (int8_t)state->fetched_data;
+
     
-    if(state->regs.n_flag == 1 && state->regs.h_flag == 1)
+    if(state->regs.z_flag == 0)
     {
-        state->regs.pc += state->fetched_data;
+        state->regs.pc += toJump;
     }
+    else
+    {
+        state->regs.pc += 2;
+    }
+
 }

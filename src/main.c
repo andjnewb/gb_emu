@@ -344,7 +344,7 @@ int main(int argc, char *argv[])
     while (state.halt != 1)
     {
 
-        //system("clear");
+        system("clear");
         printf("\nPC: 0x%x\n", state.regs.pc);
         printf("A:%x B:%x C:%x D:%x E:%x H:%x L:%x \n", state.regs.a, state.regs.b, state.regs.c, state.regs.d, state.regs.e, state.regs.h, state.regs.l);
         printf("Flags: %d%d%d%d\n", state.regs.z_flag , state.regs.n_flag, state.regs.h_flag, state.regs.c_flag);
@@ -389,6 +389,7 @@ int main(int argc, char *argv[])
         case r8:
             state.fetched_data = r->bytes[state.regs.pc + 1];
             //state.regs.pc += r->bytes[state.regs.pc + 1];
+
             break;
 
         case NONE:
@@ -400,11 +401,13 @@ int main(int argc, char *argv[])
             // exit(0);
             break;
         }
-        fprintf(out, "0x%x : 0x%x %s %x \n", state.regs.pc,  state.curr_inst.op_code, state.curr_inst.mnmemonic ,state.fetched_data);
+        ///fprintf(out, "0x%x : 0x%x %s %x \n", state.regs.pc,  state.curr_inst.op_code, state.curr_inst.mnmemonic ,state.fetched_data);
         printf("Current instruction: 0x%x: %s %x\n", state.curr_inst.op_code, state.curr_inst.mnmemonic, (state.curr_inst.length > 1) ? state.fetched_data : 0);
-        call_func(&state, instructions[r->bytes[state.regs.pc]]);
+        call_func(&state, instructions[r->bytes[state.regs.pc]], r);
         cycle++;
         int d;
+
+        
         
     }
 ////

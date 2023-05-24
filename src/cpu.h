@@ -78,13 +78,13 @@ void init_cpu(cpu_state * state, struct romBytes * bytes);
 int step_cpu();
 int decode_instruction(cpu_state * state, struct romBytes * bytes);
 void set_flag(int toSet, char flag[2], cpu_state * state);
-void call_func(cpu_state * state, instruction ins);
+void call_func(cpu_state * state, instruction ins, struct romBytes * bytes);
 
 //CPU INSTRUCTIONS
 
 //JUMPS
 void jp_nocond(cpu_state * state);
-void jr_nz_r8(cpu_state * state);
+void jr_nz_r8(cpu_state * state, struct romBytes * bytes);
 
 //Logical/Arithmetic
 void xor_a(cpu_state * state);
