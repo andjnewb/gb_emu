@@ -72,6 +72,8 @@ typedef struct
     int halt;//If this is true, no instructions will execute.
     int step;//If we are in stepping mode, only execute one instruction and wait.
 
+	
+
 }cpu_state;
 
 void init_cpu(cpu_state * state, struct romBytes * bytes);
