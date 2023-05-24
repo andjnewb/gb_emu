@@ -57,6 +57,17 @@ void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
 {
     switch(ins.op_code)
     {
+
+        case 0x3e:
+        ld_a_d8(state);
+        state->regs.pc += ins.length;
+        break;
+
+        case 0xd:
+        dec_c(state);
+        state->regs.pc += ins.length;
+        break;
+
         case 0x15:
         dec_d(state);
         state->regs.pc += ins.length;
@@ -174,6 +185,13 @@ void inc_d(cpu_state *state)
     state->regs.d = (unsigned char)result;
     //printf("Result: %uc", state->regs.d);
 
+
+    //THIS IS BAD
+    if(result > 255)
+    {
+        state->regs.d = 0;
+    }
+
     if(result == 0)
     {
         set_flag(1, "z", state);
@@ -196,13 +214,40 @@ void inc_d(cpu_state *state)
 
 }
 
+void dec_c(cpu_state * state)
+{
+    int result = state->regs.d - 1;
+    state->regs.c = (unsigned char)result;
+
+    if(result <= 0)
+    {
+        state->regs.c = 0;
+        set_flag(1, "z", state);
+    }
+    else
+    {
+        set_flag(0, "z", state);
+    }
+
+    set_flag(1, "n", state);
+
+    if(result & (1<<3))
+    {
+        set_flag(1, "h", state);
+    }
+    else
+    {
+        set_flag(0, "h", state);
+    }
+}
+
 void dec_d(cpu_state *state)
 {
 
     int result = state->regs.d - 1;
     state->regs.d = (unsigned char)result;
 
-    if(result == 0)
+    if(result <= 0)
     {
         state->regs.d = 0;
         set_flag(1, "z", state);
@@ -296,6 +341,11 @@ void ld_a_e(cpu_state *state)
     state->regs.a = state->regs.e;
 }
 
+void ld_a_d8(cpu_state *state)
+{
+    state->regs.a = state->fetched_data;
+}
+
 void dec_b(cpu_state * state)
 {
     //state->regs.b--;
@@ -338,7 +388,7 @@ void dec_h(cpu_state * state)
     int result = state->regs.h - 1;
     state->regs.h = (unsigned char)result;
 
-    if(result == 0)
+    if(result <= 0)
     {
         state->regs.h = 0;
         set_flag(1, "z", state);
@@ -370,7 +420,7 @@ void dec_e(cpu_state * state)
     int result = state->regs.e - 1;
     state->regs.e = (unsigned char)result;
 
-    if(result == 0)
+    if(result <= 0)
     {
         state->regs.e = 0;
         set_flag(1, "z", state);
