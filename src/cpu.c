@@ -17,12 +17,24 @@ void init_cpu(cpu_state * state, struct romBytes * bytes)
     state->halt = 0;
     state->memory_dest = 0x0;
     state->step = 1;
+
+    state->interrupt_master_enable = 0;
 }
 
 int step_cpu()
 {
     
 }
+
+void handle_interrupt(cpu_state * state)
+{
+    if(state->interrupt_master_enable == 1)
+    {
+
+    }
+}
+
+
 
 int decode_instruction(cpu_state * state, struct romBytes *bytes)
 {
@@ -57,6 +69,17 @@ void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
 {
     switch(ins.op_code)
     {
+
+
+        case 0xe0:
+        ldh_a8_a(state);
+        state->regs.pc += ins.length;
+        break;
+
+        case 0xf3:
+        di(state);
+        state->regs.pc += ins.length;
+        break;
 
         case 0x3e:
         ld_a_d8(state);
@@ -157,6 +180,31 @@ void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
         state->halt = 1;//
         break;
     }
+}
+
+void ldh_a8_a(cpu_state * state)
+{
+    union addr
+    {
+        uint16_t i;
+        uint8_t b[2];
+    }addr;
+    
+    union addr conv;
+
+    conv.b[0] = state->fetched_data;
+    conv.b[1] = 0xFF;
+
+
+    printf("Loading to address: %d\n", addr.i);
+
+    state->address_space[addr.i] = state->regs.a;
+}
+
+
+void di(cpu_state * state)
+{
+    state->interrupt_master_enable = 0;
 }
 
 void or_b(cpu_state * state)

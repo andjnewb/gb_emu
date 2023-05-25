@@ -72,7 +72,7 @@ typedef struct
     int halt;//If this is true, no instructions will execute.
     int step;//If we are in stepping mode, only execute one instruction and wait.
 
-	
+	int interrupt_master_enable;
 
 }cpu_state;
 
@@ -81,6 +81,7 @@ int step_cpu();
 int decode_instruction(cpu_state * state, struct romBytes * bytes);
 void set_flag(int toSet, char flag[2], cpu_state * state);
 void call_func(cpu_state * state, instruction ins, struct romBytes * bytes);
+void handle_interrupt(cpu_state * state);
 
 //CPU INSTRUCTIONS
 
@@ -107,5 +108,9 @@ void ld_d_d8(cpu_state * state);
 void ld_hl_decrement_a(cpu_state * state);
 void ld_a_e(cpu_state * state);
 void ld_a_d8(cpu_state * state);
+void ldh_a8_a(cpu_state * state);
+
+//MISC
+void di(cpu_state * state);
 
 #endif
