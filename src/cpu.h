@@ -109,6 +109,7 @@ void ld_hl_decrement_a(cpu_state * state);
 void ld_a_e(cpu_state * state);
 void ld_a_d8(cpu_state * state);
 void ldh_a8_a(cpu_state * state);
+void ldh_a_a8 (cpu_state * state);
 
 //MISC
 void di(cpu_state * state);

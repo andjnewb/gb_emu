@@ -69,7 +69,10 @@ void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
 {
     switch(ins.op_code)
     {
-
+        case 0xf0:
+        ldh_a_a8(state);
+        state->regs.pc += ins.length;
+        break;
 
         case 0xe0:
         ldh_a8_a(state);
@@ -182,23 +185,30 @@ void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
     }
 }
 
+void ldh_a_a8 (cpu_state * state)
+{
+
+    //I think this is working correctly, but I believe the location it's reading from is a register so currently it's empty. Will further test later.
+
+    //Set high byte to 0xFF and low byte to desired address.
+    uint16_t addr = ((0xFF << 8) | (state->fetched_data & 0x00FF));
+
+    
+
+    state->regs.a = state->address_space[addr];
+
+
+}
+
 void ldh_a8_a(cpu_state * state)
 {
-    union addr
-    {
-        uint16_t i;
-        uint8_t b[2];
-    }addr;
-    
-    union addr conv;
 
-    conv.b[0] = state->fetched_data;
-    conv.b[1] = 0xFF;
+    //Set high byte to 0xFF and low byte to desired address.
+    uint16_t addr = ((0xFF << 8) | (state->fetched_data & 0x00FF));
 
+    //printf("Loading to address: %x\n", addr);
 
-    printf("Loading to address: %d\n", addr.i);
-
-    state->address_space[addr.i] = state->regs.a;
+    state->address_space[addr] = state->regs.a;
 }
 
 
