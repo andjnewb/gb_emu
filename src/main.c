@@ -387,7 +387,7 @@ int main(int argc, char *argv[])
             break;
 
         case r8:
-            state.fetched_data = r->bytes[state.regs.pc + 1];
+            state.fetched_data_8_signed = r->bytes[state.regs.pc + 1];
             //state.regs.pc += r->bytes[state.regs.pc + 1];
 
             break;

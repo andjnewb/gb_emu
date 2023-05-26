@@ -423,6 +423,12 @@ void dec_b(cpu_state * state)
         state->regs.b = 0;
     }
 
+    else
+    {
+        set_flag(0, "z", state);
+        state->regs.b -= 1;
+    }
+
     set_flag(1, "n", state);
 
     if(state->regs.b & (1<<3))
@@ -504,12 +510,13 @@ void dec_e(cpu_state * state)
 void jr_nz_r8(cpu_state * state, struct romBytes * bytes)
 {
 
-    int8_t toJump = (int8_t)state->fetched_data;
+    int toJump = state->fetched_data_8_signed;
 
+    printf("tojump: %d", -(~toJump + 1));
     
     if(state->regs.z_flag == 0)
     {
-        state->regs.pc -= 2;
+        state->regs.pc -= 2;//
     }
     else
     {

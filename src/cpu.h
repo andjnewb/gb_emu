@@ -64,6 +64,7 @@ typedef struct
     registers regs;//Current state of CPU registers.
 
     uint16_t fetched_data;//Data fetched by current instruction.
+	int8_t fetched_data_8_signed;
     uint16_t memory_dest;//Instructions may or may not interact with this. Only trust it's value if the current instruction interacts with it.
     instruction curr_inst;
 
