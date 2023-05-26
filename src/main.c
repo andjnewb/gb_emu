@@ -407,10 +407,10 @@ int main(int argc, char *argv[])
         call_func(&state, instructions[r->bytes[state.regs.pc]], r);
         cycle++;
 
-        if(cycle > 1000)
-        {
-            exit(0);
-        }
+        // if(cycle > 1000)
+        // {
+        //     exit(0);
+        // }
 
         
         

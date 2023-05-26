@@ -543,7 +543,7 @@ void jr_nz_r8(cpu_state * state, struct romBytes * bytes)
 
     int toJump = state->fetched_data_8_signed;
 
-    //printf("tojump: %d", -(~toJump + 1) + 2);
+    printf("tojump: %d", -(~toJump + 1) + 2);
     
     if(state->regs.z_flag == 0)
     {
