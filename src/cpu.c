@@ -274,17 +274,26 @@ void inc_d(cpu_state *state)
 
 void dec_c(cpu_state * state)
 {
-    int result = state->regs.d - 1;
-    state->regs.c = (unsigned char)result;
+    
+    int result = state->regs.c - 1;
+    
 
-    if(result <= 0)
+    if(result < 0)
     {
-        state->regs.c = 0;
-        set_flag(1, "z", state);
+        //printf("RESULT WAS ZERO");      
+        set_flag(0, "z", state);
+        state->regs.c = 0xff;
     }
+    else if(result == 0)
+    {
+        set_flag(1, "z", state);
+        state->regs.c = 0;
+    }
+
     else
     {
         set_flag(0, "z", state);
+        state->regs.c -= 1;
     }
 
     set_flag(1, "n", state);
@@ -303,16 +312,24 @@ void dec_d(cpu_state *state)
 {
 
     int result = state->regs.d - 1;
-    state->regs.d = (unsigned char)result;
+    
 
-    if(result <= 0)
+    if(result < 0)
     {
-        state->regs.d = 0;
-        set_flag(1, "z", state);
+        //printf("RESULT WAS ZERO");      
+        set_flag(0, "z", state);
+        state->regs.d = 0xff;
     }
+    else if(result == 0)
+    {
+        set_flag(1, "z", state);
+        state->regs.d = 0;
+    }
+
     else
     {
         set_flag(0, "z", state);
+        state->regs.d -= 1;
     }
 
     set_flag(1, "n", state);
@@ -447,18 +464,25 @@ void dec_h(cpu_state * state)
 {
     //state->regs.b--;
 
-
     int result = state->regs.h - 1;
-    state->regs.h = (unsigned char)result;
+    
 
-    if(result <= 0)
+    if(result < 0)
     {
-        state->regs.h = 0;
-        set_flag(1, "z", state);
+        //printf("RESULT WAS ZERO");      
+        set_flag(0, "z", state);
+        state->regs.h = 0xff;
     }
+    else if(result == 0)
+    {
+        set_flag(1, "z", state);
+        state->regs.h = 0;
+    }
+
     else
     {
         set_flag(0, "z", state);
+        state->regs.h -= 1;
     }
 
     set_flag(1, "n", state);
@@ -479,18 +503,25 @@ void dec_e(cpu_state * state)
 {
     //state->regs.b--;
 
-
     int result = state->regs.e - 1;
-    state->regs.e = (unsigned char)result;
+    
 
-    if(result <= 0)
+    if(result < 0)
     {
-        state->regs.e = 0;
-        set_flag(1, "z", state);
+        //printf("RESULT WAS ZERO");      
+        set_flag(0, "z", state);
+        state->regs.e = 0xff;
     }
+    else if(result == 0)
+    {
+        set_flag(1, "z", state);
+        state->regs.e = 0;
+    }
+
     else
     {
         set_flag(0, "z", state);
+        state->regs.e -= 1;
     }
 
     set_flag(1, "n", state);
@@ -512,11 +543,11 @@ void jr_nz_r8(cpu_state * state, struct romBytes * bytes)
 
     int toJump = state->fetched_data_8_signed;
 
-    printf("tojump: %d", -(~toJump + 1));
+    //printf("tojump: %d", -(~toJump + 1) + 2);
     
     if(state->regs.z_flag == 0)
     {
-        state->regs.pc -= 2;//
+        state->regs.pc += -(~toJump + 1) + 2;//
     }
     else
     {
