@@ -368,8 +368,9 @@ void xor_a(cpu_state * state)
     //This is effectively a NOP
 
     uint8_t result = state->regs.a ^ state->regs.a;
+    state->regs.a = result;
 
-    if(result == 1)
+    if(result == 0)
     {
         set_flag(1, "z", state);
     }
