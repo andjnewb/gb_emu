@@ -408,25 +408,24 @@ void dec_b(cpu_state * state)
 {
     //state->regs.b--;
 
-
     int result = state->regs.b - 1;
-    state->regs.b = (unsigned char)result;
     
 
-    if(result <= 0)
+    if(result < 0)
     {
-        //printf("RESULT WAS ZERO");
-        state->regs.b = 0;
-        set_flag(1, "z", state);
-    }
-    else
-    {
+        //printf("RESULT WAS ZERO");      
         set_flag(0, "z", state);
+        state->regs.b = 0xff;
+    }
+    else if(result == 0)
+    {
+        set_flag(1, "z", state);
+        state->regs.b = 0;
     }
 
     set_flag(1, "n", state);
 
-    if(result & (1<<3))
+    if(state->regs.b & (1<<3))
     {
         set_flag(1, "h", state);
     }
@@ -510,7 +509,7 @@ void jr_nz_r8(cpu_state * state, struct romBytes * bytes)
     
     if(state->regs.z_flag == 0)
     {
-        state->regs.pc += toJump;
+        state->regs.pc -= 2;
     }
     else
     {
