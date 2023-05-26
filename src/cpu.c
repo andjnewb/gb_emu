@@ -69,6 +69,11 @@ void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
 {
     switch(ins.op_code)
     {
+        case 0xfe:
+        cp_d8(state);
+        state->regs.pc += ins.length;
+        break;
+
         case 0xf0:
         ldh_a_a8(state);
         state->regs.pc += ins.length;
@@ -268,6 +273,51 @@ void inc_d(cpu_state *state)
     else
     {
         set_flag(0, "h", state);
+    }
+
+}
+
+void cp_d8(cpu_state * state)
+{
+
+    int result = state->regs.a - state->fetched_data;
+
+     if(result < 0)
+    {
+        //printf("RESULT WAS ZERO");      
+        set_flag(0, "z", state);
+        
+    }
+    else if(result == 0)
+    {
+        set_flag(1, "z", state);
+        
+    }
+
+    else
+    {
+        set_flag(0, "z", state);
+        
+    }
+
+    set_flag(1, "n", state);
+
+    if(result & (1<<3))
+    {
+        set_flag(1, "h", state);
+    }
+    else
+    {
+        set_flag(0, "h", state);
+    }
+
+    if(result & (1<<7))
+    {
+        set_flag(1, "c", state);
+    }
+    else
+    {
+        set_flag(0, "c", state);
     }
 
 }

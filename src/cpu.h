@@ -101,6 +101,9 @@ void or_b(cpu_state * state);
 void inc_d(cpu_state * state);
 void dec_d(cpu_state * state);
 
+//Comparison
+void cp_d8(cpu_state * state);
+
 //Load/Store
 void ld_hl_d16(cpu_state * state);
 void ld_c_d8(cpu_state * state);
