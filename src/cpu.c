@@ -223,7 +223,7 @@ void ldh_a_a8 (cpu_state * state)
 
     state->regs.a = state->address_space[addr];
 
-
+    state->cycles += get_instruction_cycles(state->curr_inst, 1);
 }
 
 void ldh_a8_a(cpu_state * state)
@@ -235,12 +235,15 @@ void ldh_a8_a(cpu_state * state)
     //printf("Loading to address: %x\n", addr);
 
     state->address_space[addr] = state->regs.a;
+
+    state->cycles += get_instruction_cycles(state->curr_inst, 1);
 }
 
 
 void di(cpu_state * state)
 {
     state->interrupt_master_enable = 0;
+    state->cycles += get_instruction_cycles(state->curr_inst, 1);
 }
 
 void or_b(cpu_state * state)
@@ -261,6 +264,8 @@ void or_b(cpu_state * state)
     state->regs.n_flag = 0;
     state->regs.h_flag = 0;
     state->regs.c_flag = 0;
+
+    state->cycles += get_instruction_cycles(state->curr_inst, 1);
 }
 
 void inc_d(cpu_state *state)
@@ -295,6 +300,8 @@ void inc_d(cpu_state *state)
     {
         set_flag(0, "h", state);
     }
+
+    state->cycles += get_instruction_cycles(state->curr_inst, 1);
 
 }
 
@@ -341,6 +348,8 @@ void cp_d8(cpu_state * state)
         set_flag(0, "c", state);
     }
 
+    state->cycles += get_instruction_cycles(state->curr_inst, 1);
+
 }
 
 void dec_c(cpu_state * state)
@@ -377,6 +386,8 @@ void dec_c(cpu_state * state)
     {
         set_flag(0, "h", state);
     }
+
+    state->cycles += get_instruction_cycles(state->curr_inst, 1);
 }
 
 void dec_d(cpu_state *state)
@@ -414,6 +425,8 @@ void dec_d(cpu_state *state)
         set_flag(0, "h", state);
     }
 
+    state->cycles += get_instruction_cycles(state->curr_inst, 1);
+
 }
 
 void rra(cpu_state * state)
@@ -426,12 +439,15 @@ void rra(cpu_state * state)
     state->regs.n_flag = 0;
     state->regs.h_flag = 0;
 
+    state->cycles += get_instruction_cycles(state->curr_inst, 1);
+
 }
 
 
 void jp_nocond(cpu_state * state)
 {
     state->regs.pc = state->fetched_data;
+    state->cycles += get_instruction_cycles(state->curr_inst, 1);
 }
 
 void xor_a(cpu_state * state)
@@ -453,26 +469,32 @@ void xor_a(cpu_state * state)
     set_flag(0,"n",state);
     set_flag(0,"h",state);
     set_flag(0,"c",state);
+
+    state->cycles += get_instruction_cycles(state->curr_inst, 1);
 }
 
 void ld_hl_d16(cpu_state * state)
 {
     state->regs.hl = state->fetched_data;
+    state->cycles += get_instruction_cycles(state->curr_inst, 1);
 }
 
 void ld_c_d8(cpu_state * state)
 {
     state->regs.c = state->fetched_data;
+    state->cycles += get_instruction_cycles(state->curr_inst, 1);
 }
 
 void ld_b_d8(cpu_state * state)
 {
     state->regs.b = state->fetched_data;
+    state->cycles += get_instruction_cycles(state->curr_inst, 1);
 }
 
 void ld_d_d8(cpu_state * state)
 {
     state->regs.d = state->fetched_data;
+    state->cycles += get_instruction_cycles(state->curr_inst, 1);
 }
 
 
@@ -481,16 +503,19 @@ void ld_hl_decrement_a(cpu_state * state)
 
     state->address_space[state->regs.hl] = state->regs.a;
     state->regs.hl--;
+    state->cycles += get_instruction_cycles(state->curr_inst, 1);
 }
 
 void ld_a_e(cpu_state *state)
 {
     state->regs.a = state->regs.e;
+    state->cycles += get_instruction_cycles(state->curr_inst, 1);
 }
 
 void ld_a_d8(cpu_state *state)
 {
     state->regs.a = state->fetched_data;
+    state->cycles += get_instruction_cycles(state->curr_inst, 1);
 }
 
 void dec_b(cpu_state * state)
@@ -568,7 +593,7 @@ void dec_h(cpu_state * state)
         set_flag(0, "h", state);
     }
 
-
+    state->cycles += get_instruction_cycles(state->curr_inst, 1);
 }
 
 void dec_e(cpu_state * state)
@@ -607,7 +632,7 @@ void dec_e(cpu_state * state)
         set_flag(0, "h", state);
     }
 
-
+    state->cycles += get_instruction_cycles(state->curr_inst, 1);
 }
 
 void jr_nz_r8(cpu_state * state, struct romBytes * bytes)
@@ -620,10 +645,12 @@ void jr_nz_r8(cpu_state * state, struct romBytes * bytes)
     if(state->regs.z_flag == 0)
     {
         state->regs.pc += -(~toJump + 1) + 2;//
+        state->cycles += get_instruction_cycles(state->curr_inst, 1);
     }
     else
     {
         state->regs.pc += 2;
+        state->cycles += get_instruction_cycles(state->curr_inst, 0);
     }
 
 }

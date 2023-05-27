@@ -339,7 +339,7 @@ int main(int argc, char *argv[])
     //     }
     // }
 
-    int cycle = 0;
+    
 
     while (state.halt != 1)
     {
@@ -351,7 +351,7 @@ int main(int argc, char *argv[])
         printf("Stack Pointer: %x\n", state.regs.sp);
         printf("Fetched Data: %x \n", state.fetched_data);
         printf("Halted: %d\n", state.halt);
-        printf("Cycle: %d\n\n", cycle);
+        printf("Cycle: %d\n\n", state.cycles);
         printf("Interrupts Enabled: %s\n", state.interrupt_master_enable == 1? "Yes" : "No");
         
         
@@ -415,7 +415,7 @@ int main(int argc, char *argv[])
             handle_interrupt(&state);
         }
 
-        if(cycle > 1000)
+        if(state.cycles > 1000)
         {
             exit(0);
         }
