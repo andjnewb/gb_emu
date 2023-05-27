@@ -352,6 +352,8 @@ int main(int argc, char *argv[])
         printf("Fetched Data: %x \n", state.fetched_data);
         printf("Halted: %d\n", state.halt);
         printf("Cycle: %d\n\n", cycle);
+        printf("Interrupts Enabled: %s\n", state.interrupt_master_enable == 1? "Yes" : "No");
+        
         
         state.curr_inst = instructions[r->bytes[state.regs.pc]];
         
@@ -403,9 +405,23 @@ int main(int argc, char *argv[])
         }
         fprintf(out, "0x%x : 0x%x %s %x \n", state.regs.pc,  state.curr_inst.op_code, state.curr_inst.mnmemonic ,state.fetched_data);
         printf("Current instruction: 0x%x: %s %x\n", state.curr_inst.op_code, state.curr_inst.mnmemonic, (state.curr_inst.length > 1) ? state.fetched_data : 0);
-        handle_interrupt(&state);
+        //printf("Cycle from Current: %d/%d\n", get_instruction_cycles(state.curr_inst, 1), get_instruction_cycles(state.curr_inst, 0));
+
+
         call_func(&state, instructions[r->bytes[state.regs.pc]], r);
-        cycle++;
+
+        if(state.interrupt_master_enable == 1)
+        {
+            handle_interrupt(&state);
+        }
+
+        if(cycle > 1000)
+        {
+            exit(0);
+        }
+
+
+        
 
         
 

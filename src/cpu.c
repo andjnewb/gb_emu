@@ -28,12 +28,33 @@ int step_cpu()
 
 void handle_interrupt(cpu_state * state)
 {
-    if(state->interrupt_master_enable == 1)
-    {
-
-    }
+    
 }
 
+int get_instruction_cycles(instruction ins, int actionTaken)
+{
+    int taken;
+    int noTaken;
+    char * token;
+
+    token = strtok(ins.cycles, "/");
+    taken = atoi(token);
+
+    token = strtok(NULL, "/");
+    noTaken = atoi(token);
+
+    // printf("Taken: %d Not Taken: %d", taken, noTaken);
+
+    if( actionTaken == 1)
+    {
+        return taken;
+    }
+    else
+    {
+        return noTaken;
+    }
+    
+}
 
 
 int decode_instruction(cpu_state * state, struct romBytes *bytes)
@@ -508,7 +529,7 @@ void dec_b(cpu_state * state)
         set_flag(0, "h", state);
     }
 
-
+    state->cycles += get_instruction_cycles(state->curr_inst, 1);
 }
 
 void dec_h(cpu_state * state)

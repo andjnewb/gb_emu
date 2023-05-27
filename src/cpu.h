@@ -4,6 +4,7 @@
 #include "instructions.h"
 #include "disassemble.h"
 #include <byteswap.h>
+#include <string.h>
 typedef struct 
 {
     //8 bit registers. Can also be addressed in 16 bit pairs.
@@ -68,6 +69,8 @@ typedef struct
     uint16_t memory_dest;//Instructions may or may not interact with this. Only trust it's value if the current instruction interacts with it.
     instruction curr_inst;
 
+	int cycles;
+
     uint8_t address_space[0xffff];
 
     int halt;//If this is true, no instructions will execute.
@@ -83,6 +86,7 @@ int decode_instruction(cpu_state * state, struct romBytes * bytes);
 void set_flag(int toSet, char flag[2], cpu_state * state);
 void call_func(cpu_state * state, instruction ins, struct romBytes * bytes);
 void handle_interrupt(cpu_state * state);
+int get_instruction_cycles(instruction ins, int actionTaken);
 
 //CPU INSTRUCTIONS
 
