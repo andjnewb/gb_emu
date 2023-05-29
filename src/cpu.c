@@ -1,6 +1,27 @@
 #include "cpu.h"
 #include "disassemble.h"
 
+//CPU FUNCTIONS. Should find a better place for these. Macros are defined in instructions.h
+
+//Arithmetic/Logic
+_DEC_REG(b)
+_DEC_REG(d)
+_DEC_REG(h)
+_DEC_REG(c)
+_DEC_REG(e)
+_DEC_REG(l)
+_DEC_REG(a)
+
+//Load/Store
+_LD_REG_8_8(a,e)
+
+_LD_REG_d8(a)
+_LD_REG_d8(b)
+_LD_REG_d8(c)
+_LD_REG_d8(d)
+_LD_REG_d8(e)
+_LD_REG_d8(h)
+_LD_REG_d8(l)
 
 void init_cpu(cpu_state * state, struct romBytes * bytes)
 {
@@ -99,14 +120,6 @@ void set_flag(int toSet, char flag[2], cpu_state * state)
     }
 }
 
-//CPU FUNCTIONS. Should find a better place for these.
-_DEC_REG(b)
-_DEC_REG(d)
-_DEC_REG(h)
-_DEC_REG(c)
-_DEC_REG(e)
-_DEC_REG(l)
-_DEC_REG(a)
 
 void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
 {
@@ -133,7 +146,7 @@ void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
         break;
 
         case 0x3e:
-        ld_a_d8(state);
+        _LD_a_d8(state);
         state->regs.pc += ins.length;
         break;
 
@@ -148,7 +161,7 @@ void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
         break;
 
         case 0x7b:
-        ld_a_e(state);
+        _LD_a_e(state);
         state->regs.pc += ins.length;
         break;
 
@@ -172,7 +185,7 @@ void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
         break;
 
         case 0x16:
-        ld_d_d8(state);
+        _LD_d_d8(state);
         state->regs.pc += ins.length;
         break;
 
@@ -197,7 +210,7 @@ void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
         break;
 
         case 0x6:
-        ld_b_d8(state);
+        _LD_b_d8(state);
         state->regs.pc += ins.length;
         break;
 
@@ -206,7 +219,7 @@ void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
         break;
 
         case 0xe:
-        ld_c_d8(state);
+        _LD_c_d8(state);
         state->regs.pc += ins.length;
         break;
 
@@ -376,83 +389,6 @@ void cp_d8(cpu_state * state)
 
 }
 
-void dec_c(cpu_state * state)
-{
-    
-    int result = state->regs.c - 1;
-    
-
-    if(result < 0)
-    {
-        //printf("RESULT WAS ZERO");      
-        set_flag(0, "z", state);
-        state->regs.c = 0xff;
-    }
-    else if(result == 0)
-    {
-        set_flag(1, "z", state);
-        state->regs.c = 0;
-    }
-
-    else
-    {
-        set_flag(0, "z", state);
-        state->regs.c -= 1;
-    }
-
-    set_flag(1, "n", state);
-
-    if(result & (1<<3))
-    {
-        set_flag(1, "h", state);
-    }
-    else
-    {
-        set_flag(0, "h", state);
-    }
-
-    state->cycles += get_instruction_cycles(state->curr_inst, 1);
-}
-
-void dec_d(cpu_state *state)
-{
-
-    int result = state->regs.d - 1;
-    
-
-    if(result < 0)
-    {
-        //printf("RESULT WAS ZERO");      
-        set_flag(0, "z", state);
-        state->regs.d = 0xff;
-    }
-    else if(result == 0)
-    {
-        set_flag(1, "z", state);
-        state->regs.d = 0;
-    }
-
-    else
-    {
-        set_flag(0, "z", state);
-        state->regs.d -= 1;
-    }
-
-    set_flag(1, "n", state);
-
-    if(result & (1<<3))
-    {
-        set_flag(1, "h", state);
-    }
-    else
-    {
-        set_flag(0, "h", state);
-    }
-
-    state->cycles += get_instruction_cycles(state->curr_inst, 1);
-
-}
-
 void rra(cpu_state * state)
 {
     state->regs.c_flag = (state->regs.a >> 0) & 1;
@@ -503,25 +439,6 @@ void ld_hl_d16(cpu_state * state)
     state->cycles += get_instruction_cycles(state->curr_inst, 1);
 }
 
-void ld_c_d8(cpu_state * state)
-{
-    state->regs.c = state->fetched_data;
-    state->cycles += get_instruction_cycles(state->curr_inst, 1);
-}
-
-void ld_b_d8(cpu_state * state)
-{
-    state->regs.b = state->fetched_data;
-    state->cycles += get_instruction_cycles(state->curr_inst, 1);
-}
-
-void ld_d_d8(cpu_state * state)
-{
-    state->regs.d = state->fetched_data;
-    state->cycles += get_instruction_cycles(state->curr_inst, 1);
-}
-
-
 void ld_hl_decrement_a(cpu_state * state)
 {
 
@@ -530,134 +447,6 @@ void ld_hl_decrement_a(cpu_state * state)
     state->cycles += get_instruction_cycles(state->curr_inst, 1);
 }
 
-void ld_a_e(cpu_state *state)
-{
-    state->regs.a = state->regs.e;
-    state->cycles += get_instruction_cycles(state->curr_inst, 1);
-}
-
-void ld_a_d8(cpu_state *state)
-{
-    state->regs.a = state->fetched_data;
-    state->cycles += get_instruction_cycles(state->curr_inst, 1);
-}
-
-void dec_b(cpu_state * state)
-{
-    //state->regs.b--;
-
-    int result = state->regs.b - 1;
-    
-
-    if(result < 0)
-    {
-        //printf("RESULT WAS ZERO");      
-        set_flag(0, "z", state);
-        state->regs.b = 0xff;
-    }
-    else if(result == 0)
-    {
-        set_flag(1, "z", state);
-        state->regs.b = 0;
-    }
-
-    else
-    {
-        set_flag(0, "z", state);
-        state->regs.b -= 1;
-    }
-
-    set_flag(1, "n", state);
-
-    if(state->regs.b & (1<<3))
-    {
-        set_flag(1, "h", state);
-    }
-    else
-    {
-        set_flag(0, "h", state);
-    }
-
-    state->cycles += get_instruction_cycles(state->curr_inst, 1);
-}
-
-void dec_h(cpu_state * state)
-{
-    //state->regs.b--;
-
-    int result = state->regs.h - 1;
-    
-
-    if(result < 0)
-    {
-        //printf("RESULT WAS ZERO");      
-        set_flag(0, "z", state);
-        state->regs.h = 0xff;
-    }
-    else if(result == 0)
-    {
-        set_flag(1, "z", state);
-        state->regs.h = 0;
-    }
-
-    else
-    {
-        set_flag(0, "z", state);
-        state->regs.h -= 1;
-    }
-
-    set_flag(1, "n", state);
-
-    if(result & (1<<3))
-    {
-        set_flag(1, "h", state);
-    }
-    else
-    {
-        set_flag(0, "h", state);
-    }
-
-    state->cycles += get_instruction_cycles(state->curr_inst, 1);
-}
-
-void dec_e(cpu_state * state)
-{
-    //state->regs.b--;
-
-    int result = state->regs.e - 1;
-    
-
-    if(result < 0)
-    {
-        //printf("RESULT WAS ZERO");      
-        set_flag(0, "z", state);
-        state->regs.e = 0xff;
-    }
-    else if(result == 0)
-    {
-        set_flag(1, "z", state);
-        state->regs.e = 0;
-    }
-
-    else
-    {
-        set_flag(0, "z", state);
-        state->regs.e -= 1;
-    }
-
-    set_flag(1, "n", state);
-
-    if(result & (1<<3))
-    {
-        set_flag(1, "h", state);
-    }
-    else
-    {
-        set_flag(0, "h", state);
-    }
-
-    state->cycles += get_instruction_cycles(state->curr_inst, 1);
-}
 
 void jr_nz_r8(cpu_state * state, struct romBytes * bytes)
 {

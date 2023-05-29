@@ -99,26 +99,26 @@ void jr_nz_r8(cpu_state * state, struct romBytes * bytes);
 
 //Logical/Arithmetic
 void xor_a(cpu_state * state);
-void dec_b(cpu_state * state);
-void dec_e(cpu_state * state);
-void dec_h(cpu_state * state);
-void dec_c(cpu_state * state);
+// void dec_b(cpu_state * state);
+// void dec_e(cpu_state * state);
+// void dec_h(cpu_state * state);
+// void dec_c(cpu_state * state);
 void rra(cpu_state * state);
 void or_b(cpu_state * state);
 void inc_d(cpu_state * state);
-void dec_d(cpu_state * state);
+//void dec_d(cpu_state * state);
 
 //Comparison
 void cp_d8(cpu_state * state);
 
 //Load/Store
 void ld_hl_d16(cpu_state * state);
-void ld_c_d8(cpu_state * state);
-void ld_b_d8(cpu_state * state);
-void ld_d_d8(cpu_state * state);
+// void ld_c_d8(cpu_state * state);
+// void ld_b_d8(cpu_state * state);
+// void ld_d_d8(cpu_state * state);
 void ld_hl_decrement_a(cpu_state * state);
-void ld_a_e(cpu_state * state);
-void ld_a_d8(cpu_state * state);
+//void ld_a_e(cpu_state * state);
+//void ld_a_d8(cpu_state * state);
 void ldh_a8_a(cpu_state * state);
 void ldh_a_a8 (cpu_state * state);
 

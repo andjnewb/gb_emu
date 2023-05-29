@@ -5,40 +5,24 @@
 //
 
 /*
-int result = state->regs.b - 1;
-    
-
-    if(result < 0)
-    {
-        //printf("RESULT WAS ZERO");      
-        set_flag(0, "z", state);
-        state->regs.b = 0xff;
-    }
-    else if(result == 0)
-    {
-        set_flag(1, "z", state);
-        state->regs.b = 0;
-    }
-
-    else
-    {
-        set_flag(0, "z", state);
-        state->regs.b -= 1;
-    }
-
-    set_flag(1, "n", state);
-
-    if(state->regs.b & (1<<3))
-    {
-        set_flag(1, "h", state);
-    }
-    else
-    {
-        set_flag(0, "h", state);
-    }
-
+state->regs.a = state->fetched_data;
     state->cycles += get_instruction_cycles(state->curr_inst, 1);
+    
 */
+
+#define _LD_REG_d8(reg)\
+    void _LD_##reg## _d8(cpu_state * state)\
+    {\
+        state->regs.reg = state->fetched_data;\
+        state->cycles += get_instruction_cycles(state->curr_inst, 1);\
+    }\
+
+#define _LD_REG_8_8(reg1, reg2)\
+    void _LD_##reg1##_##reg2(cpu_state * state)\
+    {\
+        state->regs.reg1 = state->regs.reg2;\
+        state->cycles += get_instruction_cycles(state->curr_inst, 1);\
+    }\
 
 
 #define _DEC_REG(register) \
