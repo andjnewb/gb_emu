@@ -19,6 +19,7 @@ int init_video(video_state * v_state)
 
     SDL_CreateWindowAndRenderer(640, 480, 0, &v_state->window, &v_state->renderer);
 
+
     if(&v_state->window == NULL)
     {
         printf("Window was NULL...\n");
@@ -56,7 +57,7 @@ void get_text_and_rect(SDL_Renderer * renderer, int x, int y, char * text, TTF_F
     int text_height;
     SDL_Surface *  tSurface;
     
-    tSurface = TTF_RenderText_Solid(font, text, state->textColor);
+    tSurface = TTF_RenderText_Solid_Wrapped(font, text, state->textColor, 0);
     *texture = SDL_CreateTextureFromSurface(renderer, tSurface);
 
     text_width = tSurface->w;

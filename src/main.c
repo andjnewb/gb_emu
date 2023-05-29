@@ -293,9 +293,7 @@ int main(int argc, char *argv[])
     init_cpu(&state, r);
     state.regs.pc = 0x100;
 
-     get_text_and_rect(v_state.renderer, 0, 0, "Penis", v_state.font, &v_state.tex1, v_state.rect1, &v_state);
-    // get_text_and_rect(v_state->renderer, 0, v_state->rect1->y + v_state->rect1->h, "Balls", v_state->font, &v_state->tex2, v_state->rect2, v_state);
-
+     
     while (state.halt != 1)
     {
         while(SDL_PollEvent(&v_state.event) == 1)
@@ -306,17 +304,43 @@ int main(int argc, char *argv[])
             }
         }
 
+        char text_state[512];
+
+        sprintf(text_state, "\nPC: 0x%x\nA:%x B:%x C:%x D:%x E:%x H:%x L:%x \nFlags: %d%d%d%d\nStack Pointer: %x\nFetched Data: %x \nHalted: %d\nCycle: %d\nInterrupts Enabled: %s\n",
+            state.regs.pc,
+            state.regs.a, state.regs.b, state.regs.c, state.regs.d, state.regs.e, state.regs.h, state.regs.l,
+            state.regs.z_flag , state.regs.n_flag, state.regs.h_flag, state.regs.c_flag,
+            state.regs.sp,
+            state.fetched_data,
+            state.halt,
+            state.cycles,
+            state.interrupt_master_enable == 1? "Yes" : "No"
+        );
+
+        get_text_and_rect(v_state.renderer, 0, 0, text_state, v_state.font, &v_state.tex1, v_state.rect1, &v_state);
+        
+
+
+
+        SDL_SetRenderDrawColor(v_state.renderer, 0, 0, 0, 0);
+        SDL_RenderClear(v_state.renderer);
+
+        /* Use TTF textures. */
+        SDL_RenderCopy(v_state.renderer, v_state.tex1, NULL, v_state.rect1);
+        SDL_RenderCopy(v_state.renderer, v_state.tex2, NULL, v_state.rect2);
+
+        SDL_RenderPresent(v_state.renderer);
 
 
         //system("clear");
-        printf("\nPC: 0x%x\n", state.regs.pc);
-        printf("A:%x B:%x C:%x D:%x E:%x H:%x L:%x \n", state.regs.a, state.regs.b, state.regs.c, state.regs.d, state.regs.e, state.regs.h, state.regs.l);
-        printf("Flags: %d%d%d%d\n", state.regs.z_flag , state.regs.n_flag, state.regs.h_flag, state.regs.c_flag);
-        printf("Stack Pointer: %x\n", state.regs.sp);
-        printf("Fetched Data: %x \n", state.fetched_data);
-        printf("Halted: %d\n", state.halt);
-        printf("Cycle: %d\n\n", state.cycles);
-        printf("Interrupts Enabled: %s\n", state.interrupt_master_enable == 1? "Yes" : "No");
+        // printf("\nPC: 0x%x\n", state.regs.pc);
+        // printf("A:%x B:%x C:%x D:%x E:%x H:%x L:%x \n", state.regs.a, state.regs.b, state.regs.c, state.regs.d, state.regs.e, state.regs.h, state.regs.l);
+        // printf("Flags: %d%d%d%d\n", state.regs.z_flag , state.regs.n_flag, state.regs.h_flag, state.regs.c_flag);
+        // printf("Stack Pointer: %x\n", state.regs.sp);
+        // printf("Fetched Data: %x \n", state.fetched_data);
+        // printf("Halted: %d\n", state.halt);
+        // printf("Cycle: %d\n\n", state.cycles);
+        // printf("Interrupts Enabled: %s\n", state.interrupt_master_enable == 1? "Yes" : "No");
         
         
         state.curr_inst = instructions[r->bytes[state.regs.pc]];
@@ -367,8 +391,8 @@ int main(int argc, char *argv[])
             // exit(0);
             break;
         }
-        fprintf(out, "0x%x : 0x%x %s %x \n", state.regs.pc,  state.curr_inst.op_code, state.curr_inst.mnmemonic ,state.fetched_data);
-        printf("Current instruction: 0x%x: %s %x\n", state.curr_inst.op_code, state.curr_inst.mnmemonic, (state.curr_inst.length > 1) ? state.fetched_data : 0);
+        //fprintf(out, "0x%x : 0x%x %s %x \n", state.regs.pc,  state.curr_inst.op_code, state.curr_inst.mnmemonic ,state.fetched_data);
+        //printf("Current instruction: 0x%x: %s %x\n", state.curr_inst.op_code, state.curr_inst.mnmemonic, (state.curr_inst.length > 1) ? state.fetched_data : 0);
         //printf("Cycle from Current: %d/%d\n", get_instruction_cycles(state.curr_inst, 1), get_instruction_cycles(state.curr_inst, 0));
 
 
@@ -379,12 +403,12 @@ int main(int argc, char *argv[])
             handle_interrupt(&state);
         }
 
-        if(state.cycles > 10)
-        {
-            clean_SDL(&v_state);
-            exit(0);
+        // if(state.cycles > 10)
+        // {
+        //     clean_SDL(&v_state);
+        //     exit(0);
 
-        }
+        // }
 
 
     
