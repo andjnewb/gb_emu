@@ -1,9 +1,10 @@
 #include "cpu.h"
 #include "disassemble.h"
 
+
 void init_cpu(cpu_state * state, struct romBytes * bytes)
 {
-
+//
     //These initial register values are based on the DMG(original) gameboy.
     state->regs.af = 0x01b0;
     state->regs.bc = 0x0013;
@@ -27,6 +28,17 @@ int step_cpu()
 }
 
 void handle_interrupt(cpu_state * state)
+{
+
+    
+}
+
+void interrupt_set_bit(cpu_state * state, int bit, int toSet)
+{ 
+    state->address_space[0xFFFF] |= toSet << bit;//Bit zero is Vblank, Bit one is LCD STAT, Bit two is Timer Enable, Bit 3 is Serial, Bit 4 is joypad(rarely if ever used). 
+}
+
+int interrupt_get_bit(cpu_state * state, int bit)
 {
     
 }

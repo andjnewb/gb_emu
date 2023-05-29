@@ -1,17 +1,13 @@
 #include <stdio.h>
 #include <string.h>
 #include "disassemble.h"
+#include "display.h"
 #include <inttypes.h>
 #include "instructions.h"
 #include "cpu.h"
 #include <endian.h>
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_main.h>
-#include <SDL2/SDL_ttf.h>
 
-//
-const int SCREEN_HEIGHT = 800;
-const int SCREEN_WIDTH = 600;
+
 
 const instruction instructions[256] =
     {
@@ -274,10 +270,17 @@ const instruction instructions[256] =
 };
 int main(int argc, char *argv[])
 {
+
+    video_state v_state;
+
+    if(init_video(&v_state) != 1)
+    {
+        printf("Error intializing video. Exiting....\n");
+        exit(0);
+    }
+
     struct romBytes *r = malloc(sizeof(struct romBytes));
     //
-    TTF_Font *test = TTF_OpenFont("ProFontIIx.ttf", 16);
-    SDL_Color textColor = {255, 255, 255};
 
     *r = getBytes("tetris.gb");
     r->metaData = getMetaData(r);
@@ -290,59 +293,20 @@ int main(int argc, char *argv[])
     init_cpu(&state, r);
     state.regs.pc = 0x100;
 
-    // The window we want to render to.
-    SDL_Window *window = NULL;
-
-    SDL_Surface *screenSurface = NULL;
-    SDL_Surface *textSurface = NULL;
-
-    SDL_Event e;
-
-    SDL_bool quit = 0;
-
-    if (SDL_Init(SDL_INIT_VIDEO) < 0 || TTF_Init() < 0)
-    {
-        printf("SDL is fucked up. It couldn't initialize n shit g.");
-        exit(0);
-    }
-    else
-    {
-        // textSurface = TTF_RenderText_Solid(test, "THIS IS A TEST", textColor);
-
-        // // SDL_Rect message_rect = {0,0,100,100};
-
-        // window = SDL_CreateWindow("gb_emu", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
-
-        // screenSurface = SDL_GetWindowSurface(window);
-        // // SDL_Texture  * message = SDL_CreateTextureFromSurface(SDL_GetRenderer(window), textSurface);
-
-        // SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 0x00, 0x00, 0x00));
-        // // SDL_RenderCopy(SDL_GetRenderer(window), message, NULL, &message_rect );
-
-        // SDL_UpdateWindowSurface(window);
-    }
-
-    // for (int i = 0x100; i < r->sizeInBytes; i += instructions[r->bytes[i]].length)
-    // {
-    //     // printf("Instruction at 0x%x is: %s\n", i, instructions[r->bytes[i]].mnmemonic);
-    //     switch (instructions[r->bytes[i]].d_type)
-    //     {
-    //     case d8:
-    //         if (instructions[r->bytes[i]].length == 2)
-    //         {
-    //             fprintf(out, "Instruction at 0x%x is: %s %hhx\n", i, instructions[r->bytes[i]].mnmemonic, r->bytes[i + 1]);
-    //         }
-    //         break;
-
-    //     default:
-    //         fprintf(out, "Instruction at 0x%x is: %s\n", i, instructions[r->bytes[i]].mnmemonic);
-    //     }
-    // }
-
-    
+     get_text_and_rect(v_state.renderer, 0, 0, "Penis", v_state.font, &v_state.tex1, v_state.rect1, &v_state);
+    // get_text_and_rect(v_state->renderer, 0, v_state->rect1->y + v_state->rect1->h, "Balls", v_state->font, &v_state->tex2, v_state->rect2, v_state);
 
     while (state.halt != 1)
     {
+        while(SDL_PollEvent(&v_state.event) == 1)
+        {
+            if(v_state.event.type == SDL_QUIT)
+            {
+                state.halt = 1;
+            }
+        }
+
+
 
         //system("clear");
         printf("\nPC: 0x%x\n", state.regs.pc);
@@ -415,14 +379,15 @@ int main(int argc, char *argv[])
             handle_interrupt(&state);
         }
 
-        if(state.cycles > 1000)
+        if(state.cycles > 10)
         {
+            clean_SDL(&v_state);
             exit(0);
+
         }
 
 
-        
-
+    
         
 
         
@@ -439,7 +404,6 @@ int main(int argc, char *argv[])
     // free(r.bytes);
     fclose(out);
 
-    SDL_DestroyWindow(window);
-    SDL_Quit();
-    return 0;
+    
+    return clean_SDL(&v_state);
 }
