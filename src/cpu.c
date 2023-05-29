@@ -1,7 +1,8 @@
 #include "cpu.h"
 #include "disassemble.h"
 
-//CPU FUNCTIONS. Should find a better place for these. Macros are defined in instructions.h
+//CPU FUNCTIONS. Should find a better place for these. Macros are defined in instructions.h. These are mostly used for functions that would pointless to have seperate definition for each version, for example LD A,E and LD E,A.
+//Considering that there are well over forty of these variations for the 8 bit registers, you can see why it makes sense to do it this way.
 
 //Arithmetic/Logic
 _DEC_REG(b)
@@ -14,6 +15,55 @@ _DEC_REG(a)
 
 //Load/Store
 _LD_REG_8_8(a,e)
+_LD_REG_8_8(b,b)
+_LD_REG_8_8(b,c)
+_LD_REG_8_8(b,d)
+_LD_REG_8_8(b,e)
+_LD_REG_8_8(b,h)
+_LD_REG_8_8(b,l)
+_LD_REG_8_8(b,a)
+_LD_REG_8_8(c,b)
+_LD_REG_8_8(c,c)
+_LD_REG_8_8(c,d)
+_LD_REG_8_8(c,e)
+_LD_REG_8_8(c,h)
+_LD_REG_8_8(c,l)
+_LD_REG_8_8(c,a)
+_LD_REG_8_8(d,b)
+_LD_REG_8_8(d,c)
+_LD_REG_8_8(d,d)
+_LD_REG_8_8(d,e)
+_LD_REG_8_8(d,h)
+_LD_REG_8_8(d,l)
+_LD_REG_8_8(d,a)
+_LD_REG_8_8(e,b)
+_LD_REG_8_8(e,c)
+_LD_REG_8_8(e,d)
+_LD_REG_8_8(e,e)
+_LD_REG_8_8(e,h)
+_LD_REG_8_8(e,l)
+_LD_REG_8_8(e,a)
+_LD_REG_8_8(h,b)
+_LD_REG_8_8(h,c)
+_LD_REG_8_8(h,d)
+_LD_REG_8_8(h,e)
+_LD_REG_8_8(h,h)
+_LD_REG_8_8(h,l)
+_LD_REG_8_8(h,a)
+_LD_REG_8_8(l,b)
+_LD_REG_8_8(l,c)
+_LD_REG_8_8(l,d)
+_LD_REG_8_8(l,e)
+_LD_REG_8_8(l,h)
+_LD_REG_8_8(l,l)
+_LD_REG_8_8(l,a)
+_LD_REG_8_8(a,b)
+_LD_REG_8_8(a,c)
+_LD_REG_8_8(a,d)
+_LD_REG_8_8(a,h)
+_LD_REG_8_8(a,l)
+_LD_REG_8_8(a,a)
+
 
 _LD_REG_d8(a)
 _LD_REG_d8(b)
@@ -22,6 +72,11 @@ _LD_REG_d8(d)
 _LD_REG_d8(e)
 _LD_REG_d8(h)
 _LD_REG_d8(l)
+
+_LD_REG16_d16(bc)
+_LD_REG16_d16(de)
+_LD_REG16_d16(hl)
+_LD_REG16_d16(sp)
 
 void init_cpu(cpu_state * state, struct romBytes * bytes)
 {
@@ -225,7 +280,7 @@ void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
 
 
         case 0x21:
-        ld_hl_d16(state);
+        _LD_hl_d16(state);
         state->regs.pc += ins.length;
 
         break;
@@ -433,11 +488,6 @@ void xor_a(cpu_state * state)
     state->cycles += get_instruction_cycles(state->curr_inst, 1);
 }
 
-void ld_hl_d16(cpu_state * state)
-{
-    state->regs.hl = state->fetched_data;
-    state->cycles += get_instruction_cycles(state->curr_inst, 1);
-}
 
 void ld_hl_decrement_a(cpu_state * state)
 {
