@@ -2,7 +2,80 @@
 #define INSTRUCTIONS_H_
 #include <inttypes.h>
 #include "disassemble.h"
+//
 
+/*
+int result = state->regs.b - 1;
+    
+
+    if(result < 0)
+    {
+        //printf("RESULT WAS ZERO");      
+        set_flag(0, "z", state);
+        state->regs.b = 0xff;
+    }
+    else if(result == 0)
+    {
+        set_flag(1, "z", state);
+        state->regs.b = 0;
+    }
+
+    else
+    {
+        set_flag(0, "z", state);
+        state->regs.b -= 1;
+    }
+
+    set_flag(1, "n", state);
+
+    if(state->regs.b & (1<<3))
+    {
+        set_flag(1, "h", state);
+    }
+    else
+    {
+        set_flag(0, "h", state);
+    }
+
+    state->cycles += get_instruction_cycles(state->curr_inst, 1);
+*/
+
+
+#define _DEC_REG(register) \
+    void _DEC_ ## register(cpu_state * state) \
+    {\
+      int result = state->regs.register - 1;\
+        \
+      if(result < 0)\
+        {\
+            set_flag(0, "z", state);\
+            state->regs.register = 0xff;\
+        }\
+      else if(result == 0)\
+        {\
+            set_flag(1, "z", state);\
+            state->regs.register = 0;\
+        }\
+        \
+      else\
+        {\
+            set_flag(0, "z", state);\
+            state->regs.register -= 1;\
+        }\
+        \
+      set_flag(1, "n", state);\
+      \
+      \
+      if(state->regs.register & (1<<3))\
+        {\
+            set_flag(1, "h", state);\
+        }\
+      else\
+        {\
+            set_flag(0, "h", state);\
+        }\
+    state->cycles += get_instruction_cycles(state->curr_inst, 1);\
+    }\
 
 
 enum data_type

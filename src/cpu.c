@@ -98,6 +98,16 @@ void set_flag(int toSet, char flag[2], cpu_state * state)
         state->regs.c_flag == toSet;
     }
 }
+
+//CPU FUNCTIONS. Should find a better place for these.
+_DEC_REG(b)
+_DEC_REG(d)
+_DEC_REG(h)
+_DEC_REG(c)
+_DEC_REG(e)
+_DEC_REG(l)
+_DEC_REG(a)
+
 void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
 {
     switch(ins.op_code)
@@ -128,12 +138,12 @@ void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
         break;
 
         case 0xd:
-        dec_c(state);
+        _DEC_c(state);
         state->regs.pc += ins.length;
         break;
 
         case 0x15:
-        dec_d(state);
+        _DEC_d(state);
         state->regs.pc += ins.length;
         break;
 
@@ -153,7 +163,7 @@ void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
         break;
 
         case 0x25:
-        dec_h(state);
+        _DEC_h(state);
         state->regs.pc += ins.length;
 
         case 0x1f:
@@ -167,7 +177,7 @@ void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
         break;
 
         case 0x1d:
-        dec_e(state);
+        _DEC_e(state);
         state->regs.pc += ins.length;
         break;
 
@@ -176,7 +186,7 @@ void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
         break;
 
         case 0x5:
-        dec_b(state);
+        _DEC_b(state);
         state->regs.pc += ins.length;
         break;
 
@@ -222,6 +232,8 @@ void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
         break;
     }
 }
+
+
 
 void ldh_a_a8 (cpu_state * state)
 {

@@ -6,7 +6,7 @@
 #include "instructions.h"
 #include "cpu.h"
 #include <endian.h>
-
+#include <glib.h>
 
 
 const instruction instructions[256] =
@@ -279,6 +279,10 @@ int main(int argc, char *argv[])
         exit(0);
     }
 
+    GList * list = NULL;
+    
+
+
     struct romBytes *r = malloc(sizeof(struct romBytes));
     //
 
@@ -292,6 +296,7 @@ int main(int argc, char *argv[])
     cpu_state state;
     init_cpu(&state, r);
     state.regs.pc = 0x100;
+    state.step = 0;
 
      
     while (state.halt != 1)
@@ -302,11 +307,33 @@ int main(int argc, char *argv[])
             {
                 state.halt = 1;
             }
+
+            if(v_state.event.type == SDL_KEYDOWN)
+            {
+                if(v_state.event.key.keysym.sym == SDLK_SPACE)
+                {
+                    if(state.step == 1)
+                    {
+                        state.step = 0;
+                    }
+                    else
+                    {
+                        state.step = 1;
+                    }
+                    
+                }
+            }
+        }
+
+        if(state.step == 1)
+        {
+            
+            continue;
         }
 
         char text_state[512];
 
-        sprintf(text_state, "\nPC: 0x%x\nA:%x B:%x C:%x D:%x E:%x H:%x L:%x \nFlags: %d%d%d%d\nStack Pointer: %x\nFetched Data: %x \nHalted: %d\nCycle: %d\nInterrupts Enabled: %s\n",
+        sprintf(text_state, "PC: 0x%x\nA:%x B:%x C:%x D:%x E:%x H:%x L:%x \nFlags: %d%d%d%d\nStack Pointer: %x\nFetched Data: %x \nHalted: %d\nCycle: %d\nInterrupts Enabled: %s\n",
             state.regs.pc,
             state.regs.a, state.regs.b, state.regs.c, state.regs.d, state.regs.e, state.regs.h, state.regs.l,
             state.regs.z_flag , state.regs.n_flag, state.regs.h_flag, state.regs.c_flag,
@@ -318,7 +345,8 @@ int main(int argc, char *argv[])
         );
 
         get_text_and_rect(v_state.renderer, 0, 0, text_state, v_state.font, &v_state.tex1, v_state.rect1, &v_state);
-        
+        //get_text_and_rect(v_state.renderer, 0, v_state.rect1->h + 1, list == NULL ? "None" : g_list_last(list), v_state.font, &v_state.tex2, v_state.rect2, &v_state);
+
 
 
 
@@ -394,7 +422,11 @@ int main(int argc, char *argv[])
         //fprintf(out, "0x%x : 0x%x %s %x \n", state.regs.pc,  state.curr_inst.op_code, state.curr_inst.mnmemonic ,state.fetched_data);
         //printf("Current instruction: 0x%x: %s %x\n", state.curr_inst.op_code, state.curr_inst.mnmemonic, (state.curr_inst.length > 1) ? state.fetched_data : 0);
         //printf("Cycle from Current: %d/%d\n", get_instruction_cycles(state.curr_inst, 1), get_instruction_cycles(state.curr_inst, 0));
+        char toAppend[256];
 
+        sprintf(toAppend, "0x%x : 0x%x %s %x \n", state.regs.pc,  state.curr_inst.op_code, state.curr_inst.mnmemonic ,state.fetched_data);
+
+        list = g_list_append(list, toAppend);
 
         call_func(&state, instructions[r->bytes[state.regs.pc]], r);
 
@@ -411,7 +443,7 @@ int main(int argc, char *argv[])
         // }
 
 
-    
+        state.step = 0;
         
 
         
