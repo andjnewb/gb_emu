@@ -68,6 +68,9 @@ void get_text_and_rect(SDL_Renderer * renderer, int x, int y, char * text, TTF_F
     rect->y = y;
     rect->w = text_width;
     rect->h = text_height;
+
+    SDL_FreeSurface(tSurface);
+    
 }
 
 int clean_SDL(video_state * v_state)
