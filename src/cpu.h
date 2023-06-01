@@ -96,6 +96,8 @@ int interrupt_get_bit(cpu_state * state, int bit);
 //JUMPS
 void jp_nocond(cpu_state * state);
 void jr_nz_r8(cpu_state * state, struct romBytes * bytes);
+void call_a16(cpu_state * state);
+void ret(cpu_state * state);
 
 //Logical/Arithmetic
 void xor_a(cpu_state * state);
@@ -104,7 +106,7 @@ void xor_a(cpu_state * state);
 // void dec_h(cpu_state * state);
 // void dec_c(cpu_state * state);
 void rra(cpu_state * state);
-void or_b(cpu_state * state);
+//void or_b(cpu_state * state);
 void inc_d(cpu_state * state);
 //void dec_d(cpu_state * state);
 
@@ -121,6 +123,13 @@ void ld_hl_decrement_a(cpu_state * state);
 //void ld_a_d8(cpu_state * state);
 void ldh_a8_a(cpu_state * state);
 void ldh_a_a8 (cpu_state * state);
+void ldh_c_a(cpu_state * state);
+void ld_hl_d8(cpu_state * state);
+void ld_a16_a(cpu_state * state);
+void ld_hl_increment_a(cpu_state * state);
+
+
+
 
 //MISC
 void di(cpu_state * state);

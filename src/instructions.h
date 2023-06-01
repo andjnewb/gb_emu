@@ -5,10 +5,47 @@
 //
 
 /*
-    state->regs.hl = state->fetched_data;
+    uint8_t result = state->regs.a | state->regs.b;
+
+    state->regs.a = result;
+
+    if(result == 0)
+    {
+        set_flag(1, "z", state);
+    }
+    else
+    {
+        set_flag(0, "z", state);
+    }
+
+    state->regs.n_flag = 0;
+    state->regs.h_flag = 0;
+    state->regs.c_flag = 0;
+
     state->cycles += get_instruction_cycles(state->curr_inst, 1);
     
 */
+
+#define _OR_REG(reg)\
+    void _OR_##reg (cpu_state * state)\
+    {\
+        uint8_t result = state->regs.a | state->regs.reg;\
+        \
+        state->regs.a = result;\
+        \
+        if(result == 0)\
+        {\
+            set_flag(1, "z", state);\
+        }\
+        else\
+        {\
+            set_flag(0, "z", state);\
+        }\
+        \
+        state->regs.n_flag = 0;\
+        state->regs.h_flag = 0;\
+        state->regs.c_flag = 0;\
+    }\
 
 #define _LD_REG_d8(reg)\
     void _LD_##reg## _d8(cpu_state * state)\

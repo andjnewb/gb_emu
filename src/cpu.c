@@ -1,6 +1,6 @@
 #include "cpu.h"
 #include "disassemble.h"
-
+#include "stack.h"
 //CPU FUNCTIONS. Should find a better place for these. Macros are defined in instructions.h. These are mostly used for functions that would pointless to have seperate definition for each version, for example LD A,E and LD E,A.
 //Considering that there are well over forty of these variations for the 8 bit registers, you can see why it makes sense to do it this way.
 
@@ -12,6 +12,19 @@ _DEC_REG(c)
 _DEC_REG(e)
 _DEC_REG(l)
 _DEC_REG(a)
+_DEC_REG(bc)
+_DEC_REG(de)
+_DEC_REG(hl)
+_DEC_REG(sp)
+
+_OR_REG(a)
+_OR_REG(b)
+_OR_REG(c)
+_OR_REG(d)
+_OR_REG(e)
+_OR_REG(h)
+_OR_REG(l)
+
 
 //Load/Store
 _LD_REG_8_8(a,e)
@@ -121,27 +134,28 @@ int interrupt_get_bit(cpu_state * state, int bit)
 
 int get_instruction_cycles(instruction ins, int actionTaken)
 {
-    int taken;
-    int noTaken;
-    char * token;
+    // int taken;
+    // int noTaken;
+    // char * token;
 
-    token = strtok(ins.cycles, "/");
-    taken = atoi(token);
+    // token = strtok(ins.cycles, "/");
+    // taken = atoi(token);
 
-    token = strtok(NULL, "/");
-    noTaken = atoi(token);
+    // token = strtok(NULL, "/");
+    // noTaken = atoi(token);
 
-    // printf("Taken: %d Not Taken: %d", taken, noTaken);
+    // // printf("Taken: %d Not Taken: %d", taken, noTaken);
 
-    if( actionTaken == 1)
-    {
-        return taken;
-    }
-    else
-    {
-        return noTaken;
-    }
-    
+    // if( actionTaken == 1)
+    // {
+    //     return taken;
+    // }
+    // else
+    // {
+    //     return noTaken;
+    // }
+    // free(token);
+    return 0;
 }
 
 
@@ -180,6 +194,60 @@ void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
 {
     switch(ins.op_code)
     {
+
+        case 0xc9:
+        ret(state);
+        break;
+
+        case 0xb1:
+        _OR_c(state);
+        state->regs.pc += ins.length;
+        break;
+
+        case 0x78:
+        _LD_a_b(state);
+        state->regs.pc += ins.length;
+        break;
+
+        case 0xb:
+        _DEC_bc(state);
+        state->regs.pc += ins.length;
+        break;
+
+        case 0x1:
+        _LD_bc_d16(state);
+        state->regs.pc += ins.length;
+        break;
+
+        case 0xcd:
+        call_a16(state);
+        break;
+
+        case 0xe2:
+        ldh_c_a(state);
+        state->regs.pc += ins.length;
+        break;
+
+        case 0x2a:
+        ld_hl_increment_a(state);
+        state->regs.pc += ins.length;
+        break;
+
+        case 0x31:
+        _LD_sp_d16(state);
+        state->regs.pc += ins.length;
+        break;
+
+        case 0xea:
+        ld_a16_a(state);
+        state->regs.pc += ins.length;
+        break;
+
+        case 0x36:
+        ld_hl_d8(state);
+        state->regs.pc += ins.length;
+        break;
+
         case 0xfe:
         cp_d8(state);
         state->regs.pc += ins.length;
@@ -226,7 +294,7 @@ void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
         break;
 
         case 0xb0:
-        or_b(state);
+        _OR_b(state);
         state->regs.pc += ins.length;
         break;
 
@@ -301,7 +369,35 @@ void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
     }
 }
 
+void ret(cpu_state * state)
+{
+    state->regs.pc = stack_pop_16(state);
+}
 
+void call_a16(cpu_state * state)
+{
+    stack_push(state->regs.pc, state);
+    state->regs.pc = state->fetched_data;
+}
+
+void ld_hl_increment_a(cpu_state * state)
+{
+    state->address_space[state->regs.hl] = state->regs.a;
+    state->regs.hl++;
+    state->cycles += get_instruction_cycles(state->curr_inst, 1);
+}
+
+void ld_a16_a(cpu_state * state)
+{
+    state->address_space[state->fetched_data] = state->regs.a;
+    state->cycles += get_instruction_cycles(state->curr_inst, 1);
+}
+
+void ld_hl_d8(cpu_state * state)
+{
+    state->regs.hl = state->fetched_data;
+    state->cycles += get_instruction_cycles(state->curr_inst, 1);
+}
 
 void ldh_a_a8 (cpu_state * state)
 {
@@ -331,6 +427,15 @@ void ldh_a8_a(cpu_state * state)
     state->cycles += get_instruction_cycles(state->curr_inst, 1);
 }
 
+void ldh_c_a(cpu_state * state)
+{
+    uint16_t addr = ((0xFF << 8) | (state->regs.c & 0x00FF));
+
+    state->address_space[addr] = state->regs.a;
+
+    state->cycles += get_instruction_cycles(state->curr_inst, 1);
+}
+
 
 void di(cpu_state * state)
 {
@@ -338,27 +443,6 @@ void di(cpu_state * state)
     state->cycles += get_instruction_cycles(state->curr_inst, 1);
 }
 
-void or_b(cpu_state * state)
-{
-    uint8_t result = state->regs.a | state->regs.b;
-
-    state->regs.a = result;
-
-    if(result == 0)
-    {
-        set_flag(1, "z", state);
-    }
-    else
-    {
-        set_flag(0, "z", state);
-    }
-
-    state->regs.n_flag = 0;
-    state->regs.h_flag = 0;
-    state->regs.c_flag = 0;
-
-    state->cycles += get_instruction_cycles(state->curr_inst, 1);
-}
 
 void inc_d(cpu_state *state)
 {

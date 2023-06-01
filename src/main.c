@@ -6,7 +6,7 @@
 #include "instructions.h"
 #include "cpu.h"
 #include <endian.h>
-#include <glib.h>
+
 
 
 const instruction instructions[256] =
@@ -278,8 +278,6 @@ int main(int argc, char *argv[])
         printf("Error intializing video. Exiting....\n");
         exit(0);
     }
-
-    GList * list = NULL;
     
 
 
@@ -297,6 +295,8 @@ int main(int argc, char *argv[])
     init_cpu(&state, r);
     state.regs.pc = 0x100;
     state.step = 0;
+
+    int delay = 0;
 
      
     while (state.halt != 1)
@@ -322,8 +322,26 @@ int main(int argc, char *argv[])
                     }
                     
                 }
+
+                if(v_state.event.key.keysym.sym == SDLK_s)
+                {
+                    delay += 10;
+                }
+
+                if(v_state.event.key.keysym.sym == SDLK_f)
+                {
+                    delay -= 10;
+                }
+
+                if(delay < 0)
+                {
+                    delay = 0;
+                }
             }
         }
+
+        SDL_Delay(delay);
+        
 
         if(state.step == 1)
         {
@@ -344,36 +362,40 @@ int main(int argc, char *argv[])
             state.interrupt_master_enable == 1? "Yes" : "No"
         );
 
-        get_text_and_rect(v_state.renderer, 0, 0, text_state, v_state.font, &v_state.tex1, v_state.rect1, &v_state);
-        //get_text_and_rect(v_state.renderer, 0, v_state.rect1->h + 1, list == NULL ? "None" : g_list_last(list), v_state.font, &v_state.tex2, v_state.rect2, &v_state);
+        //get_text_and_rect(v_state.renderer, 0, 0, text_state, v_state.font, &v_state.tex1, v_state.rect1, &v_state);
+        
+
+        char toAppend[256];
 
 
 
 
-        SDL_SetRenderDrawColor(v_state.renderer, 0, 0, 0, 0);
-        SDL_RenderClear(v_state.renderer);
 
-        /* Use TTF textures. */
-        SDL_RenderCopy(v_state.renderer, v_state.tex1, NULL, v_state.rect1);
-        SDL_RenderCopy(v_state.renderer, v_state.tex2, NULL, v_state.rect2);
-
-        SDL_RenderPresent(v_state.renderer);
-
-
-        //system("clear");
-        // printf("\nPC: 0x%x\n", state.regs.pc);
-        // printf("A:%x B:%x C:%x D:%x E:%x H:%x L:%x \n", state.regs.a, state.regs.b, state.regs.c, state.regs.d, state.regs.e, state.regs.h, state.regs.l);
-        // printf("Flags: %d%d%d%d\n", state.regs.z_flag , state.regs.n_flag, state.regs.h_flag, state.regs.c_flag);
-        // printf("Stack Pointer: %x\n", state.regs.sp);
-        // printf("Fetched Data: %x \n", state.fetched_data);
-        // printf("Halted: %d\n", state.halt);
-        // printf("Cycle: %d\n\n", state.cycles);
-        // printf("Interrupts Enabled: %s\n", state.interrupt_master_enable == 1? "Yes" : "No");
+        system("clear");
+        printf("\nPC: 0x%x\n", state.regs.pc);
+        printf("A:%x B:%x C:%x D:%x E:%x H:%x L:%x \n", state.regs.a, state.regs.b, state.regs.c, state.regs.d, state.regs.e, state.regs.h, state.regs.l);
+        printf("Flags: %d%d%d%d\n", state.regs.z_flag , state.regs.n_flag, state.regs.h_flag, state.regs.c_flag);
+        printf("Stack Pointer: %x\n", state.regs.sp);
+        printf("Fetched Data: %x \n", state.fetched_data);
+        printf("Halted: %d\n", state.halt);
+        printf("Cycle: %d\n\n", state.cycles);
+        printf("Interrupts Enabled: %s\n", state.interrupt_master_enable == 1? "Yes" : "No");
         
         
         state.curr_inst = instructions[r->bytes[state.regs.pc]];
-        
+        sprintf(toAppend, "0x%x : 0x%x %s %x \n", state.regs.pc,  state.curr_inst.op_code, state.curr_inst.mnmemonic ,state.fetched_data);
+         get_text_and_rect(v_state.renderer, 0, v_state.rect1->h + 1, toAppend, v_state.font, &v_state.tex2, v_state.rect2, &v_state);
 
+        // SDL_SetRenderDrawColor(v_state.renderer, 0, 0, 0, 0);
+        // SDL_RenderClear(v_state.renderer);
+
+        // /* Use TTF textures. */
+        // SDL_RenderCopy(v_state.renderer, v_state.tex1, NULL, v_state.rect1);
+        // SDL_RenderCopy(v_state.renderer, v_state.tex2, NULL, v_state.rect2);
+
+        // SDL_RenderPresent(v_state.renderer);
+        
+        state.address_space[0xFF44] = 148;//Register HACK, remove later.
 
         switch (instructions[r->bytes[state.regs.pc]].d_type)
         {
@@ -422,11 +444,9 @@ int main(int argc, char *argv[])
         //fprintf(out, "0x%x : 0x%x %s %x \n", state.regs.pc,  state.curr_inst.op_code, state.curr_inst.mnmemonic ,state.fetched_data);
         //printf("Current instruction: 0x%x: %s %x\n", state.curr_inst.op_code, state.curr_inst.mnmemonic, (state.curr_inst.length > 1) ? state.fetched_data : 0);
         //printf("Cycle from Current: %d/%d\n", get_instruction_cycles(state.curr_inst, 1), get_instruction_cycles(state.curr_inst, 0));
-        char toAppend[256];
 
-        sprintf(toAppend, "0x%x : 0x%x %s %x \n", state.regs.pc,  state.curr_inst.op_code, state.curr_inst.mnmemonic ,state.fetched_data);
 
-        list = g_list_append(list, toAppend);
+        
 
         call_func(&state, instructions[r->bytes[state.regs.pc]], r);
 
