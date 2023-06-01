@@ -384,7 +384,7 @@ int main(int argc, char *argv[])
         
         state.curr_inst = instructions[r->bytes[state.regs.pc]];
         sprintf(toAppend, "0x%x : 0x%x %s %x \n", state.regs.pc,  state.curr_inst.op_code, state.curr_inst.mnmemonic ,state.fetched_data);
-         get_text_and_rect(v_state.renderer, 0, v_state.rect1->h + 1, toAppend, v_state.font, &v_state.tex2, v_state.rect2, &v_state);
+         get_text_and_rect(v_state.renderer, 0, v_state.rect1->h + 1, toAppend, v_state.font, v_state.tex2, v_state.rect2, &v_state);
 
         // SDL_SetRenderDrawColor(v_state.renderer, 0, 0, 0, 0);
         // SDL_RenderClear(v_state.renderer);

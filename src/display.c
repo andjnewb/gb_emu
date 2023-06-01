@@ -51,14 +51,14 @@ int init_video(video_state * v_state)
 
 }
 
-void get_text_and_rect(SDL_Renderer * renderer, int x, int y, char * text, TTF_Font * font, SDL_Texture ** texture, SDL_Rect * rect, video_state * state)
+void get_text_and_rect(SDL_Renderer * renderer, int x, int y, char * text, TTF_Font * font, SDL_Texture * texture, SDL_Rect * rect, video_state * state)
 {
     int text_width;
     int text_height;
     SDL_Surface *  tSurface;
     
     tSurface = TTF_RenderText_Solid_Wrapped(font, text, state->textColor, 0);
-    *texture = SDL_CreateTextureFromSurface(renderer, tSurface);
+    texture = SDL_CreateTextureFromSurface(renderer, tSurface);
 
     text_width = tSurface->w;
     text_height = tSurface->h;
