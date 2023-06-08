@@ -7,8 +7,6 @@
 #include "cpu.h"
 #include <endian.h>
 
-
-
 const instruction instructions[256] =
     {
         {"NOP", 0x0, 1, NONE, "----", "4/0"},
@@ -273,13 +271,11 @@ int main(int argc, char *argv[])
 
     video_state v_state;
 
-    if(init_video(&v_state) != 1)
+    if (init_video(&v_state) != 1)
     {
         printf("Error intializing video. Exiting....\n");
         exit(0);
     }
-    
-
 
     struct romBytes *r = malloc(sizeof(struct romBytes));
     //
@@ -298,21 +294,20 @@ int main(int argc, char *argv[])
 
     int delay = 0;
 
-     
     while (state.halt != 1)
     {
-        while(SDL_PollEvent(&v_state.event) == 1)
+        while (SDL_PollEvent(&v_state.event) == 1)
         {
-            if(v_state.event.type == SDL_QUIT)
+            if (v_state.event.type == SDL_QUIT)
             {
                 state.halt = 1;
             }
 
-            if(v_state.event.type == SDL_KEYDOWN)
+            if (v_state.event.type == SDL_KEYDOWN)
             {
-                if(v_state.event.key.keysym.sym == SDLK_SPACE)
+                if (v_state.event.key.keysym.sym == SDLK_SPACE)
                 {
-                    if(state.step == 1)
+                    if (state.step == 1)
                     {
                         state.step = 0;
                     }
@@ -320,20 +315,19 @@ int main(int argc, char *argv[])
                     {
                         state.step = 1;
                     }
-                    
                 }
 
-                if(v_state.event.key.keysym.sym == SDLK_s)
+                if (v_state.event.key.keysym.sym == SDLK_s)
                 {
                     delay += 10;
                 }
 
-                if(v_state.event.key.keysym.sym == SDLK_f)
+                if (v_state.event.key.keysym.sym == SDLK_f)
                 {
                     delay -= 10;
                 }
 
-                if(delay < 0)
+                if (delay < 0)
                 {
                     delay = 0;
                 }
@@ -341,50 +335,41 @@ int main(int argc, char *argv[])
         }
 
         SDL_Delay(delay);
-        
 
-        if(state.step == 1)
+        if (state.step == 1)
         {
-            
+
             continue;
         }
 
         char text_state[512];
 
         sprintf(text_state, "PC: 0x%x\nA:%x B:%x C:%x D:%x E:%x H:%x L:%x \nFlags: %d%d%d%d\nStack Pointer: %x\nFetched Data: %x \nHalted: %d\nCycle: %d\nInterrupts Enabled: %s\n",
-            state.regs.pc,
-            state.regs.a, state.regs.b, state.regs.c, state.regs.d, state.regs.e, state.regs.h, state.regs.l,
-            state.regs.z_flag , state.regs.n_flag, state.regs.h_flag, state.regs.c_flag,
-            state.regs.sp,
-            state.fetched_data,
-            state.halt,
-            state.cycles,
-            state.interrupt_master_enable == 1? "Yes" : "No"
-        );
+                state.regs.pc,
+                state.regs.a, state.regs.b, state.regs.c, state.regs.d, state.regs.e, state.regs.h, state.regs.l,
+                state.regs.z_flag, state.regs.n_flag, state.regs.h_flag, state.regs.c_flag,
+                state.regs.sp,
+                state.fetched_data,
+                state.halt,
+                state.cycles,
+                state.interrupt_master_enable == 1 ? "Yes" : "No");
 
-        //get_text_and_rect(v_state.renderer, 0, 0, text_state, v_state.font, &v_state.tex1, v_state.rect1, &v_state);
-        
+        // get_text_and_rect(v_state.renderer, 0, 0, text_state, v_state.font, &v_state.tex1, v_state.rect1, &v_state);
 
         char toAppend[256];
-
-
-
-
 
         system("clear");
         printf("\nPC: 0x%x\n", state.regs.pc);
         printf("A:%x B:%x C:%x D:%x E:%x H:%x L:%x \n", state.regs.a, state.regs.b, state.regs.c, state.regs.d, state.regs.e, state.regs.h, state.regs.l);
-        printf("Flags: %d%d%d%d\n", state.regs.z_flag , state.regs.n_flag, state.regs.h_flag, state.regs.c_flag);
+        printf("Flags: %d%d%d%d\n", state.regs.z_flag, state.regs.n_flag, state.regs.h_flag, state.regs.c_flag);
         printf("Stack Pointer: %x\n", state.regs.sp);
         printf("Fetched Data: %x \n", state.fetched_data);
         printf("Halted: %d\n", state.halt);
         printf("Cycle: %d\n\n", state.cycles);
-        printf("Interrupts Enabled: %s\n", state.interrupt_master_enable == 1? "Yes" : "No");
-        
-        
+        printf("Interrupts Enabled: %s\n", state.interrupt_master_enable == 1 ? "Yes" : "No");
+
         state.curr_inst = instructions[r->bytes[state.regs.pc]];
-        sprintf(toAppend, "0x%x : 0x%x %s %x \n", state.regs.pc,  state.curr_inst.op_code, state.curr_inst.mnmemonic ,state.fetched_data);
-         get_text_and_rect(v_state.renderer, 0, v_state.rect1->h + 1, toAppend, v_state.font, v_state.tex2, v_state.rect2, &v_state);
+        printf("0x%x : 0x%x %s %x \n", state.regs.pc, state.curr_inst.op_code, state.curr_inst.mnmemonic, state.fetched_data);
 
         // SDL_SetRenderDrawColor(v_state.renderer, 0, 0, 0, 0);
         // SDL_RenderClear(v_state.renderer);
@@ -394,8 +379,8 @@ int main(int argc, char *argv[])
         // SDL_RenderCopy(v_state.renderer, v_state.tex2, NULL, v_state.rect2);
 
         // SDL_RenderPresent(v_state.renderer);
-        
-        state.address_space[0xFF44] = 148;//Register HACK, remove later.
+
+        state.address_space[0xFF44] = 148; // Register HACK, remove later.
 
         switch (instructions[r->bytes[state.regs.pc]].d_type)
         {
@@ -417,7 +402,6 @@ int main(int argc, char *argv[])
             uint8_t d4 = r->bytes[state.regs.pc + 2];
 
             uint16_t toConvert1 = (d4 << 8) | d3;
-            
 
             state.fetched_data = toConvert1;
             break;
@@ -428,32 +412,44 @@ int main(int argc, char *argv[])
 
         case r8:
             state.fetched_data_8_signed = r->bytes[state.regs.pc + 1];
-            //state.regs.pc += r->bytes[state.regs.pc + 1];
+            // state.regs.pc += r->bytes[state.regs.pc + 1];
 
             break;
 
         case NONE:
             state.fetched_data = 0x0;
-            
+
             break;
 
         default:
             // exit(0);
             break;
         }
-        //fprintf(out, "0x%x : 0x%x %s %x \n", state.regs.pc,  state.curr_inst.op_code, state.curr_inst.mnmemonic ,state.fetched_data);
-        //printf("Current instruction: 0x%x: %s %x\n", state.curr_inst.op_code, state.curr_inst.mnmemonic, (state.curr_inst.length > 1) ? state.fetched_data : 0);
-        //printf("Cycle from Current: %d/%d\n", get_instruction_cycles(state.curr_inst, 1), get_instruction_cycles(state.curr_inst, 0));
+        // fprintf(out, "0x%x : 0x%x %s %x \n", state.regs.pc,  state.curr_inst.op_code, state.curr_inst.mnmemonic ,state.fetched_data);
+        // printf("Current instruction: 0x%x: %s %x\n", state.curr_inst.op_code, state.curr_inst.mnmemonic, (state.curr_inst.length > 1) ? state.fetched_data : 0);
+        // printf("Cycle from Current: %d/%d\n", get_instruction_cycles(state.curr_inst, 1), get_instruction_cycles(state.curr_inst, 0));
+
+        if(state.regs.pc == 0x237)
+        {
+             printf("0xcffe: %x\n", state.address_space[0xcffe]);
+             printf("0xcffd: %x\n", state.address_space[0xcffd]);
+             printf("0xcfff: %x\n", state.address_space[0xcfff]);
+            exit(0);
+           
+        }
 
 
-        
 
         call_func(&state, instructions[r->bytes[state.regs.pc]], r);
 
-        if(state.interrupt_master_enable == 1)
+
+
+
+        if (state.interrupt_master_enable == 1)
         {
             handle_interrupt(&state);
         }
+
 
         // if(state.cycles > 10)
         // {
@@ -462,24 +458,16 @@ int main(int argc, char *argv[])
 
         // }
 
-
         state.step = 0;
-        
-
-        
-        
     }
-////
+    ////
     printf("Disassembly written to: %s\n", "tetris.asm");
     // printf("Title = %s", r->metaData.title);
-
-    // for(int i = 0; i < 48; i++)
-    // printf("%x", r->metaData.logo[i]);
-    // fwrite(r->bytes, r->sizeInBytes, sizeof(uint8_t), out);
-    // printf("\n");
-    // free(r.bytes);
+        
+    fwrite(state.address_space, 0xffff, sizeof(uint8_t), out);
+        
+    //free(r.bytes);
     fclose(out);
 
-    
     return clean_SDL(&v_state);
 }

@@ -1,2 +1,2 @@
-diss: src/main.c src/disassemble.c src/disassemble.h src/instructions.h src/instructions.c src/cpu.h src/cpu.c src/stack.h src/stack.c src/interrupt.h src/display.h src/display.c
-	gcc `pkg-config --cflags glib-2.0` src/main.c src/disassemble.c src/disassemble.h src/instructions.h src/instructions.c src/cpu.h src/cpu.c src/stack.h src/stack.c src/interrupt.h src/display.h src/display.c  -o diss `pkg-config --libs glib-2.0` -g -lSDL2 -lSDL2_ttf -lSDL2_image
+diss: src/main.c src/disassemble.c src/disassemble.h src/instructions.h src/instructions.c src/cpu.h src/cpu.c src/stack.h src/stack.c src/interrupt.h src/display.h src/display.c src/ppu.h
+	gcc `pkg-config --cflags glib-2.0` src/main.c src/disassemble.c src/disassemble.h src/instructions.h src/instructions.c src/cpu.h src/cpu.c src/stack.h src/stack.c src/interrupt.h src/display.h src/display.c src/ppu.h  -o diss `pkg-config --libs glib-2.0` -g -lSDL2 -lSDL2_ttf -lSDL2_image

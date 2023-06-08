@@ -8,8 +8,6 @@ int init_video(video_state * v_state)
     v_state->textColor.g = 255;
     v_state->textColor.b = 255;
 
-    v_state->rect1 = malloc(sizeof(SDL_Rect));//
-    v_state->rect2 = malloc(sizeof(SDL_Rect));
 
     if(SDL_Init(SDL_INIT_EVERYTHING) == -1)
     {
@@ -17,8 +15,9 @@ int init_video(video_state * v_state)
         return 0;
     }
 
-    SDL_CreateWindowAndRenderer(640, 480, 0, &v_state->window, &v_state->renderer);
-
+    //SDL_CreateWindowAndRenderer(640, 480, 0, &v_state->window, &v_state->renderer);
+    v_state->window = SDL_CreateWindow("Penis",0,0,640,480,0);
+    v_state->renderer = SDL_CreateRenderer(v_state->window, -1, 0);
 
     if(&v_state->window == NULL)
     {
@@ -51,32 +50,10 @@ int init_video(video_state * v_state)
 
 }
 
-void get_text_and_rect(SDL_Renderer * renderer, int x, int y, char * text, TTF_Font * font, SDL_Texture * texture, SDL_Rect * rect, video_state * state)
-{
-    int text_width;
-    int text_height;
-    SDL_Surface *  tSurface;
-    
-    tSurface = TTF_RenderText_Solid_Wrapped(font, text, state->textColor, 0);
-    texture = SDL_CreateTextureFromSurface(renderer, tSurface);
 
-    text_width = tSurface->w;
-    text_height = tSurface->h;
-
-    //SDL_FreeSurface(tSurface);
-    rect->x = x;
-    rect->y = y;
-    rect->w = text_width;
-    rect->h = text_height;
-
-    SDL_FreeSurface(tSurface);
-    
-}
 
 int clean_SDL(video_state * v_state)
 {
-    SDL_DestroyTexture(v_state->tex1);
-    SDL_DestroyTexture(v_state->tex2);
 
     TTF_Quit();
 
