@@ -434,7 +434,7 @@ int main(int argc, char *argv[])
         call_func(&state, instructions[r->bytes[state.regs.pc]], r);
 
 
-        if(state.regs.pc == 0x029e)
+        if(state.regs.pc == 0x02a0)
         {
             exit(0);         
         }
