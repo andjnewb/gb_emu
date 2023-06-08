@@ -429,7 +429,7 @@ int main(int argc, char *argv[])
         // printf("Current instruction: 0x%x: %s %x\n", state.curr_inst.op_code, state.curr_inst.mnmemonic, (state.curr_inst.length > 1) ? state.fetched_data : 0);
         // printf("Cycle from Current: %d/%d\n", get_instruction_cycles(state.curr_inst, 1), get_instruction_cycles(state.curr_inst, 0));
 
-        if(state.regs.pc == 0x237)
+        if(state.regs.pc == 0x02a3)
         {
              printf("0xcffe: %x\n", state.address_space[0xcffe]);
              printf("0xcffd: %x\n", state.address_space[0xcffd]);

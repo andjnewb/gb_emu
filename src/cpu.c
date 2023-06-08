@@ -376,7 +376,7 @@ void ret(cpu_state * state)
 
 void call_a16(cpu_state * state)
 {
-    stack_push(state->regs.pc, state);
+    stack_push16(state->regs.pc, state);
     state->regs.pc = state->fetched_data;
 }
 
