@@ -429,19 +429,15 @@ int main(int argc, char *argv[])
         // printf("Current instruction: 0x%x: %s %x\n", state.curr_inst.op_code, state.curr_inst.mnmemonic, (state.curr_inst.length > 1) ? state.fetched_data : 0);
         // printf("Cycle from Current: %d/%d\n", get_instruction_cycles(state.curr_inst, 1), get_instruction_cycles(state.curr_inst, 0));
 
-        if(state.regs.pc == 0x02a3)
-        {
-             printf("0xcffe: %x\n", state.address_space[0xcffe]);
-             printf("0xcffd: %x\n", state.address_space[0xcffd]);
-             printf("0xcfff: %x\n", state.address_space[0xcfff]);
-            exit(0);
-           
-        }
-
 
 
         call_func(&state, instructions[r->bytes[state.regs.pc]], r);
 
+
+        if(state.regs.pc == 0x029e)
+        {
+            exit(0);         
+        }
 
 
 
