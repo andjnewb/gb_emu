@@ -1,6 +1,6 @@
 #ifndef PPU_H_
 #define PPU_H_
-
+#include "cpu.h"
 
 enum LCDC
 {
@@ -25,5 +25,7 @@ enum LCD_STAT
     LY_LYC_CHECK_ENABLE,
 };
 
+void get_lcd_regs(cpu_state * state, int regs[8]);
+int get_lcd_ly(cpu_state * state);
 
 #endif

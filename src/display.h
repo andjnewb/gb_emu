@@ -20,7 +20,8 @@ typedef struct
 
     uint8_t framebuff[160 * 144 * 3];//160x144 resolution, 3 bytes per pixel.
     uint8_t framebuff_alpha[160 * 144 * 4];
-    
+
+        
 }video_state;
 
 

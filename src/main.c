@@ -5,6 +5,7 @@
 #include <inttypes.h>
 #include "instructions.h"
 #include "cpu.h"
+#include "ppu.h"
 #include <endian.h>
 
 const instruction instructions[256] =
@@ -289,6 +290,9 @@ int main(int argc, char *argv[])
 
     cpu_state state;
     init_cpu(&state, r);
+
+    memcpy(state.address_space, r->bytes, 0x7fff);//map rom cart to memory map of cpu
+
     state.regs.pc = 0x100;
     state.step = 0;
 
@@ -358,6 +362,12 @@ int main(int argc, char *argv[])
 
         char toAppend[256];
 
+
+        int lcd_regs[8];
+        get_lcd_regs(&state, lcd_regs);
+
+
+
         system("clear");
         printf("\nPC: 0x%x\n", state.regs.pc);
         printf("A:%x B:%x C:%x D:%x E:%x H:%x L:%x \n", state.regs.a, state.regs.b, state.regs.c, state.regs.d, state.regs.e, state.regs.h, state.regs.l);
@@ -367,6 +377,9 @@ int main(int argc, char *argv[])
         printf("Halted: %d\n", state.halt);
         printf("Cycle: %d\n\n", state.cycles);
         printf("Interrupts Enabled: %s\n", state.interrupt_master_enable == 1 ? "Yes" : "No");
+        printf("LCD CONTROL REGS:\nLCD & PPU ENABLE-%d WINDOW TILE MAP AREA:%d WINDOW ENABLE:%d BG AND WINDOW TILE DATA AREA:%d BG TILE MAP AREA:%d OBJ SIZE:%d OBJ ENABLE:%d BG AND WINDOW ENABLE/PRIORITY:%d\n",
+                lcd_regs[7], lcd_regs[6], lcd_regs[5], lcd_regs[4], lcd_regs[3], lcd_regs[2], lcd_regs[1], lcd_regs[0]
+              );
 
         state.curr_inst = instructions[r->bytes[state.regs.pc]];
         printf("0x%x : 0x%x %s %x \n", state.regs.pc, state.curr_inst.op_code, state.curr_inst.mnmemonic, state.fetched_data);
@@ -434,10 +447,10 @@ int main(int argc, char *argv[])
         call_func(&state, instructions[r->bytes[state.regs.pc]], r);
 
 
-        if(state.regs.pc == 0x02a0)
-        {
-            exit(0);         
-        }
+        // if(state.regs.pc == 0x02a0)
+        // {
+        //     exit(0);         
+        // }
 
 
 
