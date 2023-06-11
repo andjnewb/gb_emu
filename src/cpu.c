@@ -1,6 +1,7 @@
 #include "cpu.h"
 #include "disassemble.h"
 #include "stack.h"
+#include "interrupt.h"
 //CPU FUNCTIONS. Should find a better place for these. Macros are defined in instructions.h. These are mostly used for functions that would pointless to have seperate definition for each version, for example LD A,E and LD E,A.
 //Considering that there are well over forty of these variations for the 8 bit registers, you can see why it makes sense to do it this way.
 
@@ -122,15 +123,6 @@ void handle_interrupt(cpu_state * state)
     
 }
 
-void interrupt_set_bit(cpu_state * state, int bit, int toSet)
-{ 
-    state->address_space[0xFFFF] |= toSet << bit;//Bit zero is Vblank, Bit one is LCD STAT, Bit two is Timer Enable, Bit 3 is Serial, Bit 4 is joypad(rarely if ever used). 
-}
-
-int interrupt_get_bit(cpu_state * state, int bit)
-{
-    
-}
 
 int get_instruction_cycles(instruction ins, int actionTaken)
 {
@@ -158,6 +150,33 @@ int get_instruction_cycles(instruction ins, int actionTaken)
     return 0;
 }
 
+void request_interrupt(cpu_state *state, int interrupt)
+{
+    switch(interrupt)
+    {
+        case VBLANK_F:
+        state->address_space[0xff0f] = setBit(state->address_space[0xff0f], 0);
+        break;
+
+        case LCD_STAT_F:
+        state->address_space[0xff0f] = setBit(state->address_space[0xff0f], 1);
+        break;
+
+        case TIMER_F:
+        state->address_space[0xff0f] = setBit(state->address_space[0xff0f], 2);
+        break;
+
+        case SERIAL_F:
+        state->address_space[0xff0f] = setBit(state->address_space[0xff0f], 3);
+        break;
+
+        case JOYPAD_F:
+        state->address_space[0xff0f] = setBit(state->address_space[0xff0f], 4);
+        break;
+        
+        default:break;
+    }
+}
 
 int decode_instruction(cpu_state * state, struct romBytes *bytes)
 {

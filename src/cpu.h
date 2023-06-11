@@ -4,6 +4,7 @@
 #include "instructions.h"
 #include "disassemble.h"
 #include "interrupt.h"
+#include "util.h"
 #include <byteswap.h>
 #include <string.h>
 typedef struct 
@@ -88,8 +89,7 @@ void set_flag(int toSet, char flag[2], cpu_state * state);
 void call_func(cpu_state * state, instruction ins, struct romBytes * bytes);
 void handle_interrupt(cpu_state * state);
 int get_instruction_cycles(instruction ins, int actionTaken);
-void interrupt_set_bit(cpu_state * state, int bit, int toSet);
-int interrupt_get_bit(cpu_state * state, int bit);
+void request_interrupt(cpu_state * state);
 
 //CPU INSTRUCTIONS
 
