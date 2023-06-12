@@ -39,6 +39,7 @@ typedef struct
     uint8_t * lcd_ctl;
 
     uint8_t * enabled;
+    uint8_t in_vblank;
 }ppu_state;
 
 

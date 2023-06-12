@@ -448,15 +448,16 @@ int main(int argc, char *argv[])
         ppu_cycle(&state, &_ppu_state);
 
 
-        // if(state.regs.pc == 0x02a0)
-        // {
-        //     exit(0);         
-        // }
+        if(state.regs.pc == 0x17e)
+        {
+            exit(0);         
+        }
 
 
 
         if (state.interrupt_master_enable == 1)
         {
+            printf("Handling interrupt....\n");
             handle_interrupt(&state);
         }
 

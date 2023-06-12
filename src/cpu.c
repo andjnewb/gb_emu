@@ -109,7 +109,7 @@ void init_cpu(cpu_state * state, struct romBytes * bytes)
     state->memory_dest = 0x0;
     state->step = 1;
 
-    state->interrupt_master_enable = 0;
+    state->interrupt_master_enable = 1;
 }
 
 int step_cpu()
