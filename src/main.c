@@ -383,6 +383,11 @@ int main(int argc, char *argv[])
                 lcd_regs[7], lcd_regs[6], lcd_regs[5], lcd_regs[4], lcd_regs[3], lcd_regs[2], lcd_regs[1], lcd_regs[0]
               );
 
+        if(state.regs.pc == 0x2a3)
+        {
+            exit(0);         
+        }
+
         state.curr_inst = instructions[r->bytes[state.regs.pc]];
         printf("0x%x : 0x%x %s %x \n", state.regs.pc, state.curr_inst.op_code, state.curr_inst.mnmemonic, state.fetched_data);
 
@@ -448,16 +453,12 @@ int main(int argc, char *argv[])
         ppu_cycle(&state, &_ppu_state);
 
 
-        if(state.regs.pc == 0x17e)
-        {
-            exit(0);         
-        }
+        
 
 
 
         if (state.interrupt_master_enable == 1)
         {
-            printf("Handling interrupt....\n");
             handle_interrupt(&state);
         }
 

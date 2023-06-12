@@ -35,32 +35,45 @@ void ppu_cycle(cpu_state * _cpu_state, ppu_state * _ppu_state)
     if(*_ppu_state->lcd_ly == *_ppu_state->ly_comp)
     {
         *_ppu_state->lcd_stat = setBit(*_ppu_state->lcd_stat, LY_EQUALS_LYC_FLAG);//Set LYC=LY FLAG
-
+       
         if(checkBit(*_ppu_state->lcd_stat, LY_LYC_STAT_SOURCE) == 1)
         {
             request_interrupt(_cpu_state, LCD_STAT_F);
         }
 
-        (*_ppu_state->lcd_ly)++;
+        
     }
+    else if(*_ppu_state->lcd_ly != *_ppu_state->ly_comp)
+    {
+        *_ppu_state->lcd_stat = clearBit(*_ppu_state->lcd_stat, LY_EQUALS_LYC_FLAG);
+    }
+
+
+
     if(*_ppu_state->lcd_ly > 143)
     {
         //Bit 1-0 of lcd_stat indicate which mode we are in. Here we, want to indicate we are in VBlank with 01.
         *_ppu_state->lcd_stat = clearBit(*_ppu_state->lcd_stat, 1);
         *_ppu_state->lcd_stat = setBit(*_ppu_state->lcd_stat, 0);
-        (*_ppu_state->lcd_ly)++;
+        
+    }
+    else
+    {
+        
+        *_ppu_state->lcd_stat = clearBit(*_ppu_state->lcd_stat, 1);
+        *_ppu_state->lcd_stat = clearBit(*_ppu_state->lcd_stat, 0);
+        
+   
     }
     if(*_ppu_state->lcd_ly > MAX_LY)
     {
         (*_ppu_state->lcd_ly) = 0;
     }
-    else
-    {
-        (*_ppu_state->lcd_ly)++;
-    } 
 
+
+    (*_ppu_state->lcd_ly)++;
 
     printf("LCD Status: \n");
     printf("Interrupt sources: LYC=LY STAT:%d Mode 2 OAM STAT:%d Mode 1 VBlank STAT:%d Mode 0 HBlank STAT:%d\n", checkBit(*_ppu_state->lcd_stat, LY_LYC_STAT_SOURCE), checkBit(*_ppu_state->lcd_stat, OAM_STAT_SOURCE), checkBit(*_ppu_state->lcd_stat, V_BLANK_STAT_SOURCE), checkBit(*_ppu_state->lcd_stat, H_BLANK_STAT_SOURCE));
-    printf("LY:%d LYC:%d LYC=LY FLAG:%d\n", *_ppu_state->lcd_ly, *_ppu_state->ly_comp, checkBit(*_ppu_state->lcd_stat, LY_EQUALS_LYC_FLAG));
+    printf("LY:%3d LYC:%3d LYC=LY FLAG:%3d\n", *_ppu_state->lcd_ly, *_ppu_state->ly_comp, checkBit(*_ppu_state->lcd_stat, LY_EQUALS_LYC_FLAG));
 }

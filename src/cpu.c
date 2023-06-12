@@ -100,7 +100,7 @@ void init_cpu(cpu_state * state, struct romBytes * bytes)
     state->regs.bc = 0x0013;
     state->regs.de = 0x00d8;
     state->regs.hl = 0x014d;
-    state->regs.pc = 0x100;
+    state->regs.pc = 0x017e;
     state->regs.sp = 0xFFFE;
 
     state->fetched_data = 0x0;
@@ -125,6 +125,7 @@ void handle_interrupt(cpu_state * state)
     {
         if(checkBit(state->address_space[INTERRUPT_ENABLE_REGISTER], VBLANK_E))
         {
+            printf("VBLANK INTERRUPT...\n");
             state->address_space[INTERRUPT_FLAG_REGISTER] = setBit(state->address_space[INTERRUPT_FLAG_REGISTER], VBLANK_F);
 
             state->fetched_data = VBLANK_JUMP_VECTOR;//My call doesn't take in a parameter, it just uses the cpu state's fetched data. So this lil hack allows us to just use it for now.
