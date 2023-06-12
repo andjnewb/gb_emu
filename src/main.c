@@ -395,8 +395,6 @@ int main(int argc, char *argv[])
 
         // SDL_RenderPresent(v_state.renderer);
 
-        state.address_space[0xFF44] = 148; // Register HACK, remove later.
-
         switch (instructions[r->bytes[state.regs.pc]].d_type)
         {
         case a16:
@@ -446,7 +444,7 @@ int main(int argc, char *argv[])
 
 
         ppu_cycle(&state, &_ppu_state);
-        call_func(&state, instructions[r->bytes[state.regs.pc]], r);
+        //call_func(&state, instructions[r->bytes[state.regs.pc]], r);
         
 
 
