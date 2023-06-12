@@ -7,6 +7,11 @@
 #include "util.h"
 #include <byteswap.h>
 #include <string.h>
+
+#define INTERRUPT_ENABLE_REGISTER 0xffff
+#define INTERRUPT_FLAG_REGISTER 0xff0f
+#define VBLANK_JUMP_VECTOR 0x40
+
 typedef struct 
 {
     //8 bit registers. Can also be addressed in 16 bit pairs.

@@ -37,7 +37,7 @@ void ppu_cycle(cpu_state * _cpu_state, ppu_state * _ppu_state)
 
         if(checkBit(*_ppu_state->lcd_stat, LY_LYC_STAT_SOURCE) == 1)
         {
-            request_interrupt(_cpu_state, LY_EQUALS_LYC_FLAG);
+            request_interrupt(_cpu_state, LCD_STAT_F);
         }
 
         (*_ppu_state->lcd_ly)++;

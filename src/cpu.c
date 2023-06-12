@@ -120,7 +120,20 @@ int step_cpu()
 void handle_interrupt(cpu_state * state)
 {
 
-    
+    //If the interrupt has been requested and is enabled, handle it.
+    if(checkBit(state->address_space[INTERRUPT_FLAG_REGISTER], VBLANK_F))
+    {
+        if(checkBit(state->address_space[INTERRUPT_ENABLE_REGISTER], VBLANK_E))
+        {
+            state->address_space[INTERRUPT_FLAG_REGISTER] = setBit(state->address_space[INTERRUPT_FLAG_REGISTER], VBLANK_F);
+
+            state->fetched_data = VBLANK_JUMP_VECTOR;//My call doesn't take in a parameter, it just uses the cpu state's fetched data. So this lil hack allows us to just use it for now.
+            call_a16(state);
+
+            state->interrupt_master_enable = 0;//Disable all interrupt handling until ei or reti renables it.
+
+        }
+    }
 }
 
 
@@ -155,23 +168,23 @@ void request_interrupt(cpu_state *state, int interrupt)
     switch(interrupt)
     {
         case VBLANK_F:
-        state->address_space[0xff0f] = setBit(state->address_space[0xff0f], 0);
+        state->address_space[INTERRUPT_FLAG_REGISTER] = setBit(state->address_space[INTERRUPT_FLAG_REGISTER], VBLANK_F);
         break;
 
         case LCD_STAT_F:
-        state->address_space[0xff0f] = setBit(state->address_space[0xff0f], 1);
+        state->address_space[INTERRUPT_FLAG_REGISTER] = setBit(state->address_space[INTERRUPT_FLAG_REGISTER], LCD_STAT_F);
         break;
 
         case TIMER_F:
-        state->address_space[0xff0f] = setBit(state->address_space[0xff0f], 2);
+        state->address_space[INTERRUPT_FLAG_REGISTER] = setBit(state->address_space[INTERRUPT_FLAG_REGISTER], TIMER_F);
         break;
 
         case SERIAL_F:
-        state->address_space[0xff0f] = setBit(state->address_space[0xff0f], 3);
+        state->address_space[INTERRUPT_FLAG_REGISTER] = setBit(state->address_space[INTERRUPT_FLAG_REGISTER], SERIAL_F);
         break;
 
         case JOYPAD_F:
-        state->address_space[0xff0f] = setBit(state->address_space[0xff0f], 4);
+        state->address_space[INTERRUPT_FLAG_REGISTER] = setBit(state->address_space[INTERRUPT_FLAG_REGISTER], JOYPAD_F);
         break;
         
         default:break;
