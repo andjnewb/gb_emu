@@ -1,7 +1,12 @@
 #ifndef PPU_H_
 #define PPU_H_
+
+#define MAX_LY 153
+
 #include "cpu.h"
 #include "util.h"
+
+
 
 enum LCDC
 {
@@ -19,22 +24,25 @@ enum LCD_STAT
 {
     SCREEN_MODE_1,
     SCREEN_MODE_2,
-    LY_LYC_COMPARISON_SIGNAL,
-    H_BLANK_CHECK_ENABLE,
-    V_BLANK_CHECK_ENABLE,
-    OAM_CHECK_ENABLE,
-    LY_LYC_CHECK_ENABLE,
+    LY_EQUALS_LYC_FLAG,
+    H_BLANK_STAT_SOURCE,
+    V_BLANK_STAT_SOURCE,
+    OAM_STAT_SOURCE,
+    LY_LYC_STAT_SOURCE,
 };
 
 typedef struct 
 {
-    uint8_t lcd_ly;
-    uint8_t ly_comp;
-    uint8_t lcd_stat;
-    uint8_t lcd_ctl;
+    uint8_t * lcd_ly;
+    uint8_t * ly_comp;
+    uint8_t * lcd_stat;
+    uint8_t * lcd_ctl;
+
+    uint8_t * enabled;
 }ppu_state;
 
 
+void init_ppu(cpu_state * _cpu_state, ppu_state * _ppu_state);
 void get_lcd_regs(cpu_state * state, int regs[8]);
 int get_lcd_ly(cpu_state * state);
 void ppu_cycle(cpu_state * _cpu_state, ppu_state * _ppu_state);

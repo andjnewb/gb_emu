@@ -89,7 +89,7 @@ void set_flag(int toSet, char flag[2], cpu_state * state);
 void call_func(cpu_state * state, instruction ins, struct romBytes * bytes);
 void handle_interrupt(cpu_state * state);
 int get_instruction_cycles(instruction ins, int actionTaken);
-void request_interrupt(cpu_state * state);
+void request_interrupt(cpu_state * state, int interrupt);
 
 //CPU INSTRUCTIONS
 

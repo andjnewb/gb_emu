@@ -289,7 +289,9 @@ int main(int argc, char *argv[])
     FILE *out = fopen("tetris.asm", "w");
 
     cpu_state state;
+    ppu_state _ppu_state;
     init_cpu(&state, r);
+    init_ppu(&state, &_ppu_state);
 
     memcpy(state.address_space, r->bytes, 0x7fff);//map rom cart to memory map of cpu
 
@@ -443,8 +445,9 @@ int main(int argc, char *argv[])
         // printf("Cycle from Current: %d/%d\n", get_instruction_cycles(state.curr_inst, 1), get_instruction_cycles(state.curr_inst, 0));
 
 
-
+        ppu_cycle(&state, &_ppu_state);
         call_func(&state, instructions[r->bytes[state.regs.pc]], r);
+        
 
 
         // if(state.regs.pc == 0x02a0)
