@@ -443,9 +443,9 @@ int main(int argc, char *argv[])
         // printf("Cycle from Current: %d/%d\n", get_instruction_cycles(state.curr_inst, 1), get_instruction_cycles(state.curr_inst, 0));
 
 
-        ppu_cycle(&state, &_ppu_state);
-        //call_func(&state, instructions[r->bytes[state.regs.pc]], r);
         
+        call_func(&state, instructions[r->bytes[state.regs.pc]], r);
+        ppu_cycle(&state, &_ppu_state);
 
 
         // if(state.regs.pc == 0x02a0)

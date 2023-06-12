@@ -28,28 +28,28 @@ int get_lcd_ly(cpu_state *state)
 
 void ppu_cycle(cpu_state * _cpu_state, ppu_state * _ppu_state)
 {
-     (*_ppu_state->lcd_ly) += 1;
+   
 
-    // if(*_ppu_state->lcd_ly == *_ppu_state->ly_comp)
-    // {
-    //     *_ppu_state->lcd_stat = setBit(*_ppu_state->lcd_stat, LY_EQUALS_LYC_FLAG);//Set LYC=LY FLAG
+    if(*_ppu_state->lcd_ly == *_ppu_state->ly_comp)
+    {
+        *_ppu_state->lcd_stat = setBit(*_ppu_state->lcd_stat, LY_EQUALS_LYC_FLAG);//Set LYC=LY FLAG
         
 
-    //     if(checkBit(*_ppu_state->lcd_stat, LY_LYC_STAT_SOURCE) == 1)
-    //     {
-    //         request_interrupt(_cpu_state, LY_EQUALS_LYC_FLAG);
-    //     }
+        if(checkBit(*_ppu_state->lcd_stat, LY_LYC_STAT_SOURCE) == 1)
+        {
+            request_interrupt(_cpu_state, LY_EQUALS_LYC_FLAG);
+        }
 
-    //     (*_ppu_state->lcd_ly)++;
-    // }
-    // else if(*_ppu_state->lcd_ly > MAX_LY)
-    // {
-    //     (*_ppu_state->lcd_ly) = 0;
-    // }
-    // else
-    // {
-    //     (*_ppu_state->lcd_ly)++;
-    // } 
+        (*_ppu_state->lcd_ly)++;
+    }
+    else if(*_ppu_state->lcd_ly > MAX_LY)
+    {
+        (*_ppu_state->lcd_ly) = 0;
+    }
+    else
+    {
+        (*_ppu_state->lcd_ly)++;
+    } 
 
 
     printf("LCD Status: \n");
