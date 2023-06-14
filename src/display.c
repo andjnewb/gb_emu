@@ -64,3 +64,17 @@ int clean_SDL(video_state * v_state)
 
     return EXIT_SUCCESS;
 }
+
+void draw_frame(video_state *vstate, ppu_state *_ppu_state, cpu_state *_cpu_state)
+{
+
+}
+
+void copy_bg_from_vram(video_state *vstate, ppu_state *_ppu_state, cpu_state *_cpu_state)
+{
+    //Select tile map and tile data locations based on LCDC
+    _ppu_state->tile_map_loc  = (checkBit(_cpu_state->address_space[LCD_CTL_ADDR], BG_TILE_MAP) == 1) ? 0x9c00 : 0x9800;
+    _ppu_state->tile_data_loc  = (checkBit(_cpu_state->address_space[LCD_CTL_ADDR], BG_AND_WINDOW_TILESET) == 1) ? 0x8000 : 0x8800;
+
+    
+}
