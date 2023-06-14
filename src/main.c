@@ -115,10 +115,6 @@ int main(int argc, char *argv[])
         printf("LCD CONTROL REGS:\nLCD & PPU ENABLE-%d WINDOW TILE MAP AREA:%d WINDOW ENABLE:%d BG AND WINDOW TILE DATA AREA:%d BG TILE MAP AREA:%d OBJ SIZE:%d OBJ ENABLE:%d BG AND WINDOW ENABLE/PRIORITY:%d\n",
                lcd_regs[7], lcd_regs[6], lcd_regs[5], lcd_regs[4], lcd_regs[3], lcd_regs[2], lcd_regs[1], lcd_regs[0]);
 
-        if (state.regs.pc == 0x2a3)
-        {
-            exit(0);
-        }
 
         fetch_instruction(&state, r);
         call_func(&state, state.curr_inst, r);

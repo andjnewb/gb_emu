@@ -89,7 +89,7 @@
         }\
     state->cycles += get_instruction_cycles(state->curr_inst, 1);\
     }\
-
+//NOT TESTED. PROBABLY NEEDS WORK.
 #define _INC_REG(register) \
     void _INC_ ## register(cpu_state * state) \
     {\

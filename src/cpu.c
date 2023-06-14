@@ -500,10 +500,10 @@ void set_flag(int toSet, char flag[2], cpu_state * state)
 
 void fetch_instruction(cpu_state *state, struct romBytes *r)
 {
-        state->curr_inst = instructions[r->bytes[state->regs.pc]];
+        state->curr_inst = instructions[state->address_space[state->regs.pc]];
         
 
-        switch (instructions[r->bytes[state->regs.pc]].d_type)
+        switch (instructions[state->address_space[state->regs.pc]].d_type)
         {
         case a16:
             uint8_t d1 = r->bytes[state->regs.pc + 1];
@@ -746,6 +746,12 @@ void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
         printf("Non implemented instruction at 0x%x: 0x%x %s\n", state->regs.pc , ins.op_code, ins.mnmemonic);
         state->halt = 1;//
         break;
+    }
+
+    if(state->regs.pc > 0xffff)
+    {
+        //PC somehow ended up outside of our address space. die.
+        state->halt = 1;
     }
 }
 
