@@ -4,7 +4,7 @@
 #include <SDL2/SDL_ttf.h>
 #include <SDL2/SDL_image.h>
 #include "ppu.h"
-
+#include "cpu.h"
 
 
 typedef struct 
@@ -30,6 +30,8 @@ int init_video(video_state * v_state);
 
 int clean_SDL(video_state * v_state);
 
+void draw_frame(video_state * vstate, ppu_state * _ppu_state, cpu_state * _cpu_state);
 
+void copy_bg_from_vram(video_state * vstate, ppu_state * _ppu_state, cpu_state * _cpu_state);
 
 #endif

@@ -3,7 +3,8 @@
         "disassemble.h": "c",
         "sdl_test_font.h": "c",
         "gqueue.h": "c",
-        "inttypes.h": "c"
+        "inttypes.h": "c",
+        "sdl_image.h": "c"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

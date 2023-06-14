@@ -2,6 +2,13 @@
 #define PPU_H_
 
 #define MAX_LY 153
+#define VRAM_END 0x9fff
+#define VRAM_BEGIN 0x8000
+#define LCD_CTL_ADDR 0xff40
+#define LY_REG_ADDR 0xff44 
+#define LYC_REG_ADDR 0xff45
+#define SCX_REG_ADDR 0xff42
+#define SCY_REG_ADDR 0xff43
 
 #include "cpu.h"
 #include "util.h"
@@ -39,8 +46,20 @@ typedef struct
     uint8_t * lcd_ctl;
 
     uint8_t * enabled;
-    uint8_t in_vblank;
+    
+    uint16_t tile_map_loc;
+    uint16_t tile_data_loc;
+
+    uint8_t * scx;
+    uint8_t * scy;
+    
 }ppu_state;
+
+typedef struct
+{
+
+}tile;
+
 
 
 void init_ppu(cpu_state * _cpu_state, ppu_state * _ppu_state);
