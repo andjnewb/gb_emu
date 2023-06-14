@@ -2,29 +2,7 @@
 #define INSTRUCTIONS_H_
 #include <inttypes.h>
 #include "disassemble.h"
-//
 
-/*
-    uint8_t result = state->regs.a | state->regs.b;
-
-    state->regs.a = result;
-
-    if(result == 0)
-    {
-        set_flag(1, "z", state);
-    }
-    else
-    {
-        set_flag(0, "z", state);
-    }
-
-    state->regs.n_flag = 0;
-    state->regs.h_flag = 0;
-    state->regs.c_flag = 0;
-
-    state->cycles += get_instruction_cycles(state->curr_inst, 1);
-    
-*/
 
 #define _OR_REG(reg)\
     void _OR_##reg (cpu_state * state)\

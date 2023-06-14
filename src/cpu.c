@@ -362,7 +362,7 @@ void init_cpu(cpu_state * state, struct romBytes * bytes)
     state->regs.bc = 0x0013;
     state->regs.de = 0x00d8;
     state->regs.hl = 0x014d;
-    state->regs.pc = 0x017e;
+    state->regs.pc = 0x100;
     state->regs.sp = 0xFFFE;
 
     state->fetched_data = 0x0;
@@ -487,16 +487,7 @@ void set_flag(int toSet, char flag[2], cpu_state * state)
 void fetch_instruction(cpu_state *state, struct romBytes *r)
 {
         state->curr_inst = instructions[r->bytes[state->regs.pc]];
-        printf("0x%x : 0x%x %s %x \n", state->regs.pc, state->curr_inst.op_code, state->curr_inst.mnmemonic, state->fetched_data);
-
-        // SDL_SetRenderDrawColor(v_state.renderer, 0, 0, 0, 0);
-        // SDL_RenderClear(v_state.renderer);
-
-        // /* Use TTF textures. */
-        // SDL_RenderCopy(v_state.renderer, v_state.tex1, NULL, v_state.rect1);
-        // SDL_RenderCopy(v_state.renderer, v_state.tex2, NULL, v_state.rect2);
-
-        // SDL_RenderPresent(v_state.renderer);
+        
 
         switch (instructions[r->bytes[state->regs.pc]].d_type)
         {
@@ -541,6 +532,8 @@ void fetch_instruction(cpu_state *state, struct romBytes *r)
             // exit(0);
             break;
         }
+
+        printf("0x%x : 0x%x %s %x \n", state->regs.pc, state->curr_inst.op_code, state->curr_inst.mnmemonic, state->fetched_data);
 }
 
 void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)

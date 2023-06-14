@@ -25,8 +25,6 @@ int main(int argc, char *argv[])
     *r = getBytes("tetris.gb");
     r->metaData = getMetaData(r);
 
-    uint8_t ins = r->bytes[0x100];
-
     FILE *out = fopen("tetris.asm", "w");
 
     cpu_state state;
@@ -34,15 +32,14 @@ int main(int argc, char *argv[])
     init_cpu(&state, r);
     init_ppu(&state, &_ppu_state);
 
-    memcpy(state.address_space, r->bytes, 0x7fff);//map rom cart to memory map of cpu
-
-    state.regs.pc = 0x100;
+    memcpy(state.address_space, r->bytes, 0x7fff); // map rom cart to memory map of cpu
     state.step = 0;
 
     int delay = 0;
 
     while (state.halt != 1)
     {
+            
         while (SDL_PollEvent(&v_state.event) == 1)
         {
             if (v_state.event.type == SDL_QUIT)
@@ -52,17 +49,17 @@ int main(int argc, char *argv[])
 
             if (v_state.event.type == SDL_KEYDOWN)
             {
-                if (v_state.event.key.keysym.sym == SDLK_SPACE)
-                {
-                    if (state.step == 1)
-                    {
-                        state.step = 0;
-                    }
-                    else
-                    {
-                        state.step = 1;
-                    }
-                }
+                // if (v_state.event.key.keysym.sym == SDLK_SPACE)
+                // {
+                //     if (state.step == 1)
+                //     {
+                //         state.step = 0;
+                //     }
+                //     else
+                //     {
+                //         state.step = 1;
+                //     }
+                // }
 
                 if (v_state.event.key.keysym.sym == SDLK_s)
                 {
@@ -91,25 +88,20 @@ int main(int argc, char *argv[])
 
         char text_state[512];
 
-        sprintf(text_state, "PC: 0x%x\nA:%x B:%x C:%x D:%x E:%x H:%x L:%x \nFlags: %d%d%d%d\nStack Pointer: %x\nFetched Data: %x \nHalted: %d\nCycle: %d\nInterrupts Enabled: %s\n",
-                state.regs.pc,
-                state.regs.a, state.regs.b, state.regs.c, state.regs.d, state.regs.e, state.regs.h, state.regs.l,
-                state.regs.z_flag, state.regs.n_flag, state.regs.h_flag, state.regs.c_flag,
-                state.regs.sp,
-                state.fetched_data,
-                state.halt,
-                state.cycles,
-                state.interrupt_master_enable == 1 ? "Yes" : "No");
-
-        // get_text_and_rect(v_state.renderer, 0, 0, text_state, v_state.font, &v_state.tex1, v_state.rect1, &v_state);
+        // sprintf(text_state, "PC: 0x%x\nA:%x B:%x C:%x D:%x E:%x H:%x L:%x \nFlags: %d%d%d%d\nStack Pointer: %x\nFetched Data: %x \nHalted: %d\nCycle: %d\nInterrupts Enabled: %s\n",
+        //         state.regs.pc,
+        //         state.regs.a, state.regs.b, state.regs.c, state.regs.d, state.regs.e, state.regs.h, state.regs.l,
+        //         state.regs.z_flag, state.regs.n_flag, state.regs.h_flag, state.regs.c_flag,
+        //         state.regs.sp,
+        //         state.fetched_data,
+        //         state.halt,
+        //         state.cycles,
+        //         state.interrupt_master_enable == 1 ? "Yes" : "No");
 
         char toAppend[256];
 
-
         int lcd_regs[8];
         get_lcd_regs(&state, lcd_regs);
-
-
 
         system("clear");
         printf("\nPC: 0x%x\n", state.regs.pc);
@@ -121,52 +113,28 @@ int main(int argc, char *argv[])
         printf("Cycle: %d\n\n", state.cycles);
         printf("Interrupts Enabled: %s\n", state.interrupt_master_enable == 1 ? "Yes" : "No");
         printf("LCD CONTROL REGS:\nLCD & PPU ENABLE-%d WINDOW TILE MAP AREA:%d WINDOW ENABLE:%d BG AND WINDOW TILE DATA AREA:%d BG TILE MAP AREA:%d OBJ SIZE:%d OBJ ENABLE:%d BG AND WINDOW ENABLE/PRIORITY:%d\n",
-                lcd_regs[7], lcd_regs[6], lcd_regs[5], lcd_regs[4], lcd_regs[3], lcd_regs[2], lcd_regs[1], lcd_regs[0]
-              );
+               lcd_regs[7], lcd_regs[6], lcd_regs[5], lcd_regs[4], lcd_regs[3], lcd_regs[2], lcd_regs[1], lcd_regs[0]);
 
-        if(state.regs.pc == 0x2a3)
+        if (state.regs.pc == 0x2a3)
         {
-            exit(0);         
+            exit(0);
         }
-
-        printf("0x%x : 0x%x %s %x \n", state.regs.pc, state.curr_inst.op_code, state.curr_inst.mnmemonic, state.fetched_data);
-       
-        // fprintf(out, "0x%x : 0x%x %s %x \n", state.regs.pc,  state.curr_inst.op_code, state.curr_inst.mnmemonic ,state.fetched_data);
-        // printf("Current instruction: 0x%x: %s %x\n", state.curr_inst.op_code, state.curr_inst.mnmemonic, (state.curr_inst.length > 1) ? state.fetched_data : 0);
-        // printf("Cycle from Current: %d/%d\n", get_instruction_cycles(state.curr_inst, 1), get_instruction_cycles(state.curr_inst, 0));
-
 
         fetch_instruction(&state, r);
         call_func(&state, state.curr_inst, r);
         ppu_cycle(&state, &_ppu_state);
-
-
-        
-
-
 
         if (state.interrupt_master_enable == 1)
         {
             handle_interrupt(&state);
         }
 
-
-        // if(state.cycles > 10)
-        // {
-        //     clean_SDL(&v_state);
-        //     exit(0);
-
-        // }
-
         state.step = 0;
     }
-    ////
     printf("Disassembly written to: %s\n", "tetris.asm");
-    // printf("Title = %s", r->metaData.title);
-        
-    fwrite(state.address_space, 0xffff, sizeof(uint8_t), out);
-        
-    //free(r.bytes);
+
+    fwrite(state.address_space, sizeof(uint8_t), 0xffff, out);
+
     fclose(out);
 
     return clean_SDL(&v_state);
