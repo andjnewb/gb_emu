@@ -46,6 +46,14 @@
         state->cycles += get_instruction_cycles(state->curr_inst, 1);\
     }\
 
+#define _LD_REG16_REG(reg16, reg8)\
+    void _LD_##reg16##_##reg8(cpu_state * state)\
+    {\
+        state->regs.reg16 = state->regs.reg8;\
+        state->cycles += get_instruction_cycles(state->curr_inst, 1);\
+    }\
+
+
 #define _DEC_REG(register) \
     void _DEC_ ## register(cpu_state * state) \
     {\
@@ -82,6 +90,35 @@
     state->cycles += get_instruction_cycles(state->curr_inst, 1);\
     }\
 
+#define _INC_REG(register) \
+    void _INC_ ## register(cpu_state * state) \
+    {\
+      int result = state->regs.register + 1;\
+        \
+      if(result > 255)\
+        {\
+            set_flag(1, "z", state);\
+            state->regs.register = 0x0;\
+        }\
+      else\
+        {\
+            set_flag(0, "z", state);\
+            state->regs.register += 1;\
+        }\
+        \
+      set_flag(1, "n", state);\
+      \
+      \
+      if(state->regs.register & (1<<3))\
+        {\
+            set_flag(1, "h", state);\
+        }\
+      else\
+        {\
+            set_flag(0, "h", state);\
+        }\
+    state->cycles += get_instruction_cycles(state->curr_inst, 1);\
+    }\
 
 enum data_type
 {

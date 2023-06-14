@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
     struct romBytes *r = malloc(sizeof(struct romBytes));
     //
 
-    *r = getBytes("tetris.gb");
+    *r = getBytes("06-ldr,r.gb");
     r->metaData = getMetaData(r);
 
     FILE *out = fopen("tetris.asm", "w");
@@ -122,6 +122,12 @@ int main(int argc, char *argv[])
 
         fetch_instruction(&state, r);
         call_func(&state, state.curr_inst, r);
+
+        if(state.fetched_data == 0xff01)
+        {
+            fprintf(out, "%x", state.address_space[0xff01]);
+        }
+
         ppu_cycle(&state, &_ppu_state);
 
         if (state.interrupt_master_enable == 1)
@@ -133,7 +139,7 @@ int main(int argc, char *argv[])
     }
     printf("Disassembly written to: %s\n", "tetris.asm");
 
-    fwrite(state.address_space, sizeof(uint8_t), 0xffff, out);
+    
 
     fclose(out);
 

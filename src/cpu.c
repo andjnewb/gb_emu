@@ -280,6 +280,18 @@ _DEC_REG(de)
 _DEC_REG(hl)
 _DEC_REG(sp)
 
+_INC_REG(b)
+_INC_REG(d)
+_INC_REG(h)
+_INC_REG(c)
+_INC_REG(e)
+_INC_REG(l)
+_INC_REG(a)
+_INC_REG(bc)
+_INC_REG(de)
+_INC_REG(hl)
+_INC_REG(sp)
+
 _OR_REG(a)
 _OR_REG(b)
 _OR_REG(c)
@@ -353,6 +365,8 @@ _LD_REG16_d16(bc)
 _LD_REG16_d16(de)
 _LD_REG16_d16(hl)
 _LD_REG16_d16(sp)
+
+_LD_REG16_REG(de,a)
 
 void init_cpu(cpu_state * state, struct romBytes * bytes)
 {
@@ -540,6 +554,26 @@ void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
 {
     switch(ins.op_code)
     {
+
+        case 0x1c:
+        _INC_e(state);
+        state->regs.pc += ins.length;
+        break;
+
+        case 0x12:
+        _LD_de_a(state);
+        state->regs.pc += ins.length;
+        break;
+
+        case 0x11:
+        _LD_de_d16(state);
+        state->regs.pc += ins.length;
+        break;
+
+        case 0x47:
+        _LD_b_a(state);
+        state->regs.pc += ins.length;
+        break;
 
         case 0xc9:
         ret(state);
