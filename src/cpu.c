@@ -557,16 +557,16 @@ void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
 {
     switch(ins.op_code)
     {
-    case 0xff:
-    case 0xef:
-    case 0xdf:
-    case 0xcf:
-    case 0xf7:
-    case 0xe7:
-    case 0xd7:
-    case 0xc7:
-            rst(state);
-            break;
+    // case 0xff:
+    // case 0xef:
+    // case 0xdf:
+    // case 0xcf:
+    // case 0xf7:
+    // case 0xe7:
+    // case 0xd7:
+    // case 0xc7:
+    //         rst(state);
+    //         break;
             
     case 0x61:
             _LD_h_c(state);

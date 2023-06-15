@@ -117,12 +117,20 @@ int main(int argc, char *argv[])
 
 
         fetch_instruction(&state, r);
+        fprintf(out, "0x%x : 0x%x %s %x \n", state.regs.pc, state.curr_inst.op_code, state.curr_inst.mnmemonic, state.fetched_data);
         call_func(&state, state.curr_inst, r);
 
         if(state.fetched_data == 0xff01)
         {
             fprintf(out, "%x", state.address_space[0xff01]);
         }
+
+        if(state.regs.pc == 0x27a3)
+        {
+            printf("cfff:%x cffd:%x")
+        }
+
+        
 
         ppu_cycle(&state, &_ppu_state);
 
