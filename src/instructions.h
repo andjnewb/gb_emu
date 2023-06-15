@@ -3,7 +3,6 @@
 #include <inttypes.h>
 #include "disassemble.h"
 
-
 #define _OR_REG(reg)\
     void _OR_##reg (cpu_state * state)\
     {\
@@ -119,6 +118,15 @@
         }\
     state->cycles += get_instruction_cycles(state->curr_inst, 1);\
     }\
+
+#define _LD_REG_REGA16(register1, register2)\
+    void _LD_##register1##_## register2(cpu_state * state)\
+    {\
+        state->regs.register1 = state->address_space[state->regs.register2];\
+        state->cycles += get_instruction_cycles(state->curr_inst, 1);\
+    }\
+
+
 
 enum data_type
 {

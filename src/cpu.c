@@ -63,7 +63,7 @@ const instruction instructions[256] =
         {"DEC (HL)", 0x35, 1, NONE, "z1h-", "12/0"},
         {"LD (HL),d8", 0x36, 2, d8, "----", "12/0"},
         {"SCF", 0x37, 1, NONE, "-001", "4/0"},
-        {"JR Z,r8 ", 0x38, 2, r8, "----", "1/0"},
+        {"JR C,r8 ", 0x38, 2, r8, "----", "1/0"},
         {"ADD HL,SP ", 0x39, 1, NONE, "-0hc", "1/0"},
         {"LD A,(HL-) ", 0x3a, 1, NONE, "----", "1/0"},
         {"DEC SP", 0x3b, 1, NONE, "----", "1/0"},
@@ -367,6 +367,9 @@ _LD_REG16_d16(hl)
 _LD_REG16_d16(sp)
 
 _LD_REG16_REG(de,a)
+_LD_REG16_REG(bc,a)
+
+_LD_REG_REGA16(d,hl)
 
 void init_cpu(cpu_state * state, struct romBytes * bytes)
 {
@@ -554,198 +557,246 @@ void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
 {
     switch(ins.op_code)
     {
+    case 0xff:
+    case 0xef:
+    case 0xdf:
+    case 0xcf:
+    case 0xf7:
+    case 0xe7:
+    case 0xd7:
+    case 0xc7:
+            rst(state);
+            break;
+            
+    case 0x61:
+            _LD_h_c(state);
+            state->regs.pc += ins.length;
+            break;
+    case 0x02:
+            ld_data_at_addr_bc_a(state);
+            state->regs.pc += ins.length;
+            break;
 
-        case 0x1c:
-        _INC_e(state);
-        state->regs.pc += ins.length;
-        break;
+    case 0x56:
+            _LD_d_hl(state);
+            state->regs.pc += ins.length;
+            break;
 
-        case 0x12:
-        _LD_de_a(state);
-        state->regs.pc += ins.length;
-        break;
+    case 0x4b:
+            _LD_c_e(state);
+            state->regs.pc += ins.length;
+            break;
 
-        case 0x11:
-        _LD_de_d16(state);
-        state->regs.pc += ins.length;
-        break;
+    case 0x40:
+            _LD_b_b(state);
+            state->regs.pc += ins.length;
+            break;
 
-        case 0x47:
-        _LD_b_a(state);
-        state->regs.pc += ins.length;
-        break;
+    case 0x38:
+            jr_c_r8(state);
+            state->regs.pc += ins.length;
+            break;
 
-        case 0xc9:
-        ret(state);
-        break;
+    case 0x30:
+            jr_nc_r8(state);
+            state->regs.pc += ins.length;
+            break;
 
-        case 0xb1:
-        _OR_c(state);
-        state->regs.pc += ins.length;
-        break;
+    case 0x28:
+            jr_z_r8(state);
+            state->regs.pc += ins.length;
+            break;
 
-        case 0x78:
-        _LD_a_b(state);
-        state->regs.pc += ins.length;
-        break;
+    case 0x1c:
+            _INC_e(state);
+            state->regs.pc += ins.length;
+            break;
 
-        case 0xb:
-        _DEC_bc(state);
-        state->regs.pc += ins.length;
-        break;
+    case 0x12:
+            ld_data_at_addr_de_a(state);
+            state->regs.pc += ins.length;
+            break;
 
-        case 0x1:
-        _LD_bc_d16(state);
-        state->regs.pc += ins.length;
-        break;
+    case 0x11:
+            _LD_de_d16(state);
+            state->regs.pc += ins.length;
+            break;
 
-        case 0xcd:
-        call_a16(state);
-        break;
+    case 0x47:
+            _LD_b_a(state);
+            state->regs.pc += ins.length;
+            break;
 
-        case 0xe2:
-        ldh_c_a(state);
-        state->regs.pc += ins.length;
-        break;
+    case 0xc9:
+            ret(state);
+            break;
 
-        case 0x2a:
-        ld_hl_increment_a(state);
-        state->regs.pc += ins.length;
-        break;
+    case 0xb1:
+            _OR_c(state);
+            state->regs.pc += ins.length;
+            break;
 
-        case 0x31:
-        _LD_sp_d16(state);
-        state->regs.pc += ins.length;
-        break;
+    case 0x78:
+            _LD_a_b(state);
+            state->regs.pc += ins.length;
+            break;
 
-        case 0xea:
-        ld_a16_a(state);
-        state->regs.pc += ins.length;
-        break;
+    case 0xb:
+            _DEC_bc(state);
+            state->regs.pc += ins.length;
+            break;
 
-        case 0x36:
-        ld_hl_d8(state);
-        state->regs.pc += ins.length;
-        break;
+    case 0x1:
+            _LD_bc_d16(state);
+            state->regs.pc += ins.length;
+            break;
 
-        case 0xfe:
-        cp_d8(state);
-        state->regs.pc += ins.length;
-        break;
+    case 0xcd:
+            call_a16(state);
+            break;
 
-        case 0xf0:
-        ldh_a_a8(state);
-        state->regs.pc += ins.length;
-        break;
+    case 0xe2:
+            ldh_c_a(state);
+            state->regs.pc += ins.length;
+            break;
 
-        case 0xe0:
-        ldh_a8_a(state);
-        state->regs.pc += ins.length;
-        break;
+    case 0x2a:
+            ld_hl_increment_a(state);
+            state->regs.pc += ins.length;
+            break;
 
-        case 0xf3:
-        di(state);
-        state->regs.pc += ins.length;
-        break;
+    case 0x31:
+            _LD_sp_d16(state);
+            state->regs.pc += ins.length;
+            break;
 
-        case 0x3e:
-        _LD_a_d8(state);
-        state->regs.pc += ins.length;
-        break;
+    case 0xea:
+            ld_a16_a(state);
+            state->regs.pc += ins.length;
+            break;
 
-        case 0xd:
-        _DEC_c(state);
-        state->regs.pc += ins.length;
-        break;
+    case 0x36:
+            ld_hl_d8(state);
+            state->regs.pc += ins.length;
+            break;
 
-        case 0x15:
-        _DEC_d(state);
-        state->regs.pc += ins.length;
-        break;
+    case 0xfe:
+            cp_d8(state);
+            state->regs.pc += ins.length;
+            break;
 
-        case 0x7b:
-        _LD_a_e(state);
-        state->regs.pc += ins.length;
-        break;
+    case 0xf0:
+            ldh_a_a8(state);
+            state->regs.pc += ins.length;
+            break;
 
-        case 0x14:
-        inc_d(state);
-        state->regs.pc += ins.length;
-        break;
+    case 0xe0:
+            ldh_a8_a(state);
+            state->regs.pc += ins.length;
+            break;
 
-        case 0xb0:
-        _OR_b(state);
-        state->regs.pc += ins.length;
-        break;
+    case 0xf3:
+            di(state);
+            state->regs.pc += ins.length;
+            break;
 
-        case 0x25:
-        _DEC_h(state);
-        state->regs.pc += ins.length;
+    case 0x3e:
+            _LD_a_d8(state);
+            state->regs.pc += ins.length;
+            break;
 
-        case 0x1f:
-        rra(state);
-        state->regs.pc += ins.length;
-        break;
+    case 0xd:
+            _DEC_c(state);
+            state->regs.pc += ins.length;
+            break;
 
-        case 0x16:
-        _LD_d_d8(state);
-        state->regs.pc += ins.length;
-        break;
+    case 0x15:
+            _DEC_d(state);
+            state->regs.pc += ins.length;
+            break;
 
-        case 0x1d:
-        _DEC_e(state);
-        state->regs.pc += ins.length;
-        break;
+    case 0x7b:
+            _LD_a_e(state);
+            state->regs.pc += ins.length;
+            break;
 
-        case 0x20:
-        jr_nz_r8(state, bytes);
-        break;
+    case 0x14:
+            inc_d(state);
+            state->regs.pc += ins.length;
+            break;
 
-        case 0x5:
-        _DEC_b(state);
-        state->regs.pc += ins.length;
-        break;
+    case 0xb0:
+            _OR_b(state);
+            state->regs.pc += ins.length;
+            break;
 
-        case 0x32:
-        ld_hl_decrement_a(state);
-        state->regs.pc += ins.length;
+    case 0x25:
+            _DEC_h(state);
+            state->regs.pc += ins.length;
 
-        break;
+    case 0x1f:
+            rra(state);
+            state->regs.pc += ins.length;
+            break;
 
-        case 0x6:
-        _LD_b_d8(state);
-        state->regs.pc += ins.length;
-        break;
+    case 0x16:
+            _LD_d_d8(state);
+            state->regs.pc += ins.length;
+            break;
 
-        case 0xc3:
-        jp_nocond(state);
-        break;
+    case 0x1d:
+            _DEC_e(state);
+            state->regs.pc += ins.length;
+            break;
 
-        case 0xe:
-        _LD_c_d8(state);
-        state->regs.pc += ins.length;
-        break;
+    case 0x20:
+            jr_nz_r8(state, bytes);
+            break;
 
+    case 0x5:
+            _DEC_b(state);
+            state->regs.pc += ins.length;
+            break;
 
-        case 0x21:
-        _LD_hl_d16(state);
-        state->regs.pc += ins.length;
+    case 0x32:
+            ld_hl_decrement_a(state);
+            state->regs.pc += ins.length;
 
-        break;
+            break;
 
-        case 0xaf:
-        xor_a(state);
-        state->regs.pc += ins.length;
-        break;
+    case 0x6:
+            _LD_b_d8(state);
+            state->regs.pc += ins.length;
+            break;
 
-        case 0x0:
-        state->regs.pc += ins.length;
-        break;
+    case 0xc3:
+            jp_nocond(state);
+            break;
 
-        default:
-        printf("Non implemented instruction at 0x%x: 0x%x %s\n", state->regs.pc , ins.op_code, ins.mnmemonic);
-        state->halt = 1;//
-        break;
+    case 0xe:
+            _LD_c_d8(state);
+            state->regs.pc += ins.length;
+            break;
+
+    case 0x21:
+            _LD_hl_d16(state);
+            state->regs.pc += ins.length;
+
+            break;
+
+    case 0xaf:
+            xor_a(state);
+            state->regs.pc += ins.length;
+            break;
+
+    case 0x0:
+            state->regs.pc += ins.length;
+            break;
+
+    default:
+            printf("Non implemented instruction at 0x%x: 0x%x %s\n", state->regs.pc, ins.op_code, ins.mnmemonic);
+            state->halt = 1; //
+            break;
     }
 
     if(state->regs.pc > 0xffff)
@@ -753,6 +804,16 @@ void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
         //PC somehow ended up outside of our address space. die.
         state->halt = 1;
     }
+}
+
+void ld_data_at_addr_de_a(cpu_state * state)
+{
+    state->address_space[state->regs.de] = state->regs.a;
+}
+
+void ld_data_at_addr_bc_a(cpu_state *state)
+{
+    state->address_space[state->regs.bc] = state->regs.a;
 }
 
 void ret(cpu_state * state)
@@ -811,6 +872,13 @@ void ldh_a8_a(cpu_state * state)
     state->address_space[addr] = state->regs.a;
 
     state->cycles += get_instruction_cycles(state->curr_inst, 1);
+
+    if(addr == 0xff01)
+    {
+        FILE *out = fopen("test.txt", "a");
+        fprintf(out, "%x\n", state->regs.a);
+        fclose(out);
+    }
 }
 
 void ldh_c_a(cpu_state * state)
@@ -829,6 +897,51 @@ void di(cpu_state * state)
     state->cycles += get_instruction_cycles(state->curr_inst, 1);
 }
 
+void rst(cpu_state *state)
+{
+    uint8_t addr;
+    switch(state->curr_inst.op_code)
+    {
+        case 0xFF:
+        addr = 0x38;
+        break;
+
+        case 0xef:
+        addr = 0x28;
+        break;
+
+        case 0xdf:
+        addr = 0x18;
+        break;
+
+        case 0xcf:
+        addr = 0x08;
+        break;
+
+        case 0xc7:
+        addr = 0x0;
+        break;
+
+        case 0xd7:
+        addr = 0x10;
+        break;
+
+        case 0xe7:
+        addr = 0x20;
+        break;
+
+        case 0xf7:
+        addr = 0x30;
+        break;
+
+        default:break;
+    }
+
+    stack_push16(state->regs.pc, state);
+
+    state->regs.pc = addr;
+
+}
 
 void inc_d(cpu_state *state)
 {
@@ -986,4 +1099,57 @@ void jr_nz_r8(cpu_state * state, struct romBytes * bytes)
         state->cycles += get_instruction_cycles(state->curr_inst, 0);
     }
 
+}
+
+void jr_nc_r8(cpu_state *state)
+{
+    int toJump = state->fetched_data_8_signed;
+
+    //printf("tojump: %d", -(~toJump + 1) + 2);
+    
+    if(state->regs.c_flag == 0)
+    {
+        state->regs.pc += -(~toJump + 1) + 2;//
+        state->cycles += get_instruction_cycles(state->curr_inst, 1);
+    }
+    else
+    {
+        state->regs.pc += 2;
+        state->cycles += get_instruction_cycles(state->curr_inst, 0);
+    }
+}
+
+void jr_z_r8(cpu_state *state)
+{
+    int toJump = state->fetched_data_8_signed;
+
+    //printf("tojump: %d", -(~toJump + 1) + 2);
+    
+    if(state->regs.z_flag == 1)
+    {
+        state->regs.pc += -(~toJump + 1) + 2;//
+        state->cycles += get_instruction_cycles(state->curr_inst, 1);
+    }
+    else
+    {
+        state->regs.pc += 2;
+        state->cycles += get_instruction_cycles(state->curr_inst, 0);
+    }
+}
+
+void jr_c_r8(cpu_state *state)
+{
+
+    int toJump = state->fetched_data_8_signed;
+
+    if(state->regs.c_flag == 1)
+    {
+        state->regs.pc += -(~toJump + 1) + 2;//
+        state->cycles += get_instruction_cycles(state->curr_inst, 1);
+    }
+    else
+    {
+        state->regs.pc += 2;
+        state->cycles += get_instruction_cycles(state->curr_inst, 0);
+    }
 }

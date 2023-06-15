@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
     struct romBytes *r = malloc(sizeof(struct romBytes));
     //
 
-    *r = getBytes("06-ldr,r.gb");
+    *r = getBytes("tetris.gb");
     r->metaData = getMetaData(r);
 
     FILE *out = fopen("tetris.asm", "w");

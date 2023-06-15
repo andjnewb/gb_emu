@@ -102,6 +102,9 @@ void fetch_instruction(cpu_state * state, struct romBytes * r);
 //JUMPS
 void jp_nocond(cpu_state * state);
 void jr_nz_r8(cpu_state * state, struct romBytes * bytes);
+void jr_nc_r8(cpu_state * state);
+void jr_z_r8(cpu_state * state);
+void jr_c_r8(cpu_state * state);
 void call_a16(cpu_state * state);
 void ret(cpu_state * state);
 
@@ -133,11 +136,12 @@ void ldh_c_a(cpu_state * state);
 void ld_hl_d8(cpu_state * state);
 void ld_a16_a(cpu_state * state);
 void ld_hl_increment_a(cpu_state * state);
-
-
+void ld_data_at_addr_de_a(cpu_state * state);
+void ld_data_at_addr_bc_a(cpu_state * state);
 
 
 //MISC
 void di(cpu_state * state);
+void rst(cpu_state * state);
 
 #endif
