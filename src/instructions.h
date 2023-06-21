@@ -3,6 +3,64 @@
 #include <inttypes.h>
 #include "disassemble.h"
 
+#define _LD_REG_VALUE_AT_ADDR_IN_HL(register)\
+    void _LD_##register##_AT_HL(cpu_state * state)\
+    {\
+        state->regs.register = state->address_space[state->regs.hl];\
+        state->cycles += get_instruction_cycles(state->curr_inst, 1);\
+    }\
+
+#define _ADD_REG16_REG16(register1,register2) \
+    void _ADD_##register1##_##register2(cpu_state * state) \
+    {\
+      int result = state->regs.register1 + state->regs.register2;\
+        \
+      if(result > 0xffff)\
+        {\
+            state->regs.register1 = 0x0;\
+        }\
+            \
+      state->regs.register1 = result;\
+            \
+      set_flag(0, "n", state);\
+      \
+      \
+      if(state->regs.register1 & (1<<11))\
+        {\
+            set_flag(1, "h", state);\
+        }\
+      else\
+        {\
+            set_flag(0, "h", state);\
+        }\
+\
+      if(state->regs.register1 & (1<<15))\
+      {\
+        set_flag(1, "c", state);\
+      }\
+      else\
+      {\
+        set_flag(1, "c", state);\
+      }\
+\
+    state->cycles += get_instruction_cycles(state->curr_inst, 1);\
+    }\
+
+
+#define _POP_REG_16(register)\
+    void _POP_##register(cpu_state * state)\
+    {\
+        if(state->curr_inst.op_code == 0xf1)\
+        {\
+            \
+        }\
+        else\
+        {\
+            state->regs.register = stack_pop_16(state);\
+        }\
+    }\
+
+
 #define _ADD_A_REG(register) \
     void _ADD_A_## register(cpu_state * state) \
     {\
@@ -19,7 +77,7 @@
             state->regs.register = result;\
         }\
         \
-      set_flag(1, "n", state);\
+      set_flag(0, "n", state);\
       \
       \
       if(state->regs.register & (1<<3))\
@@ -29,6 +87,14 @@
       else\
         {\
             set_flag(0, "h", state);\
+        }\
+      if(state->regs.register & (1<<7))\
+        {\
+            set_flag(1, "c", state);\
+        }\
+      else\
+        {\
+            set_flag(0, "c", state);\
         }\
     state->cycles += get_instruction_cycles(state->curr_inst, 1);\
     }\

@@ -663,6 +663,24 @@ _ADD_A_REG(h)
 _ADD_A_REG(l)
 _ADD_A_REG(a)
 
+_POP_REG_16(bc)
+_POP_REG_16(de)
+_POP_REG_16(hl)
+_POP_REG_16(af)//This is the weird one. Need to do some bit magic to handle it if it comes up, since I'm not emulating the f register normally.
+
+_ADD_REG16_REG16(hl,de)
+_ADD_REG16_REG16(hl,hl)
+_ADD_REG16_REG16(hl,sp)
+_ADD_REG16_REG16(hl,bc)
+
+_LD_REG_VALUE_AT_ADDR_IN_HL(c)
+_LD_REG_VALUE_AT_ADDR_IN_HL(e)
+_LD_REG_VALUE_AT_ADDR_IN_HL(l)
+_LD_REG_VALUE_AT_ADDR_IN_HL(a)
+_LD_REG_VALUE_AT_ADDR_IN_HL(b)
+_LD_REG_VALUE_AT_ADDR_IN_HL(d)
+_LD_REG_VALUE_AT_ADDR_IN_HL(h)
+
 void init_cpu(cpu_state * state, struct romBytes * bytes)
 {
 //
@@ -866,7 +884,32 @@ void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
     case 0xc7:
             rst(state);
             break;
-    
+
+
+    case 0x5e:
+        _LD_h_AT_HL(state);
+        state->regs.pc += ins.length;
+        break;
+        
+    case 0x19:
+        _ADD_hl_de(state);
+        state->regs.pc += ins.length;
+        break;
+
+    case 0x5f:
+        _LD_e_a(state);
+        state->regs.pc += ins.length;
+        break;
+
+    case 0xe1:
+        _POP_hl(state);
+        state->regs.pc += ins.length;
+        break;
+
+    case 0x87:
+        _ADD_A_a(state);
+        state->regs.pc += ins.length;
+        break;
 
     case 0x79:
             _LD_a_c(state);
