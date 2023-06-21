@@ -3,7 +3,12 @@
 #include <inttypes.h>
 #include "disassemble.h"
 
-
+#define CB_SWAP(reg)\
+    void _SWAP_##reg(cpu_state * state)\
+    {\
+        uint8_t val = state->regs.reg;\
+        state->regs.reg = ((val & 0x0f) << 4 | (val & 0xf0) >> 4);\
+    }\
 
 #define _OR_REG(reg)\
     void _OR_##reg (cpu_state * state)\
