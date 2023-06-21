@@ -14,8 +14,9 @@ void stack_push16(uint16_t data, cpu_state * state)
 
 uint8_t stack_pop(cpu_state * state)
 {
-    return state->regs.sp++;
+    return state->address_space[state->regs.sp++];
 }
+
 uint16_t stack_pop_16(cpu_state * state)
 {
     uint16_t low = stack_pop(state);

@@ -379,7 +379,7 @@ void init_cpu(cpu_state * state, struct romBytes * bytes)
     state->regs.bc = 0x0013;
     state->regs.de = 0x00d8;
     state->regs.hl = 0x014d;
-    state->regs.pc = 0x100;
+    state->regs.pc = 0x02a0;
     state->regs.sp = 0xFFFE;
 
     state->fetched_data = 0x0;
@@ -823,7 +823,11 @@ void ret(cpu_state * state)
 
 void call_a16(cpu_state * state)
 {
-    state->regs.pc += 2;
+
+    state->regs.pc += 3;
+
+    //printf("pc:%2x \n",state->regs.pc);
+
     stack_push16(state->regs.pc, state);
     state->regs.pc = state->fetched_data;
 }
