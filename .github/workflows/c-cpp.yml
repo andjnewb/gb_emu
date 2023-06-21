@@ -17,6 +17,8 @@ jobs:
       run: sudo apt-get update
     - name: sdl
       run: sudo apt-get install libsdl2-dev
+    -name: sdl_ttf
+      run: sudo apt-get install libsdl2-ttf-dev
     - name: make
       run: make
     - name: make check
