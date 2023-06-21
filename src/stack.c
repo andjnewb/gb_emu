@@ -21,5 +21,5 @@ uint16_t stack_pop_16(cpu_state * state)
     uint16_t low = stack_pop(state);
     uint16_t hi = stack_pop(state);
 
-    return (hi << 8) | low;
+    return (hi << 8) | (low & 0x00ff);
 }
