@@ -3,6 +3,36 @@
 #include <inttypes.h>
 #include "disassemble.h"
 
+#define _ADD_A_REG(register) \
+    void _ADD_A_## register(cpu_state * state) \
+    {\
+      int result = state->regs.a + state->regs.register;\
+        \
+      if(result > 255)\
+        {\
+            set_flag(1, "z", state);\
+            state->regs.register = 0x0;\
+        }\
+      else\
+        {\
+            set_flag(0, "z", state);\
+            state->regs.register = result;\
+        }\
+        \
+      set_flag(1, "n", state);\
+      \
+      \
+      if(state->regs.register & (1<<3))\
+        {\
+            set_flag(1, "h", state);\
+        }\
+      else\
+        {\
+            set_flag(0, "h", state);\
+        }\
+    state->cycles += get_instruction_cycles(state->curr_inst, 1);\
+    }\
+
 
 #define _AND_REG(reg)\
     void _AND_##reg(cpu_state * state)\
