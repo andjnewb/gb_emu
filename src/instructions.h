@@ -3,6 +3,8 @@
 #include <inttypes.h>
 #include "disassemble.h"
 
+
+
 #define _OR_REG(reg)\
     void _OR_##reg (cpu_state * state)\
     {\

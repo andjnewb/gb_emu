@@ -92,6 +92,7 @@ int step_cpu();
 int decode_instruction(cpu_state * state, struct romBytes * r);
 void set_flag(int toSet, char flag[2], cpu_state * state);
 void call_func(cpu_state * state, instruction ins, struct romBytes * bytes);
+void call_cb_func(cpu_state * state, instruction ins);
 void handle_interrupt(cpu_state * state);
 int get_instruction_cycles(instruction ins, int actionTaken);
 void request_interrupt(cpu_state * state, int interrupt);
@@ -110,14 +111,9 @@ void ret(cpu_state * state);
 
 //Logical/Arithmetic
 void xor_a(cpu_state * state);
-// void dec_b(cpu_state * state);
-// void dec_e(cpu_state * state);
-// void dec_h(cpu_state * state);
-// void dec_c(cpu_state * state);
 void rra(cpu_state * state);
-//void or_b(cpu_state * state);
 void inc_d(cpu_state * state);
-//void dec_d(cpu_state * state);
+void and_d8(cpu_state * state);
 
 //Comparison
 void cp_d8(cpu_state * state);
@@ -143,5 +139,6 @@ void ld_data_at_addr_bc_a(cpu_state * state);
 //MISC
 void di(cpu_state * state);
 void rst(cpu_state * state);
+void cpl(cpu_state * state);
 
 #endif

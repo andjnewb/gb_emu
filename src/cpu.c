@@ -5,7 +5,7 @@
 //CPU FUNCTIONS. Should find a better place for these. Macros are defined in instructions.h. These are mostly used for functions that would pointless to have seperate definition for each version, for example LD A,E and LD E,A.
 //Considering that there are well over forty of these variations for the 8 bit registers, you can see why it makes sense to do it this way.
 
-const instruction instructions[256] =
+const instruction instructions[512] =
     {
         {"NOP", 0x0, 1, NONE, "----", "4/0"},
         {"LD BC,d16", 0x1, 3, d16, "----", "12/0"},
@@ -210,7 +210,7 @@ const instruction instructions[256] =
         {"RET Z", 0xc8, 1, NONE, "----", "1/0"},
         {"RET", 0xc9, 1, NONE, "----", "1/0"},
         {"JP Z,A16", 0xca, 3, a16, "----", "1/0"},
-        {"CBPREFIX", 0xcb, 2, NONE, "----", "1/0"},
+        {"CBPREFIX", 0xcb, 2, d8, "----", "1/0"},
         {"CALL Z,A16", 0xcc, 3, a16, "----", "1/0"},
         {"CALL A16", 0xcd, 3, a16, "----", "1/0"},
         {"ADC A,D8", 0xce, 2, d8, "z0hc", "1/0"},
@@ -567,7 +567,26 @@ void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
     // case 0xc7:
     //         rst(state);
     //         break;
-            
+
+    case 0xcb:
+
+            call_cb_func(state,)
+
+    case 0xe6:
+            and_d8(state);
+            state->regs.pc += ins.length;
+            break;
+
+    case 0x2f:
+            cpl(state);
+            state->regs.pc += ins.length;
+            break;
+    
+    case 0xfb:
+            state->interrupt_master_enable = 1;
+            state->regs.pc += ins.length;
+            break;
+
     case 0x61:
             _LD_h_c(state);
             state->regs.pc += ins.length;
@@ -806,6 +825,10 @@ void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
     }
 }
 
+void call_cb_func(cpu_state *state, instruction ins)
+{
+}
+
 void ld_data_at_addr_de_a(cpu_state * state)
 {
     state->address_space[state->regs.de] = state->regs.a;
@@ -948,6 +971,14 @@ void rst(cpu_state *state)
 
 }
 
+void cpl(cpu_state *state)
+{
+    state->regs.a = ~(state->regs.a);
+
+    set_flag(1, "n", state);
+    set_flag(1, "h", state);
+}
+
 void inc_d(cpu_state *state)
 {
     int result = state->regs.d + 1;
@@ -983,6 +1014,26 @@ void inc_d(cpu_state *state)
 
     state->cycles += get_instruction_cycles(state->curr_inst, 1);
 
+}
+
+void and_d8(cpu_state *state)
+{
+    uint8_t result = state->regs.a & state->fetched_data;
+
+    state->regs.a = result;
+
+    if(result == 0)
+    {
+        set_flag(1, "z", state);
+    }
+    else
+    {
+        set_flag(0, "z", state);
+    }
+
+    set_flag(0, "n", state);
+    set_flag(1, "h", state);
+    set_flag(0, "c", state);
 }
 
 void cp_d8(cpu_state * state)
