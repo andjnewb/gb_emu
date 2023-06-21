@@ -655,6 +655,13 @@ _AND_REG(h)
 _AND_REG(l)
 _AND_REG(a)
 
+_ADD_A_REG(b)
+_ADD_A_REG(c)
+_ADD_A_REG(d)
+_ADD_A_REG(e)
+_ADD_A_REG(h)
+_ADD_A_REG(l)
+_ADD_A_REG(a)
 
 void init_cpu(cpu_state * state, struct romBytes * bytes)
 {
@@ -831,7 +838,7 @@ void fetch_instruction(cpu_state *state, struct romBytes *r)
             break;
 
         case NONE:
-        
+
             state->fetched_data = 0x0;
 
             break;
@@ -849,16 +856,17 @@ void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
 {
     switch(ins.op_code)
     {
-    // case 0xff:
-    // case 0xef:
-    // case 0xdf:
-    // case 0xcf:
-    // case 0xf7:
-    // case 0xe7:
-    // case 0xd7:
-    // case 0xc7:
-    //         rst(state);
-    //         break;
+    case 0xff:
+    case 0xef:
+    case 0xdf:
+    case 0xcf:
+    case 0xf7:
+    case 0xe7:
+    case 0xd7:
+    case 0xc7:
+            rst(state);
+            break;
+    
 
     case 0x79:
             _LD_a_c(state);
