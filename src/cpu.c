@@ -794,6 +794,7 @@ void fetch_instruction(cpu_state *state, struct romBytes *r)
         switch (instructions[state->address_space[state->regs.pc]].d_type)
         {
         case a16:
+
             uint8_t d1 = r->bytes[state->regs.pc + 1];
             uint8_t d2 = r->bytes[state->regs.pc + 2];
 
@@ -803,10 +804,12 @@ void fetch_instruction(cpu_state *state, struct romBytes *r)
 
             break;
         case d8:
+
             state->fetched_data = r->bytes[state->regs.pc + 1];
 
             break;
         case d16:
+
             uint8_t d3 = r->bytes[state->regs.pc + 1];
             uint8_t d4 = r->bytes[state->regs.pc + 2];
 
@@ -816,21 +819,25 @@ void fetch_instruction(cpu_state *state, struct romBytes *r)
             break;
 
         case a8:
+
             state->fetched_data = r->bytes[state->regs.pc + 1];
             break;
 
         case r8:
+
             state->fetched_data_8_signed = r->bytes[state->regs.pc + 1];
             // state.regs.pc += r->bytes[state.regs.pc + 1];
 
             break;
 
         case NONE:
+        
             state->fetched_data = 0x0;
 
             break;
 
         default:
+
             // exit(0);
             break;
         }
