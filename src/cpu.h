@@ -110,7 +110,7 @@ void call_a16(cpu_state * state);
 void ret(cpu_state * state);
 
 //Logical/Arithmetic
-void xor_a(cpu_state * state);
+// void xor_a(cpu_state * state);
 void rra(cpu_state * state);
 void inc_d(cpu_state * state);
 void and_d8(cpu_state * state);

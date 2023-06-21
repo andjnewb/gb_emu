@@ -631,6 +631,31 @@ _LD_REG16_REG(bc,a)
 
 _LD_REG_REGA16(d,hl)
 
+_CB_SWAP(b)
+_CB_SWAP(c)
+_CB_SWAP(d)
+_CB_SWAP(e)
+_CB_SWAP(h)
+_CB_SWAP(l)
+_CB_SWAP(a)
+
+_XOR_REG(b)
+_XOR_REG(c)
+_XOR_REG(d)
+_XOR_REG(e)
+_XOR_REG(h)
+_XOR_REG(l)
+_XOR_REG(a)
+
+_AND_REG(b)
+_AND_REG(c)
+_AND_REG(d)
+_AND_REG(e)
+_AND_REG(h)
+_AND_REG(l)
+_AND_REG(a)
+
+
 void init_cpu(cpu_state * state, struct romBytes * bytes)
 {
 //
@@ -827,6 +852,25 @@ void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
     // case 0xc7:
     //         rst(state);
     //         break;
+
+    case 0x79:
+            _LD_a_c(state);
+            state->regs.pc += ins.length;
+            break;
+
+    case 0xa1:
+            _AND_c(state);
+            state->regs.pc += ins.length;
+            break;
+    case 0xa9:
+            _XOR_c(state);
+            state->regs.pc += ins.length;
+            break;
+
+    case 0x4f:
+            _LD_c_a(state);
+            state->regs.pc += ins.length;
+            break;
 
     case 0xcb:
 
@@ -1065,7 +1109,7 @@ void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
             break;
 
     case 0xaf:
-            xor_a(state);
+            _XOR_a(state);
             state->regs.pc += ins.length;
             break;
 
@@ -1091,11 +1135,16 @@ void call_cb_func(cpu_state *state, instruction ins)
 
     switch(ins.op_code)
     {
+        case 0x37:
+        _SWAP_a(state);
+        break;
+
 
         default:
             printf("Non implemented CB instruction at 0x%x: 0x%x %s\n", state->regs.pc, ins.op_code, ins.mnmemonic);
             state->halt = 1; //
             break;
+        
     }
 
     state->regs.pc += ins.length;//This will always be two. Fisrt byte is cb prefix, second byte is op-code.
@@ -1376,28 +1425,28 @@ void jp_nocond(cpu_state * state)
     state->cycles += get_instruction_cycles(state->curr_inst, 1);
 }
 
-void xor_a(cpu_state * state)
-{
-    //This is effectively a NOP
+// void xor_a(cpu_state * state)
+// {
+//     //This is effectively a NOP
 
-    uint8_t result = state->regs.a ^ state->regs.a;
-    state->regs.a = result;
+//     uint8_t result = state->regs.a ^ state->regs.a;
+//     state->regs.a = result;
 
-    if(result == 0)
-    {
-        set_flag(1, "z", state);
-    }
-    else
-    {
-        set_flag(0, "z", state);
-    }
+//     if(result == 0)
+//     {
+//         set_flag(1, "z", state);
+//     }
+//     else
+//     {
+//         set_flag(0, "z", state);
+//     }
 
-    set_flag(0,"n",state);
-    set_flag(0,"h",state);
-    set_flag(0,"c",state);
+//     set_flag(0,"n",state);
+//     set_flag(0,"h",state);
+//     set_flag(0,"c",state);
 
-    state->cycles += get_instruction_cycles(state->curr_inst, 1);
-}
+//     state->cycles += get_instruction_cycles(state->curr_inst, 1);
+// }
 
 
 void ld_hl_decrement_a(cpu_state * state)

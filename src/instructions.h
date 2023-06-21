@@ -3,7 +3,47 @@
 #include <inttypes.h>
 #include "disassemble.h"
 
-#define CB_SWAP(reg)\
+
+#define _AND_REG(reg)\
+    void _AND_##reg(cpu_state * state)\
+    {\
+        uint8_t result = state->regs.a & state->regs.reg;\
+        state->regs.a = result;\
+\
+        if(result == 0)\
+        {\
+            set_flag(1, "z", state);\
+        }\
+        else\
+        {\
+            set_flag(0, "z", state);\
+        }\
+       state->cycles += get_instruction_cycles(state->curr_inst, 1);\
+    }\
+
+#define _XOR_REG(reg)\
+    void _XOR_##reg(cpu_state * state)\
+    {\
+        uint8_t result = state->regs.a ^ state->regs.reg;\
+        state->regs.a = result;\
+\
+        if(result == 0)\
+        {\
+            set_flag(1, "z", state);\
+        }\
+        else\
+        {\
+            set_flag(0, "z", state);\
+        }\
+\
+        set_flag(0,"n",state);\
+        set_flag(0,"h",state);\
+        set_flag(0,"c",state);\
+\
+       state->cycles += get_instruction_cycles(state->curr_inst, 1);\
+    }\
+
+#define _CB_SWAP(reg)\
     void _SWAP_##reg(cpu_state * state)\
     {\
         uint8_t val = state->regs.reg;\
