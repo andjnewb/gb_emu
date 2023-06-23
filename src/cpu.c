@@ -547,10 +547,7 @@ _INC_REG(c)
 _INC_REG(e)
 _INC_REG(l)
 _INC_REG(a)
-_INC_REG(bc)
-_INC_REG(de)
-_INC_REG(hl)
-_INC_REG(sp)
+
 
 _OR_REG(a)
 _OR_REG(b)
@@ -668,6 +665,11 @@ _POP_REG_16(de)
 _POP_REG_16(hl)
 _POP_REG_16(af)//This is the weird one. Need to do some bit magic to handle it if it comes up, since I'm not emulating the f register normally.
 
+_PUSH_REG_16(bc)
+_PUSH_REG_16(de)
+_PUSH_REG_16(hl)
+_PUSH_REG_16(af)
+
 _ADD_REG16_REG16(hl,de)
 _ADD_REG16_REG16(hl,hl)
 _ADD_REG16_REG16(hl,sp)
@@ -680,6 +682,11 @@ _LD_REG_VALUE_AT_ADDR_IN_HL(a)
 _LD_REG_VALUE_AT_ADDR_IN_HL(b)
 _LD_REG_VALUE_AT_ADDR_IN_HL(d)
 _LD_REG_VALUE_AT_ADDR_IN_HL(h)
+
+_INC_REG16(bc)
+_INC_REG16(de)
+_INC_REG16(hl)
+_INC_REG16(sp)
 
 void init_cpu(cpu_state * state, struct romBytes * bytes)
 {
@@ -884,7 +891,23 @@ void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
     case 0xc7:
             rst(state);
             break;
+    case 0x8:
+        ld_a16_SP(state);
+        state->regs.pc += ins.length;
 
+    case 0xe9:
+        jp_hl_addr(state);
+        break;
+
+    case 0xd5:
+        _PUSH_de(state);
+        state->regs.pc += ins.length;
+        break;
+    
+    case 0x23:
+        _INC_hl(state);
+        state->regs.pc += ins.length;
+        break;
 
     case 0x5e:
         _LD_h_AT_HL(state);
@@ -1218,6 +1241,12 @@ void ld_data_at_addr_bc_a(cpu_state *state)
     state->address_space[state->regs.bc] = state->regs.a;
 }
 
+void ld_a16_SP(cpu_state *state)
+{
+    state->regs.sp = state->fetched_data;
+    state->cycles += get_instruction_cycles(state->curr_inst, 1);
+}
+
 void ret(cpu_state * state)
 {
     state->regs.pc = stack_pop_16(state);
@@ -1481,6 +1510,13 @@ void jp_nocond(cpu_state * state)
 {
     state->regs.pc = state->fetched_data;
     state->cycles += get_instruction_cycles(state->curr_inst, 1);
+}
+
+void jp_hl_addr(cpu_state *state)
+{
+    state->regs.pc = state->regs.hl;
+    state->cycles += get_instruction_cycles(state->curr_inst, 1);
+
 }
 
 // void xor_a(cpu_state * state)

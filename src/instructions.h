@@ -3,6 +3,21 @@
 #include <inttypes.h>
 #include "disassemble.h"
 
+#define _INC_REG16(register)\
+    void _INC_##register(cpu_state * state)\
+    {\
+        int result = state->regs.register + 1;\
+        \
+        if(result > 0xffff)\
+        {\
+            state->regs.register = 0x0;\
+        }\
+        else\
+        {\
+            state->regs.register++;\
+        }\
+    }\
+
 #define _LD_REG_VALUE_AT_ADDR_IN_HL(register)\
     void _LD_##register##_AT_HL(cpu_state * state)\
     {\
@@ -52,7 +67,15 @@
     {\
         if(state->curr_inst.op_code == 0xf1)\
         {\
+            uint8_t temp;\
             \
+            state->regs.register = 0;\
+            state->regs.a = stack_pop(state);\
+            temp = stack_pop(state);\
+            state->regs.z_flag =  1 ? checkBit(temp,3) == 1 : 0;\
+            state->regs.n_flag =  1 ? checkBit(temp,2) == 1 : 0;\
+            state->regs.h_flag =  1 ? checkBit(temp,1) == 1 : 0;\
+            state->regs.c_flag =  1 ? checkBit(temp,0) == 1 : 0;\
         }\
         else\
         {\
@@ -60,6 +83,28 @@
         }\
     }\
 
+#define _PUSH_REG_16(register)\
+    void _PUSH_##register(cpu_state * state)\
+    {\
+        if(state->curr_inst.op_code == 0xf5)\
+        {\
+            uint8_t temp;\
+            \
+            stack_push(state->regs.a,state);\
+\
+            temp = setBit(temp, 3) ? state->regs.z_flag == 1 : clearBit(temp, 3);\
+            temp = setBit(temp, 2) ? state->regs.n_flag == 1 : clearBit(temp, 2);\
+            temp = setBit(temp, 1) ? state->regs.h_flag == 1 : clearBit(temp, 1);\
+            temp = setBit(temp, 0) ? state->regs.c_flag == 1 : clearBit(temp, 0);\
+            \
+            stack_push(temp,state);\
+\
+        }\
+        else\
+        {\
+            stack_push16(state->regs.register, state);\
+        }\
+    }\
 
 #define _ADD_A_REG(register) \
     void _ADD_A_## register(cpu_state * state) \

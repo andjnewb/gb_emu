@@ -101,13 +101,14 @@ void fetch_instruction(cpu_state * state, struct romBytes * r);
 //CPU INSTRUCTIONS
 
 //JUMPS
-void jp_nocond(cpu_state * state);
-void jr_nz_r8(cpu_state * state, struct romBytes * bytes);
-void jr_nc_r8(cpu_state * state);
-void jr_z_r8(cpu_state * state);
-void jr_c_r8(cpu_state * state);
-void call_a16(cpu_state * state);
-void ret(cpu_state * state);
+void jp_nocond(cpu_state * state);//Jumps to the address in the operand.
+void jp_hl_addr(cpu_state * state);//Jump to the address stored in the HL register.
+void jr_nz_r8(cpu_state * state, struct romBytes * bytes);//Jump if the zero flag is not set.
+void jr_nc_r8(cpu_state * state);//Jump if the carry flag is not set.
+void jr_z_r8(cpu_state * state);//Jump if the zero flag is set.
+void jr_c_r8(cpu_state * state);//Jump if the carry flag is set.
+void call_a16(cpu_state * state);//Call function at address. Push pc onto the stack.
+void ret(cpu_state * state);//Return from function. Pop address to return to of the stack.
 
 //Logical/Arithmetic
 // void xor_a(cpu_state * state);
@@ -134,6 +135,7 @@ void ld_a16_a(cpu_state * state);
 void ld_hl_increment_a(cpu_state * state);
 void ld_data_at_addr_de_a(cpu_state * state);
 void ld_data_at_addr_bc_a(cpu_state * state);
+void ld_a16_SP(cpu_state * state);
 
 
 //MISC
