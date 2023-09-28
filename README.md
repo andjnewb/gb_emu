@@ -1,5 +1,5 @@
 # gb_emu
-This project started out and continues to be a way for me to learn more about emulation. To that end, it is far from perfect and though usuable for CPU emulation, other parts such as PPU emulation are under-developed or incomplete.
+This project started out and continues to be a way for me to learn more about emulation. To that end, it is far from perfect and though usuable for CPU emulation, other parts such as PPU emulation are under-developed or non-existent.
 # Status
 Currently, my testing method is to run my emulator alongside a more established emulator with a built in debugger running Tetris. To that end my emulator can accurately emulate CPU function up to address 0x31. It will effectively emulate thousands of lines of code before reaching that point,
 as 0x31 is actually a subroutine and not where program execution begins on the GameBoy. Most of the bitwise "extra" functions of the GameBoy architecture have already been implemented using macros. Bugs still exist, and the ones that do are pesky to hunt down because they behave 
