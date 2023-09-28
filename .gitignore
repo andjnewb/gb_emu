@@ -3,6 +3,7 @@
 *.txt
 *.hex
 *.gb
+*.asm
 out.hex
 diss
 src/instructions.h.gch
