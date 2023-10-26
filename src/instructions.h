@@ -35,7 +35,10 @@
             state->regs.register1 = 0x0;\
         }\
             \
-      state->regs.register1 = result;\
+      else\
+        {\
+            state->regs.register1 = result;\
+        }\
             \
       set_flag(0, "n", state);\
       \

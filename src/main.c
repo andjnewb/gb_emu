@@ -115,11 +115,10 @@ int main(int argc, char *argv[])
         printf("LCD CONTROL REGS:\nLCD & PPU ENABLE-%d WINDOW TILE MAP AREA:%d WINDOW ENABLE:%d BG AND WINDOW TILE DATA AREA:%d BG TILE MAP AREA:%d OBJ SIZE:%d OBJ ENABLE:%d BG AND WINDOW ENABLE/PRIORITY:%d\n",
                lcd_regs[7], lcd_regs[6], lcd_regs[5], lcd_regs[4], lcd_regs[3], lcd_regs[2], lcd_regs[1], lcd_regs[0]);
 
-        // if(state.regs.pc == 0x27a3)
-        // {
-        //     printf("cffe:%x cffd:%x", state.address_space[0xcffe],state.address_space[0xcffd]);
-        //     exit(0);
-        // }
+        if(state.regs.pc == 0x2f8)
+        {
+            delay = 1000;
+        }
 
 
         fetch_instruction(&state, r);
