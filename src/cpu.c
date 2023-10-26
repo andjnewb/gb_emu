@@ -696,7 +696,7 @@ void init_cpu(cpu_state * state, struct romBytes * bytes)
     state->regs.bc = 0x0013;
     state->regs.de = 0x00d8;
     state->regs.hl = 0x014d;
-    state->regs.pc = 0x02a0;
+    state->regs.pc = 0x100;
     state->regs.sp = 0xFFFE;
 
     state->fetched_data = 0x0;
@@ -891,6 +891,9 @@ void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
     case 0xc7:
             rst(state);
             break;
+    case 0xc1:
+        _POP_bc(state);
+        state->regs.pc += ins.length;
     case 0x8:
         ld_a16_SP(state);
         state->regs.pc += ins.length;

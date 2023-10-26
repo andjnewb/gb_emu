@@ -22,10 +22,10 @@ int main(int argc, char *argv[])
     struct romBytes *r = malloc(sizeof(struct romBytes));
     //
 
-    *r = getBytes("tetris.gb");
+    *r = getBytes("cpu_instrs.gb");
     r->metaData = getMetaData(r);
 
-    FILE *out = fopen("tetris.asm", "w");
+    FILE *out = fopen("test.out", "w");
 
     cpu_state state;
     ppu_state _ppu_state;
@@ -115,22 +115,17 @@ int main(int argc, char *argv[])
         printf("LCD CONTROL REGS:\nLCD & PPU ENABLE-%d WINDOW TILE MAP AREA:%d WINDOW ENABLE:%d BG AND WINDOW TILE DATA AREA:%d BG TILE MAP AREA:%d OBJ SIZE:%d OBJ ENABLE:%d BG AND WINDOW ENABLE/PRIORITY:%d\n",
                lcd_regs[7], lcd_regs[6], lcd_regs[5], lcd_regs[4], lcd_regs[3], lcd_regs[2], lcd_regs[1], lcd_regs[0]);
 
-        if(state.regs.pc == 0x2f8)
-        {
-            delay = 1000;
-        }
-
 
         fetch_instruction(&state, r);
-        fprintf(out, "0x%x : 0x%x %s %x \n", state.regs.pc, state.curr_inst.op_code, state.curr_inst.mnmemonic, state.fetched_data);
+        //fprintf(out, "0x%x : 0x%x %s %x \n", state.regs.pc, state.curr_inst.op_code, state.curr_inst.mnmemonic, state.fetched_data);
         call_func(&state, state.curr_inst, r);
 
-        if(state.fetched_data == 0xff01)
-        {
-            fprintf(out, "%x", state.address_space[0xff01]);
-            clean_SDL(&v_state);
-            exit(0);
-        }
+        // if(state.fetched_data == 0xff01)
+        // {
+        //     fprintf(out, "%x", state.address_space[0xff01]);
+        //     clean_SDL(&v_state);
+        //     exit(0);
+        // }
 
 
         
@@ -143,8 +138,13 @@ int main(int argc, char *argv[])
         }
 
         state.step = 0;
+
+        if(state.address_space[0xff02] == 0x81)//Check if the serial port is enabled, then write its contents.
+        {
+            fprintf(out, "%c", state.address_space[0xff01]);
+        }
     }
-    printf("Disassembly written to: %s\n", "tetris.asm");
+    printf("Console output written to: %s\n", "tetris.asm");
 
     
 
