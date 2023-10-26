@@ -891,13 +891,44 @@ void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
     case 0xc7:
             rst(state);
             break;
+    case 0xf1:
+        _POP_af(state);
+        state->regs.pc += ins.length;
+        break;
+        
+    case 0xf5:
+        _PUSH_af(state);
+        state->regs.pc += ins.length;
+        break;
+
+    case 0xe5:
+        _PUSH_hl(state);
+        state->regs.pc += ins.length;
+        break;
+
+    case 0x18:
+        jr_r8(state);
+        break;
+
+    case 0x7c:
+        _LD_a_h(state);
+        state->regs.pc += ins.length;
+        break;
+
+    case 0x7d:
+        _LD_a_l(state);
+        state->regs.pc += ins.length;
+        break;
+
     case 0xc1:
         _POP_bc(state);
         state->regs.pc += ins.length;
+        break;
+
     case 0x8:
         ld_a16_SP(state);
         state->regs.pc += ins.length;
-
+        break;
     case 0xe9:
         jp_hl_addr(state);
         break;
@@ -1253,6 +1284,12 @@ void ld_a16_SP(cpu_state *state)
 void ret(cpu_state * state)
 {
     state->regs.pc = stack_pop_16(state);
+}
+
+void jr_r8(cpu_state *state)
+{
+    int8_t val = state->fetched_data;//We need to use a signed value, since we could be jumping backwards.
+    state->regs.pc += val;
 }
 
 void call_a16(cpu_state * state)

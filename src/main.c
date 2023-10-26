@@ -144,7 +144,7 @@ int main(int argc, char *argv[])
             fprintf(out, "%c", state.address_space[0xff01]);
         }
     }
-    printf("Console output written to: %s\n", "tetris.asm");
+    printf("Console output written to: %s\n", "test.out");
 
     
 

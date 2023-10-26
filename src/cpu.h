@@ -109,6 +109,7 @@ void jr_z_r8(cpu_state * state);//Jump if the zero flag is set.
 void jr_c_r8(cpu_state * state);//Jump if the carry flag is set.
 void call_a16(cpu_state * state);//Call function at address. Push pc onto the stack.
 void ret(cpu_state * state);//Return from function. Pop address to return to of the stack.
+void jr_r8(cpu_state * state);
 
 //Logical/Arithmetic
 // void xor_a(cpu_state * state);
