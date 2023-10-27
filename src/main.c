@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
     memcpy(state.address_space, r->bytes, 0x7fff); // map rom cart to memory map of cpu
     state.step = 0;
 
-    int delay = 0;
+    int delay = 300;
 
     while (state.halt != 1)
     {
@@ -117,7 +117,7 @@ int main(int argc, char *argv[])
 
 
         fetch_instruction(&state, r);
-        //fprintf(out, "0x%x : 0x%x %s %x \n", state.regs.pc, state.curr_inst.op_code, state.curr_inst.mnmemonic, state.fetched_data);
+        fprintf(out, "0x%x : 0x%x %s %x \n", state.regs.pc, state.curr_inst.op_code, state.curr_inst.mnmemonic, state.fetched_data);
         call_func(&state, state.curr_inst, r);
 
         // if(state.fetched_data == 0xff01)
@@ -139,10 +139,10 @@ int main(int argc, char *argv[])
 
         state.step = 0;
 
-        if(state.address_space[0xff02] == 0x81)//Check if the serial port is enabled, then write its contents.
-        {
-            fprintf(out, "%c", state.address_space[0xff01]);
-        }
+        // if(state.address_space[0xff02] == 0x81)//Check if the serial port is enabled, then write its contents.
+        // {
+        //     fprintf(out, "%c", state.address_space[0xff01]);
+        // }
     }
     printf("Console output written to: %s\n", "test.out");
 
