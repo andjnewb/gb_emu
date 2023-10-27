@@ -1507,7 +1507,7 @@ void and_d8(cpu_state *state)
 void cp_d8(cpu_state * state)
 {
 
-    int result = state->regs.a - state->fetched_data;
+    uint8_t result = state->regs.a - state->fetched_data;
 
      if(result < 0)
     {
@@ -1529,7 +1529,8 @@ void cp_d8(cpu_state * state)
 
     set_flag(1, "n", state);
 
-    if(result & (1<<3))
+    //FIXME: This flag shouldn't be set at 0x745 in cpu_instrs.gb
+    if(checkBit(result, 4) == 0)//We want to know if bit 4 was borrowed from during the subtraction. This is my stupid way of doing it.
     {
         set_flag(1, "h", state);
     }
@@ -1538,7 +1539,7 @@ void cp_d8(cpu_state * state)
         set_flag(0, "h", state);
     }
 
-    if(result & (1<<7))
+    if(state->regs.a < state->fetched_data)//No borrow
     {
         set_flag(1, "c", state);
     }

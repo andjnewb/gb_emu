@@ -3,6 +3,7 @@
 #include <inttypes.h>
 #include "disassemble.h"
 
+//FIXME: Do I need to set the zero flag when result wraps around???
 #define _INC_REG16(register)\
     void _INC_##register(cpu_state * state)\
     {\
