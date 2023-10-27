@@ -888,7 +888,15 @@ void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
     case 0xf7:
     case 0xe7:
     case 0xd7:
+    case 0x3:
+        _INC_bc(state);
+        state->regs.pc += ins.length;
+        break;
 
+    case 0xc5:
+        _PUSH_bc(state);
+        state->regs.pc += ins.length;
+        break;
     case 0xc7:
         rst(state);
         break;

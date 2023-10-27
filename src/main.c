@@ -139,10 +139,10 @@ int main(int argc, char *argv[])
 
         state.step = 0;
 
-        if(state.address_space[0xff02] == 0x81)//Check if the serial port is enabled, then write its contents.
-        {
-            fprintf(out, "%c", state.address_space[0xff01]);
-        }
+        // if(state.address_space[0xff02] == 0x81)//Check if the serial port is enabled, then write its contents.
+        // {
+        //     fprintf(out, "%c", state.address_space[0xff01]);
+        // }
     }
     printf("Console output written to: %s\n", "test.out");
 
