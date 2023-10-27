@@ -857,7 +857,7 @@ void fetch_instruction(cpu_state *state, struct romBytes *r)
 
         case r8:
 
-            state->fetched_data_8_signed = r->bytes[state->regs.pc + 1];
+            state->fetched_data_8_signed = (int8_t)r->bytes[state->regs.pc + 1];
             // state.regs.pc += r->bytes[state.regs.pc + 1];
 
             break;
@@ -888,7 +888,7 @@ void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
     case 0xf7:
     case 0xe7:
     case 0xd7:
-    
+
     case 0xc7:
         rst(state);
         break;
@@ -918,6 +918,7 @@ void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
         break;
 
     case 0x18:
+        state->regs.pc += ins.length;//The correct behavior for a jump is to increment the pc before jumping. May need to examine other jumps to bring them in line.
         jr_r8(state);
         break;
 
@@ -1299,6 +1300,7 @@ void ret(cpu_state * state)
 
 void jr_r8(cpu_state *state)
 {   
+    //This seems hackish but it isn't. The CPU of the gameboy increments the PC by two before this jump, since two is the length of the instruction.
     state->regs.pc += state->fetched_data_8_signed;
 }
 
