@@ -888,14 +888,25 @@ void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
     case 0xf7:
     case 0xe7:
     case 0xd7:
+    
     case 0xc7:
-            rst(state);
-            break;
+        rst(state);
+        break;
+    case 0x3c:
+        _INC_a(state);
+        state->regs.pc += ins.length;
+        break;
+
+    case 0x77:
+        _LD_a_AT_HL(state);
+        state->regs.pc += ins.length;
+        break;
+
     case 0xf1:
         _POP_af(state);
         state->regs.pc += ins.length;
         break;
-        
+
     case 0xf5:
         _PUSH_af(state);
         state->regs.pc += ins.length;
@@ -1287,9 +1298,8 @@ void ret(cpu_state * state)
 }
 
 void jr_r8(cpu_state *state)
-{
-    int8_t val = state->fetched_data;//We need to use a signed value, since we could be jumping backwards.
-    state->regs.pc += val;
+{   
+    state->regs.pc += state->fetched_data_8_signed;
 }
 
 void call_a16(cpu_state * state)
