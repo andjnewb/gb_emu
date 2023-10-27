@@ -117,7 +117,7 @@ int main(int argc, char *argv[])
 
 
         fetch_instruction(&state, r);
-        //fprintf(out, "0x%x : 0x%x %s %x \n", state.regs.pc, state.curr_inst.op_code, state.curr_inst.mnmemonic, state.curr_inst.d_type == 5 ? state.fetched_data_8_signed : state.fetched_data);
+        fprintf(out, "0x%x : 0x%x %s %x \n", state.regs.pc, state.curr_inst.op_code, state.curr_inst.mnmemonic, state.curr_inst.d_type == 5 ? state.fetched_data_8_signed : state.fetched_data);
         call_func(&state, state.curr_inst, r);
 
         // if(state.fetched_data == 0xff01)

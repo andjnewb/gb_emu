@@ -1507,46 +1507,16 @@ void and_d8(cpu_state *state)
 void cp_d8(cpu_state * state)
 {
 
-    uint8_t result = state->regs.a - state->fetched_data;
+    int result = state->regs.a - state->fetched_data;
+    uint8_t umm = state->fetched_data;
 
-     if(result < 0)
-    {
-        //printf("RESULT WAS ZERO");      
-        set_flag(0, "z", state);
-        
-    }
-    else if(result == 0)
-    {
-        set_flag(1, "z", state);
-        
-    }
+    if( result == 0){state->regs.z_flag = 1;}
 
-    else
-    {
-        set_flag(0, "z", state);
-        
-    }
+    state->regs.n_flag = 1;
 
-    set_flag(1, "n", state);
+    if((umm & 0xF) > (result & 0xF)){state->regs.h_flag = 1;}
 
-    //FIXME: This flag shouldn't be set at 0x745 in cpu_instrs.gb
-    if(checkBit(result, 4) == 0)//We want to know if bit 4 was borrowed from during the subtraction. This is my stupid way of doing it.
-    {
-        set_flag(1, "h", state);
-    }
-    else
-    {
-        set_flag(0, "h", state);
-    }
-
-    if(state->regs.a < state->fetched_data)//No borrow
-    {
-        set_flag(1, "c", state);
-    }
-    else
-    {
-        set_flag(0, "c", state);
-    }
+    if((umm & 0xFF) > (result & 0xFF)){state->regs.c_flag = 1;}
 
     state->cycles += get_instruction_cycles(state->curr_inst, 1);
 
