@@ -71,6 +71,7 @@ int main(int argc, char *argv[])
         printf("Interrupts Enabled: %s\n", state.interrupt_master_enable == 1 ? "Yes" : "No");
         printf("LCD CONTROL REGS:\nLCD & PPU ENABLE-%d WINDOW TILE MAP AREA:%d WINDOW ENABLE:%d BG AND WINDOW TILE DATA AREA:%d BG TILE MAP AREA:%d OBJ SIZE:%d OBJ ENABLE:%d BG AND WINDOW ENABLE/PRIORITY:%d\n",
                lcd_regs[7], lcd_regs[6], lcd_regs[5], lcd_regs[4], lcd_regs[3], lcd_regs[2], lcd_regs[1], lcd_regs[0]);
+        
 
         if(state.step == 0)
         {
@@ -91,6 +92,7 @@ int main(int argc, char *argv[])
                     if (state.step == 1)
                     {
                         do_everything(&state, &_ppu_state, r);
+                        
                     }
                     
                 }
@@ -111,6 +113,8 @@ int main(int argc, char *argv[])
                 }
             }
         }
+        fetch_instruction(&state, r);
+        printf("0x%x : 0x%x %s %x \n", state.regs.pc, state.curr_inst.op_code, state.curr_inst.mnmemonic, state.curr_inst.d_type == 5 ? state.fetched_data_8_signed : state.fetched_data); 
 
         SDL_Delay(delay);
 
@@ -131,9 +135,7 @@ void do_everything(cpu_state *state, ppu_state * _ppu_state, struct romBytes * b
 {
 
     fetch_instruction(state, bytes);
-    //fprintf(out, "0x%x : 0x%x %s %x \n", state->regs.pc, state->curr_inst.op_code, state->curr_inst.mnmemonic, state->curr_inst.d_type == 5 ? state->fetched_data_8_signed : state->fetched_data);
     call_func(state, state->curr_inst, bytes);
-        
     ppu_cycle(state, _ppu_state);
 
     if (state->interrupt_master_enable == 1)

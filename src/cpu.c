@@ -874,7 +874,7 @@ void fetch_instruction(cpu_state *state, struct romBytes *r)
             break;
         }
 
-        printf("0x%x : 0x%x %s %x \n", state->regs.pc, state->curr_inst.op_code, state->curr_inst.mnmemonic, state->fetched_data);
+        //printf("0x%x : 0x%x %s %x \n", state->regs.pc, state->curr_inst.op_code, state->curr_inst.mnmemonic, state->fetched_data);
 }
 
 void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
@@ -1307,6 +1307,7 @@ void ret(cpu_state * state)
 void jr_r8(cpu_state *state)
 {   
     //This seems hackish but it isn't. The CPU of the gameboy increments the PC by two before this jump, since two is the length of the instruction.
+    state->regs.pc += state->curr_inst.length;
     state->regs.pc += state->fetched_data_8_signed;
 }
 
@@ -1591,10 +1592,13 @@ void jr_nz_r8(cpu_state * state, struct romBytes * bytes)
     int toJump = state->fetched_data_8_signed;
 
     //printf("tojump: %d", -(~toJump + 1) + 2);
+
+    
     
     if(state->regs.z_flag == 0)
     {
-        state->regs.pc += -(~toJump + 1) + 2;//
+        state->regs.pc += state->curr_inst.length;
+        state->regs.pc += toJump;//
         state->cycles += get_instruction_cycles(state->curr_inst, 1);
     }
     else
@@ -1613,7 +1617,8 @@ void jr_nc_r8(cpu_state *state)
     
     if(state->regs.c_flag == 0)
     {
-        state->regs.pc += -(~toJump + 1) + 2;//
+        state->regs.pc += state->curr_inst.length;
+        state->regs.pc += toJump;//
         state->cycles += get_instruction_cycles(state->curr_inst, 1);
     }
     else
@@ -1631,7 +1636,8 @@ void jr_z_r8(cpu_state *state)
     
     if(state->regs.z_flag == 1)
     {
-        state->regs.pc += -(~toJump + 1) + 2;//
+        state->regs.pc += state->curr_inst.length;
+        state->regs.pc += toJump;//
         state->cycles += get_instruction_cycles(state->curr_inst, 1);
     }
     else
@@ -1648,7 +1654,8 @@ void jr_c_r8(cpu_state *state)
 
     if(state->regs.c_flag == 1)
     {
-        state->regs.pc += -(~toJump + 1) + 2;//
+        state->regs.pc += state->curr_inst.length;
+        state->regs.pc += toJump;//
         state->cycles += get_instruction_cycles(state->curr_inst, 1);
     }
     else
