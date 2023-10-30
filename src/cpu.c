@@ -926,7 +926,6 @@ void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
         break;
 
     case 0x18:
-        state->regs.pc += ins.length;//The correct behavior for a jump is to increment the pc before jumping. May need to examine other jumps to bring them in line.
         jr_r8(state);
         break;
 
@@ -1053,17 +1052,16 @@ void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
 
     case 0x38:
             jr_c_r8(state);
-            state->regs.pc += ins.length;
+            
             break;
 
     case 0x30:
             jr_nc_r8(state);
-            state->regs.pc += ins.length;
+            
             break;
 
     case 0x28:
             jr_z_r8(state);
-            state->regs.pc += ins.length;
             break;
 
     case 0x1c:
@@ -1208,7 +1206,7 @@ void call_func(cpu_state * state, instruction ins, struct romBytes * bytes)
             state->regs.pc += ins.length;
             break;
 
-    case 0x20:
+    case 0x20:   
             jr_nz_r8(state, bytes);
             break;
 
@@ -1511,12 +1509,16 @@ void cp_d8(cpu_state * state)
     uint8_t umm = state->fetched_data;
 
     if( result == 0){state->regs.z_flag = 1;}
+    else{state->regs.z_flag = 0;}
 
     state->regs.n_flag = 1;
 
     if((umm & 0xF) > (result & 0xF)){state->regs.h_flag = 1;}
+    else{state->regs.h_flag = 0;}
 
     if((umm & 0xFF) > (result & 0xFF)){state->regs.c_flag = 1;}
+    else{state->regs.c_flag = 0;}
+
 
     state->cycles += get_instruction_cycles(state->curr_inst, 1);
 

@@ -34,7 +34,7 @@ int get_lcd_ly(cpu_state *state)
 
 void ppu_cycle(cpu_state * _cpu_state, ppu_state * _ppu_state)
 {
-    //(*_ppu_state->lcd_ly)++;
+    (*_ppu_state->lcd_ly)++;//Increment lcd line number
 
     if(*_ppu_state->lcd_ly == *_ppu_state->ly_comp)
     {
